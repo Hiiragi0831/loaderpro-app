@@ -1,0 +1,12 @@
+.authorization {
+	&__auth {
+		.row {
+			display: flex;
+		}
+
+		.form {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}

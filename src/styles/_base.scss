@@ -142,3 +142,26 @@ iframe {
 	width: 100%;
 	height: 100%;
 }
+
+.site {
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+	min-height: 100vh; // fallback
+	// stylelint-disable-next-line
+	min-height: var(--vh);
+}
+
+.container {
+	position: relative;
+	z-index: 1;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 100%;
+	// stylelint-disable-next-line
+	max-width: vc(1400);
+
+	@include devices {
+		padding: 0 vc(15);
+	}
+}
