@@ -1,0 +1,19 @@
+extends @pug/base
+
+append globals
+	- pageName = 'home'
+
+append vars
+
+block content
+	+router(pageName)
+		.home
+			include @components/header/header
+			h1 Index.html
+			a(href="./article") article
+			include @components/footer/footer
+			+lazyBlur({
+				imgS: `${baseDir}assets/images/home/section-1/1.jpg`,
+				imgL: `${baseDir}assets/images/home/section-1/1.jpg`,
+			})
+			+sharing('vk')
