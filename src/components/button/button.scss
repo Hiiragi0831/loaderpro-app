@@ -1,0 +1,11 @@
+.button {
+	border-radius: vc(5);
+	padding: vc(15) vc(30);
+	font-weight: 600;
+	font-size: vc(16);
+
+	&__primary {
+		color: $color-white;
+		background-color: $color-carrot-orange;
+	}
+}
