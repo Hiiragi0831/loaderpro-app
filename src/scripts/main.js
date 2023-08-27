@@ -16,6 +16,7 @@ import router from '@components/router/router';
 import home from '../pages/home/home';
 import article from '../pages/article/article';
 import sharing from '../components/sharing/sharing';
+import authentication from "../components/authentication/authentication";
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -49,6 +50,7 @@ const scriptsInit = [
 
 	home.init,
 	article.init,
+	authentication.init,
 ];
 
 // добавить скрипты для удаленния данных при уходе
