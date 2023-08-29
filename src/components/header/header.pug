@@ -1,2 +1,22 @@
 header.header
-	h2 header
+	.header__top
+		.container
+	.header__main
+		.container
+			.row
+				.header__logo
+					+svg("logo")
+				.header__buttons
+					a.button.button__primary(href="#") Запросить деталь
+					a.button.button__primary(href="/authorization/") Войти в систему
+	.header__footer
+		.container
+			.row
+				.header__links
+					a.header__link(href="#") PartSearch
+					a.header__link(href="#") TypeProductSearch
+					a.header__link(href="#") SearchMyLoader
+				.header__links
+					a.header__link(href="#") Предложения
+					a.header__link(href="#") Заказы
+					a.header__link(href="#") Промоакции

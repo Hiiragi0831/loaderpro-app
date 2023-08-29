@@ -1,12 +1,28 @@
 .authorization {
 	&__auth {
+		align-self: center;
+
 		.row {
-			display: flex;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: vc(130);
 		}
 
 		.form {
 			display: flex;
 			flex-direction: column;
+			gap: vc(20);
 		}
+	}
+
+	&__registration,
+	&__login {
+		display: flex;
+		flex-direction: column;
+		gap: vc(20);
+	}
+
+	.h1 {
+		color: $color-carrot-orange;
 	}
 }

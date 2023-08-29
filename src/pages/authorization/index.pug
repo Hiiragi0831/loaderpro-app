@@ -13,5 +13,11 @@ block content
 				section.authorization__auth
 					.container
 						.row
-							include @components/authentication/authentication
+							.authorization__login
+								p.h1 Уже являетесь пользователем?
+								p.h2 Выполнить вход:
+								include @components/authentication/authentication
+							.authorization__registration
+								p.h1 Новый пользователь?
+								p.h2 Зарегистрируйтесь здесь
 			include @components/footer/footer

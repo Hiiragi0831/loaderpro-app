@@ -1,0 +1,58 @@
+.header {
+	&__top {
+		padding: vc(18) 0;
+		background-color: $color-snow;
+	}
+
+	&__main {
+		padding: vc(25) 0;
+
+		.row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	&__footer {
+		background-color: $color-nero;
+
+		.row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	&__logo {
+		width: vc(204);
+		height: vc(44);
+
+		svg {
+			fill: $color-black;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		gap: vc(10);
+	}
+
+	&__links {
+		display: flex;
+	}
+
+	&__link {
+		display: block;
+		padding: vc(22) vc(28);
+		font-weight: 700;
+		font-size: vc(19);
+		color: $color-white;
+		transition: color $transition, background-color $transition;
+
+		&:hover {
+			color: $color-nero;
+			background-color: $color-carrot-orange;
+		}
+	}
+}
