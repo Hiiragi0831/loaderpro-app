@@ -2,20 +2,22 @@ import {Notyf} from 'notyf';
 
 let notyf = new Notyf();
 const sendForm = async (data) => {
-	let response = await fetch('/auth/api/login.php', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify(data),
-	});
-
-	return response.json();
+	try {
+		return await fetch('/auth/api/login.php', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data),
+		});
+	} catch (error) {
+		return error;
+	}
 };
 const init = () => {
 	const loginForm = document.querySelector('[data-login-form]');
 	// При отправке формы входа
-	loginForm.addEventListener('submit', (evt) => {
+	loginForm.addEventListener('submit', async (evt) => {
 		evt.preventDefault();
 
 		let object = {};
@@ -26,8 +28,14 @@ const init = () => {
 
 		sendForm(object)
 			.then((response) => {
-				notyf.success(response.message);
-				console.log('then', response);
+				if (response.ok) {
+					return response.json();
+				}
+				throw new Error('Something went wrong');
+			})
+			.then((responseJson) => {
+				notyf.success(responseJson.message);
+				console.log('then', responseJson);
 			})
 			.catch((error) => {
 				notyf.error(error.message);
