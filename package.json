@@ -98,6 +98,7 @@
 		"lodash.throttle": "4.1.1",
 		"lozad": "1.16.0",
 		"ninelines-sharing": "1.5.8",
+		"notyf": "3.10.0",
 		"ua-parser-js": "1.0.33"
 	},
 	"husky": {

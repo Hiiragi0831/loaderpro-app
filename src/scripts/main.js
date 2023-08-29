@@ -4,15 +4,15 @@ import throttle from 'lodash.throttle';
 import '@styles/vendor.scss';
 import '@styles/main.scss';
 
-import actualYear from '@scripts/modules/actual-year';
-import uaParser from '@scripts/modules/ua-parser';
-import vhFix from '@scripts/modules/vh-fix';
+import actualYear from '../scripts/modules/actual-year';
+import uaParser from '../scripts/modules/ua-parser';
+import vhFix from '../scripts/modules/vh-fix';
 
-import {isDevices} from '@scripts/helpers/index';
-import lazyLoad from '@scripts/modules/lazy-load';
+import {isDevices} from '../scripts/helpers/index';
+import lazyLoad from '../scripts/modules/lazy-load';
 import scrollToAnchor from './modules/scrollToAnchor';
 import lazyBlur from './modules/lazyBlur';
-import router from '@components/router/router';
+import router from '../components/router/router';
 import home from '../pages/home/home';
 import article from '../pages/article/article';
 import sharing from '../components/sharing/sharing';

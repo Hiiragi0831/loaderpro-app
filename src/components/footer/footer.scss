@@ -1,0 +1,84 @@
+.footer {
+	padding: vc(30) 0;
+	color: $color-white;
+	background-color: $color-nero;
+
+	&__row {
+		display: flex;
+		gap: vc(60);
+	}
+
+	&__about {
+		display: flex;
+		flex-direction: column;
+		gap: vc(16);
+	}
+
+	&__logo {
+		width: vc(227);
+		height: vc(49);
+
+		svg {
+			fill: $color-white;
+		}
+	}
+
+	&__head {
+		font-weight: 600;
+		font-size: vc(18);
+	}
+
+	&__socials {
+		display: flex;
+		gap: vc(11);
+
+		svg {
+			width: vc(24);
+			height: vc(24);
+			fill: $color-white;
+		}
+	}
+
+	&__ya {
+		picture {
+			width: vc(136);
+			height: vc(41);
+		}
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: column;
+		gap: vc(20);
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: vc(10);
+
+		&-row {
+			display: flex;
+			gap: vc(20);
+
+			picture {
+				height: vc(20);
+			}
+		}
+
+		&-pay {
+			display: flex;
+			align-items: center;
+			gap: vc(6);
+
+			p {
+				font-size: vc(10);
+			}
+
+			svg {
+				width: vc(25);
+				height: vc(25);
+			}
+		}
+	}
+}

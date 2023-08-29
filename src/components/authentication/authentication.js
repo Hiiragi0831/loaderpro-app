@@ -1,3 +1,6 @@
+import {Notyf} from 'notyf';
+
+let notyf = new Notyf();
 const sendForm = async (data) => {
 	let response = await fetch('/auth/api/login.php', {
 		method: 'POST',
@@ -23,9 +26,13 @@ const init = () => {
 
 		sendForm(object)
 			.then((response) => {
+				notyf.success(response.message);
 				console.log('then', response);
 			})
-			.catch((error) => console.log('catch', error));
+			.catch((error) => {
+				notyf.error(error.message);
+				console.log('catch', error);
+			});
 	});
 };
 
