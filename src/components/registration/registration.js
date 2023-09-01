@@ -3,7 +3,7 @@ import {Notyf} from 'notyf';
 let notyf = new Notyf();
 const sendForm = async (data) => {
 	try {
-		return await fetch('/auth/api/login.php', {
+		return await fetch('/auth/api/create_user.php', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -15,7 +15,7 @@ const sendForm = async (data) => {
 	}
 };
 const init = () => {
-	const form = document.querySelector('[data-login-form]');
+	const form = document.querySelector('[data-registration-form]');
 	// При отправке формы входа
 	form.addEventListener('submit', async (evt) => {
 		evt.preventDefault();
@@ -31,9 +31,6 @@ const init = () => {
 				console.log('then', response);
 				if (response.ok) {
 					return response.json();
-				}
-				if (response.status === 401) {
-					throw new Error('Something went wrong');
 				}
 				throw new Error('Something went wrong');
 			})

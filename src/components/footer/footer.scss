@@ -1,5 +1,5 @@
 .footer {
-	padding: vc(30) 0;
+	padding: vc(30) 0 0;
 	color: $color-white;
 	background-color: $color-nero;
 
@@ -80,5 +80,12 @@
 				height: vc(25);
 			}
 		}
+	}
+
+	&__copyright {
+		margin-top: vc(30);
+		padding: vc(15) 0;
+		text-align: center;
+		background-color: $color-black;
 	}
 }

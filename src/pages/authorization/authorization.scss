@@ -1,10 +1,23 @@
 .authorization {
+	&__logo {
+		width: vc(527);
+		height: vc(113);
+
+		svg {
+			fill: $color-black;
+		}
+	}
+
+	&__head {
+		margin: vc(20) 0 vc(40);
+	}
+
 	&__auth {
 		align-self: center;
 
 		.row {
 			display: grid;
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: 1fr auto 1fr;
 			gap: vc(130);
 		}
 
@@ -19,7 +32,13 @@
 	&__login {
 		display: flex;
 		flex-direction: column;
+		width: 100%;
 		gap: vc(20);
+	}
+
+	&__hr {
+		width: 1px;
+		background-color: $color-nero;
 	}
 
 	.h1 {

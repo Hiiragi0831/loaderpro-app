@@ -2,9 +2,29 @@
 	border-radius: vc(5);
 	padding: vc(15) vc(20);
 	font-weight: 600;
+	text-align: center;
+	transition-property: background-color, border, color;
+	transition-duration: $transition-duration;
+	transition-timing-function: $transition-timing-function;
 
 	&__primary {
+		border: 1px solid $color-carrot-orange;
 		color: $color-white;
 		background-color: $color-carrot-orange;
+
+		&:hover {
+			color: $color-carrot-orange;
+			background-color: $color-white;
+		}
+	}
+
+	&__outline {
+		border: 1px solid $color-carrot-orange;
+		color: $color-eclipse;
+
+		&:hover {
+			color: $color-white;
+			background-color: $color-carrot-orange;
+		}
 	}
 }

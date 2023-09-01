@@ -1,4 +1,7 @@
 form.form(data-login-form)
-	input.form__input(type="email" placeholder="email" name="email")
+	input.form__input(type="email" placeholder="Email" name="email")
 	input.form__input(type="password" placeholder="Пароль" name="password" autocomplete="on")
-	button.button.button__primary(type="submit") Авторизоваться
+	.form__row
+		button.button.button__primary(type="submit") Авторизоваться
+		a(href="#") Забыли пароль ?
+	a.button.button__outline Требуется наша помощь ?

@@ -1,14 +1,78 @@
 extends @pug/base
 
 append globals
-	- pageName = 'home'
+	- pageName = 'authorization'
 
 append vars
 
 block content
 	+router(pageName)
 		.site
-			include @components/header/header
-			main.home
-				a.button.button__primary(href="/authorization/") authorization page
-			include @components/footer/footer
+			//include @components/header/header
+			main.authorization
+				section.authorization__auth
+					.container
+						.authorization__logo
+							+svg("logo")
+						.authorization__head
+							p.h2 LOADER PROTECTION
+						.row
+							.authorization__login
+								p.h1 Вы зарегистрированны?
+								p.h3 Выполнить вход
+								include @components/authentication/authentication
+							.authorization__hr
+							.authorization__registration
+								p.h1 Новый пользователь?
+								p.h3 Зарегистрируйтесь здесь
+								include @components/registration/registration
+			footer.footer
+				.container
+					.footer__row
+						.footer__about
+							.footer__logo
+								+svg("logo")
+						.footer__ya
+							+picture({
+								path: `${baseDir}assets/images/yandex`,
+								ext: 'png',
+							})
+						.footer__info
+							.footer__head Социальные сети
+							.footer__socials
+								a.footer__social(href="#")
+									+svg("social-wa")
+								a.footer__social(href="#")
+									+svg("social-tg")
+								a.footer__social(href="#")
+									+svg("social-vk")
+								a.footer__social(href="#")
+									+svg("social-yu")
+								a.footer__social(href="#")
+									+svg("social-r")
+						.footer__info
+							.footer__head Способы оплаты
+							.footer__info-row
+								.footer__info-pay
+									+svg("icon-bank")
+									p Безнал с НДС
+								.footer__info-pay
+									+svg("icon-credit-card")
+									p Оплата картой
+						.footer__info
+							.footer__head Варианты доставки
+							.footer__info-row
+								+picture({
+									path: `${baseDir}assets/images/logo-cdek`,
+									ext: 'png',
+								})
+								+picture({
+									path: `${baseDir}assets/images/logo-del`,
+									ext: 'png',
+								})
+								+picture({
+									path: `${baseDir}assets/images/logo-dpd`,
+									ext: 'png',
+								})
+				.footer__copyright
+					p Все права защищены. 2023

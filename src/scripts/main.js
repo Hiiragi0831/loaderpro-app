@@ -13,8 +13,6 @@ import lazyLoad from '../scripts/modules/lazy-load';
 import scrollToAnchor from './modules/scrollToAnchor';
 import lazyBlur from './modules/lazyBlur';
 import router from '../components/router/router';
-import home from '../pages/home/home';
-import article from '../pages/article/article';
 import sharing from '../components/sharing/sharing';
 import authentication from '../components/authentication/authentication';
 
@@ -48,8 +46,6 @@ const scriptsInit = [
 	lazyBlur.init,
 	sharing.init,
 
-	home.init,
-	article.init,
 	authentication.init,
 ];
 

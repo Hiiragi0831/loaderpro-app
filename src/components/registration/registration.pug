@@ -1,0 +1,14 @@
+form.form(data-registration-form)
+	.form__row
+		input.form__input(type="text" placeholder="Имя" name="firstname")
+		input.form__input(type="text" placeholder="Фамилия" name="lastname")
+	input.form__input(type="phone" placeholder="Телефон" name="phone")
+	input.form__input(type="email" placeholder="Email" name="email")
+	input.form__input(type="password" placeholder="Пароль" name="password" autocomplete="off")
+	.form__row
+		input.form__input(type="text" placeholder="Наименование компании" name="сompany")
+		input.form__input(type="text" placeholder="Должность" name="employee")
+	input.form__input(type="text" placeholder="Адрес" name="address")
+	input.form__input(type="text" placeholder="Город" name="city")
+
+	button.button.button__primary(type="submit") Зарегистрироваться
