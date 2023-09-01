@@ -3,7 +3,7 @@ import {Notyf} from 'notyf';
 let notyf = new Notyf();
 const sendForm = async (data) => {
 	try {
-		return await fetch('/auth/api/login.php', {
+		return await fetch('https://api.loaderpro.ru/auth/api/login.php', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

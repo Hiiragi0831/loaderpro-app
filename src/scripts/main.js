@@ -15,6 +15,7 @@ import lazyBlur from './modules/lazyBlur';
 import router from '../components/router/router';
 import sharing from '../components/sharing/sharing';
 import authentication from '../components/authentication/authentication';
+import registration from '../components/registration/registration';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -47,6 +48,7 @@ const scriptsInit = [
 	sharing.init,
 
 	authentication.init,
+	registration.init,
 ];
 
 // добавить скрипты для удаленния данных при уходе
