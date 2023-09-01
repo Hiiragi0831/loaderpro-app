@@ -32,13 +32,15 @@ const init = () => {
 				if (response.ok) {
 					return response.json();
 				}
-				if (response.status === 401) {
-					throw new Error('Something went wrong');
-				}
 				throw new Error('Something went wrong');
 			})
 			.then((responseJson) => {
-				notyf.success(responseJson.message);
+				if (responseJson.status === '401') {
+					notyf.error(responseJson.message);
+				} else {
+					notyf.success(responseJson.message);
+				}
+
 				console.log('then', responseJson);
 			})
 			.catch((error) => {

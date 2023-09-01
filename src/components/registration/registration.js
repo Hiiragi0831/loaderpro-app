@@ -35,7 +35,11 @@ const init = () => {
 				throw new Error('Something went wrong');
 			})
 			.then((responseJson) => {
-				notyf.success(responseJson.message);
+				if (responseJson.status === '400') {
+					notyf.error(responseJson.message);
+				} else {
+					notyf.success(responseJson.message);
+				}
 				console.log('then', responseJson);
 			})
 			.catch((error) => {
