@@ -15,39 +15,41 @@ const sendForm = async (data) => {
 	}
 };
 const init = () => {
-	const form = document.querySelector('[data-login-form]');
-	// При отправке формы входа
-	form.addEventListener('submit', async (evt) => {
-		evt.preventDefault();
+	if (document.querySelector('[data-login-form]')) {
+		const form = document.querySelector('[data-login-form]');
+		// При отправке формы входа
+		form.addEventListener('submit', async (evt) => {
+			evt.preventDefault();
 
-		let object = {};
+			let object = {};
 
-		new FormData(form).forEach((value, key) => {
-			object[key] = value;
-		});
-
-		sendForm(object)
-			.then((response) => {
-				console.log('then', response);
-				if (response.ok) {
-					return response.json();
-				}
-				throw new Error('Something went wrong');
-			})
-			.then((responseJson) => {
-				if (responseJson.status === '401') {
-					notyf.error(responseJson.message);
-				} else {
-					notyf.success(responseJson.message);
-				}
-
-				console.log('then', responseJson);
-			})
-			.catch((error) => {
-				notyf.error(error.message);
-				console.log('catch', error);
+			new FormData(form).forEach((value, key) => {
+				object[key] = value;
 			});
-	});
+
+			sendForm(object)
+				.then((response) => {
+					console.log('then', response);
+					if (response.ok) {
+						return response.json();
+					}
+					throw new Error('Something went wrong');
+				})
+				.then((responseJson) => {
+					if (responseJson.status === '401') {
+						notyf.error(responseJson.message);
+					} else {
+						notyf.success(responseJson.message);
+					}
+
+					console.log('then', responseJson);
+				})
+				.catch((error) => {
+					notyf.error(error.message);
+					console.log('catch', error);
+				});
+		});
+	}
 };
 
 export default {

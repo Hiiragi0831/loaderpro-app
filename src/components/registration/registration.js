@@ -14,9 +14,8 @@ const sendForm = async (data) => {
 		return error;
 	}
 };
-const init = (container) => {
-	if (container.dataset.barbaNamespace === 'register') {
-		console.log('data-registration-form');
+const init = () => {
+	if (document.querySelector('[data-registration-form]')) {
 		const form = document.querySelector('[data-registration-form]');
 
 		form.addEventListener('submit', async (evt) => {

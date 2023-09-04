@@ -62,6 +62,12 @@ const init = () => {
 	vhFix.init();
 	// закоментировать или удалить если SPA поведение не требуется
 	router.init(scriptsInit, scriptsDestroy);
+	// lazyLoad.init();
+	// scrollToAnchor.init();
+	// lazyBlur.init();
+	// sharing.init();
+	// authentication.init();
+	// registration.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));
