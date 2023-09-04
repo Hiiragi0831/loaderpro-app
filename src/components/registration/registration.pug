@@ -1,14 +1,40 @@
 form.form(data-registration-form)
+	p.h4 Вы уже наш клиент?
 	.form__row
-		input.form__input(type="text" placeholder="Имя" name="firstname")
-		input.form__input(type="text" placeholder="Фамилия" name="lastname")
+		label.form__checkbox
+			input(type="checkbox")
+			span да
+		label.form__checkbox
+			input(type="")
+			span нет
+	hr
+	p.h4 О вашей деятельности
+	p Я покупаю запачасти для:
+	.form__column
+		label.form__checkbox
+			input(type="checkbox")
+			span Вариант выбора
+		label.form__checkbox
+			input(type="checkbox")
+			span Вариант выбора
+		label.form__checkbox
+			input(type="checkbox")
+			span Вариант выбора
+		label.form__checkbox
+			input(type="checkbox")
+			span Вариант выбора
+		label.form__checkbox
+			input(type="checkbox")
+			span Вариант выбора
+	hr
+	p.h4 Контактная информация
+	input.form__input(type="text" placeholder="Имя" name="firstname")
+	input.form__input(type="text" placeholder="Фамилия" name="lastname")
 	input.form__input(type="phone" placeholder="Телефон" name="phone")
 	input.form__input(type="email" placeholder="Email" name="email")
 	input.form__input(type="password" placeholder="Пароль" name="password" autocomplete="off")
-	.form__row
-		input.form__input(type="text" placeholder="Наименование компании" name="сompany")
-		input.form__input(type="text" placeholder="Должность" name="employee")
+	input.form__input(type="text" placeholder="Наименование компании" name="сompany")
+	input.form__input(type="text" placeholder="Должность" name="employee")
 	input.form__input(type="text" placeholder="Адрес" name="address")
 	input.form__input(type="text" placeholder="Город" name="city")
-
 	button.button.button__primary(type="submit") Зарегистрироваться

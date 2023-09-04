@@ -25,54 +25,11 @@ block content
 							.authorization__registration
 								p.h1 Новый пользователь?
 								p.h3 Зарегистрируйтесь здесь
-								include @components/registration/registration
-			footer.footer
-				.container
-					.footer__row
-						.footer__about
-							.footer__logo
-								+svg("logo")
-						.footer__ya
-							+picture({
-								path: `${baseDir}assets/images/yandex`,
-								ext: 'png',
-							})
-						.footer__info
-							.footer__head Социальные сети
-							.footer__socials
-								a.footer__social(href="#")
-									+svg("social-wa")
-								a.footer__social(href="#")
-									+svg("social-tg")
-								a.footer__social(href="#")
-									+svg("social-vk")
-								a.footer__social(href="#")
-									+svg("social-yu")
-								a.footer__social(href="#")
-									+svg("social-r")
-						.footer__info
-							.footer__head Способы оплаты
-							.footer__info-row
-								.footer__info-pay
-									+svg("icon-bank")
-									p Безнал с НДС
-								.footer__info-pay
-									+svg("icon-credit-card")
-									p Оплата картой
-						.footer__info
-							.footer__head Варианты доставки
-							.footer__info-row
-								+picture({
-									path: `${baseDir}assets/images/logo-cdek`,
-									ext: 'png',
-								})
-								+picture({
-									path: `${baseDir}assets/images/logo-del`,
-									ext: 'png',
-								})
-								+picture({
-									path: `${baseDir}assets/images/logo-dpd`,
-									ext: 'png',
-								})
-				.footer__copyright
-					p Все права защищены. 2023
+								.authorization__advantages
+									.authorization__edge Dminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									.authorization__edge Dminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									.authorization__edge Dminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									.authorization__edge Dminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									.authorization__edge Dminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+									a.button.button__primary(href="/register") Зарегистрироваться
+			+footer-two()

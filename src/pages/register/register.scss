@@ -1,0 +1,49 @@
+.register {
+	padding: 0 0 vc(80);
+
+	&__head {
+		padding: vc(50) 0 vc(140);
+		background-color: $color-snow;
+
+		&-row {
+			display: flex;
+			flex-direction: column;
+			gap: vc(24);
+		}
+
+		p {
+			font-weight: 400;
+			font-size: vc(18);
+			line-height: 167%;
+		}
+	}
+
+	&__logo {
+		width: vc(527);
+		height: vc(113);
+
+		svg {
+			fill: $color-black;
+		}
+	}
+
+	&__form {
+		margin: vc(-110) auto 0;
+		border-radius: 20px;
+		padding: vc(30);
+		width: 100%;
+		max-width: vc(850);
+		box-shadow: 0 vc(12) vc(24) 0 rgba($color-black, 0.05);
+		background: $color-white;
+
+		.form {
+			display: flex;
+			flex-direction: column;
+			gap: vc(10);
+		}
+
+		.button {
+			margin-top: vc(10);
+		}
+	}
+}

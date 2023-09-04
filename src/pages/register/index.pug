@@ -1,0 +1,24 @@
+extends @pug/base
+
+append globals
+	- pageName = 'register'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			//include @components/header/header
+			main.register
+				section
+					.register__head
+						.container
+							.register__head-row
+								.register__logo
+									+svg("logo")
+								h2 LOADER PROTECTION
+								h3 Станьте нашим клиентом
+								p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					.register__form
+						include @components/registration/registration
+			+footer-two()

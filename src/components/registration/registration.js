@@ -14,39 +14,42 @@ const sendForm = async (data) => {
 		return error;
 	}
 };
-const init = () => {
-	const form = document.querySelector('[data-registration-form]');
-	// При отправке формы входа
-	form.addEventListener('submit', async (evt) => {
-		evt.preventDefault();
+const init = (container) => {
+	if (container.dataset.barbaNamespace === 'register') {
+		console.log('data-registration-form');
+		const form = document.querySelector('[data-registration-form]');
 
-		let object = {};
+		form.addEventListener('submit', async (evt) => {
+			evt.preventDefault();
 
-		new FormData(form).forEach((value, key) => {
-			object[key] = value;
-		});
+			let object = {};
 
-		sendForm(object)
-			.then((response) => {
-				console.log('then', response);
-				if (response.ok) {
-					return response.json();
-				}
-				throw new Error('Something went wrong');
-			})
-			.then((responseJson) => {
-				if (responseJson.status === '400') {
-					notyf.error(responseJson.message);
-				} else {
-					notyf.success(responseJson.message);
-				}
-				console.log('then', responseJson);
-			})
-			.catch((error) => {
-				notyf.error(error.message);
-				console.log('catch', error);
+			new FormData(form).forEach((value, key) => {
+				object[key] = value;
 			});
-	});
+
+			sendForm(object)
+				.then((response) => {
+					console.log('then', response);
+					if (response.ok) {
+						return response.json();
+					}
+					throw new Error('Something went wrong');
+				})
+				.then((responseJson) => {
+					if (responseJson.status === '400') {
+						notyf.error(responseJson.message);
+					} else {
+						notyf.success(responseJson.message);
+					}
+					console.log('then', responseJson);
+				})
+				.catch((error) => {
+					notyf.error(error.message);
+					console.log('catch', error);
+				});
+		});
+	}
 };
 
 export default {

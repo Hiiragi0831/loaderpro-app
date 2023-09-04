@@ -1,60 +1,113 @@
-footer.footer
-	.container
-		.footer__row
-			.footer__about
-				.footer__logo
-					+svg("logo")
-				.footer__socials
-					a.footer__social(href="#")
-						+svg("social-wa")
-					a.footer__social(href="#")
-						+svg("social-tg")
-					a.footer__social(href="#")
-						+svg("social-vk")
-					a.footer__social(href="#")
-						+svg("social-yu")
-					a.footer__social(href="#")
-						+svg("social-r")
+mixin footer
+	footer.footer
+		.container
+			.footer__row
+				.footer__about
+					.footer__logo
+						+svg("logo")
+					.footer__socials
+						a.footer__social(href="#")
+							+svg("social-wa")
+						a.footer__social(href="#")
+							+svg("social-tg")
+						a.footer__social(href="#")
+							+svg("social-vk")
+						a.footer__social(href="#")
+							+svg("social-yu")
+						a.footer__social(href="#")
+							+svg("social-r")
+					.footer__ya
+						+picture({
+							path: `${baseDir}assets/images/yandex`,
+							ext: 'png',
+						})
+				.footer__links
+					.footer__head Обслуживание клиентов
+					a.footer__link(href="#") Company History
+					a.footer__link(href="#") Documentation
+					a.footer__link(href="#") Term & Service
+					a.footer__link(href="#") Components
+				.footer__links
+					.footer__head Мой аккаунт
+					a.footer__link(href="#") Sign Up
+					a.footer__link(href="#") Login
+					a.footer__link(href="#") Careers
+					a.footer__link(href="#") Privacy Policy
+				.footer__info
+					.footer__head Способы оплаты
+					.footer__info-row
+						.footer__info-pay
+							+svg("icon-bank")
+							p Безнал с НДС
+						.footer__info-pay
+							+svg("icon-credit-card")
+							p Оплата картой
+				.footer__info
+					.footer__head Варианты доставки
+					.footer__info-row
+						+picture({
+							path: `${baseDir}assets/images/logo-cdek`,
+							ext: 'png',
+						})
+						+picture({
+							path: `${baseDir}assets/images/logo-del`,
+							ext: 'png',
+						})
+						+picture({
+							path: `${baseDir}assets/images/logo-dpd`,
+							ext: 'png',
+						})
+		.footer__copyright
+			p Все права защищены. 2023
+
+mixin footer-two
+	footer.footer
+		.container
+			.footer__row
+				.footer__about
+					.footer__logo
+						+svg("logo")
 				.footer__ya
 					+picture({
 						path: `${baseDir}assets/images/yandex`,
 						ext: 'png',
 					})
-			.footer__links
-				.footer__head Обслуживание клиентов
-				a.footer__link(href="#") Company History
-				a.footer__link(href="#") Documentation
-				a.footer__link(href="#") Term & Service
-				a.footer__link(href="#") Components
-			.footer__links
-				.footer__head Мой аккаунт
-				a.footer__link(href="#") Sign Up
-				a.footer__link(href="#") Login
-				a.footer__link(href="#") Careers
-				a.footer__link(href="#") Privacy Policy
-			.footer__info
-				.footer__head Способы оплаты
-				.footer__info-row
-					.footer__info-pay
-						+svg("icon-bank")
-						p Безнал с НДС
-					.footer__info-pay
-						+svg("icon-credit-card")
-						p Оплата картой
-			.footer__info
-				.footer__head Варианты доставки
-				.footer__info-row
-					+picture({
-						path: `${baseDir}assets/images/logo-cdek`,
-						ext: 'png',
-					})
-					+picture({
-						path: `${baseDir}assets/images/logo-del`,
-						ext: 'png',
-					})
-					+picture({
-						path: `${baseDir}assets/images/logo-dpd`,
-						ext: 'png',
-					})
-	.footer__copyright
-		p Все права защищены. 2023
+				.footer__info
+					.footer__head Социальные сети
+					.footer__socials
+						a.footer__social(href="#")
+							+svg("social-wa")
+						a.footer__social(href="#")
+							+svg("social-tg")
+						a.footer__social(href="#")
+							+svg("social-vk")
+						a.footer__social(href="#")
+							+svg("social-yu")
+						a.footer__social(href="#")
+							+svg("social-r")
+				.footer__info
+					.footer__head Способы оплаты
+					.footer__info-row
+						.footer__info-pay
+							+svg("icon-bank")
+							p Безнал с НДС
+						.footer__info-pay
+							+svg("icon-credit-card")
+							p Оплата картой
+				.footer__info
+					.footer__head Варианты доставки
+					.footer__info-row
+						+picture({
+							path: `${baseDir}assets/images/logo-cdek`,
+							ext: 'png',
+						})
+						+picture({
+							path: `${baseDir}assets/images/logo-del`,
+							ext: 'png',
+						})
+						+picture({
+							path: `${baseDir}assets/images/logo-dpd`,
+							ext: 'png',
+						})
+		.footer__copyright
+			p Все права защищены. 2023
