@@ -1,0 +1,16 @@
+extends @pug/base
+
+append globals
+	- pageName = 'account'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main.account
+				section
+					.container
+
+			+footer()
