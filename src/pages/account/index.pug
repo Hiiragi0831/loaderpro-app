@@ -10,9 +10,17 @@ block content
 		.site
 			include @components/header/header
 			main.account
-				section
+				section.account__breadcrumbs
 					.container
 						+breadcrumbs()
-				section
+				section.account__section
 					.container
+						h1 Мой аккаунт
+						.account__row
+							nav.account__menu
+								.account__menu-wrapper
+									each item in data.account.menu
+										a.account__menu-item(href!= item.href)
+											+svg(item.icon)
+											span!= item.name
 			+footer()

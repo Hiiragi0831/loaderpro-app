@@ -1,3 +1,57 @@
 .account {
+	h1 {
+		margin-bottom: vc(20);
+	}
 
+	&__breadcrumbs {
+		margin-bottom: vc(20);
+	}
+
+	&__row {
+		display: grid;
+		grid-template-columns: vc(290) 1fr;
+		gap: vc(30);
+	}
+
+	&__menu {
+		overflow: hidden;
+		border: 1px solid $color-light-grey;
+		border-radius: vc(5);
+		width: 100%;
+		max-height: vc(650);
+
+		&-wrapper {
+			padding: vc(20) vc(16);
+		}
+
+		&-item {
+			display: flex;
+			align-items: center;
+			border-bottom: 1px solid $color-light-grey;
+			padding: vc(20) 0;
+			transition: color $transition;
+			gap: vc(16);
+
+			svg {
+				flex-shrink: 0;
+				width: vc(22);
+				height: vc(22);
+				fill: $color-carrot-orange;
+			}
+
+			&:hover,
+			.is-active {
+				color: $color-carrot-orange;
+			}
+
+			&:first-child {
+				padding-top: 0;
+			}
+
+			&:last-child {
+				border: none;
+				padding-bottom: 0;
+			}
+		}
+	}
 }
