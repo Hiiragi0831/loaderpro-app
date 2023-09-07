@@ -1,0 +1,29 @@
+.breadcrumbs {
+	display: flex;
+	gap: vc(10);
+
+	&__item {
+		display: flex;
+		align-items: center;
+		font-size: vc(16);
+		gap: vc(10);
+
+		&::before {
+			content: "";
+			position: relative;
+			display: inline-flex;
+			width: vc(14);
+			height: vc(14);
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M9.62503 6.99997C9.62503 7.11186 9.58226 7.22386 9.49684 7.30928L5.12184 11.6843C4.95089 11.8552 4.67406 11.8552 4.50321 11.6843C4.33237 11.5133 4.33226 11.2365 4.50321 11.0657L8.5689 6.99997L4.50321 2.93429C4.33226 2.76333 4.33226 2.4865 4.50321 2.31566C4.67417 2.14482 4.951 2.14471 5.12184 2.31566L9.49684 6.69066C9.58226 6.77608 9.62503 6.88808 9.62503 6.99997Z' fill='black'/%3E%3C/svg%3E");
+			background-position: center;
+			background-size: vc(14);
+			background-repeat: no-repeat;
+		}
+
+		&:first-child {
+			&::before {
+				display: none;
+			}
+		}
+	}
+}
