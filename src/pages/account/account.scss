@@ -54,4 +54,45 @@
 			}
 		}
 	}
+
+	&__info {
+		h2 {
+			margin-bottom: vc(10);
+		}
+
+		&-item {
+			margin-bottom: vc(30);
+		}
+
+		&-head {
+			margin-bottom: vc(20);
+			border-radius: vc(5);
+			padding: vc(18) vc(30);
+			background: $color-gainsboro;
+
+			p {
+				font-weight: 600;
+				font-size: vc(20);
+			}
+		}
+
+		&-row {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: vc(30);
+
+			&.row-3 {
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+		}
+
+		&-buttons {
+			display: flex;
+			gap: vc(10);
+
+			button {
+				flex:1 1 auto;
+			}
+		}
+	}
 }

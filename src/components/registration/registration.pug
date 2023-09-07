@@ -28,13 +28,50 @@ form.form(data-registration-form)
 			span Вариант выбора
 	hr
 	p.h4 Контактная информация
-	input.form__input(type="text" placeholder="Имя" name="firstname")
-	input.form__input(type="text" placeholder="Фамилия" name="lastname")
-	input.form__input(type="phone" placeholder="Телефон" name="phone")
-	input.form__input(type="email" placeholder="Email" name="email")
-	input.form__input(type="password" placeholder="Пароль" name="password" autocomplete="off")
-	input.form__input(type="text" placeholder="Наименование компании" name="сompany")
-	input.form__input(type="text" placeholder="Должность" name="employee")
-	input.form__input(type="text" placeholder="Адрес" name="address")
-	input.form__input(type="text" placeholder="Город" name="city")
+	+input({
+		type: 'text',
+		placeholder: 'Имя',
+		name: 'firstname'
+	})
+	+input({
+		type: 'text',
+		placeholder: 'Фамилия',
+		name: 'lastname'
+	})
+	+input({
+		type: 'phone',
+		placeholder: 'Телефон',
+		name: 'phone'
+	})
+	+input({
+		type: 'email',
+		placeholder: 'Email',
+		name: 'email'
+	})
+	+input({
+		type: 'password',
+		placeholder: 'Пароль',
+		name: 'password',
+		autocomplete: 'off'
+	})
+	+input({
+		type: 'text',
+		placeholder: 'Наименование компании',
+		name: 'сompany',
+	})
+	+input({
+		type: 'text',
+		placeholder: 'Должность',
+		name: 'employee',
+	})
+	+input({
+		type: 'text',
+		placeholder: 'Адрес',
+		name: 'address',
+	})
+	+input({
+		type: 'text',
+		placeholder: 'Город',
+		name: 'city',
+	})
 	button.button.button__primary(type="submit") Зарегистрироваться

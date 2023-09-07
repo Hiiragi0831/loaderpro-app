@@ -23,4 +23,44 @@ block content
 										a.account__menu-item(href!= item.href)
 											+svg(item.icon)
 											span!= item.name
+							.account__info
+								h2 Контактные лица
+								.account__info-item
+									.account__info-head
+										p Сделайте Ваш выбор
+									.account__info-row.row-3
+										+input({
+											type: 'text',
+											placeholder: 'Имя',
+											name: 'firstname'
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Фамилия',
+											name: 'lastname'
+										})
+										.account__info-buttons
+											button.button.button__primary Поиск
+											button.button.button__outline Добавить контакт
+								.account__info-item
+									.account__info-head
+										p Результат от 1 до 2
+									.account__info-table
+										table.table
+											tr
+												th
+												th Фамилия
+												th Имя
+												th Телефон
+												th Моб. телефон
+												th E-mail
+												th Должность
+											tr
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
 			+footer()
