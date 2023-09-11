@@ -1,6 +1,7 @@
 import debounce from 'lodash.debounce';
 import throttle from 'lodash.throttle';
 
+import 'swiper/swiper-bundle.css';
 import '@styles/vendor.scss';
 import '@styles/main.scss';
 
@@ -16,6 +17,7 @@ import router from '../components/router/router';
 import sharing from '../components/sharing/sharing';
 import authentication from '../components/authentication/authentication';
 import registration from '../components/registration/registration';
+import home from '../pages/home/home';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -49,6 +51,7 @@ const scriptsInit = [
 
 	authentication.init,
 	registration.init,
+	home.init,
 ];
 
 // добавить скрипты для удаленния данных при уходе

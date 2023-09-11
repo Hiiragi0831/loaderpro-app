@@ -1,4 +1,4 @@
 mixin input(data)
 	label.form__input
-		input(type= data.type placeholder= data.placeholder name= data.name autocomplete=`${data.autocomplete ? data.autocomplete: ''}`)
+		input(type= data.type placeholder= data.placeholder name= data.name autocomplete= data.autocomplete ? data.autocomplete: '')
 		span= data.placeholder
