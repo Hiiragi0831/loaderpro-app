@@ -2,3 +2,10 @@ mixin input(data)
 	label.form__input
 		input(type= data.type placeholder= data.placeholder name= data.name autocomplete= data.autocomplete ? data.autocomplete: '' value= data.value ? data.value: '')
 		span= data.placeholder
+
+mixin select(data)
+	label.form__select
+		select
+			each item in data.items
+				option(value= item.value selected=item.selected)= item.value
+		span= data.placeholder

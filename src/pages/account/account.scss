@@ -81,6 +81,10 @@
 			grid-template-columns: 1fr;
 			gap: vc(30);
 
+			&.row-2 {
+				grid-template-columns: 1fr 1fr;
+			}
+
 			&.row-3 {
 				grid-template-columns: 1fr 1fr 1fr;
 			}

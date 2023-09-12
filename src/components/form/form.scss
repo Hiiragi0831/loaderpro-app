@@ -40,6 +40,33 @@
 		}
 	}
 
+	&__select {
+		position: relative;
+
+		select {
+			position: relative;
+			border: 1px solid $color-gray68;
+			border-radius: vc(5);
+			padding: vc(15) vc(20);
+			width: 100%;
+			font-weight: 500;
+			font-size: vc(16);
+			color: $color-eclipse;
+		}
+
+		span {
+			position: absolute;
+			left: vc(15);
+			top: vc(15);
+			display: inline-block;
+			padding: 0 vc(5);
+			background: $color-white;
+			transition: translate $transition;
+			cursor: text;
+			translate: 0 vc(-25);
+		}
+	}
+
 	&__row {
 		display: flex;
 		align-items: center;

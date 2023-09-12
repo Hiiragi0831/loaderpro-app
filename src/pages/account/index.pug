@@ -65,6 +65,76 @@ block content
 											name: 'whatsapp',
 											value: '+79993334455'
 										})
+								.account__info-item
+									.account__info-head
+										p Настройки профиля
+									.account__info-row.row-2
+										+input({
+											type: 'password',
+											placeholder: 'Новый пароль',
+											name: 'password-new',
+										})
+										+input({
+											type: 'password',
+											placeholder: 'Повторно введите новый пароль',
+											name: 'password-new-repeat',
+										})
+										+select({
+											placeholder: 'Язык',
+											items: [
+												{value: 'Русский', selected: true},
+												{value: 'English'},
+												{value: '日本'},
+											],
+										})
+										+select({
+											placeholder: 'Уведомление по электронной почте',
+											items: [
+												{value: 'Почта 1', selected: true},
+												{value: 'Почта 2'},
+												{value: 'Почта 3'},
+											],
+										})
+								.account__info-item
+									.account__info-head
+										p Мои настройки для заказов
+									.account__info-row.row-2
+										+select({
+											placeholder: 'Адрес доставки по умолчанию',
+											items: [
+												{value: 'Адрес 1'},
+												{value: 'Адрес 2'},
+												{value: 'Адрес 3'},
+											],
+										})
+										+select({
+											placeholder: 'Перевозчик по умолчанию',
+											items: [
+												{value: 'Перевозчик 1'},
+												{value: 'Перевозчик 2'},
+												{value: 'Перевозчик 3'},
+											],
+										})
+										+select({
+											placeholder: 'Приоритет отгрузки по умолчанию',
+											items: [
+												{value: 'отгрузки 1'},
+												{value: 'отгрузки 2'},
+												{value: 'отгрузки 3'},
+											],
+										})
+										+select({
+											placeholder: 'Метод доставки по умолчанию',
+											items: [
+												{value: 'доставки 1'},
+												{value: 'доставки 2'},
+												{value: 'доставки 3'},
+											],
+										})
+
+								.account__info-buttons
+									button.button.button__primary Сохранить
+									button.button.button__outline По умолчанию
 								//.account__info-item
 								//	.account__info-head
 								//		p Сделайте Ваш выбор
