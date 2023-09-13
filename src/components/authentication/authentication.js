@@ -1,4 +1,5 @@
 import {Notyf} from 'notyf';
+import {Cookie} from '../cookies/cookies';
 
 let notyf = new Notyf();
 const sendForm = async (data) => {
@@ -17,6 +18,7 @@ const sendForm = async (data) => {
 const init = () => {
 	if (document.querySelector('[data-login-form]')) {
 		const form = document.querySelector('[data-login-form]');
+		const jwt = new Cookie('jwt');
 		// При отправке формы входа
 		form.addEventListener('submit', async (evt) => {
 			evt.preventDefault();
@@ -30,6 +32,7 @@ const init = () => {
 			sendForm(object)
 				.then((response) => {
 					console.log('then', response);
+
 					if (response.ok) {
 						return response.json();
 					}
@@ -40,6 +43,7 @@ const init = () => {
 						notyf.error(responseJson.message);
 					} else {
 						notyf.success(responseJson.message);
+						jwt.set(responseJson.jwt, 1);
 					}
 
 					console.log('then', responseJson);
