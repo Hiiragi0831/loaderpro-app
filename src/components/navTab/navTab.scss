@@ -1,0 +1,19 @@
+.navtab {
+	display: inline-flex;
+	border-bottom: 2px solid $color-carrot-orange;
+
+	&__item {
+		border-radius: vc(5) vc(5) 0 0;
+		padding: vc(16) vc(46);
+		font-weight: 700;
+		font-size: vc(16);
+		background-color: $color-white;
+		transition: color $transition, background-color $transition;
+
+		&.is-active,
+		&:hover {
+			color: $color-white;
+			background-color: $color-carrot-orange;
+		}
+	}
+}

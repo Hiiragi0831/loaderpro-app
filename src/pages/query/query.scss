@@ -1,0 +1,33 @@
+.query {
+	&__box {
+		flex-direction: column;
+		border-radius: vc(10);
+		width: 100%;
+		box-shadow: $box-shadow;
+		background: $color-white;
+
+		&-title {
+			border-bottom: 1px solid $color-gainsboro;
+			padding: vc(25) vc(30);
+			font-weight: 600;
+			font-size: vc(24);
+		}
+
+		&-form {
+			padding: vc(25) vc(30);
+
+			.form {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				gap: vc(30);
+
+				&__group {
+					display: grid;
+					grid-template-columns: 0.8fr 1.4fr 0.8fr;
+					gap: vc(35);
+				}
+			}
+		}
+	}
+}

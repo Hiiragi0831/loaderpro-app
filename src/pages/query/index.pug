@@ -1,0 +1,103 @@
+extends @pug/base
+
+append globals
+	- pageName = 'account'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main.query
+				+breadcrumbs()
+				section
+					.container
+						+navTab([
+							{
+								link: 'Новый запрос',
+								active: true,
+							},
+							{
+								link: 'История запросов'
+							},
+						])
+				section
+					.container
+						.query__box
+							.query__box-title Запрос цены
+							.query__box-form
+								form.form
+									.form__group
+										+select({
+											placeholder: 'Бренды*',
+											items: [
+												{value: 'Бренд 1', selected: true},
+												{value: 'Бренд 2'},
+												{value: 'Бренд 3'},
+											],
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Номер запчасти*',
+											name: 'numparts',
+										})
+										+input({
+											type: 'number',
+											placeholder: 'Количество*',
+											name: 'count',
+											value: '1'
+										})
+									.form__buttons
+										button.button.button__primary Добавить в запрос
+										button.button.button__outline Импортировать из файла
+				section
+					.container
+						.query__box
+							.query__box-title Ваш запрос
+							.query__box-form
+								form.form
+									.form__group
+										+select({
+											placeholder: 'Бренды*',
+											items: [
+												{value: 'Бренд 1', selected: true},
+												{value: 'Бренд 2'},
+												{value: 'Бренд 3'},
+											],
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Номер запчасти*',
+											name: 'numparts',
+											value: '1235456'
+										})
+										+input({
+											type: 'number',
+											placeholder: 'Количество*',
+											name: 'count',
+											value: '4'
+										})
+									.form__group
+										+select({
+											placeholder: 'Бренды*',
+											items: [
+												{value: 'Бренд 1'},
+												{value: 'Бренд 2'},
+												{value: 'Бренд 3', selected: true},
+											],
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Номер запчасти*',
+											name: 'numparts',
+											value: '236548'
+										})
+										+input({
+											type: 'number',
+											placeholder: 'Количество*',
+											name: 'count',
+											value: '2'
+										})
+
+			+footer()
