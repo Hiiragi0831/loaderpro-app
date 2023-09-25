@@ -5,7 +5,7 @@ mixin input(data)
 
 mixin select(data)
 	label.form__select
-		select
+		select(name= data.name)
 			each item in data.items
 				option(value= item.value selected=item.selected)= item.value
 		span= data.placeholder

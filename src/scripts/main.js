@@ -18,6 +18,7 @@ import sharing from '../components/sharing/sharing';
 import authentication from '../components/authentication/authentication';
 import registration from '../components/registration/registration';
 import home from '../pages/home/home';
+import query from '../pages/query/query';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -52,6 +53,7 @@ const scriptsInit = [
 	authentication.init,
 	registration.init,
 	home.init,
+	query.init,
 ];
 
 // добавить скрипты для удаленния данных при уходе

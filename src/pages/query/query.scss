@@ -24,8 +24,12 @@
 
 				&__group {
 					display: grid;
-					grid-template-columns: 0.8fr 1.4fr 0.8fr;
+					grid-template-columns: 0.8fr 1.4fr 0.8fr 0.1fr;
 					gap: vc(35);
+
+					&--3 {
+						grid-template-columns: 0.8fr 1.4fr 0.8fr;
+					}
 				}
 			}
 		}
