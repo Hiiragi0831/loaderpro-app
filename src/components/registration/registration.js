@@ -3,7 +3,7 @@ import {Notyf} from 'notyf';
 let notyf = new Notyf();
 const sendForm = async (data) => {
 	try {
-		return await fetch('https://api.loaderpro.ru/auth/api/create_user.php', {
+		return await fetch('https://api.loaderpro.ru/Main/create_user/', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

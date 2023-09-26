@@ -5,7 +5,7 @@ import barba from '@barba/core';
 let notyf = new Notyf();
 const sendForm = async (data) => {
 	try {
-		return await fetch('https://api.loaderpro.ru/auth/api/login.php', {
+		return await fetch('https://api.loaderpro.ru/Main/auth_user/', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
