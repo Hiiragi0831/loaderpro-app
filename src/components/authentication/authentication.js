@@ -45,7 +45,8 @@ const init = () => {
 					} else {
 						notyf.success(responseJson.message);
 						jwt.set(responseJson.jwt, 1);
-						barba.go(responseJson.url);
+						// barba.go(responseJson.url);
+						barba.go('/query/');
 					}
 
 					console.log('then', responseJson);
