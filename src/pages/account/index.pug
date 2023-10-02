@@ -123,14 +123,11 @@ block content
 									.account__info-head
 										p Мои настройки для заказов
 									.account__info-row.row-2
-										+select({
+										+input({
+											type: 'text',
 											placeholder: 'Адрес доставки по умолчанию',
 											name: 'deliveryaddress',
-											items: [
-												{value: 'Адрес 1'},
-												{value: 'Адрес 2'},
-												{value: 'Адрес 3'},
-											],
+											value: 'Константинополь'
 										})
 										+select({
 											placeholder: 'Перевозчик по умолчанию',
