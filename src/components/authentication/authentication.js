@@ -1,6 +1,5 @@
 import {Notyf} from 'notyf';
 import {Cookie} from '../cookies/cookies';
-import barba from '@barba/core';
 
 let notyf = new Notyf();
 const sendForm = async (data) => {
@@ -46,7 +45,6 @@ const init = () => {
 						notyf.success(responseJson.message);
 						jwt.set(responseJson.jwt, 1);
 						// barba.go(responseJson.url);
-						barba.go('/query/');
 					}
 
 					console.log('then', responseJson);

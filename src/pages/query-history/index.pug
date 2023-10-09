@@ -1,0 +1,74 @@
+extends @pug/base
+
+append globals
+	- pageName = 'query-history'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main.query
+				+breadcrumbs()
+				section
+					.container
+						+navTab([
+							{
+								link: 'Новый запрос',
+							},
+							{
+								link: 'История запросов',
+								active: true,
+							},
+						])
+				section
+					.container
+						.query__box
+							.query__box-title Поиск
+							.query__box-form
+								form.form(data-price-request)
+									.form__row
+										+select({
+											placeholder: 'Бренды*',
+											name: 'brand',
+											items: [
+												{value: 'Бренд 1', selected: true},
+												{value: 'Бренд 2'},
+												{value: 'Бренд 3'},
+											],
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Номер запчасти*',
+											name: 'numparts',
+										})
+										+input({
+											type: 'number',
+											placeholder: 'Наш номер предложения',
+											name: 'count',
+											value: '1'
+										})
+										+input({
+											type: 'date',
+											placeholder: 'Дата',
+											name: 'date',
+											value: '1'
+										})
+									.form__buttons
+										button.button.button__primary(type="submit") Поиск
+				section
+					.container
+						.query__box
+							.query__box-title Результат поиска
+							.query__box-items
+								+commodityQuery({
+									title: 'Название товара',
+									status: true,
+								})
+								+commodityQuery({
+									title: 'Название товара',
+									status: false,
+								})
+
+			+footer()

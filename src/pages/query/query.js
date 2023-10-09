@@ -1,6 +1,5 @@
 import {Notyf} from 'notyf';
 import {Cookie} from '../../components/cookies/cookies';
-import barba from '@barba/core';
 
 let notyf = new Notyf();
 
@@ -31,7 +30,7 @@ const addItem = (container) => {
 
 		object.jwt = jwt.get('jwt');
 
-		console.log(object)
+		console.log(object);
 
 		sendForm(object)
 			.then((response) => {
@@ -48,7 +47,7 @@ const addItem = (container) => {
 				} else {
 					notyf.success(responseJson.message);
 
-					barba.go(responseJson.url);
+					// barba.go(responseJson.url);
 				}
 
 				console.log('then', responseJson);
@@ -59,10 +58,6 @@ const addItem = (container) => {
 			});
 	});
 };
-
-const renderItems = () => {
-
-}
 const init = () => {
 	if (document.querySelector('.query')) {
 		addItem(document.querySelector('[data-price-request]'));
