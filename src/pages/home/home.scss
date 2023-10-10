@@ -132,12 +132,17 @@
 
 		.swiper-slide {
 			padding: vc(20) 0;
+			height: auto;
 		}
 
 		&-item {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			margin-right: vc(15);
 			border-radius: vc(10);
 			padding: vc(15);
+			height: 100%;
 			box-shadow: $box-shadow;
 			background-color: $color-white;
 		}

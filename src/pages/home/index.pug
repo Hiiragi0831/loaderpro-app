@@ -34,7 +34,7 @@ block content
 									+svg('magnifying-glass')
 								.home__link-info
 									.home__link-title SearchMyLoader
-									.home__link-descritpion Поиск помои машинам
+									.home__link-descritpion Поиск по моим машинам
 								.home__link-icon
 									+svg('chevron-right')
 						.home__warehouse
@@ -52,66 +52,13 @@ block content
 					.home__brands
 						.swiper
 							.swiper-wrapper
-								.swiper-slide
-									.home__brands-item
-										+picture({
-											path: `${baseDir}assets/images/vendors/still`,
-											ext: 'png',
-										})
-								.swiper-slide
-									.home__brands-item
-										+picture({
-											path: `${baseDir}assets/images/vendors/still`,
-											ext: 'png',
-										})
-								.swiper-slide
-									.home__brands-item
-										+picture({
-											path: `${baseDir}assets/images/vendors/still`,
-											ext: 'png',
-										})
-								.swiper-slide
-									.home__brands-item
-										+picture({
-											path: `${baseDir}assets/images/vendors/still`,
-											ext: 'png',
-										})
-								.swiper-slide
-									.home__brands-item
-										+picture({
-											path: `${baseDir}assets/images/vendors/still`,
-											ext: 'png',
-										})
-								.swiper-slide
-									.home__brands-item
-										+picture({
-											path: `${baseDir}assets/images/vendors/still`,
-											ext: 'png',
-										})
-								.swiper-slide
-									.home__brands-item
-										+picture({
-											path: `${baseDir}assets/images/vendors/still`,
-											ext: 'png',
-										})
-								.swiper-slide
-									.home__brands-item
-										+picture({
-											path: `${baseDir}assets/images/vendors/still`,
-											ext: 'png',
-										})
-								.swiper-slide
-									.home__brands-item
-										+picture({
-											path: `${baseDir}assets/images/vendors/still`,
-											ext: 'png',
-										})
-								.swiper-slide
-									.home__brands-item
-										+picture({
-											path: `${baseDir}assets/images/vendors/still`,
-											ext: 'png',
-										})
+								each name in ["sany", "anderson", "atlet", "baumann", "bobcat", "bosch", "bt", "caterpillar", "clark", "combilift", "crown", "cummnis", "cvs_ferrrari", "dalian", "deutz", "donaldson", "doosan", "fantuzzi", "hangcha", "heli", "hyster", "hysterold", "hyundai", "impco", "isuzu", "jac", "jcb", "jungheinrich", "kalmar", "komatsu", "konecranes", "kubota", "linde", "loaderpro", "lovato", "manitou", "maximal", "merlo", "mitsubishi", "mustang", "nichiyu", "nissan", "noblelift", "om_pimespo", "perkins", "rader_vogel", "rema", "schaltbau", "sennebogen", "still", "tcm", "terberg", "terex", "toyota", "tvh", "tvhold", "unicarriers", "yale", "yanmar"]
+									.swiper-slide
+										.home__brands-item
+											+picture({
+												path: `${baseDir}assets/images/vendors/${name}`,
+												ext: 'png',
+											})
 					.home__row
 						.home__news
 							.home__news-bg
