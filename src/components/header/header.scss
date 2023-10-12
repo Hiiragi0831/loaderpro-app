@@ -2,6 +2,26 @@
 	&__top {
 		padding: vc(18) 0;
 		background-color: $color-snow;
+
+		.row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		&-links {
+			display: flex;
+			gap: vc(60);
+		}
+
+		&-link {
+			font-weight: 500;
+		}
+
+		&-info {
+			display: flex;
+			gap: vc(40);
+		}
 	}
 
 	&__main {
@@ -11,6 +31,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			gap: vc(60);
 		}
 	}
 
@@ -24,6 +45,57 @@
 		}
 	}
 
+	&__notification {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 500;
+		gap: vc(5);
+	}
+
+	&__icon {
+		position: relative;
+
+		svg {
+			width: vc(22);
+			height: vc(22);
+			fill: $color-black;
+		}
+
+		span {
+			position: absolute;
+			right: 0;
+			top: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 100%;
+			width: vc(13);
+			height: vc(13);
+			font-weight: 600;
+			font-size: vc(8);
+			text-align: center;
+			color: $color-white;
+			background: $color-carrot-orange;
+		}
+	}
+
+	&__basket {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: vc(8);
+
+		&-dropdown {
+			svg {
+				width: vc(15);
+				height: vc(15);
+				fill: $color-black;
+			}
+		}
+	}
+
 	&__logo {
 		width: vc(204);
 		height: vc(44);
@@ -33,9 +105,50 @@
 		}
 	}
 
-	&__buttons {
+	&__user {
 		display: flex;
+		cursor: pointer;
+		gap: vc(12);
+
+		&-box {
+			display: flex;
+			flex-direction: column;
+			gap: vc(10);
+		}
+
+		&-top {
+			display: flex;
+			font-size: vc(14);
+			gap: vc(10);
+
+			svg {
+				width: vc(16);
+				height: vc(16);
+				fill: $color-carrot-orange;
+			}
+		}
+
+		&-footer {
+			font-size: vc(12);
+		}
+
+		&-button {
+			svg {
+				width: vc(15);
+				height: vc(15);
+				fill: $color-black;
+			}
+		}
+	}
+
+	&__query {
+		display: grid;
+		grid-template-columns: 1fr 1fr vc(145) vc(164);
 		gap: vc(10);
+
+		button {
+			flex-shrink: 0;
+		}
 	}
 
 	&__links {

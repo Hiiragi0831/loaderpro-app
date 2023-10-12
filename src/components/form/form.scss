@@ -46,6 +46,7 @@
 		flex-shrink: 0;
 
 		select {
+			appearance: none;
 			position: relative;
 			border: 1px solid $color-gray68;
 			border-radius: vc(5);
@@ -54,6 +55,10 @@
 			font-weight: 500;
 			font-size: vc(16);
 			color: $color-eclipse;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z'/%3E%3C/svg%3E");
+			background-position: right vc(15) bottom 50%;
+			background-size: vc(15) vc(15);
+			background-repeat: no-repeat;
 		}
 
 		span {

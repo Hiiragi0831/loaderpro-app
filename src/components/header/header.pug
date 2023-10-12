@@ -1,14 +1,59 @@
 header.header
 	.header__top
 		.container
+			.row
+				.header__top-links
+					a.header__top-link(href="#") Обслуживание клиентов
+					a.header__top-link(href="#") Свяжитесь с нами
+				.header__top-info
+					.header__notification
+						.header__icon
+							+svg("bell")
+							span 9+
+						p Уведомление
+					a.header__basket(href="#")
+						.header__icon
+							+svg("cart-shopping")
+							span 9+
+						p 27/04/23 12:00
+						b 1 500 ₽
+						.header__basket-dropdown
+							+svg("chevron-down")
+
 	.header__main
 		.container
 			.row
 				a.header__logo(href="/")
 					+svg("logo")
-				.header__buttons
-					a.button.button__primary(href="#") Запросить деталь
-					a.button.button__primary(href="/authorization/") Войти в систему
+				form.header__query
+					+select({
+						placeholder: 'Бренд',
+						items: [
+							{value: 'Бренд 1', selected: true},
+							{value: 'Бренд 2'},
+							{value: 'Бренд 3'},
+						],
+					})
+					+input({
+						type: 'text',
+						placeholder: 'Номер запчасти',
+						name: 'numparts',
+					})
+					+input({
+						type: 'number',
+						placeholder: 'Количество',
+						name: 'count',
+					})
+					button.button.button__primary(type="submit") Запросить цену
+				.header__user
+					.header__user-box
+						.header__user-top
+							+svg("user")
+							p Имя пользователя
+						.header__user-footer
+							p 35465756200 - telkhpro 000
+					.header__user-button
+						+svg("chevron-down")
 	.header__footer
 		.container
 			.row
