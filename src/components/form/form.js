@@ -10,12 +10,13 @@ export class Form {
 	}
 
 	async sendForm(data, url) {
+		console.log(JSON.stringify(data));
 		try {
 			return await fetch(url, {
 				method: this.method,
-				headers: {
-					'Content-Type': 'application/json',
-				},
+				// headers: {
+				// 	'Content-Type': 'application/json',
+				// },
 				body: JSON.stringify(data),
 			});
 		} catch (error) {
@@ -23,7 +24,8 @@ export class Form {
 		}
 	}
 
-	sendData(url, data, target) {
+	sendData(data, url) {
+		console.log(url, data);
 		this.sendForm(data, url)
 			.then((response) => {
 				if (response.ok) {
@@ -31,15 +33,15 @@ export class Form {
 				}
 				throw new Error();
 			}).then((responseJson) => {
-				this.onSuccess(target, responseJson);
+				this.onSuccess(responseJson);
 			})
 			.catch((error) => {
-				this.onError(target, error);
+				this.onError(error);
 			});
 	}
 
-	onSuccess(target, responseJson) {
-		console.log('Ваша форма успешна отправлена', target, responseJson);
+	onSuccess(responseJson) {
+		console.log('Ваша форма успешна отправлена', responseJson);
 		if (responseJson.status === 'error') {
 			notyf.error(responseJson.message);
 		} else {
@@ -55,8 +57,8 @@ export class Form {
 		}
 	}
 
-	onError(target, error) {
-		console.error('Произошла ошибка отправки', error, target);
+	onError(error) {
+		console.error('Произошла ошибка отправки', error);
 		notyf.error('Произошла ошибка отправки');
 	}
 
@@ -68,7 +70,7 @@ export class Form {
 				this.data[key] = value;
 			});
 
-			this.sendData(action, this.data, target);
+			this.sendData(this.data, action);
 		});
 	}
 }

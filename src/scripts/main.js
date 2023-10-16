@@ -19,6 +19,8 @@ import authentication from '../components/authentication/authentication';
 import registration from '../components/registration/registration';
 import home from '../pages/home/home';
 import query from '../pages/query/query';
+import {Cookie} from '../components/cookies/cookies';
+import {Form} from '../components/form/form';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -61,6 +63,20 @@ const resize = () => {
 //
 // ];
 
+const jwt = new Cookie('jwt');
+const sendJwt = new Form('POST');
+
+switch (window.location.pathname) {
+	case '/':
+		break;
+	case '/register':
+		break;
+	case '/register/':
+		break;
+	default:
+		console.log('not home, not register');
+		sendJwt.sendData({jwt: jwt.get()}, 'https://api.loaderpro.ru/account');
+}
 const init = () => {
 	uaParser.init();
 	actualYear.init();
