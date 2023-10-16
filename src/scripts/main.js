@@ -75,7 +75,7 @@ switch (window.location.pathname) {
 		break;
 	default:
 		console.log('not home, not register');
-		sendJwt.sendData({jwt: jwt.get()}, 'https://api.loaderpro.ru/account');
+		sendJwt.sendData({jwt: jwt.get()}, 'https://api.loaderpro.ru/account/access');
 }
 const init = () => {
 	uaParser.init();
