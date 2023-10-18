@@ -19,6 +19,7 @@ import authentication from '../components/authentication/authentication';
 import registration from '../components/registration/registration';
 import home from '../pages/home/home';
 import query from '../pages/query/query';
+import account from '../pages/account/account';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -74,6 +75,7 @@ const init = () => {
 	registration.init();
 	home.init();
 	query.init();
+	account.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));

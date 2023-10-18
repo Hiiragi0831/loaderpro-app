@@ -1,18 +1,18 @@
 form.form(data-registration-form)
 	p.h4 О вашей деятельности
-	p Я покупаю запачасти для:
+	p Я покупаю запчасти для:
 	.form__column
 		label.form__checkbox
-			input(type="checkbox")
+			input(type="checkbox" value="Обслуживания и ремонта автопарка компании где я работаю")
 			span Обслуживания и ремонта автопарка компании где я работаю
 		label.form__checkbox
-			input(type="checkbox")
+			input(type="checkbox" value="Перепродажи их конечным пользователям")
 			span Перепродажи их конечным пользователям
 		label.form__checkbox
-			input(type="checkbox")
+			input(type="checkbox" value="Ремонта / обслуживания машин моих клиентов")
 			span Ремонта / обслуживания машин моих клиентов
 		label.form__checkbox
-			input(type="checkbox")
+			input(type="checkbox" value="Ремонта своей собственной техники")
 			span Ремонта своей собственной техники
 	hr
 	p.h4 Контактная информация
@@ -23,13 +23,18 @@ form.form(data-registration-form)
 	})
 	+input({
 		type: 'text',
-			placeholder: 'Фамилия',
+		placeholder: 'Фамилия',
 		name: 'lastname'
 	})
 	+input({
 		type: 'phone',
-			placeholder: 'Телефон',
+		placeholder: 'Телефон',
 		name: 'phone'
+	})
+	+input({
+		type: 'text',
+		placeholder: 'Телеграмм',
+		name: 'telegram'
 	})
 	+input({
 		type: 'email',

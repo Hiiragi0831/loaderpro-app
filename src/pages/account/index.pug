@@ -21,7 +21,7 @@ block content
 										a.account__menu-item(href!= item.href)
 											+svg(item.icon)
 											span!= item.name
-							.account__info
+							form.account__info(data-account-form)
 								h2 Профиль
 								.account__info-item
 									.account__info-head
@@ -99,7 +99,7 @@ block content
 										+input({
 											type: 'password',
 											placeholder: 'Повторно введите новый пароль',
-											name: 'password-new-repeat',
+											name: '',
 										})
 										+select({
 											placeholder: 'Язык',
@@ -158,7 +158,7 @@ block content
 										})
 
 								.account__info-buttons
-									button.button.button__primary Сохранить
+									button.button.button__primary(type="submit") Сохранить
 									button.button.button__outline По умолчанию
 								//.account__info-item
 								//	.account__info-head
