@@ -37,17 +37,3 @@ const init = () => {
 export default {
 	init,
 };
-
-// $('body').on('click', '.row-notifications', function(){
-// 	var noteid = $(this).attr('data-id');
-// 	var urlsite = window.location.pathname+'/note_read/';
-// 	$(this).attr('style', 'opacity: 0.5;');
-//
-// 	$.ajax({
-// 		type: "POST",
-// 		url: urlsite,
-// 		data: {
-// 			'noteid': noteid
-// 		}
-// 	});
-// });
