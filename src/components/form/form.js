@@ -62,15 +62,19 @@ export class Form {
 		notyf.error('Произошла ошибка отправки');
 	}
 
+	send(action, target) {
+		new FormData(target).forEach((value, key) => {
+			this.data[key] = value;
+		});
+
+		this.sendData(this.data, action);
+	}
+
 	init(action, target) {
 		target.addEventListener('submit', async (evt) => {
 			evt.preventDefault();
 
-			new FormData(target).forEach((value, key) => {
-				this.data[key] = value;
-			});
-
-			this.sendData(this.data, action);
+			this.send(action, target);
 		});
 	}
 }
