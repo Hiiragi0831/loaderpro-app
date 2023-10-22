@@ -26,7 +26,7 @@ const init = () => {
 		form.addEventListener('submit', (evt) => {
 			evt.preventDefault();
 			if (!change) {
-				sendData.send('https://api.loaderpro.ru/account/save/', form);
+				sendData.send('https://my.loaderpro.ru/account/save/', form);
 			} else {
 				notyf.error('Пароли не совпадают');
 			}

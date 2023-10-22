@@ -5,7 +5,7 @@ let notyf = new Notyf();
 
 const sendForm = async (data) => {
 	try {
-		return await fetch('https://api.loaderpro.ru/Main/orders', {
+		return await fetch('https://my.loaderpro.ru/Main/orders', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

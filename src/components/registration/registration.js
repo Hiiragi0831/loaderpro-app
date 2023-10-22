@@ -4,7 +4,7 @@ const init = () => {
 		const form = document.querySelector('[data-registration-form]');
 		const sendData = new Form('POST');
 
-		sendData.init('https://api.loaderpro.ru/Main/create_user/', form);
+		sendData.init('https://my.loaderpro.ru/Main/create_user/', form);
 	}
 };
 
