@@ -67,7 +67,22 @@ export class Form {
 			this.data[key] = value;
 		});
 
+		if (this.cookieJwt.get('jwt')) {
+			this.data.jwt = this.cookieJwt.get('jwt');
+		}
+
 		this.sendData(this.data, action);
+	}
+
+	setAtributs(target) {
+		const labels = target.querySelectorAll('label');
+
+		labels.forEach((i) => {
+			if (i.dataset.required) {
+				console.log(i);
+				i.querySelector('input').required = true;
+			}
+		});
 	}
 
 	init(action, target) {
@@ -76,5 +91,7 @@ export class Form {
 
 			this.send(action, target);
 		});
+
+		this.setAtributs(target);
 	}
 }

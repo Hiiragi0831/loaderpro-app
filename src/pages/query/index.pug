@@ -42,13 +42,13 @@ block content
 											type: 'text',
 											placeholder: 'Номер запчасти*',
 											name: 'numparts',
-										})
+										})(data-required="true")
 										+input({
 											type: 'number',
 											placeholder: 'Количество*',
 											name: 'count',
 											value: '1'
-										})
+										})(data-required="true")
 									.form__buttons
 										button.button.button__primary(type="submit") Добавить в запрос
 										button.button.button__outline Импортировать из файла
