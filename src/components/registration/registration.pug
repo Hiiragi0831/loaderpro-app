@@ -37,6 +37,11 @@ form.form(data-registration-form)
 		name: 'telegram'
 	})
 	+input({
+		type: 'text',
+		placeholder: 'Whats App',
+		name: 'whatsapp',
+	})
+	+input({
 		type: 'email',
 		placeholder: 'Email',
 		name: 'email'
@@ -46,6 +51,11 @@ form.form(data-registration-form)
 		placeholder: 'Пароль',
 		name: 'password',
 		autocomplete: 'off'
+	})
+	+input({
+		type: 'text',
+		placeholder: 'Должность',
+		name: 'employee',
 	})
 	+input({
 		type: 'text',
@@ -59,11 +69,6 @@ form.form(data-registration-form)
 	})
 	+input({
 		type: 'text',
-		placeholder: 'Должность',
-		name: 'employee',
-	})
-	+input({
-		type: 'text',
 		placeholder: 'Адрес',
 		name: 'address',
 	})
@@ -71,5 +76,10 @@ form.form(data-registration-form)
 		type: 'text',
 		placeholder: 'Город',
 		name: 'city',
+	})
+	+input({
+		type: 'text',
+		placeholder: 'Юр. Адрес',
+		name: 'legaladdress',
 	})
 	button.button.button__primary(type="submit") Зарегистрироваться
