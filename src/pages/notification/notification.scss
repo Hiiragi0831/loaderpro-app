@@ -1,0 +1,24 @@
+.notification {
+	.row {
+		display: flex;
+		flex-direction: column;
+		gap: vc(15);
+	}
+
+	&__item {
+		border: 1px solid $color-gray68;
+		border-radius: vc(10);
+		padding: vc(10);
+		box-shadow: $box-shadow;
+
+		&-date {
+			font-size: vc(14);
+			color: $color-gray68;
+		}
+
+		&-title {
+			font-weight: 700;
+			font-size: vc(18);
+		}
+	}
+}

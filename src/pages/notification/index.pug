@@ -1,0 +1,26 @@
+extends @pug/base
+
+append globals
+	- pageName = 'query'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main.notification
+				+breadcrumbs()
+				section
+					.container
+						.row
+							.notification__item
+								p.notification__item-date 12.12.1234
+								p.notification__item-title Lorem ipsum dolor sit amet
+								p.notification__item-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid culpa dolore doloribus dolorum, ducimus eaque, hic iste, laborum magnam maiores necessitatibus odit quasi quisquam saepe sunt vel veritatis vero.
+							.notification__item
+								p.notification__item-date 12.12.1234
+								p.notification__item-title Lorem ipsum dolor sit amet
+								p.notification__item-text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid culpa dolore doloribus dolorum, ducimus eaque, hic iste, laborum magnam maiores necessitatibus odit quasi quisquam saepe sunt vel veritatis vero.
+
+			+footer()
