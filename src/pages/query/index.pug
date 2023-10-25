@@ -24,86 +24,101 @@ block content
 						])
 				section
 					.container
-						.query__box
+						.query__box(data-query)
 							.query__box-title Запрос цены
 							.query__box-form
-								form.form(data-price-request)
-									.form__group.form__group--3
-										+select({
-											placeholder: 'Бренды*',
-											name: 'brand',
-											items: [
-												{value: 'Бренд 1', selected: true},
-												{value: 'Бренд 2'},
-												{value: 'Бренд 3'},
-											],
-										})
-										+input({
-											type: 'text',
-											placeholder: 'Номер запчасти*',
-											name: 'numparts',
-										})(data-required="true")
-										+input({
-											type: 'number',
-											placeholder: 'Количество*',
-											name: 'count',
-											value: '1'
-										})(data-required="true")
+								form.form
+									.form__main
+										.form__group.form__group--3
+											+select({
+												placeholder: 'Бренды*',
+												name: 'brand',
+												items: [
+													{value: 'Бренд 1', selected: true},
+													{value: 'Бренд 2'},
+													{value: 'Бренд 3'},
+												],
+											})
+											+input({
+												type: 'text',
+												placeholder: 'Номер запчасти*',
+												name: 'numparts',
+											})(data-required="true")
+											+input({
+												type: 'number',
+												placeholder: 'Количество*',
+												name: 'count',
+												value: '1'
+											})(data-required="true")
 									.form__buttons
 										button.button.button__primary(type="submit") Добавить в запрос
 										button.button.button__outline Импортировать из файла
 				section
 					.container
-						.query__box
+						.query__box(data-querys)
 							.query__box-title Ваш запрос
 							.query__box-form
 								form.form(data-items-request)
-									.form__group
-										+select({
-											placeholder: 'Бренды*',
-											items: [
-												{value: 'Бренд 1', selected: true},
-												{value: 'Бренд 2'},
-												{value: 'Бренд 3'},
-											],
-										})
-										+input({
-											type: 'text',
-											placeholder: 'Номер запчасти*',
-											name: 'numparts',
-											value: '1235456'
-										})
-										+input({
-											type: 'number',
-											placeholder: 'Количество*',
-											name: 'count',
-											value: '4'
-										})
-										button.button.button__primary X
-									.form__group
-										+select({
-											placeholder: 'Бренды*',
-											items: [
-												{value: 'Бренд 1'},
-												{value: 'Бренд 2'},
-												{value: 'Бренд 3', selected: true},
-											],
-										})
-										+input({
-											type: 'text',
-											placeholder: 'Номер запчасти*',
-											name: 'numparts',
-											value: '236548'
-										})
-										+input({
-											type: 'number',
-											placeholder: 'Количество*',
-											name: 'count',
-											value: '2'
-										})
-										button.button.button__primary X
+									.form__main
+										.form__group
+											+input({
+												type: 'text',
+												placeholder: 'Бренд',
+												name: 'brand',
+												value: 'Бренд 1'
+											})(data-disabled="true")
+											+input({
+												type: 'text',
+												placeholder: 'Номер запчасти',
+												name: 'numparts',
+												value: '1235456'
+											})(data-disabled="true")
+											+input({
+												type: 'number',
+												placeholder: 'Количество',
+												name: 'count',
+												value: '4'
+											})(data-disabled="true")
+											button.button.button__primary X
+										.form__group
+											+input({
+												type: 'text',
+												placeholder: 'Бренд',
+												name: 'brand',
+												value: 'Бренд 3'
+											})(data-disabled="true")
+											+input({
+												type: 'text',
+												placeholder: 'Номер запчасти*',
+												name: 'numparts',
+												value: '236548'
+											})(data-disabled="true")
+											+input({
+												type: 'number',
+												placeholder: 'Количество*',
+												name: 'count',
+												value: '2'
+											})(data-disabled="true")
+											button.button.button__primary X
 									.form__footer
 										button.button.button__outline Очистить
 										button.button.button__primary Отправить запрос
-
+							template
+								.form__group
+									+input({
+										type: 'text',
+										placeholder: 'Бренд',
+										name: 'brand',
+									})(data-disabled)
+									+input({
+										type: 'text',
+										placeholder: 'Номер запчасти*',
+										name: 'numparts',
+									})
+									+input({
+										type: 'number',
+										placeholder: 'Количество*',
+										name: 'count',
+									})
+									button.button.button__primary X
 			+footer()

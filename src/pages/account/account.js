@@ -10,17 +10,22 @@ const init = () => {
 		const passwordRepeat = form.querySelector('.password-repeat').querySelector('input');
 		let change = false;
 
-		password.addEventListener('change', () => {
-			change = true;
-		});
-
-		passwordRepeat.addEventListener('change', () => {
+		const comparison = () => {
 			if (password.value === passwordRepeat.value) {
 				change = false;
 			} else {
 				change = true;
 				notyf.error('Пароли не совпадают');
 			}
+		};
+
+		password.addEventListener('change', () => {
+			change = true;
+			comparison();
+		});
+
+		passwordRepeat.addEventListener('change', () => {
+			comparison();
 		});
 
 		form.addEventListener('submit', (evt) => {

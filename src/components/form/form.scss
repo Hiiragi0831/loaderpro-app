@@ -5,6 +5,14 @@
 		background: $color-gainsboro;
 	}
 
+	&__main {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: vc(30);
+		width: 100%;
+		gap: vc(30);
+	}
+
 	&__input {
 		position: relative;
 		display: block;

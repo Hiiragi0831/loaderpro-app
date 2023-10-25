@@ -79,8 +79,11 @@ export class Form {
 
 		labels.forEach((i) => {
 			if (i.dataset.required) {
-				console.log(i);
 				i.querySelector('input').required = true;
+			}
+
+			if (i.dataset.disabled) {
+				i.querySelector('input').disabled = true;
 			}
 		});
 	}
