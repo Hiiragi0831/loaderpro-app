@@ -1,16 +1,18 @@
 import {Form} from '../../components/form/form';
 
-const formGroup = (object) => {
-	console.log(object);
-	// let formGroup = document.createElement('div');
-	// formGroup.classList.add('form__group');
-	// item.querySelector('template').content.cloneNode(true)
-};
-
 const addQuery = () => {
 	const queryBox = document.querySelector('[data-query]');
 	const querysBox = document.querySelector('[data-querys]');
 	let object = {};
+
+	const formGroup = (data) => {
+		const clone = querysBox.querySelector('template').content.cloneNode(true);
+		clone.querySelector('input[name="brand"]').value = data.brand;
+		clone.querySelector('input[name="numparts"]').value = data.numparts;
+		clone.querySelector('input[name="count"]').value = data.count;
+
+		querysBox.querySelector('.form .form__main').append(clone);
+	};
 
 	queryBox.querySelector('.form').addEventListener('submit', (evt) => {
 		evt.preventDefault();
@@ -19,7 +21,6 @@ const addQuery = () => {
 		});
 
 		formGroup(object);
-		querysBox.querySelector('.form .form__main').append(queryBox.querySelector('.form__group').cloneNode(true));
 	});
 };
 

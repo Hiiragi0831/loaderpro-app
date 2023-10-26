@@ -79,7 +79,7 @@ block content
 												name: 'count',
 												value: '4'
 											})(data-disabled="true")
-											button.button.button__primary X
+											button.button.button__primary(type="button" name="delete") X
 										.form__group
 											+input({
 												type: 'text',
@@ -99,10 +99,10 @@ block content
 												name: 'count',
 												value: '2'
 											})(data-disabled="true")
-											button.button.button__primary X
+											button.button.button__primary(type="button" name="delete") X
 									.form__footer
-										button.button.button__outline Очистить
-										button.button.button__primary Отправить запрос
+										button.button.button__outline(type="clean") Очистить
+										button.button.button__primary(type="submit") Отправить запрос
 							template
 								.form__group
 									+input({
@@ -114,11 +114,11 @@ block content
 										type: 'text',
 										placeholder: 'Номер запчасти*',
 										name: 'numparts',
-									})
+									})(data-disabled)
 									+input({
 										type: 'number',
 										placeholder: 'Количество*',
 										name: 'count',
-									})
-									button.button.button__primary X
+									})(data-disabled)
+									button.button.button__primary(type="button" name="delete") X
 			+footer()
