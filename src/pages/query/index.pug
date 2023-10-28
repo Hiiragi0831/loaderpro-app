@@ -58,9 +58,9 @@ block content
 						.query__box(data-querys)
 							.query__box-title Ваш запрос
 							.query__box-form
-								form.form(data-items-request)
+								.form
 									.form__main
-										.form__group
+										form.form__group
 											+input({
 												type: 'text',
 												placeholder: 'Бренд',
@@ -80,7 +80,7 @@ block content
 												value: '4'
 											})(data-disabled="true")
 											button.button.button__primary(type="button" name="delete") X
-										.form__group
+										form.form__group
 											+input({
 												type: 'text',
 												placeholder: 'Бренд',
@@ -104,7 +104,7 @@ block content
 										button.button.button__outline(type="clean") Очистить
 										button.button.button__primary(type="submit") Отправить запрос
 							template
-								.form__group
+								form.form__group
 									+input({
 										type: 'text',
 										placeholder: 'Бренд',
