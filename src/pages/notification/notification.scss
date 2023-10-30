@@ -20,5 +20,15 @@
 			font-weight: 700;
 			font-size: vc(18);
 		}
+
+		&.is-new {
+			border-color: $color-carrot-orange;
+		}
+	}
+
+	&__footer {
+		display: flex;
+		margin-top: vc(15);
+		gap: vc(30);
 	}
 }
