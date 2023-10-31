@@ -17,6 +17,7 @@ import lazyBlur from './modules/lazyBlur';
 import sharing from '../components/sharing/sharing';
 import authentication from '../components/authentication/authentication';
 import registration from '../components/registration/registration';
+import header from '../components/header/header';
 import home from '../pages/home/home';
 import query from '../pages/query/query';
 import account from '../pages/account/account';
@@ -78,6 +79,7 @@ const init = () => {
 	query.init();
 	account.init();
 	notification.init();
+	header.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));

@@ -64,7 +64,7 @@ const init = () => {
 				data.push(object);
 			});
 
-			form.sendData(data, 'https://my.loaderpro.ru/Main/orders');
+			form.sendData(data, 'https://my.loaderpro.ru/Main/orders/');
 		});
 	}
 };
