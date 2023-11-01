@@ -18,9 +18,9 @@
 		justify-content: space-between;
 		overflow: hidden;
 		border-radius: vc(5);
-		padding: vc(20) vc(30) vc(20) vc(130);
+		padding: vc(20) vc(30) vc(20) vc(110);
 		box-shadow: $box-shadow;
-		gap: vc(30);
+		gap: vc(10);
 
 		&-info {
 			display: flex;
@@ -47,8 +47,8 @@
 
 			&-bg {
 				position: absolute;
-				left: vc(-20);
-				top: vc(13);
+				left: vc(-25);
+				top: vc(20);
 				border-radius: 100%;
 				width: vc(125);
 				height: vc(125);
@@ -88,7 +88,7 @@
 				width: 100%;
 				height: 100%;
 				background-color: $color-black;
-				opacity: 0.3;
+				opacity: 0.7;
 				inset: 0;
 			}
 
@@ -143,8 +143,15 @@
 			border-radius: vc(10);
 			padding: vc(15);
 			height: 100%;
+			max-height: vc(86);
 			box-shadow: $box-shadow;
 			background-color: $color-white;
+
+			picture,
+			img {
+				height: 100%;
+				object-fit: contain;
+			}
 		}
 	}
 

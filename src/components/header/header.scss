@@ -15,7 +15,7 @@
 		}
 
 		&-link {
-			font-weight: 500;
+			//font-weight: 500;
 		}
 
 		&-info {
@@ -156,16 +156,37 @@
 	}
 
 	&__link {
+		position: relative;
 		display: block;
 		padding: vc(22) vc(28);
-		font-weight: 700;
 		font-size: vc(19);
 		color: $color-white;
 		transition: color $transition, background-color $transition;
 
+		&::after {
+			content: attr(data-title);
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: 700;
+			text-align: center;
+			color: transparent;
+			transform: scale(0.9);
+			transform-origin: center center;
+			transition: 0.24s;
+			inset: 0;
+		}
+
 		&:hover {
-			color: $color-nero;
+			//color: $color-nero;
+			color: transparent;
 			background-color: $color-carrot-orange;
+
+			&::after {
+				color: $color-nero;
+				transform: scale(1);
+			}
 		}
 	}
 }
