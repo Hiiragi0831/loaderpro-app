@@ -2,17 +2,21 @@ form.form(data-registration-form)
 	p.h4 О вашей деятельности
 	p Я покупаю запчасти для:
 	.form__column
+		input(type="hidden" name="maintenance" value="")
+		input(type="hidden" name="resales" value="")
+		input(type="hidden" name="repairsclients" value="")
+		input(type="hidden" name="repairsmy" value="")
 		label.form__checkbox
-			input(type="checkbox" name="maintenance" value="Обслуживания и ремонта автопарка компании где я работаю")
+			input(type="checkbox" data-name="maintenance" value="Обслуживания и ремонта автопарка компании где я работаю")
 			span Обслуживания и ремонта автопарка компании где я работаю
 		label.form__checkbox
-			input(type="checkbox" name="resales" value="Перепродажи их конечным пользователям")
+			input(type="checkbox" data-name="resales" value="Перепродажи их конечным пользователям")
 			span Перепродажи их конечным пользователям
 		label.form__checkbox
-			input(type="checkbox" name="repairs-clients" value="Ремонта / обслуживания машин моих клиентов")
+			input(type="checkbox" data-name="repairsclients" value="Ремонта / обслуживания машин моих клиентов")
 			span Ремонта / обслуживания машин моих клиентов
 		label.form__checkbox
-			input(type="checkbox" name="repairs-my" value="Ремонта своей собственной техники")
+			input(type="checkbox" data-name="repairsmy" value="Ремонта своей собственной техники")
 			span Ремонта своей собственной техники
 	hr
 	p.h4 Контактная информация
