@@ -25,6 +25,8 @@
 	}
 
 	&__main {
+		position: relative;
+		z-index: 2;
 		padding: vc(25) 0;
 
 		.row {
@@ -137,6 +139,57 @@
 				width: vc(15);
 				height: vc(15);
 				fill: $color-black;
+			}
+		}
+
+		&-dropdown {
+			position: absolute;
+			top: vc(30);
+			z-index: 3;
+			display: flex;
+			flex-direction: column;
+			border-radius: vc(5);
+			padding: 0 vc(10);
+			max-width: vc(200);
+			box-shadow: $box-shadow;
+			background-color: $color-white;
+			opacity: 0;
+			visibility: hidden;
+			transition: visibility $transition, opacity $transition;
+		}
+
+		&-link {
+			border-bottom: 1px solid $color-gainsboro;
+			padding: vc(10) 0;
+			font-size: vc(13);
+			transition: color $transition;
+
+			&:hover {
+				color: $color-carrot-orange;
+			}
+
+			&:last-child {
+				border: none;
+			}
+
+			&--logout {
+				display: flex;
+				align-items: center;
+				color: $color-warning;
+				gap: vc(5);
+
+				svg {
+					width: vc(13);
+					height: vc(13);
+					fill: $color-warning;
+				}
+			}
+		}
+
+		&:hover {
+			.header__user-dropdown {
+				opacity: 1;
+				visibility: visible;
 			}
 		}
 	}

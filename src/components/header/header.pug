@@ -55,6 +55,15 @@ header.header
 							p 35465756200 - telkhpro 000
 					.header__user-button
 						+svg("chevron-down")
+					.header__user-dropdown
+						a.header__user-link(href="#") Заказы
+						a.header__user-link(href="#") Счета-фактуры
+						a.header__user-link(href="#") Моя техника
+						a.header__user-link(href="#") Рекламации и возвраты
+						a.header__user-link(href="#") Настройки
+						a.header__user-link.header__user-link--logout
+							+svg("arrow-right-from-bracket")
+							| Завершить сеанс
 	.header__footer
 		.container
 			.row
