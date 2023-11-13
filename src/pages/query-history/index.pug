@@ -27,29 +27,29 @@ block content
 						.query__box
 							.query__box-title Поиск
 							.query__box-form
-								form.form
+								form.form(data-query-history)
 									.form__main
 										.form__row
 											+input({
 												type: 'text',
-												placeholder: 'Бренд',
+												placeholder: 'Бренд*',
 												name: 'brand',
-											})
+											})(data-required="true")
 											+input({
 												type: 'text',
 												placeholder: 'Номер запчасти*',
 												name: 'numparts',
-											})
+											})(data-required="true")
 											+input({
 												type: 'text',
-												placeholder: 'Номер запроса',
+												placeholder: 'Номер запроса*',
 												name: 'numquery',
-											})
+											})(data-required="true")
 											+input({
 												type: 'date',
-												placeholder: 'Дата',
+												placeholder: 'Дата*',
 												name: 'date',
-											})
+											})(data-required="true")
 									.form__buttons
 										button.button.button__primary(type="submit") Поиск
 				section
