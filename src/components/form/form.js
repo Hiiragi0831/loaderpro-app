@@ -74,7 +74,7 @@ export class Form {
 		this.sendData(this.data, action);
 	}
 
-	setAtributs(target) {
+	setAttribute(target) {
 		const labels = target.querySelectorAll('label');
 
 		labels.forEach((i) => {
@@ -95,6 +95,6 @@ export class Form {
 			this.send(action, target);
 		});
 
-		this.setAtributs(target);
+		this.setAttribute(target);
 	}
 }

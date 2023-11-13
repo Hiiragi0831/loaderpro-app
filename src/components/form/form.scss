@@ -31,6 +31,10 @@
 				color: transparent;
 			}
 
+			&::-webkit-calendar-picker-indicator {
+				display: none !important;
+			}
+
 			&:focus ~ span,
 			&:not(:placeholder-shown) ~ span {
 				translate: 0 vc(-25);

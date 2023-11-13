@@ -37,12 +37,17 @@ const addQuery = () => {
 
 			if (!value) {
 				trigger = false;
-				notyf.error('Не все поля заполнены');
 			}
 		});
 
 		if (trigger) {
 			formGroup(object);
+			queryBox.querySelector('.form').querySelectorAll('input').forEach((el) => {
+				el.value = '';
+			});
+			notyf.success('Успешно добавлено в список');
+		} else {
+			notyf.error('Обязательные поля не заполнены');
 		}
 	});
 };

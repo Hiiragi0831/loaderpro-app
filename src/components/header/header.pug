@@ -26,15 +26,12 @@ header.header
 				a.header__logo(href="/")
 					+svg("logo")
 				form.header__query(data-header-request)
-					+select({
+					+input({
+						type: 'text',
 						placeholder: 'Бренд',
 						name: 'brand',
-						items: [
-							{value: 'Бренд 1', selected: true},
-							{value: 'Бренд 2'},
-							{value: 'Бренд 3'},
-						],
-					})
+						list: 'brands',
+					})(data-required="true")
 					+input({
 						type: 'text',
 						placeholder: 'Номер запчасти',
@@ -75,3 +72,9 @@ header.header
 					a.header__link(href="#" data-title="Предложения") Предложения
 					a.header__link(href="#" data-title="Заказы") Заказы
 					a.header__link(href="#" data-title="Промоакции") Промоакции
+	datalist#brands
+		option(value="HTML")
+		option(value="CSS")
+		option(value="JavaScript")
+		option(value="Java")
+		option(value="Ruby")

@@ -30,15 +30,12 @@ block content
 								form.form
 									.form__main
 										.form__group.form__group--3
-											+select({
-												placeholder: 'Бренды*',
+											+input({
+												type: 'text',
+												placeholder: 'Бренд*',
 												name: 'brand',
-												items: [
-													{value: 'Бренд 1', selected: true},
-													{value: 'Бренд 2'},
-													{value: 'Бренд 3'},
-												],
-											})
+												list: 'brands',
+											})(data-required="true")
 											+input({
 												type: 'text',
 												placeholder: 'Номер запчасти*',
