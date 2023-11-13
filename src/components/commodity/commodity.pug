@@ -36,7 +36,7 @@ mixin commodityQuery(data)
 					p Цена:
 					p 15 000 Р
 			.commodity-query__info-item
-				if (data.status)
+				if (data.status === 'green')
 					.commodity-query__info-status.green
 						p В наличии
 						button
@@ -44,10 +44,16 @@ mixin commodityQuery(data)
 					.commodity-query__info-stoke
 						p 1 шт. (склад)
 						p 1 шт. (1-2 недели)
-
-				else
+				else if (data.status === 'red')
 					.commodity-query__info-status.red
 						p Нет в Наличии
+						button
+							+svg('rotate')
+					.commodity-query__info-stoke
+						p -
+				else if (data.status === 'yellow')
+					.commodity-query__info-status.yellow
+						p Под заказ
 						button
 							+svg('rotate')
 					.commodity-query__info-stoke

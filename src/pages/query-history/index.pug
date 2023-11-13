@@ -59,11 +59,15 @@ block content
 							.query__box-items
 								+commodityQuery({
 									title: 'Название товара',
-									status: true,
+									status: 'green',
 								})
 								+commodityQuery({
 									title: 'Название товара',
-									status: false,
+									status: 'red',
+								})
+								+commodityQuery({
+									title: 'Название товара',
+									status: 'yellow',
 								})
 
 			+footer()
