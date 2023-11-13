@@ -53,7 +53,7 @@ const addQuery = () => {
 };
 
 const init = () => {
-	if (document.querySelector('.query')) {
+	if (document.querySelector('[data-query]')) {
 		let data = [];
 		const form = new Form('POST');
 		addQuery();

@@ -119,7 +119,8 @@
 			}
 
 			&-summary {
-				justify-items: flex-end;
+				display: flex;
+				justify-content: flex-end;
 			}
 
 			&-button {
