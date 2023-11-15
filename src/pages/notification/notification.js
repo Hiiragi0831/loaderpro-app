@@ -9,7 +9,7 @@ const listener = () => {
 				noteid,
 			};
 
-			sendData.sendData(object, 'https://my.loaderpro.ru/notifications/');
+			sendData.sendData(object, 'https://my.loaderpro.ru/notifications/note_read');
 			el.classList.remove('is-new');
 		});
 	});
