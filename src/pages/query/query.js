@@ -37,10 +37,6 @@ const addQuery = () => {
 		new FormData(evt.target).forEach((value, key) => {
 			object[key] = value;
 
-			if (cookie.get('jwt')) {
-				object.jwt = cookie.get('jwt');
-			}
-
 			if (!value) {
 				trigger = false;
 			}
@@ -71,6 +67,10 @@ const init = () => {
 				let object = {};
 				new FormData(el).forEach((value, key) => {
 					object[key] = value;
+
+					if (cookie.get('jwt')) {
+						object.jwt = cookie.get('jwt');
+					}
 				});
 				data.push(object);
 			});
