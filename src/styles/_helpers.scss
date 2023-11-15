@@ -66,3 +66,21 @@
 	hyphens: auto;
 }
 /* stylelint-enable */
+.demo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: vc(100);
+
+	ol {
+		list-style: initial;
+		margin-top: vc(30);
+		margin-left: vc(25);
+	}
+
+	li {
+		display: list-item;
+		list-style: decimal;
+		font-size: vc(24);
+	}
+}

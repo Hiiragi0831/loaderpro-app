@@ -1,0 +1,17 @@
+.page {
+	display: flex;
+	flex-direction: column;
+
+	&-message {
+		margin: auto 0;
+		text-align: center;
+
+		.container {
+			max-width: vc(1080);
+		}
+
+		a {
+			color: $color-carrot-orange;
+		}
+	}
+}

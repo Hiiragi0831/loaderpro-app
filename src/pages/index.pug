@@ -8,28 +8,41 @@ append vars
 block content
 	+router(pageName)
 		.site
-			//include @components/header/header
-			main.authorization
-				section.authorization__auth
-					.container
-						.authorization__logo
-							+svg("logo")
-						.authorization__head
-							p.h2 LOADER PROTECTION
-						.row
-							.authorization__login
-								p.h1 Уже зарегистрированы?
-								p.h3 Выполнить вход
-								include @components/authentication/authentication
-							.authorization__hr
-							.authorization__registration
-								p.h1 Новый пользователь?
-								p.h3 Зарегистрируйтесь здесь
-								.authorization__advantages
-									.authorization__edge Ничего лишнего в новом облике с привычным функционалом.
-									.authorization__edge Поиск запчастей по артикулу, данным техники или типу запчасти.
-									.authorization__edge Возможность сохранить данные машин для простоты запроса.
-									.authorization__edge Более 25 000 тысяч товаров в наличии на складах РФ.
-									.authorization__edge Доставка санкционных товаров от 30 дней.
-									a.button.button__primary(href="/register/") Зарегистрироваться
-			+footer-two()
+			.demo
+				.container
+					h1 Список станиц
+					-
+						const pages = [
+							{
+								title: '404',
+								href: '404',
+							}, {
+								title: 'Страница авторизации',
+								href: 'authorization',
+							}, {
+								title: 'Страница регистрации',
+								href: 'register',
+							}, {
+								title: 'Мой профиль',
+								href: 'account',
+							}, {
+								title: 'Главная',
+								href: 'home',
+							}, {
+								title: 'Уведомления',
+								href: 'notification',
+							}, {
+								title: 'Запрос',
+								href: 'query',
+							}, {
+								title: 'История запросов',
+								href: 'query-history',
+							}, {
+								title: 'Ваш запрос обработан',
+								href: 'message-query',
+							},
+						]
+					ol
+						each item in pages
+							li
+								a(href=item.href)!= item.title
