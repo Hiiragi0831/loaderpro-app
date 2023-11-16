@@ -1,7 +1,7 @@
 .header {
 	&__top {
 		padding: vc(18) 0;
-		background-color: $color-snow;
+		background-color: $woodsmoke-50;
 
 		.row {
 			display: flex;
@@ -38,7 +38,7 @@
 	}
 
 	&__footer {
-		background-color: $color-nero;
+		background-color: $woodsmoke-950;
 
 		.row {
 			display: flex;
@@ -79,7 +79,7 @@
 			font-size: vc(8);
 			text-align: center;
 			color: $color-white;
-			background: $color-carrot-orange;
+			background: $tree-poppy-400;
 		}
 	}
 
@@ -126,7 +126,7 @@
 			svg {
 				width: vc(16);
 				height: vc(16);
-				fill: $color-carrot-orange;
+				fill: $tree-poppy-400;
 			}
 		}
 
@@ -159,13 +159,13 @@
 		}
 
 		&-link {
-			border-bottom: 1px solid $color-gainsboro;
+			border-bottom: 1px solid $woodsmoke-100;
 			padding: vc(10) 0;
 			font-size: vc(13);
 			transition: color $transition;
 
 			&:hover {
-				color: $color-carrot-orange;
+				color: $tree-poppy-400;
 			}
 
 			&:last-child {
@@ -175,13 +175,13 @@
 			&--logout {
 				display: flex;
 				align-items: center;
-				color: $color-warning;
+				color: $red-orange-500;
 				gap: vc(5);
 
 				svg {
 					width: vc(13);
 					height: vc(13);
-					fill: $color-warning;
+					fill: $red-orange-500;
 				}
 			}
 		}
@@ -232,12 +232,12 @@
 		}
 
 		&:hover {
-			//color: $color-nero;
+			//color: $woodsmoke-950;
 			color: transparent;
-			background-color: $color-carrot-orange;
+			background-color: $tree-poppy-400;
 
 			&::after {
-				color: $color-nero;
+				color: $woodsmoke-950;
 				transform: scale(1);
 			}
 		}

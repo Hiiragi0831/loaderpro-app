@@ -11,7 +11,7 @@
 
 	&__menu {
 		overflow: hidden;
-		border: 1px solid $color-light-grey;
+		border: 1px solid $woodsmoke-200;
 		border-radius: vc(5);
 		width: 100%;
 		max-height: vc(650);
@@ -23,7 +23,7 @@
 		&-item {
 			display: flex;
 			align-items: center;
-			border-bottom: 1px solid $color-light-grey;
+			border-bottom: 1px solid $woodsmoke-200;
 			padding: vc(20) 0;
 			transition: color $transition;
 			gap: vc(16);
@@ -32,12 +32,12 @@
 				flex-shrink: 0;
 				width: vc(22);
 				height: vc(22);
-				fill: $color-carrot-orange;
+				fill: $tree-poppy-400;
 			}
 
 			&:hover,
 			.is-active {
-				color: $color-carrot-orange;
+				color: $tree-poppy-400;
 			}
 
 			&:first-child {
@@ -64,7 +64,7 @@
 			margin-bottom: vc(20);
 			border-radius: vc(5);
 			padding: vc(18) vc(30);
-			background: $color-gainsboro;
+			background: $woodsmoke-100;
 
 			p {
 				font-weight: 600;

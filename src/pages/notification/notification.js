@@ -1,7 +1,7 @@
 import {Form} from '../../components/form/form';
 
 const listener = () => {
-	document.querySelectorAll('.notification__item').forEach((el) => {
+	document.querySelectorAll('.notification').forEach((el) => {
 		el.addEventListener('click', () => {
 			const sendData = new Form('POST');
 			const noteid = el.dataset.id;
@@ -9,7 +9,11 @@ const listener = () => {
 				noteid,
 			};
 
-			sendData.sendData(object, 'https://my.loaderpro.ru/notifications/note_read');
+			if (el.dataset.read === '0') {
+				sendData.sendData(object, 'https://my.loaderpro.ru/notifications/note_read');
+				el.dataset.read = 1;
+			}
+
 			el.classList.remove('is-new');
 		});
 	});

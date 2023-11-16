@@ -1,14 +1,32 @@
-// COLORS https://www.htmlcsscolor.com/hex/FAFAFA
 $color-black: #000;
 $color-white: #fff;
-$color-gray68: #adadad;
-$color-light-grey: #d0d0d0;
-$color-carrot-orange: #f8991d;
-$color-eclipse: #383838;
-$color-nero: #181818;
-$color-snow: #fafafa;
-$color-gainsboro: #e2e2e2;
-$color-warning: #f44336;
+	$color-transparent: rgba($color-white, 0);
+
+$tree-poppy-50: #fff8eb;
+$tree-poppy-100: #fdebc8;
+$tree-poppy-200: #fcd48b;
+$tree-poppy-300: #fab84f;
+$tree-poppy-400: #f8991d;
+$tree-poppy-500: #f27a0e;
+$tree-poppy-600: #d65709;
+$tree-poppy-700: #b2390b;
+$tree-poppy-800: #902c10;
+$tree-poppy-900: #772510;
+$tree-poppy-950: #441004;
+
+$red-orange-500: #f44336;
+
+$woodsmoke-50: #f6f6f6;
+$woodsmoke-100: #e7e7e7;
+$woodsmoke-200: #d1d1d1;
+$woodsmoke-300: #b0b0b0;
+$woodsmoke-400: #888;
+$woodsmoke-500: #6d6d6d;
+$woodsmoke-600: #5d5d5d;
+$woodsmoke-700: #4f4f4f;
+$woodsmoke-800: #454545;
+$woodsmoke-900: #3d3d3d;
+$woodsmoke-950: #181818;
 
 // FONTS
 $font-montserrat: 'Montserrat', Arial, sans-serif;

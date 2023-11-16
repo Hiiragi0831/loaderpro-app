@@ -11,7 +11,17 @@
 		}
 
 		a {
-			color: $color-carrot-orange;
+			color: $tree-poppy-400;
+		}
+	}
+}
+
+.section {
+	&-notification {
+		.row {
+			display: flex;
+			flex-direction: column;
+			gap: vc(30);
 		}
 	}
 }

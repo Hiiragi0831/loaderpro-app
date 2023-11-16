@@ -1,6 +1,6 @@
 .navtab {
 	display: inline-flex;
-	border-bottom: 2px solid $color-carrot-orange;
+	border-bottom: 2px solid $tree-poppy-400;
 
 	&__item {
 		border-radius: vc(5) vc(5) 0 0;
@@ -13,7 +13,7 @@
 		&.is-active,
 		&:hover {
 			color: $color-white;
-			background-color: $color-carrot-orange;
+			background-color: $tree-poppy-400;
 		}
 	}
 }

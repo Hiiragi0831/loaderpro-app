@@ -52,7 +52,7 @@
 				border-radius: 100%;
 				width: vc(125);
 				height: vc(125);
-				background-color: $color-carrot-orange;
+				background-color: $tree-poppy-400;
 
 				svg {
 					position: absolute;
@@ -234,11 +234,11 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			outline: vc(30) solid rgba($color-carrot-orange, 0.2);
+			outline: vc(30) solid rgba($tree-poppy-400, 0.2);
 			border-radius: 100%;
 			width: vc(90);
 			height: vc(90);
-			background-color: rgba($color-carrot-orange, 0.7);
+			background-color: rgba($tree-poppy-400, 0.7);
 
 			svg {
 				position: absolute;

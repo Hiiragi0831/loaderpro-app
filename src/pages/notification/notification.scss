@@ -1,34 +1,73 @@
 .notification {
-	.row {
+	border: 1px solid $color-transparent;
+	border-radius: 5px;
+	box-shadow: $box-shadow;
+	background: $color-white;
+	transition: border $transition;
+
+	&__head {
+		border-bottom: 1px solid $color-transparent;
+		border-radius: vc(5) vc(5) 0 0;
+		padding: vc(18) vc(30);
+		font-size: vc(20);
+		background: $woodsmoke-100;
+		transition: border $transition, background $transition;
+
+		span {
+			margin-left: vc(20);
+			font-weight: 700;
+		}
+	}
+
+	&__main {
+		display: flex;
+		padding: vc(20) vc(30);
+		gap: vc(120);
+
+		@include devices {
+			flex-direction: column;
+			gap: vc(15);
+		}
+	}
+
+	&__info {
 		display: flex;
 		flex-direction: column;
-		gap: vc(15);
+		gap: vc(12);
+
+		&-head {
+			display: flex;
+			gap: vc(6);
+
+			p {
+				font-weight: 500;
+				font-size: vc(18);
+			}
+
+			svg {
+				width: vc(20);
+				height: vc(20);
+				fill: $tree-poppy-400;
+			}
+		}
+
+		&-main {
+			display: flex;
+			gap: vc(12);
+
+			p {
+				font-size: vc(16);
+				color: $woodsmoke-600;
+			}
+		}
 	}
 
-	&__item {
-		border: 1px solid $color-gray68;
-		border-radius: vc(10);
-		padding: vc(10);
-		box-shadow: $box-shadow;
+	&.is-new {
+		border-color: $tree-poppy-400;
 
-		&-date {
-			font-size: vc(14);
-			color: $color-gray68;
+		.notification__head {
+			border-color: $tree-poppy-400;
+			background: $tree-poppy-50;
 		}
-
-		&-title {
-			font-weight: 700;
-			font-size: vc(18);
-		}
-
-		&.is-new {
-			border-color: $color-carrot-orange;
-		}
-	}
-
-	&__footer {
-		display: flex;
-		margin-top: vc(15);
-		gap: vc(30);
 	}
 }

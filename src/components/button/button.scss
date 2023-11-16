@@ -10,23 +10,23 @@
 	transition-timing-function: $transition-timing-function;
 
 	&__primary {
-		border: 1px solid $color-carrot-orange;
+		border: 1px solid $tree-poppy-400;
 		color: $color-white;
-		background-color: $color-carrot-orange;
+		background-color: $tree-poppy-400;
 
 		&:hover {
-			color: $color-carrot-orange;
+			color: $tree-poppy-400;
 			background-color: $color-white;
 		}
 	}
 
 	&__outline {
-		border: 1px solid $color-carrot-orange;
-		color: $color-carrot-orange;
+		border: 1px solid $tree-poppy-400;
+		color: $tree-poppy-400;
 
 		&:hover {
 			color: $color-white;
-			background-color: $color-carrot-orange;
+			background-color: $tree-poppy-400;
 		}
 	}
 }
