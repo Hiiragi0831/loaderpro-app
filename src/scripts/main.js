@@ -22,6 +22,7 @@ import home from '../pages/home/home';
 import query from '../pages/query/query';
 import account from '../pages/account/account';
 import notification from '../pages/notification/notification';
+import inputFile from '../components/input-file/input-file';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -80,6 +81,7 @@ const init = () => {
 	account.init();
 	notification.init();
 	header.init();
+	inputFile.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));

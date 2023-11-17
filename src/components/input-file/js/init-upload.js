@@ -14,11 +14,11 @@ export const uploadImage = () => new Upload(uploadImageBlock, {
 	maxFileSize: 1048576,
 	accept: ['.png', '.jpg', '.jpeg', '.webp'],
 	iconFormat: {
-		'png': './img/file/icon-file-png.png',
-		'jpg': './img/file/icon-file-jpg.png',
-		'jpeg': './img/file/icon-file-jpg.png',
-		'webp': './img/file/icon-file-webp.png',
-		'default': './img/file/icon-file-docs.png',
+		'png': '/assets/images/file/icon-file-png.png',
+		'jpg': '/assets/images/file/icon-file-jpg.png',
+		'jpeg': '/assets/images/file/icon-file-jpg.png',
+		'webp': '/assets/images/file/icon-file-webp.png',
+		'default': '/assets/images/file/icon-file-docs.png',
 	},
 	fileInfo: {
 		fileName: true,
@@ -34,10 +34,10 @@ export const uploadFile = () => new Upload(uploadIFileBlock, {
 	maxFullSize: 1048576,
 	accept: ['.pdf', '.docx', '.xlsx'],
 	iconFormat: {
-		'xlsx': './img/file/icon-file-xlsx.png',
-		'docx': './img/file/icon-file-docx.png',
-		'pdf': './img/file/icon-file-pdf.png',
-		'default': './img/file/icon-file-docx.png',
+		'xlsx': '/assets/images/file/icon-file-xlsx.png',
+		'docx': '/assets/images/file/icon-file-docx.png',
+		'pdf': '/assets/images/file/icon-file-pdf.png',
+		'default': '/assets/images/file/icon-file-docx.png',
 	},
 	fileInfo: {
 		fileName: true,
@@ -54,11 +54,11 @@ export const uploadImageDrop = () => new Upload(uploadImageDropBlock, {
 	maxFileSize: 1048576,
 	accept: ['.png', '.jpg', '.jpeg', '.webp'],
 	iconFormat: {
-		'png': './img/file/icon-file-png.png',
-		'jpg': './img/file/icon-file-jpg.png',
-		'jpeg': './img/file/icon-file-jpg.png',
-		'webp': './img/file/icon-file-webp.png',
-		'default': './img/file/icon-file-docs.png',
+		'png': '/assets/images/file/icon-file-png.png',
+		'jpg': '/assets/images/file/icon-file-jpg.png',
+		'jpeg': '/assets/images/file/icon-file-jpg.png',
+		'webp': '/assets/images/file/icon-file-webp.png',
+		'default': '/assets/images/file/icon-file-docs.png',
 	},
 	fileInfo: {
 		fileName: true,
@@ -74,10 +74,10 @@ export const uploadFileDrop = () => new Upload(uploadFileDropBlock, {
 	maxFileSize: 1048576,
 	accept: ['.pdf', '.docx', '.xlsx'],
 	iconFormat: {
-		'xlsx': './img/file/icon-file-xlsx.png',
-		'docx': './img/file/icon-file-docx.png',
-		'pdf': './img/file/icon-file-pdf.png',
-		'default': './img/file/icon-file-docx.png',
+		'xlsx': '/assets/images/file/icon-file-xlsx.png',
+		'docx': '/assets/images/file/icon-file-docx.png',
+		'pdf': '/assets/images/file/icon-file-pdf.png',
+		'default': '/assets/images/file/icon-file-docx.png',
 	},
 	fileInfo: {
 		fileName: true,
@@ -94,10 +94,10 @@ export const uploadFileDropPreview = () => new Upload(uploadFileDropPreviewBlock
 	maxFileSize: 1048576,
 	accept: ['.pdf', '.docx', '.xlsx'],
 	iconFormat: {
-		'xlsx': './img/file/icon-file-xlsx.png',
-		'docx': './img/file/icon-file-docx.png',
-		'pdf': './img/file/icon-file-pdf.png',
-		'default': './img/file/icon-file-docx.png',
+		'xlsx': '/assets/images/file/icon-file-xlsx.png',
+		'docx': '/assets/images/file/icon-file-docx.png',
+		'pdf': '/assets/images/file/icon-file-pdf.png',
+		'default': '/assets/images/file/icon-file-docx.png',
 	},
 	fileInfo: {
 		fileName: true,
