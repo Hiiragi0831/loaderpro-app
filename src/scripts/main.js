@@ -25,6 +25,8 @@ import account from '../pages/account/account';
 import notification from '../pages/notification/notification';
 import inputFile from '../components/input-file/input-file';
 import datepicker from '../components/datepicker/datepicker';
+import product from '../components/product/product';
+import queryHistory from '../pages/query-history/query-history';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -80,11 +82,13 @@ const init = () => {
 	registration.init();
 	home.init();
 	query.init();
+	queryHistory.init();
 	account.init();
 	notification.init();
 	header.init();
 	inputFile.init();
 	datepicker.init();
+	product.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));

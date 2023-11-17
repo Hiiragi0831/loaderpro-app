@@ -1,0 +1,38 @@
+.product {
+	&__main {
+		position: relative;
+		display: grid;
+		grid-template-columns: vc(500) 1fr;
+		overflow: hidden;
+		gap: vc(30);
+	}
+
+	&__gallery {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		gap: vc(15);
+
+		picture {
+			overflow: hidden;
+			border-radius: vc(5);
+		}
+
+		&-thumb {
+			width: calc(100% + #{vc(15)});
+
+			.swiper-slide {
+				padding-right: vc(15);
+				opacity: 0.7;
+			}
+
+			.swiper-slide-thumb-active {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__info {
+
+	}
+}
