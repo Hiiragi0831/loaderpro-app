@@ -46,10 +46,10 @@ block content
 												name: 'numquery',
 											})(data-required="true")
 											+input({
-												type: 'date',
+												type: 'text',
 												placeholder: 'Дата*',
 												name: 'date',
-											})(data-required="true")
+											}).datepicker-multiple(data-required="true")
 									.form__buttons
 										button.button.button__primary(type="submit") Поиск
 				section

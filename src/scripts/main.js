@@ -2,6 +2,7 @@ import debounce from 'lodash.debounce';
 import throttle from 'lodash.throttle';
 
 import 'swiper/swiper-bundle.css';
+import 'air-datepicker/air-datepicker.css';
 import '@styles/vendor.scss';
 import '@styles/main.scss';
 
@@ -23,6 +24,7 @@ import query from '../pages/query/query';
 import account from '../pages/account/account';
 import notification from '../pages/notification/notification';
 import inputFile from '../components/input-file/input-file';
+import datepicker from '../components/datepicker/datepicker';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -82,6 +84,7 @@ const init = () => {
 	notification.init();
 	header.init();
 	inputFile.init();
+	datepicker.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));
