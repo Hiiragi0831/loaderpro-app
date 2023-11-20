@@ -1,0 +1,31 @@
+extends @pug/base
+
+append globals
+	- pageName = 'query'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main
+				+breadcrumbs()
+				section.employee
+					.container
+						.row
+							.employee__img
+								+picture({
+									path: `${baseDir}assets/images/image`,
+									ext: 'png',
+								})
+							.employee__info
+								h3 Ваш коммерческий представитель
+								p Имя Фамилия
+								.employee__info-item
+									+svg('phone-flip')
+									a(href="#") 8(800) 200-69-65
+								.employee__info-item
+									+svg('envelope')
+									a(href="#") example@gmail.com
+			+footer()

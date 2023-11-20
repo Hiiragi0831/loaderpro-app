@@ -1,0 +1,33 @@
+.employee {
+	.row {
+		display: grid;
+		grid-template-columns: vc(400) 1fr;
+		gap: vc(25);
+
+		@include devices {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__img {
+		overflow: hidden;
+		border-radius: vc(5);
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: vc(20);
+
+		&-item {
+			display: flex;
+			gap: vc(20);
+
+			svg {
+				width: vc(20);
+				height: vc(20);
+				fill: $tree-poppy-400;
+			}
+		}
+	}
+}
