@@ -1,10 +1,18 @@
 .product {
+	display: flex;
+	flex-direction: column;
+	gap: vc(100);
+
 	&__main {
 		position: relative;
 		display: grid;
-		grid-template-columns: vc(500) 1fr;
+		grid-template-columns: vc(400) 1fr;
 		overflow: hidden;
 		gap: vc(30);
+
+		@include devices {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	&__gallery {
@@ -32,7 +40,138 @@
 		}
 	}
 
-	&__info {
+	&__head {
+		display: flex;
+		flex-direction: column;
+		border-bottom: 1px solid $woodsmoke-200;
+		padding-bottom: vc(20);
+		gap: vc(10);
 
+		&-bottom {
+			display: flex;
+			justify-content: space-between;
+			gap: vc(15);
+
+			@include devices {
+				flex-direction: column;
+			}
+		}
+
+		&-right {
+			display: flex;
+			gap: vc(40);
+		}
+
+		&-item {
+			a {
+				font-weight: 700;
+				color: $tree-poppy-500;
+			}
+		}
+
+		@include devices {
+			gap: vc(15);
+		}
+	}
+
+	&__info {
+		&-item {
+			border-bottom: 1px solid $woodsmoke-200;
+			padding: vc(20) 0;
+
+			&--price {
+				font-size: vc(20);
+			}
+
+			&--count {
+				display: flex;
+				gap: vc(50);
+
+				.form__input {
+					max-width: vc(200);
+
+					@include devices {
+						max-width: 100%;
+					}
+				}
+
+				@include devices {
+					flex-direction: column;
+					gap: vc(15);
+				}
+			}
+		}
+
+		&-status {
+			display: flex;
+			align-items: center;
+			gap: vc(10);
+
+			svg {
+				width: vc(20);
+				height: vc(20);
+				fill: rgba($color-black, 0.4);
+			}
+
+			&.red {
+				color: #fa5d47;
+			}
+
+			&.green {
+				color: #02bc7d;
+			}
+
+			&.yellow {
+				color: $tree-poppy-400;
+			}
+		}
+	}
+
+	&__button {
+		padding-top: vc(20);
+	}
+
+	&__specification {
+		display: flex;
+		justify-content: space-between;
+		margin-top: -1px;
+		border-top: 1px solid $woodsmoke-100;
+		border-bottom: 1px solid $woodsmoke-100;
+		padding: vc(20);
+		background-color: $color-white;
+
+		&:nth-child(4n + 1),
+		&:nth-child(4n + 2) {
+			@include desktop {
+				background-color: $woodsmoke-50;
+			}
+		}
+
+		&:nth-child(2n) {
+			@include devices {
+				background-color: $woodsmoke-50;
+			}
+		}
+	}
+
+	&__specifications {
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: vc(20);
+			gap: 2%;
+
+			> * {
+				width: 49%;
+
+				@include devices {
+					width: 100%;
+				}
+			}
+
+			@include devices {
+				gap: 0;
+			}
+		}
 	}
 }
