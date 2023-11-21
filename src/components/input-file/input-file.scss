@@ -2,7 +2,6 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 50px;
 
 	input {
 		position: absolute;
@@ -17,29 +16,13 @@
 		clip: rect(0 0 0 0);
 	}
 
-	.btn {
-		display: inline-flex;
-		margin: 0;
-		border: none;
-		border-radius: 10px;
-		padding: 17px 35px;
-		font-family: inherit;
-		font-weight: 400;
-		font-size: 16px;
-		line-height: 100%;
-		text-transform: uppercase;
-		color: #fff;
-		background-color: #2c39f2;
-		cursor: pointer;
-	}
-
 	&__preview-item {
 		position: relative;
 	}
 
 	&__preview {
-		border-radius: 10px;
-		padding: 10px;
+		margin-top: vc(10);
+		border-radius: vc(5);
 
 		&.is-invalid {
 			border: 1px solid rgba(255, 0, 0, 0.6);
@@ -59,9 +42,9 @@
 	&__preview-file-info {
 		display: grid;
 		grid-template-columns: 2fr 1fr;
-		padding: 10px;
+		padding: vc(10);
 		width: 100%;
-		gap: 20px;
+		gap: vc(20);
 	}
 
 	&__preview-img {
@@ -73,15 +56,16 @@
 
 	&__preview-item-remove {
 		position: absolute;
-		right: 10px;
-		top: 10px;
+		right: vc(15);
+		top: vc(10);
 		z-index: 2;
 		border: none;
+		border-radius: vc(5);
 		padding: 0;
-		width: 20px;
-		height: 20px;
+		width: vc(20);
+		height: vc(20);
 		color: #fff;
-		background-color: #2c39f2;
+		background-color: $tree-poppy-400;
 		cursor: pointer;
 	}
 
@@ -89,12 +73,12 @@
 		position: relative;
 		display: flex;
 		overflow: hidden;
-		margin-bottom: 10px;
+		margin-bottom: vc(20);
 		border: 1px solid rgba(0, 0, 0, 0.2);
-		border-radius: 10px;
-		padding: 20px;
-		width: 400px;
-		min-height: 400px;
+		border-radius: vc(5);
+		padding: vc(20);
+		width: vc(400);
+		min-height: vc(400);
 		cursor: pointer;
 
 		&::before {
@@ -130,7 +114,7 @@
 	&__message {
 		position: absolute;
 		right: 0;
-		bottom: -5px;
+		bottom: vc(-5);
 		color: #f00;
 	}
 
@@ -140,14 +124,14 @@
 		grid-template-columns: 1fr 1fr;
 		width: 100%;
 		pointer-events: none;
-		gap: 20px;
+		gap: vc(20);
 	}
 
 	&--images {
 		.input-upload__preview {
 			display: grid;
-			grid-template-columns: repeat(4, 200px);
-			gap: 20px;
+			grid-template-columns: repeat(4, vc(200));
+			gap: vc(20);
 		}
 
 		.input-upload__preview-item {
@@ -156,19 +140,19 @@
 			align-items: center;
 			justify-content: center;
 			overflow: hidden;
-			margin-top: 10px;
+			margin-top: vc(10);
 			border: 1px solid rgba(0, 0, 0, 0.2);
-			border-radius: 10px;
-			width: 200px;
-			height: 150px;
+			border-radius: vc(5);
+			width: vc(200);
+			height: vc(150);
 		}
 
 		.input-upload__preview-icon {
 			position: absolute;
-			left: 10px;
-			top: 10px;
+			left: vc(10);
+			top: vc(10);
 			z-index: 1;
-			width: 30px;
+			width: vc(30);
 			height: auto;
 		}
 
@@ -177,9 +161,9 @@
 			left: 0;
 			bottom: 0;
 			z-index: 1;
-			padding: 5px 10px;
+			padding: vc(5) vc(10);
 			width: 100%;
-			height: 40px;
+			height: vc(40);
 			color: #fff;
 			background-color: rgba(0, 0, 0, 0.8);
 		}
@@ -189,7 +173,7 @@
 		.input-upload__preview {
 			display: grid;
 			grid-template-columns: 1fr;
-			gap: 20px;
+			gap: vc(20);
 		}
 
 		.input-upload__preview-item {
@@ -197,19 +181,18 @@
 			display: flex;
 			align-items: center;
 			overflow: hidden;
-			margin-top: 10px;
 			border: 1px solid rgba(0, 0, 0, 0.2);
-			border-radius: 10px;
-			padding: 5px 40px 5px 50px;
+			border-radius: vc(5);
+			padding: vc(5) vc(40) vc(5) vc(50);
 			width: 100%;
-			height: 50px;
+			height: vc(50);
 		}
 
 		.input-upload__preview-icon {
 			position: absolute;
-			left: 10px;
+			left: vc(10);
 			z-index: 1;
-			width: 30px;
+			width: vc(30);
 			height: auto;
 		}
 
@@ -226,19 +209,19 @@
 			justify-content: center;
 			overflow: hidden;
 			border: 1px solid rgba(0, 0, 0, 0.2);
-			border-radius: 10px;
+			border-radius: vc(10);
 			width: 100%;
-			height: 150px;
+			height: vc(150);
 			cursor: auto;
 			pointer-events: all;
 		}
 
 		.input-upload__preview-icon {
 			position: absolute;
-			left: 10px;
-			top: 10px;
+			left: vc(10);
+			top: vc(10);
 			z-index: 1;
-			width: 30px;
+			width: vc(30);
 			height: auto;
 		}
 
@@ -247,9 +230,9 @@
 			left: 0;
 			bottom: 0;
 			z-index: 1;
-			padding: 5px 10px;
+			padding: vc(5) vc(10);
 			width: 100%;
-			height: 40px;
+			height: vc(40);
 			color: #fff;
 			background-color: rgba(0, 0, 0, 0.8);
 		}
@@ -263,19 +246,19 @@
 			justify-content: center;
 			overflow: hidden;
 			border: 1px solid rgba(0, 0, 0, 0.2);
-			border-radius: 10px;
+			border-radius: vc(5);
 			width: 100%;
-			height: 150px;
+			height: vc(150);
 			cursor: auto;
 			pointer-events: all;
 		}
 
 		.input-upload__preview-icon {
 			position: absolute;
-			left: 10px;
-			top: 10px;
+			left: vc(10);
+			top: vc(10);
 			z-index: 1;
-			width: 30px;
+			width: vc(30);
 			height: auto;
 		}
 
@@ -284,9 +267,9 @@
 			left: 0;
 			bottom: 0;
 			z-index: 1;
-			padding: 5px 10px;
+			padding: vc(5) vc(10);
 			width: 100%;
-			height: 40px;
+			height: vc(40);
 			color: #fff;
 			background-color: rgba(0, 0, 0, 0.8);
 		}

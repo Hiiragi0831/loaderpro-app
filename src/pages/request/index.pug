@@ -1,0 +1,192 @@
+extends @pug/base
+
+append globals
+	- pageName = 'query'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main
+				+breadcrumbs()
+				section.employee
+					.container
+						form.page__info
+							h2 Форма запроса
+							.page__info-item
+								.page__info-head
+									p Данные о клиенте
+								.page__info-row.row-3
+									+input({
+										type: 'text',
+										placeholder: 'Номер запчасти',
+										name: 'numparts',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Имя пользователя',
+										name: 'username',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Телефон',
+										name: 'phone',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Компания',
+										name: 'company',
+									})
+									+input({
+										type: 'email',
+										placeholder: 'E-mail',
+										name: 'email',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Whats App',
+										name: 'whatsapp',
+									})
+							.page__info-item
+								.page__info-head
+									p Информация о транспортном средстве
+								.page__info-row.row-3
+									+input({
+										type: 'text',
+										placeholder: 'Бренд',
+										name: 'transportbrand',
+										list: 'brands',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Модель',
+										name: 'transportmodel',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Год производства',
+										name: 'transportyearproduction',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Префикс',
+										name: 'transportprefix',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Серийный номер',
+										name: 'transportserialnumber',
+									})
+							.page__info-item
+								.page__info-head
+									p Двигатель
+								.page__info-row.row-3
+									+input({
+										type: 'text',
+										placeholder: 'Бренд',
+										name: 'enginebrand',
+										list: 'brands',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Модель',
+										name: 'enginemodel',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Напряжение',
+										name: 'enginevoltage',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Тип топлива',
+										name: 'enginefueltype',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Серийный номер',
+										name: 'engineserialnumber',
+									})
+							.page__info-item
+								.page__info-head
+									p Трансмиссия
+								.page__info-row.row-3
+									+input({
+										type: 'text',
+										placeholder: 'Бренд',
+										name: 'transmissionbrand',
+										list: 'brands',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Тип',
+										name: 'transmissiontype',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Информация',
+										name: 'transmissioninfo',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Серийный номер',
+										name: 'transmissionserialnumber',
+									})
+							.page__info-item
+								.page__info-head
+									p Мачта
+								.page__info-row.row-3
+									+input({
+										type: 'text',
+										placeholder: 'Бренд',
+										name: 'mastbrand',
+										list: 'brands',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Модель',
+										name: 'mastmodel',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Высота',
+										name: 'mastheight',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Серийный номер',
+										name: 'mastserialnumber',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Количество секций',
+										name: 'mastsections',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Количество цилиндров',
+										name: 'mastcylinders',
+									})
+							.page__info-item
+								.page__info-head
+									p Примечания
+								.page__info-row
+									+textarea({
+										placeholder: 'Текст',
+										name: 'text',
+										rows: '4',
+									})
+							.page__info-item
+								.page__info-head
+									p Вложения
+								.page__info-row
+									.input-upload.input-upload--file(data-upload="file")
+										label
+											input(type="file" name="upload-file")
+											span.button.button__outline Загрузить файл
+							.page__info-item
+								.page__info-row
+									button.button.button__primary Отправить
+			+footer()

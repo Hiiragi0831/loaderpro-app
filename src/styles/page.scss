@@ -14,6 +14,63 @@
 			color: $tree-poppy-400;
 		}
 	}
+
+	&__info {
+		h2 {
+			margin-bottom: vc(10);
+		}
+
+		&-item {
+			margin-bottom: vc(30);
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+
+		&-head {
+			margin-bottom: vc(20);
+			border-radius: vc(5);
+			padding: vc(18) vc(30);
+			background: $woodsmoke-100;
+
+			p {
+				font-weight: 600;
+				font-size: vc(20);
+			}
+		}
+
+		&-row {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: vc(30);
+
+			&.row-2 {
+				grid-template-columns: 1fr 1fr;
+
+				@include devices {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			&.row-3 {
+				grid-template-columns: 1fr 1fr 1fr;
+
+				@include devices {
+					grid-template-columns: 1fr;
+				}
+			}
+		}
+
+		&-buttons {
+			display: flex;
+			gap: vc(10);
+
+			button {
+				flex:1 1 auto;
+			}
+		}
+	}
 }
 
 .section {
