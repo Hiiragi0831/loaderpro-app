@@ -1,0 +1,21 @@
+extends @pug/base
+
+append globals
+	- pageName = 'query'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main
+				+breadcrumbs()
+				section.section-news
+					.container
+						.row
+							include @components/news/news
+							include @components/news/news
+							include @components/news/news
+							include @components/news/news
+			+footer()

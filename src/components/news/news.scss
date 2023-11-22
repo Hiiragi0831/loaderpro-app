@@ -1,0 +1,27 @@
+.news {
+	display: flex;
+	flex-direction: column;
+	border-radius: vc(5);
+	padding: vc(20);
+	background: $woodsmoke-50;
+	gap: vc(10);
+
+	&__img {
+		overflow: hidden;
+		border-radius: vc(5);
+	}
+
+	&__title {
+		font-weight: 600;
+	}
+
+	&__link {
+		text-decoration: underline !important;
+		color: $tree-poppy-400;
+		transition: opacity $transition;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
