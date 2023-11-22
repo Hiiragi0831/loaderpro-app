@@ -1,7 +1,7 @@
 export const config = {
     html: {
         // настройки для html
-        publicPath: '/', // путь к файлам для продакшн версии
+        publicPath: '/template-front/', // путь к файлам для продакшн версии
         publicPathDev: '/', // путь к файлам для версии разработки
         domain: '/', // домен проекта
         isProd: () => process.env.IS_PROD, // isProd = true - используется publicPath; isProd = false - используется publicPathDev

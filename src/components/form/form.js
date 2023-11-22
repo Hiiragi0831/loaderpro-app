@@ -6,6 +6,7 @@ export class Form {
 	constructor(method) {
 		this.data = {};
 		this.method = method;
+		this.elappend = null;
 		this.cookieJwt = new Cookie('jwt');
 	}
 
@@ -40,12 +41,28 @@ export class Form {
 			});
 	}
 
+	convertStringToHTML(htmlString) {
+		const parser = new DOMParser();
+		const html = parser.parseFromString(htmlString, 'text/html');
+
+		return html.body;
+	}
+
+	renderHtml(html) {
+		this.elappend.innerHTML = '';
+		this.elappend.append(this.convertStringToHTML(html));
+	}
+
 	onSuccess(responseJson) {
 		console.log('Ваша форма успешна отправлена', responseJson);
 		if (responseJson.status === 'error') {
 			notyf.error(responseJson.message);
 		} else {
 			notyf.success(responseJson.message);
+
+			if (responseJson.html) {
+				this.renderHtml(responseJson.html);
+			}
 
 			if (responseJson.jwt) {
 				this.cookieJwt.set(responseJson.jwt, 1);
@@ -88,12 +105,14 @@ export class Form {
 		});
 	}
 
-	init(action, target) {
+	init(action, target, elappend) {
 		target.addEventListener('submit', async (evt) => {
 			evt.preventDefault();
 
 			this.send(action, target);
 		});
+
+		this.elappend = elappend;
 
 		this.setAttribute(target);
 	}
