@@ -1,0 +1,36 @@
+.pagenav {
+	display: flex;
+	justify-content: center;
+	margin: vc(30) auto 0;
+	gap: vc(10);
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid $woodsmoke-100;
+		border-radius: vc(5);
+		width: vc(45);
+		height: vc(45);
+		font-weight: 700;
+		font-size: vc(18);
+		background-color: $color-white;
+		transition: background-color $transition, color $transition;
+
+		svg {
+			width: vc(20);
+			height: vc(20);
+			fill: $color-black;
+		}
+
+		&.is-active,
+		&:hover {
+			color: $color-white;
+			background-color: $tree-poppy-400;
+
+			svg {
+				fill: $color-white;
+			}
+		}
+	}
+}
