@@ -1,0 +1,42 @@
+.cardFunnel {
+	overflow: hidden;
+	border: 1px solid $tree-poppy-400;
+	border-radius:vc(5);
+	box-shadow: $box-shadow;
+	background: $color-white;
+
+	&__head {
+		border-bottom: 1px solid $tree-poppy-400;
+		padding: vc(12);
+		background: $tree-poppy-50;
+	}
+
+	&__main {
+		display: flex;
+		flex-direction: column;
+		padding: vc(12);
+		gap: vc(16);
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+		gap: vc(14);
+
+		p {
+			font-size: vc(12);
+		}
+
+		svg {
+			width: vc(16);
+			height: vc(16);
+			fill: $tree-poppy-400;
+		}
+	}
+
+	&__price {
+		font-weight: 700;
+		font-size: vc(16);
+		color: $tree-poppy-400;
+	}
+}

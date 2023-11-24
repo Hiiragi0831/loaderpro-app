@@ -1,0 +1,39 @@
+extends @pug/base
+
+append globals
+	- pageName = 'query'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main.funnel
+				+breadcrumbs()
+				section
+					.container
+						+navTab([
+							{
+								link: 'Новый запрос',
+							},
+							{
+								link: 'Воронка запросов',
+								active: true,
+							},
+						])
+				section
+					.container
+						.funnel__wrapper
+							.funnel__row
+								each item in ['Котел', 'Подбор', 'В запросе', 'Обработан', 'Счет отправлен', 'Заказа оформлен', 'Счет оплачен', 'В пути', 'Готов к отгрузке', 'Отгружен']
+									.funnel__col
+										.funnel__head
+											p.h3!= item
+										.funnel__list
+											include @components/cardFunnel/cardFunnel
+											include @components/cardFunnel/cardFunnel
+											include @components/cardFunnel/cardFunnel
+											include @components/cardFunnel/cardFunnel
+											include @components/cardFunnel/cardFunnel
+			+footer()

@@ -1,0 +1,33 @@
+.funnel {
+	.container {
+		max-width: vc(1780);
+	}
+
+	&__wrapper {
+		position: relative;
+		overflow: auto;
+		width: 100%;
+	}
+
+	&__row {
+		display: flex;
+		padding-bottom: vc(24);
+		width: 100%;
+	}
+
+	&__col {
+		flex-shrink: 0;
+		padding: 0 vc(12);
+		width: vc(338);
+	}
+
+	&__head {
+		padding: vc(15) vc(10) vc(10);
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: vc(15);
+	}
+}
