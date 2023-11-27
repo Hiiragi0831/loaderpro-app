@@ -20,6 +20,10 @@
 		border-right: 1px solid $woodsmoke-200;
 		padding: 0 vc(12);
 		width: vc(338);
+
+		&:last-child {
+			border: none;
+		}
 	}
 
 	&__head {
