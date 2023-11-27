@@ -1,7 +1,7 @@
 mixin cardFunnel(data)
 	.cardFunnel&attributes(attributes)
 		.cardFunnel__head
-			p Номер запроса: #[b 12453453]
+			p!= `Номер ${data}: <b> 12453453</b>`
 		.cardFunnel__main
 			.cardFunnel__info
 				+svg('user')

@@ -18,38 +18,41 @@ block content
 								link: 'Новый запрос',
 							},
 							{
-								link: 'Воронка запросов',
+								link: 'Воронка заказов',
 								active: true,
 							},
 						])
 				section
 					.container
-						p.h3.mb-20 Поиск запроса
-						form.form
-							.form__main
-								.form__row
-									+input({
-										type: 'text',
-										placeholder: 'Номер запроса',
-										name: 'requestnumber',
-									})
-									+input({
-										type: 'text',
-										placeholder: 'Кем создан',
-										name: 'createdby',
-									})
-									+input({
-										type: 'text',
-										placeholder: 'Дата',
-										name: 'date',
-									}).datepicker-multiple
-									button.button.button__primary(type="submit") Поиск
+						.query__box
+							.query__box-title Поиск заказа
+							.query__box-form
+								form.form
+									.form__main
+										.form__row
+											+input({
+												type: 'text',
+												placeholder: 'Номер заказа',
+												name: 'requestnumber',
+											})
+											+input({
+												type: 'text',
+												placeholder: 'Кем создан',
+												name: 'createdby',
+											})
+											+input({
+												type: 'text',
+												placeholder: 'Дата',
+												name: 'date',
+											}).datepicker-multiple
+											button.button.button__primary(type="submit") Поиск
 				section.mt-40
 					.container
 						.funnel__wrapper
 							.funnel__row
 								-
 									const funnel = [
+										{title: 'Заказа оформлен', color: 'grey'},
 										{title: 'Счет оплачен', color: 'blue-1'},
 										{title: 'В пути', color: 'blue-2'},
 										{title: 'Готов к отгрузке', color: 'blue-3'},
@@ -61,9 +64,9 @@ block content
 											p.h3!= item.title
 											.funnel__head-line(class=`funnel__head-line--${item.color}`)
 										.funnel__list
-											+cardFunnel()
-											+cardFunnel()
-											+cardFunnel()
-											+cardFunnel()
-											+cardFunnel()
+											+cardFunnel('заказа')
+											+cardFunnel('заказа')
+											+cardFunnel('заказа')
+											+cardFunnel('заказа')
+											+cardFunnel('заказа')
 			+footer()
