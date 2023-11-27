@@ -1,0 +1,18 @@
+extends @pug/base
+
+append globals
+	- pageName = 'query'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main
+				+breadcrumbs()
+				section.request-card
+					.container
+						.row
+
+			+footer()

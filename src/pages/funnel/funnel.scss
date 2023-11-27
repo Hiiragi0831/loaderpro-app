@@ -17,12 +17,46 @@
 
 	&__col {
 		flex-shrink: 0;
+		border-right: 1px solid $woodsmoke-200;
 		padding: 0 vc(12);
 		width: vc(338);
 	}
 
 	&__head {
+		display: flex;
+		flex-direction: column;
 		padding: vc(15) vc(10) vc(10);
+		text-align: center;
+
+		&-line {
+			width: 100%;
+			height: vc(3);
+			background: $color-black;
+
+			&--grey {
+				background: $woodsmoke-200;
+			}
+
+			&--blue-1 {
+				background: #d6eaff;
+			}
+
+			&--blue-2 {
+				background: #c1e0ff;
+			}
+
+			&--blue-3 {
+				background: #98cbff;
+			}
+
+			&--blue-4 {
+				background: #64a9fd;
+			}
+
+			&--green {
+				background: #cf6;
+			}
+		}
 	}
 
 	&__list {

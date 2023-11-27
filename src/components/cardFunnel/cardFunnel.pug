@@ -1,12 +1,13 @@
-.cardFunnel
-	.cardFunnel__head
-		p Номер запроса: #[b 12453453]
-	.cardFunnel__main
-		.cardFunnel__info
-			+svg('user')
-			p Кем создан: Алексей Привалов
-		.cardFunnel__info
-			+svg('calendar-clock')
-			p Дата создания: 20 ноября 2023
-		.cardFunnel__price
-			p 1 504 847 ₽
+mixin cardFunnel(data)
+	.cardFunnel&attributes(attributes)
+		.cardFunnel__head
+			p Номер запроса: #[b 12453453]
+		.cardFunnel__main
+			.cardFunnel__info
+				+svg('user')
+				p Кем создан: Алексей Привалов
+			.cardFunnel__info
+				+svg('calendar-clock')
+				p Дата создания: 20 ноября 2023
+			.cardFunnel__price
+				p 1 504 847 ₽

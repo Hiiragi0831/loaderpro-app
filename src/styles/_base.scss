@@ -1,7 +1,7 @@
 @use 'sass:math';
 
 :root {
-	--width-base: #{$desktop-lg};
+	--width-base: #{$desktop-xl};
 	--width-current: #{$desktop-xl * 1px};
 	--width-multiplier: var(--width-current) / var(--width-base);
 

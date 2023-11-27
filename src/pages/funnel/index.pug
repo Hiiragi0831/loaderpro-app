@@ -24,16 +24,52 @@ block content
 						])
 				section
 					.container
+						p.h3.mb-20 Поиск запроса
+						form.form
+							.form__main
+								.form__row
+									+input({
+										type: 'text',
+										placeholder: 'Номер запроса',
+										name: 'requestnumber',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Кем создан',
+										name: 'createdby',
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Дата',
+										name: 'date',
+									}).datepicker-multiple
+									button.button.button__primary(type="submit") Поиск
+				section.mt-40
+					.container
 						.funnel__wrapper
 							.funnel__row
-								each item in ['Котел', 'Подбор', 'В запросе', 'Обработан', 'Счет отправлен', 'Заказа оформлен', 'Счет оплачен', 'В пути', 'Готов к отгрузке', 'Отгружен']
+								-
+									const funnel = [
+										{title: 'Котел', color: 'grey'},
+										{title: 'Подбор', color: 'blue-1'},
+										{title: 'В запросе', color: 'blue-2'},
+										{title: 'Обработан', color: 'blue-3'},
+										{title: 'Счет отправлен', color: 'blue-4'},
+										{title: 'Заказа оформлен', color: 'green'},
+										{title: 'Счет оплачен', color: 'blue-1'},
+										{title: 'В пути', color: 'blue-2'},
+										{title: 'Готов к отгрузке', color: 'blue-3'},
+										{title: 'Отгружен', color: 'green'},
+									];
+								each item in funnel
 									.funnel__col
 										.funnel__head
-											p.h3!= item
+											p.h3!= item.title
+											.funnel__head-line(class=`funnel__head-line--${item.color}`)
 										.funnel__list
-											include @components/cardFunnel/cardFunnel
-											include @components/cardFunnel/cardFunnel
-											include @components/cardFunnel/cardFunnel
-											include @components/cardFunnel/cardFunnel
-											include @components/cardFunnel/cardFunnel
+											+cardFunnel()
+											+cardFunnel()
+											+cardFunnel()
+											+cardFunnel()
+											+cardFunnel()
 			+footer()
