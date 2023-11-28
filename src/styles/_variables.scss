@@ -28,6 +28,15 @@ $woodsmoke-800: #454545;
 $woodsmoke-900: #3d3d3d;
 $woodsmoke-950: #181818;
 
+$status-colors: (
+	"grey": $woodsmoke-200,
+	"blue-1": #d6eaff,
+	"blue-2": #c1e0ff,
+	"blue-3": #98cbff,
+	"blue-4": #64a9fd,
+	"green": #cf6,
+);
+
 // FONTS
 $font-montserrat: 'Montserrat', Arial, sans-serif;
 

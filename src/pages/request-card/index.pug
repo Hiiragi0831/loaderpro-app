@@ -9,10 +9,147 @@ block content
 	+router(pageName)
 		.site
 			include @components/header/header
-			main
+			main.request-card
 				+breadcrumbs()
-				section.request-card
+				section
 					.container
 						.row
+							.request-card__status
+								.request-card__title
+									h1.h3 Запрос 9389923
+								.request-card__labels
+									+select({
+										placeholder: 'Статус запроса',
+										name: 'language',
+										items: [
+											{value: 'status-0', label: 'Заказа оформлен'},
+											{value: 'status-1', label: 'Счет оплачен'},
+											{value: 'status-2', selected: true, label: 'В пути'},
+											{value: 'status-3', label: 'Готов к отгрузке'},
+											{value: 'status-4', label: 'Отгружен'},
+										],
+									}).request-card__select(data-color)
+									+input({
+										type: 'text',
+										placeholder: 'Ответственный',
+										name: 'responsible',
+										value: 'Вася Неудержимый Романович'
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Бюджет',
+										name: 'budget',
+										value: 'Семки есть?'
+									})
+									+input({
+										type: 'number',
+										placeholder: 'Закупка',
+										name: 'purchase',
+										value: '300'
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Доп.завтраты',
+										name: 'additionalaccounts',
+										value: 'Братцы маслину поймал...'
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Доставка',
+										name: 'delivery',
+										value: 'Четкие линии'
+									})
+									+input({
+										type: 'number',
+										placeholder: 'Маржа',
+										name: 'margin',
+										value: '150'
+									})
+									+input({
+										type: 'number',
+										placeholder: 'Маржа в %',
+										name: 'marginpercent',
+										value: '20'
+									})
+									+input({
+										type: 'number',
+										placeholder: '№ счета',
+										name: 'accountno',
+										value: '2390842'
+									})
+									+input({
+										type: 'text',
+										placeholder: '№ УПД',
+										name: 'updno',
+										value: 'Зашквар 13'
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Оплачен полностью',
+										name: 'paidinfull',
+										value: 'да?'
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Тип заявки',
+										name: 'applicationtype',
+										value: 'Бригада'
+									})
+									+input({
+										type: 'text',
+										placeholder: 'Направление',
+										name: 'direction',
+										value: 'Нижние ярусы Стикса'
+									})
+								.request-card__contact
+									p.h4 Информация о контакте
+									.request-card__contact-item
+										p Компания
+										p #[b ООО "Добрый зайка"]
+									.request-card__contact-item
+										p Раб. телефон
+										p #[b +7-977-777-66-66]
+									.request-card__contact-item
+										p E-mail раб
+										p #[b морковка@зайкидобра.рф]
+									.request-card__contact-item
+										p Должность
+										p #[b Старший Заяц]
+							.request-card__products
+								.request-card__head
+									.request-card__head-item
+										p Дата создания:
+										p #[b 12.12.2023]
+									.request-card__head-item
+										p Номер запроса:
+										p #[b 2353674392]
+									.request-card__head-item
+										p Действует до:
+										p #[b 09.05.2023]
+								.request-card__product
+									+picture({
+										path: `${baseDir}assets/images/image`,
+										ext: 'png',
+									})
+									.request-card__product-info
+										.request-card__product-change
+											+svg('pencil')
+										.request-card__product-title
+											p.h4 Название товара
+										.request-card__product-specifications
+											.request-card__product-specification
+												p Бренд: #[span Название]
+											.request-card__product-specification
+												p Количество: #[span 12]
+											.request-card__product-specification
+												p Цена: #[span 1000 Р]
+											.request-card__product-specification
+												p Ед. изм: #[span Шт]
+											.request-card__product-specification
+												p Вес (кг): #[span 13]
+											.request-card__product-specification
+												p Наличие: #[span Есть]
+								.request-card__buttons
+									button.button.button__primary Сохранить
 
 			+footer()

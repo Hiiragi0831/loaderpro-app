@@ -27,6 +27,7 @@ import inputFile from '../components/input-file/input-file';
 import datepicker from '../components/datepicker/datepicker';
 import product from '../components/product/product';
 import queryHistory from '../pages/query-history/query-history';
+import requestCard from '../pages/request-card/request-card';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -89,6 +90,7 @@ const init = () => {
 	inputFile.init();
 	datepicker.init();
 	product.init();
+	requestCard.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));

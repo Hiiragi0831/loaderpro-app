@@ -1,3 +1,152 @@
-.request-card {
+@use 'sass:meta';
 
+@mixin status-color($args:()) {
+	@each $key, $val in $args {
+		&[data-color='#{$key}']::before {
+			background: $val;
+		}
+	}
+}
+
+.request-card {
+	.row {
+		display: grid;
+		grid-template-columns: vc(510) 1fr;
+		gap: vc(38);
+	}
+
+	&__status {
+		display: flex;
+		flex-direction: column;
+		gap: vc(30);
+	}
+
+	&__title {
+	}
+
+	&__labels {
+		display: flex;
+		flex-direction: column;
+		gap: vc(30);
+	}
+
+	&__select {
+		@include status-color($status-colors);
+
+		margin-bottom: vc(30);
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: vc(-12);
+			border-radius: vc(90);
+			width: 100%;
+			height: vc(13);
+			background: $color-black;
+		}
+
+		select {
+			outline: none;
+			border: none;
+			padding-right: 0;
+			padding-left: 0;
+			font-size: vc(18);
+		}
+
+		span {
+			left: 0;
+			top: vc(10);
+			padding: 0;
+			width: 100%;
+			font-weight: 700;
+			font-size: vc(18);
+		}
+	}
+
+	&__contact {
+		&-item {
+			display: grid;
+			justify-content: space-between;
+			grid-template-columns: 1fr 1fr;
+			border-bottom: 1px solid $woodsmoke-100;
+			padding: vc(15) 0;
+			font-size: vc(16);
+
+			p {
+				&:last-child {
+					text-align: end;
+				}
+			}
+		}
+	}
+
+	&__products {
+		display: flex;
+		flex-direction: column;
+		gap: vc(30);
+	}
+
+	&__head {
+		display: flex;
+		justify-content: space-between;
+		border-radius: vc(5);
+		padding: vc(12) vc(20);
+		background-color: $woodsmoke-100;
+	}
+
+	&__product {
+		position: relative;
+		display: grid;
+		grid-template-columns: vc(118) 1fr;
+		border: 1px solid $woodsmoke-200;
+		border-radius: vc(5);
+		padding: vc(20) vc(16);
+		box-shadow: $box-shadow;
+		background: $color-white;
+		gap: vc(14);
+
+		picture {
+			overflow: hidden;
+			border-radius: vc(5);
+		}
+
+		&-change {
+			position: absolute;
+			right: vc(16);
+			top: vc(20);
+			z-index: 2;
+
+			svg {
+				width: vc(18);
+				height: vc(18);
+				fill: $tree-poppy-400;
+				cursor: pointer;
+			}
+		}
+
+		&-title {
+			border-bottom: 1px solid $woodsmoke-200;
+			padding: 0 0 vc(10) 0;
+		}
+
+		&-specifications {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			padding: vc(20) 0;
+			gap: vc(10) vc(40);
+		}
+
+		&-specification {
+			font-weight: 500;
+
+			span {
+				color: $tree-poppy-400;
+			}
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: flex-end;
+	}
 }
