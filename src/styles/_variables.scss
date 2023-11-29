@@ -29,12 +29,11 @@ $woodsmoke-900: #3d3d3d;
 $woodsmoke-950: #181818;
 
 $status-colors: (
-	"grey": $woodsmoke-200,
-	"blue-1": #d6eaff,
-	"blue-2": #c1e0ff,
-	"blue-3": #98cbff,
-	"blue-4": #64a9fd,
-	"green": #cf6,
+	"status-0": $woodsmoke-200,
+	"status-1": #d6eaff,
+	"status-2": #c1e0ff,
+	"status-3": #98cbff,
+	"status-4": #cf6,
 );
 
 // FONTS
@@ -42,7 +41,7 @@ $font-montserrat: 'Montserrat', Arial, sans-serif;
 
 // TRANSITIONS
 $transition-duration: 0.35s;
-$transition-timing-function: ease;
+$transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
 $transition: $transition-duration $transition-timing-function;
 
 // SETTINGS

@@ -132,6 +132,29 @@ block content
 										ext: 'png',
 									})
 									.request-card__product-info
+										.request-card__product-change(data-open-modal="modal-1")
+											+svg('pencil')
+										.request-card__product-title
+											p.h4 Название товара
+										.request-card__product-specifications
+											.request-card__product-specification
+												p Бренд: #[span Название]
+											.request-card__product-specification
+												p Количество: #[span 12]
+											.request-card__product-specification
+												p Цена: #[span 1000 ₽]
+											.request-card__product-specification
+												p Ед. изм: #[span Шт]
+											.request-card__product-specification
+												p Вес (кг): #[span 13]
+											.request-card__product-specification
+												p Наличие: #[span Есть]
+								.request-card__product
+									+picture({
+										path: `${baseDir}assets/images/image`,
+										ext: 'png',
+									})
+									.request-card__product-info
 										.request-card__product-change
 											+svg('pencil')
 										.request-card__product-title
@@ -142,7 +165,7 @@ block content
 											.request-card__product-specification
 												p Количество: #[span 12]
 											.request-card__product-specification
-												p Цена: #[span 1000 Р]
+												p Цена: #[span 1000 ₽]
 											.request-card__product-specification
 												p Ед. изм: #[span Шт]
 											.request-card__product-specification
@@ -151,5 +174,15 @@ block content
 												p Наличие: #[span Есть]
 								.request-card__buttons
 									button.button.button__primary Сохранить
-
+			section.modal.modal--preload(data-modal="modal-1")
+				.modal__wrapper
+					.modal__overlay(data-close-modal)
+					.modal__content
+						section
+							h2.subtitle example-1
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.
+						button.modal__close-btn(type='button', aria-label='Закрыть попап', data-close-modal, data-focus).
+							Закрыть
 			+footer()

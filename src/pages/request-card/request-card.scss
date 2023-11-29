@@ -43,6 +43,7 @@
 			width: 100%;
 			height: vc(13);
 			background: $color-black;
+			transition: background $transition;
 		}
 
 		select {
