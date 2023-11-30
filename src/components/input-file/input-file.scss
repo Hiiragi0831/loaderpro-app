@@ -77,7 +77,7 @@
 		border: 1px solid rgba(0, 0, 0, 0.2);
 		border-radius: vc(5);
 		padding: vc(20);
-		width: vc(400);
+		width: 100%;
 		min-height: vc(400);
 		cursor: pointer;
 
@@ -121,10 +121,14 @@
 	&--images-drop .input-upload__preview,
 	&--file-drop .input-upload__preview {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 		width: 100%;
 		pointer-events: none;
 		gap: vc(20);
+
+		@include devices {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	&--images {

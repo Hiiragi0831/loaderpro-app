@@ -155,7 +155,7 @@ block content
 										ext: 'png',
 									})
 									.request-card__product-info
-										.request-card__product-change
+										.request-card__product-change(data-open-modal="modal-1")
 											+svg('pencil')
 										.request-card__product-title
 											p.h4 Название товара
@@ -176,13 +176,87 @@ block content
 									button.button.button__primary Сохранить
 			section.modal.modal--preload(data-modal="modal-1")
 				.modal__wrapper
-					.modal__overlay(data-close-modal)
+					.modal__overlay
 					.modal__content
-						section
-							h2.subtitle example-1
-							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.
-							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.
-							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel doloremque asperiores amet neque quam architecto sequi voluptatum odio laudantium earum sit voluptas ipsam eius praesentium, rem, aliquam dolores porro. Tenetur.
-						button.modal__close-btn(type='button', aria-label='Закрыть попап', data-close-modal, data-focus).
-							Закрыть
+						button.modal__close-btn(type="button" aria-label="Закрыть попап" data-close-modal data-focus)
+							+svg("xmark")
+						section.productEditing
+							.productEditing__title
+								p.h3 Редактирование товара
+							form.form.productEditing__form
+								.form__main
+									.form__row
+										+input({
+											type: 'text',
+											placeholder: 'Название товара',
+											name: 'productname',
+											value: 'Lorem ipsum dolor sit amet'
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Бренд',
+											name: 'brand',
+											list: 'brands',
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Артикул',
+											name: 'article',
+											value: '128731-332MT'
+										})
+										+input({
+											type: 'num',
+											placeholder: 'Цена',
+											name: 'price',
+											value: '12345'
+										})
+										+input({
+											type: 'num',
+											placeholder: 'Количество',
+											name: 'count',
+											value: '2'
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Срок поставки',
+											name: 'deliverytime',
+										}).datepicker-multiple
+										+input({
+											type: 'text',
+											placeholder: 'Категория',
+											name: 'category',
+											value: 'Lorem'
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Тип',
+											name: 'type',
+											value: 'Lorem'
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Единица измерения',
+											name: 'measurement',
+											value: 'Кг'
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Вес',
+											name: 'weight',
+											value: '100'
+										})
+										+textarea({
+											placeholder: 'Комментарий',
+											name: 'comment',
+											rows: '4',
+										})(style="grid-column: span 2 / span 1;")
+								.form__img
+									.input-upload.input-upload--images-drop(data-upload="img-drop")
+										.input-upload__drop-zone(data-drop-zone)
+											span.input-upload__drop-zone-text Фото товара
+										label(data-drop-zone)
+											input(type="file" name="upload-file")
+								.form__buttons
+									button.button.button__primary(type="submit") Сохранить
+
 			+footer()

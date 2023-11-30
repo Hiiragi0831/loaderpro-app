@@ -11,6 +11,6 @@ mixin select(data)
 		span= data.placeholder
 
 mixin textarea(data)
-	label.form__textarea
+	label.form__textarea&attributes(attributes)
 		textarea(placeholder= data.placeholder name= data.name value= data.value ? data.value: '' rows= data.rows)
 		span= data.placeholder

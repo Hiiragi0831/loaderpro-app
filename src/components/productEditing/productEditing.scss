@@ -1,0 +1,19 @@
+.productEditing {
+	&__title {
+		border-bottom: 1px solid $woodsmoke-300;
+		padding-bottom: vc(15);
+
+		.h3 {
+			font-weight: 600;
+		}
+	}
+
+	&__form {
+		padding-top: vc(30);
+
+		.form__row {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+}
