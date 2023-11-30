@@ -191,7 +191,7 @@ block content
 											placeholder: 'Название товара',
 											name: 'productname',
 											value: 'Lorem ipsum dolor sit amet'
-										})
+										})(style="grid-column: span 2 / span 1;")
 										+input({
 											type: 'text',
 											placeholder: 'Бренд',
@@ -218,6 +218,12 @@ block content
 										})
 										+input({
 											type: 'text',
+											placeholder: 'Качество',
+											name: 'quality',
+											value: 'Муха не сидела'
+										})
+										+input({
+											type: 'text',
 											placeholder: 'Срок поставки',
 											name: 'deliverytime',
 										}).datepicker-multiple
@@ -233,6 +239,7 @@ block content
 											name: 'type',
 											value: 'Lorem'
 										})
+										input#autocomplete
 										+input({
 											type: 'text',
 											placeholder: 'Единица измерения',

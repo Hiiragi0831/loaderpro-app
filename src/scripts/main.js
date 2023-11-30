@@ -3,6 +3,7 @@ import throttle from 'lodash.throttle';
 
 import 'swiper/swiper-bundle.css';
 import 'air-datepicker/air-datepicker.css';
+import '@tarekraafat/autocomplete.js/dist/css/autoComplete.css';
 import '@styles/vendor.scss';
 import '@styles/main.scss';
 
@@ -29,6 +30,7 @@ import product from '../components/product/product';
 import queryHistory from '../pages/query-history/query-history';
 import requestCard from '../pages/request-card/request-card';
 import modal from '../components/modal/modal';
+import autocomplete from '../components/autocomplete/autocomplete';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -93,6 +95,7 @@ const init = () => {
 	product.init();
 	requestCard.init();
 	modal.init();
+	autocomplete.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));
