@@ -22,11 +22,11 @@ block content
 										placeholder: 'Статус запроса',
 										name: 'language',
 										items: [
-											{value: 'status-0', label: 'Заказа оформлен'},
-											{value: 'status-1', label: 'Счет оплачен'},
-											{value: 'status-2', selected: true, label: 'В пути'},
-											{value: 'status-3', label: 'Готов к отгрузке'},
-											{value: 'status-4', label: 'Отгружен'},
+											{value: 'status-0', label: 'Котел'},
+											{value: 'status-1', label: 'Подбор'},
+											{value: 'status-2', selected: true, label: 'В запросе'},
+											{value: 'status-3', label: 'Обработан'},
+											{value: 'status-4', label: 'Счет отправлен'},
 										],
 									}).request-card__select(data-color)
 									+input({
@@ -39,7 +39,7 @@ block content
 										type: 'text',
 										placeholder: 'Бюджет',
 										name: 'budget',
-										value: 'Семки есть?'
+										value: '24 000'
 									})
 									+input({
 										type: 'number',
@@ -48,22 +48,22 @@ block content
 										value: '300'
 									})
 									+input({
-										type: 'text',
+										type: 'number',
 										placeholder: 'Доп.завтраты',
 										name: 'additionalaccounts',
-										value: 'Братцы маслину поймал...'
+										value: '300'
 									})
 									+input({
-										type: 'text',
+										type: 'number',
 										placeholder: 'Доставка',
 										name: 'delivery',
-										value: 'Четкие линии'
+										value: '300'
 									})
 									+input({
 										type: 'number',
 										placeholder: 'Маржа',
 										name: 'margin',
-										value: '150'
+										value: '6000'
 									})
 									+input({
 										type: 'number',
@@ -87,20 +87,8 @@ block content
 										type: 'text',
 										placeholder: 'Оплачен полностью',
 										name: 'paidinfull',
-										value: 'да?'
-									})
-									+input({
-										type: 'text',
-										placeholder: 'Тип заявки',
-										name: 'applicationtype',
-										value: 'Бригада'
-									})
-									+input({
-										type: 'text',
-										placeholder: 'Направление',
-										name: 'direction',
-										value: 'Нижние ярусы Стикса'
-									})
+										value: '08.12.2023',
+									}).datepicker-cnh
 								.request-card__contact
 									p.h4 Информация о контакте
 									.request-card__contact-item
@@ -140,6 +128,8 @@ block content
 											.request-card__product-specification
 												p Бренд: #[span Название]
 											.request-card__product-specification
+												p Артикул: #[span 1343245]
+											.request-card__product-specification
 												p Количество: #[span 12]
 											.request-card__product-specification
 												p Цена: #[span 1000 ₽]
@@ -149,6 +139,8 @@ block content
 												p Вес (кг): #[span 13]
 											.request-card__product-specification
 												p Наличие: #[span Есть]
+											.request-card__product-specification
+												p Сумма: #[span 12000 ₽]
 								.request-card__product
 									+picture({
 										path: `${baseDir}assets/images/image`,
@@ -163,6 +155,8 @@ block content
 											.request-card__product-specification
 												p Бренд: #[span Название]
 											.request-card__product-specification
+												p Артикул: #[span 1343245]
+											.request-card__product-specification
 												p Количество: #[span 12]
 											.request-card__product-specification
 												p Цена: #[span 1000 ₽]
@@ -172,6 +166,8 @@ block content
 												p Вес (кг): #[span 13]
 											.request-card__product-specification
 												p Наличие: #[span Есть]
+											.request-card__product-specification
+												p Сумма: #[span 12000 ₽]
 								.request-card__buttons
 									button.button.button__primary Сохранить
 			section.modal.modal--preload(data-modal="modal-1")
@@ -239,7 +235,7 @@ block content
 											name: 'type',
 											value: 'Lorem'
 										})
-										input#autocomplete
+										//input#autocomplete
 										+input({
 											type: 'text',
 											placeholder: 'Единица измерения',

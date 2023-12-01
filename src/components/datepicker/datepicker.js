@@ -11,6 +11,15 @@ const init = () => {
 			});
 		});
 	}
+
+	if (document.querySelector('.datepicker-single')) {
+		document.querySelectorAll('.datepicker-single').forEach((el) => {
+			// eslint-disable-next-line
+			let datepickerSingle = new AirDatepicker(el.querySelector('input'), {
+				// inline: true,
+			});
+		});
+	}
 };
 
 export default {
