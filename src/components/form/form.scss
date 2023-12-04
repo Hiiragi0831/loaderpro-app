@@ -107,6 +107,10 @@
 		gap: vc(10);
 	}
 
+	&__img {
+		margin-bottom: vc(15);
+	}
+
 	&__buttons {
 		display: flex;
 		justify-content: flex-end;

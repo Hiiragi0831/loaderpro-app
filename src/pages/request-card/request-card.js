@@ -11,10 +11,19 @@ const marginCalc = () => {
 	margin.disabled = true;
 	marginpercent.disabled = true;
 
-	// бюджет - закупка - доп затраты - доставка
-	margin.value = budget.value - purchase.value - additionalaccounts.value - delivery.value;
-	// маржа / бюджет * 100
-	marginpercent.value = margin.value / budget.value * 100;
+	const formula = () => {
+		margin.value = budget.value - purchase.value - additionalaccounts.value - delivery.value;
+		// маржа / бюджет * 100
+		marginpercent.value = Math.round(margin.value / budget.value * 100 * 10) / 10;
+	};
+
+	formula();
+
+	[budget, purchase, additionalaccounts, delivery].forEach((i) => {
+		i.addEventListener('change', () => {
+			formula();
+		});
+	});
 };
 const init = () => {
 	if (!requestCard) {

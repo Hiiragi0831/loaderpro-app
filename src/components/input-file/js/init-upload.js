@@ -51,7 +51,7 @@ export const uploadImageDrop = () => new Upload(uploadImageDropBlock, {
 	uploadLength: 4,
 	dropZone: true,
 	previewImg: true,
-	maxFileSize: 1048576,
+	maxFileSize: 307200,
 	accept: ['.png', '.jpg', '.jpeg', '.webp'],
 	iconFormat: {
 		'png': '/assets/images/file/icon-file-png.png',
