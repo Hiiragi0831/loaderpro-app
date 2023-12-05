@@ -9,29 +9,20 @@ block content
 	+router(pageName)
 		.site
 			include @components/header/header
+			-
+				const catalog = require('data.js').default;
+				console.log(catalog);
 			main.catalog
 				+breadcrumbs()
 				section
 					.container
 						.row
-							.catalog__item
-								+svg('engine')
-								p Запчасти двигателя
-								.catalog__item-wrapper
-									.catalog__item-content
-										a(href="#") Блок цилиндров
-										a(href="#") Двигатели в сборе и части двигателя
-										a(href="#") Система охлаждения двигателя
-										a(href="#") Кривошипно-шатунный механизм
-										a(href="#") Газораспределительный механизм
-										a(href="#") Запчасти привода гидронасоса
-										a(href="#") Топливная система двигателя
-										a(href="#") Система впуска/выпуска
-										a(href="#") Электрооборудование двигателя
-										a(href="#") Прокладки и уплотнения двигателя
-										a(href="#") Детали корпуса двигателя
-										a(href="#") Система смазки двигателя
-										a(href="#") Выхлопная система двигателя
-										a(href="#") Масла и смазки
-										a(href="#") Другие детали двигателя
+							each item in catalog
+								.catalog__item
+									+svg(`${item.icon}`)
+									p!= item.title
+									.catalog__item-wrapper
+										.catalog__item-content
+											each link in item.links
+												a(href="#")!= link
 			+footer()
