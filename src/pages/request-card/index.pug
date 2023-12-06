@@ -1,7 +1,7 @@
 extends @pug/base
 
 append globals
-	- pageName = 'query'
+	- pageName = 'request-card'
 
 append vars
 
@@ -210,22 +210,61 @@ block content
 											name: 'count',
 											value: '2'
 										})
-										+input({
-											type: 'text',
+										+select({
 											placeholder: 'Качество',
 											name: 'quality',
-											value: 'Муха не сидела'
+											items: [
+												{value: 'quality-0', selected: true, label: 'Оригинал'},
+												{value: 'quality-1', label: 'OEM'},
+												{value: 'quality-2', label: 'Аналог'},
+											],
 										})
-										+input({
-											type: 'text',
+										+select({
 											placeholder: 'Срок поставки',
 											name: 'deliverytime',
-										}).datepicker-multiple
-										+input({
-											type: 'text',
+											items: [
+												{value: 'deliverytime-0', selected: true, label: 'В наличии'},
+												{value: 'deliverytime-1', label: '1-2 дня'},
+												{value: 'deliverytime-2', label: '2 - 3 дня'},
+												{value: 'deliverytime-3', label: '3 - 5 дней'},
+												{value: 'deliverytime-4', label: '5 - 7 дней'},
+												{value: 'deliverytime-5', label: '7 - 10 дней'},
+												{value: 'deliverytime-6', label: '1 - 2 недели'},
+												{value: 'deliverytime-7', label: '2 - 3 недели'},
+												{value: 'deliverytime-8', label: '3 - 4 недели'},
+												{value: 'deliverytime-9', label: '4 - 5 недель'},
+												{value: 'deliverytime-10', label: '6 - 8 недель'},
+												{value: 'deliverytime-11', label: '8 - 10 недель'},
+												{value: 'deliverytime-12', label: '10 - 12 недель'},
+												{value: 'deliverytime-13', label: '3 - 4 месяца'},
+												{value: 'deliverytime-14', label: '4 - 5 месяцев'},
+												{value: 'deliverytime-15', label: '5 - 6 месяцев'},
+												{value: 'deliverytime-16', label: 'Срок уточняется'},
+												{value: 'deliverytime-17', label: 'Нет предложений'},
+												{value: 'deliverytime-18', label: 'Некорректный номер'},
+											],
+										})
+										+select({
 											placeholder: 'Категория',
 											name: 'category',
-											value: 'Lorem'
+											items: [
+												{value: 'category-0', label: 'Запчасти ДВС'},
+												{value: 'category-1', label: 'Запчасти системы охлаждения'},
+												{value: 'category-2', label: 'Фильтры'},
+												{value: 'category-3', label: 'Запчасти ведущего моста'},
+												{value: 'category-4', label: 'Запчасти управляемого моста'},
+												{value: 'category-5', label: 'Запчасти корпуса'},
+												{value: 'category-6', label: 'Запчасти мачт'},
+												{value: 'category-7', label: 'Запчасти трансмиссии'},
+												{value: 'category-8', label: 'Запчасти гидравлики'},
+												{value: 'category-9', label: 'Запчасти тормозной системы'},
+												{value: 'category-10', label: 'Запчасти шасси'},
+												{value: 'category-11', label: 'Запчасти электрики'},
+												{value: 'category-12', label: 'Колеса, шины, диски и ЦПС'},
+												{value: 'category-13', label: 'Вилы и навесное оборудование'},
+												{value: 'category-14', label: 'Комплекты для ТО'},
+												{ value: 'category-15', label: 'Освещение и дополнительное оборудование'},
+											]
 										})
 										+input({
 											type: 'text',
@@ -234,11 +273,16 @@ block content
 											value: 'Lorem'
 										})
 										//input#autocomplete
-										+input({
-											type: 'text',
+										+select({
 											placeholder: 'Единица измерения',
 											name: 'measurement',
-											value: 'Кг'
+											items: [
+
+												{value: 'measurement-0', selected: true, label: 'шт.'},
+												{value: 'measurement-1', label: 'м.'},
+												{value: 'measurement-2', label: 'л.'},
+												{value: 'measurement-3', label: 'компл.'},
+											],
 										})
 										+input({
 											type: 'text',
