@@ -6,8 +6,9 @@ mixin input(data)
 mixin select(data)
 	label.form__select&attributes(attributes)
 		select(name= data.name)
-			each item in data.items
-				option(value= item.value selected=item.selected label=item.label)= item.value
+			if data.items
+				each item in data.items
+					option(value= item.value selected=item.selected label=item.label)= item.value
 		span= data.placeholder
 
 mixin textarea(data)

@@ -266,18 +266,31 @@ block content
 												{ value: 'category-15', label: 'Освещение и дополнительное оборудование'},
 											]
 										})
-										+input({
-											type: 'text',
+										+select({
 											placeholder: 'Тип',
 											name: 'type',
-											value: 'Lorem'
+											items: [
+												{value: 'type-0', label: 'Двигатели в сборе и части двигателя'},
+												{value: 'type-1', label: 'Система охлаждения двигателя'},
+												{value: 'type-2', label: 'Кривошипно-шатунный механизм'},
+												{value: 'type-3', label: 'Газораспределительный механизм'},
+												{value: 'type-4', label: 'Запчасти привода гидронасоса'},
+												{value: 'type-5', label: 'Топливная система двигателя'},
+												{value: 'type-6', label: 'Система впуска/выпуска'},
+												{value: 'type-7', label: 'Электрооборудование двигателя'},
+												{value: 'type-8', label: 'Прокладки и уплотнения двигателя'},
+												{value: 'type-9', label: 'Детали корпуса двигателя'},
+												{value: 'type-10', label: 'Система смазки двигателя'},
+												{value: 'type-11', label: 'Выхлопная система двигателя'},
+												{value: 'type-12', label: 'Масла и смазки'},
+												{value: 'type-13', label: 'Другие детали двигателя'},
+											],
 										})
 										//input#autocomplete
 										+select({
 											placeholder: 'Единица измерения',
 											name: 'measurement',
 											items: [
-
 												{value: 'measurement-0', selected: true, label: 'шт.'},
 												{value: 'measurement-1', label: 'м.'},
 												{value: 'measurement-2', label: 'л.'},

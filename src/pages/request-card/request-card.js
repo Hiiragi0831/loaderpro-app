@@ -1,3 +1,4 @@
+import typeData from './data';
 const requestCard = document.querySelector('.request-card');
 
 const marginCalc = () => {
@@ -25,19 +26,48 @@ const marginCalc = () => {
 		});
 	});
 };
-const init = () => {
-	if (!requestCard) {
-		return;
-	}
 
+const colorChange = () => {
 	const select = requestCard.querySelector('.request-card__select');
 	select.dataset.color = select.querySelector('select').value;
 
 	select.querySelector('select').addEventListener('change', (evt) => {
 		select.dataset.color = evt.target.value;
 	});
+};
 
+const typeChange = (modal) => {
+	const type = modal.querySelector('[name="type"]');
+	const category = modal.querySelector('[name="category"]');
+
+	category.addEventListener('change', (i) => {
+		type.innerHTML = '';
+
+		typeData.forEach((data) => {
+			const options = [];
+
+			data.options.forEach((text, index) => {
+				options.push(`<option value="type-${index}" label="${text}">type-${index}</option>`);
+			});
+
+			if (i.target.value === data.category) {
+				type.innerHTML = options.join('');
+			}
+		});
+	});
+};
+
+const init = () => {
+	if (!requestCard) {
+		return;
+	}
+
+	colorChange();
 	marginCalc();
+
+	document.querySelectorAll('.modal').forEach((i) => {
+		typeChange(i);
+	});
 };
 
 export default {
