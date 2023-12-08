@@ -79,6 +79,11 @@
 			font-weight: 500;
 			font-size: vc(16);
 			color: $color-white;
+			transition: color $transition;
+
+			&:hover {
+				color: $tree-poppy-400;
+			}
 		}
 	}
 }
