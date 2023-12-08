@@ -8,10 +8,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border: 1px solid $woodsmoke-100;
-		border-radius: vc(5);
-		width: vc(45);
-		height: vc(45);
+		border-radius: 100%;
+		width: vc(35);
+		height: vc(35);
 		font-weight: 700;
 		font-size: vc(18);
 		background-color: $color-white;
@@ -21,6 +20,7 @@
 			width: vc(20);
 			height: vc(20);
 			fill: $color-black;
+			transition: fill $transition;
 		}
 
 		&.is-active,
@@ -31,6 +31,11 @@
 			svg {
 				fill: $color-white;
 			}
+		}
+
+		&.is-disabled {
+			color: $color-black;
+			background-color: $color-white;
 		}
 	}
 }
