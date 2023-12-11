@@ -9,20 +9,14 @@ block content
 	+router(pageName)
 		.site
 			include @components/header/header
-			-
-				const catalog = require('data.js').default;
-				console.log(catalog);
 			main.catalog
 				+breadcrumbs()
 				section
 					.container
+						h1 Название категории
 						.row
-							each item in catalog
-								.catalog__item
-									+svg(`${item.icon}`)
-									p!= item.title
-									.catalog__item-wrapper
-										.catalog__item-content
-											each link in item.links
-												a(href="#")!= link
+							.catalog__filter
+								.catalog__filter-header
+									+svg('sliders')
+									p.h4 Фильтры
 			+footer()

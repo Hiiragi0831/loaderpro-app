@@ -1,0 +1,27 @@
+extends @pug/base
+
+append globals
+	- pageName = 'category'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			-
+				const category = require('data.js').default;
+			main.category
+				+breadcrumbs()
+				section
+					.container
+						.row
+							each item in category
+								.category__item
+									+svg(`${item.icon}`)
+									p!= item.title
+									.category__item-wrapper
+										.category__item-content
+											each link in item.links
+												a(href="#")!= link
+			+footer()
