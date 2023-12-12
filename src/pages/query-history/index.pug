@@ -35,22 +35,22 @@ block content
 												placeholder: 'Бренд',
 												name: 'brand',
 												list: 'brands',
-											})(data-required="true")
+											})
 											+input({
 												type: 'text',
 												placeholder: 'Номер запчасти',
 												name: 'numparts',
-											})(data-required="true")
+											})
 											+input({
 												type: 'text',
 												placeholder: 'Номер запроса',
 												name: 'numquery',
-											})(data-required="true")
+											})
 											+input({
 												type: 'text',
 												placeholder: 'Дата',
 												name: 'date',
-											}).datepicker-multiple(data-required="true")
+											}).datepicker-multiple
 									.form__buttons
 										button.button.button__primary(type="submit") Поиск
 				section

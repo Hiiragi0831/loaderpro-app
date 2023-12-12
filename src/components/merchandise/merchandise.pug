@@ -1,0 +1,28 @@
+mixin merchandise(data)
+	form.merchandise
+		.merchandise__img
+			+picture({
+				path: `${baseDir}assets/images/image`,
+				ext: 'png',
+			})
+		.merchandise__main
+			.merchandise__price
+				p 3 738 ₽
+				s 4 673 ₽
+			.merchandise__article
+				p Артикул: 322610
+		.merchandise__footer
+			.merchandise__status
+				if data.status === 1
+					.merchandise__circle.merchandise__circle--green
+					p В наличии
+				else if data.status === 2
+					.merchandise__circle.merchandise__circle--orange
+					p 1-2 недели
+				else
+					.merchandise__circle.merchandise__circle--red
+					p Нет предложений
+			.merchandise__title
+				p Масло ROLF 5W30 3-SYNTHETIC A3/B4 (5л) синт. АКЦИЯ "4+1"
+			.merchandise__button
+				button.button.button__primary В корзину

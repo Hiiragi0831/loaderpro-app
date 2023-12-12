@@ -4,6 +4,10 @@
 		grid-template-columns: vc(300) 1fr;
 		margin-top: vc(40);
 		gap: vc(15);
+
+		@include devices {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	&__filter {
@@ -20,6 +24,16 @@
 				height: vc(20);
 				fill: $tree-poppy-400;
 			}
+		}
+	}
+
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: vc(20);
+
+		@include devices {
+			grid-template-columns: 1fr;
 		}
 	}
 }
