@@ -81,6 +81,11 @@
 		}
 	}
 
+	&__button {
+		display: flex;
+		justify-content: flex-end;
+	}
+
 	&__products {
 		display: flex;
 		flex-direction: column;
