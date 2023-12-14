@@ -1,14 +1,8 @@
 .commodity {
 	&-query {
-		display: grid;
-		grid-template-columns: vc(300) 1fr 1fr;
-		padding: vc(30);
-		gap: vc(30);
-
 		&__heading {
 			display: flex;
 			grid-column: 1 / 4;
-			margin: vc(-30) vc(-30) 0;
 			padding: vc(22) vc(30);
 			background-color: #e5edf0;
 			gap: vc(50);
@@ -20,6 +14,13 @@
 					margin-left: auto;
 				}
 			}
+		}
+
+		&__item {
+			display: grid;
+			grid-template-columns: vc(300) 1fr 1fr;
+			padding: vc(30);
+			gap: vc(30);
 		}
 
 		&__img {
