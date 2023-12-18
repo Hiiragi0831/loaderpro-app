@@ -1,4 +1,5 @@
 import typeData from './data';
+import {Form} from '../../components/form/form';
 const requestCard = document.querySelector('.request-card');
 
 const marginCalc = () => {
@@ -57,6 +58,21 @@ const typeChange = (modal) => {
 	});
 };
 
+const sendData = () => {
+	const sendForm = new Form('POST');
+	const from = requestCard.querySelector('[data-request-card]');
+
+	sendForm.init('https://my.loaderpro.ru/request_card/request_card_save/', from);
+};
+
+const editProduct = () => {
+	// https://my.loaderpro.ru/Main/edit_product/
+	const send = new Form('POST');
+	const from = document.querySelector('.productEditing__form');
+
+	send.init('https://my.loaderpro.ru/Main/edit_product/', from);
+};
+
 const init = () => {
 	if (!requestCard) {
 		return;
@@ -64,6 +80,8 @@ const init = () => {
 
 	colorChange();
 	marginCalc();
+	sendData();
+	editProduct();
 
 	document.querySelectorAll('.modal').forEach((i) => {
 		typeChange(i);
