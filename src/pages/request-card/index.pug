@@ -179,7 +179,7 @@ block content
 						section.productEditing
 							.productEditing__title
 								p.h3 Редактирование товара
-							form.form.productEditing__form
+							form.form.productEditing__form(enctype="multipart/form-data")
 								.form__main
 									.form__row
 										+input({
@@ -315,7 +315,7 @@ block content
 										.input-upload__drop-zone(data-drop-zone)
 											span.input-upload__drop-zone-text Фото товара
 										label(data-drop-zone)
-											input(type="file" name="upload-file")
+											input(type="file" name="images")
 								.form__buttons
 									button.button.button__primary(type="submit") Сохранить
 

@@ -222,6 +222,7 @@ export class Upload {
 		if (!event.dataTransfer.files.length) {
 			return;
 		}
+		// this._files = [...this._files, ...event.dataTransfer.files].slice(0, this._uploadLength);
 		this._files = [...this._files, ...Array.from(event.dataTransfer.files)].slice(0, this._uploadLength);
 		this._renderFiles();
 	}
@@ -230,6 +231,7 @@ export class Upload {
 		if (!event.target.files.length) {
 			return;
 		}
+		// this._files = [...this._files, ...event.target.files].slice(0, this._uploadLength);
 		this._files = [...this._files, ...Array.from(event.target.files)].slice(0, this._uploadLength);
 		this._renderFiles();
 	}

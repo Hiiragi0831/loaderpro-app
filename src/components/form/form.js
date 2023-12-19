@@ -79,10 +79,37 @@ export class Form {
 		notyf.error('Произошла ошибка отправки');
 	}
 
+	fileUpload(files, action) {
+		// Create FormData instance
+		// console.log(files, action);
+		const fd = new FormData();
+
+		// Iterate over all selected files
+		Array.from(files).forEach((file) => {
+			fd.append('image', file);
+		});
+
+		// Create XHR rquest
+		const xhr = new XMLHttpRequest();
+
+		// Log HTTP response
+		xhr.onload = () => {
+			console.log(xhr.response);
+		};
+		console.log(fd);
+		// Send XHR reqeust
+		xhr.open('POST', action);
+		xhr.send(fd);
+	}
+
 	send(action, target) {
 		new FormData(target).forEach((value, key) => {
 			this.data[key] = value;
 		});
+
+		if (target.querySelector('[type="file"]')) {
+			this.fileUpload(target.querySelector('[type="file"]').files, action);
+		}
 
 		if (this.cookieJwt.get('jwt')) {
 			this.data.jwt = this.cookieJwt.get('jwt');
