@@ -68,9 +68,11 @@ const sendData = () => {
 const editProduct = () => {
 	// https://my.loaderpro.ru/Main/edit_product/
 	const send = new Form('POST');
-	const from = document.querySelector('.productEditing__form');
+	const forms = document.querySelectorAll('.productEditing__form');
 
-	send.init('https://my.loaderpro.ru/Main/edit_product/', from);
+	forms.forEach((form) => {
+		send.init('https://my.loaderpro.ru/Main/edit_product/', form);
+	});
 };
 
 const init = () => {

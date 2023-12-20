@@ -1,11 +1,13 @@
 import {uploadFile, uploadFileDrop, uploadFileDropPreview, uploadImage, uploadImageDrop} from './js/init-upload';
 
 const init = () => {
-	uploadImage();
+	// uploadImage();
 	uploadFile();
-	uploadImageDrop();
-	uploadFileDrop();
-	uploadFileDropPreview();
+	document.querySelectorAll('[data-upload="img-drop"]').forEach((i) => {
+		uploadImageDrop(i);
+	});
+	// uploadFileDrop();
+	// uploadFileDropPreview();
 };
 
 export default {

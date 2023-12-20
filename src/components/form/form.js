@@ -81,12 +81,12 @@ export class Form {
 
 	fileUpload(files, action) {
 		// Create FormData instance
-		// console.log(files, action);
 		const fd = new FormData();
 
 		// Iterate over all selected files
 		Array.from(files).forEach((file) => {
-			fd.append('image', file);
+			// images.push(file);
+			fd.append('images[]', file, file.name);
 		});
 
 		// Create XHR rquest
@@ -96,7 +96,6 @@ export class Form {
 		xhr.onload = () => {
 			console.log(xhr.response);
 		};
-		console.log(fd);
 		// Send XHR reqeust
 		xhr.open('POST', action);
 		xhr.send(fd);

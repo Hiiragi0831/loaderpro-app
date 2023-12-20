@@ -22,11 +22,11 @@ block content
 										placeholder: 'Статус запроса',
 										name: 'language',
 										items: [
-											{value: 'status-0', label: 'Котел'},
-											{value: 'status-1', label: 'Подбор'},
-											{value: 'status-2', selected: true, label: 'В запросе'},
-											{value: 'status-3', label: 'Обработан'},
-											{value: 'status-4', label: 'Счет отправлен'},
+											{value: '0', label: 'Котел'},
+											{value: '1', label: 'Подбор'},
+											{value: '2', selected: true, label: 'В запросе'},
+											{value: '3', label: 'Обработан'},
+											{value: '4', label: 'Счет отправлен'},
 										],
 									}).request-card__select(data-color)
 									+input({
@@ -169,7 +169,7 @@ block content
 											.request-card__product-specification
 												p Сумма: #[span 12000 ₽]
 								.request-card__buttons
-									button.button.button__primary Добавить товар
+									button.button.button__primary(data-open-modal="add-product") Добавить товар
 			section.modal.modal--preload(data-modal="modal-1")
 				.modal__wrapper
 					.modal__overlay
@@ -315,8 +315,158 @@ block content
 										.input-upload__drop-zone(data-drop-zone)
 											span.input-upload__drop-zone-text Фото товара
 										label(data-drop-zone)
-											input(type="file" name="images")
+											input(type="file" name="images[]")
 								.form__buttons
 									button.button.button__primary(type="submit") Сохранить
-
+			section.modal.modal--preload(data-modal="add-product")
+				.modal__wrapper
+					.modal__overlay
+					.modal__content
+						button.modal__close-btn(type="button" aria-label="Закрыть попап" data-close-modal data-focus)
+							+svg("xmark")
+						section.productEditing
+							.productEditing__title
+								p.h3 Редактирование товара
+							form.form.productEditing__form(enctype="multipart/form-data")
+								.form__main
+									.form__row
+										+input({
+											type: 'text',
+											placeholder: 'Название товара',
+											name: 'productname',
+											value: 'Lorem ipsum dolor sit amet'
+										})(style="grid-column: span 2 / span 1;")
+										+input({
+											type: 'text',
+											placeholder: 'Бренд',
+											name: 'brand',
+											list: 'brands',
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Артикул',
+											name: 'article',
+											value: '128731-332MT'
+										})
+										+input({
+											type: 'num',
+											placeholder: 'Цена',
+											name: 'price',
+											value: '12345'
+										})
+										+input({
+											type: 'num',
+											placeholder: 'Количество',
+											name: 'count',
+											value: '2'
+										})
+										+select({
+											placeholder: 'Качество',
+											name: 'quality',
+											items: [
+												{value: 'quality-0', selected: true, label: 'Оригинал'},
+												{value: 'quality-1', label: 'OEM'},
+												{value: 'quality-2', label: 'Аналог'},
+											],
+										})
+										+select({
+											placeholder: 'Срок поставки',
+											name: 'deliverytime',
+											items: [
+												{value: 'deliverytime-0', selected: true, label: 'В наличии'},
+												{value: 'deliverytime-1', label: '1-2 дня'},
+												{value: 'deliverytime-2', label: '2 - 3 дня'},
+												{value: 'deliverytime-3', label: '3 - 5 дней'},
+												{value: 'deliverytime-4', label: '5 - 7 дней'},
+												{value: 'deliverytime-5', label: '7 - 10 дней'},
+												{value: 'deliverytime-6', label: '1 - 2 недели'},
+												{value: 'deliverytime-7', label: '2 - 3 недели'},
+												{value: 'deliverytime-8', label: '3 - 4 недели'},
+												{value: 'deliverytime-9', label: '4 - 5 недель'},
+												{value: 'deliverytime-10', label: '6 - 8 недель'},
+												{value: 'deliverytime-11', label: '8 - 10 недель'},
+												{value: 'deliverytime-12', label: '10 - 12 недель'},
+												{value: 'deliverytime-13', label: '3 - 4 месяца'},
+												{value: 'deliverytime-14', label: '4 - 5 месяцев'},
+												{value: 'deliverytime-15', label: '5 - 6 месяцев'},
+												{value: 'deliverytime-16', label: 'Срок уточняется'},
+												{value: 'deliverytime-17', label: 'Нет предложений'},
+												{value: 'deliverytime-18', label: 'Некорректный номер'},
+											],
+										})
+										+select({
+											placeholder: 'Категория',
+											name: 'category',
+											items: [
+												{value: 'category-0', label: 'Запчасти ДВС'},
+												{value: 'category-1', label: 'Запчасти системы охлаждения'},
+												{value: 'category-2', label: 'Фильтры'},
+												{value: 'category-3', label: 'Запчасти ведущего моста'},
+												{value: 'category-4', label: 'Запчасти управляемого моста'},
+												{value: 'category-5', label: 'Запчасти корпуса'},
+												{value: 'category-6', label: 'Запчасти мачт'},
+												{value: 'category-7', label: 'Запчасти трансмиссии'},
+												{value: 'category-8', label: 'Запчасти гидравлики'},
+												{value: 'category-9', label: 'Запчасти тормозной системы'},
+												{value: 'category-10', label: 'Запчасти шасси'},
+												{value: 'category-11', label: 'Запчасти электрики'},
+												{value: 'category-12', label: 'Колеса, шины, диски и ЦПС'},
+												{value: 'category-13', label: 'Вилы и навесное оборудование'},
+												{value: 'category-14', label: 'Комплекты для ТО'},
+												{
+													value: 'category-15',
+													label: 'Освещение и дополнительное оборудование'
+												},
+											]
+										})
+										+select({
+											placeholder: 'Тип',
+											name: 'type',
+											items: [
+												{value: 'type-0', label: 'Двигатели в сборе и части двигателя'},
+												{value: 'type-1', label: 'Система охлаждения двигателя'},
+												{value: 'type-2', label: 'Кривошипно-шатунный механизм'},
+												{value: 'type-3', label: 'Газораспределительный механизм'},
+												{value: 'type-4', label: 'Запчасти привода гидронасоса'},
+												{value: 'type-5', label: 'Топливная система двигателя'},
+												{value: 'type-6', label: 'Система впуска/выпуска'},
+												{value: 'type-7', label: 'Электрооборудование двигателя'},
+												{value: 'type-8', label: 'Прокладки и уплотнения двигателя'},
+												{value: 'type-9', label: 'Детали корпуса двигателя'},
+												{value: 'type-10', label: 'Система смазки двигателя'},
+												{value: 'type-11', label: 'Выхлопная система двигателя'},
+												{value: 'type-12', label: 'Масла и смазки'},
+												{value: 'type-13', label: 'Другие детали двигателя'},
+											],
+										})
+										//input#autocomplete
+										+select({
+											placeholder: 'Единица измерения',
+											name: 'measurement',
+											items: [
+												{value: 'measurement-0', selected: true, label: 'шт.'},
+												{value: 'measurement-1', label: 'м.'},
+												{value: 'measurement-2', label: 'л.'},
+												{value: 'measurement-3', label: 'компл.'},
+											],
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Вес',
+											name: 'weight',
+											value: '100'
+										})
+										+textarea({
+											placeholder: 'Комментарий',
+											name: 'comment',
+											rows: '4',
+										})(style="grid-column: span 2 / span 1;")
+								.form__img
+									.input-upload.input-upload--images-drop(data-upload="img-drop")
+										.input-upload__drop-zone(data-drop-zone)
+											span.input-upload__drop-zone-text Фото товара
+										label(data-drop-zone)
+											input(type="file" name="images[]")
+								.form__buttons
+									button.button.button__primary(type="submit") Сохранить
 			+footer()

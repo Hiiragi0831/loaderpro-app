@@ -2,7 +2,6 @@ import {Upload} from './upload.js';
 
 const uploadImageBlock = document.querySelector('[data-upload="img"]');
 const uploadIFileBlock = document.querySelector('[data-upload="file"]');
-const uploadImageDropBlock = document.querySelector('[data-upload="img-drop"]');
 const uploadFileDropBlock = document.querySelector('[data-upload="file-drop"]');
 const uploadFileDropPreviewBlock = document.querySelector('[data-upload="file-drop-preview"]');
 
@@ -47,7 +46,7 @@ export const uploadFile = () => new Upload(uploadIFileBlock, {
 	errorMessage: 'Общий размер файлов слишком большой',
 });
 
-export const uploadImageDrop = () => new Upload(uploadImageDropBlock, {
+export const uploadImageDrop = (selector) => new Upload(selector, {
 	uploadLength: 4,
 	dropZone: true,
 	previewImg: true,
