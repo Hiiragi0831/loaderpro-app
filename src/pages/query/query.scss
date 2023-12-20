@@ -34,3 +34,24 @@
 		}
 	}
 }
+
+.query-import {
+	&__lead {
+		padding: vc(30) 0;
+		font-weight: 500;
+		font-size: vc(18);
+	}
+
+	.form {
+		&__row {
+			flex-direction: column;
+		}
+
+		&__file {
+			margin-bottom: vc(30);
+			border-top: 1px solid $woodsmoke-100;
+			border-bottom: 1px solid $woodsmoke-100;
+			padding: vc(30) 0;
+		}
+	}
+}

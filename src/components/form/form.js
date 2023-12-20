@@ -1,5 +1,6 @@
 import {Notyf} from 'notyf';
 import {Cookie} from '../cookies/cookies';
+import el from "air-datepicker/locale/el";
 let notyf = new Notyf();
 
 export class Form {
@@ -79,14 +80,17 @@ export class Form {
 		notyf.error('Произошла ошибка отправки');
 	}
 
-	fileUpload(files, action) {
+	fileUpload(files, action, type) {
 		// Create FormData instance
 		const fd = new FormData();
 
 		// Iterate over all selected files
 		Array.from(files).forEach((file) => {
-			// images.push(file);
-			fd.append('images[]', file, file.name);
+			if (type === 'image') {
+				fd.append('images[]', file, file.name);
+			} else {
+				fd.append('file', file, file.name);
+			}
 		});
 
 		// Create XHR rquest
@@ -106,8 +110,10 @@ export class Form {
 			this.data[key] = value;
 		});
 
-		if (target.querySelector('[type="file"]')) {
-			this.fileUpload(target.querySelector('[type="file"]').files, action);
+		if (target.querySelector('[name="images[]"]')) {
+			this.fileUpload(target.querySelector('[type="file"]').files, action, 'image');
+		} else {
+			this.fileUpload(target.querySelector('[type="file"]').files, action, 'file');
 		}
 
 		if (this.cookieJwt.get('jwt')) {

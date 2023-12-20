@@ -49,7 +49,7 @@ block content
 											})(data-required="true")
 									.form__buttons
 										button.button.button__primary(type="submit") Добавить в запрос
-										button.button.button__outline Импортировать из файла
+										button.button.button__outline(data-open-modal="import-file") Импортировать из файла
 				section
 					.container
 						.query__box(data-querys)
@@ -119,4 +119,46 @@ block content
 										name: 'count',
 									})(data-disabled)
 									button.button.button__primary(type="button" name="delete") X
+				section.modal.modal--preload(data-modal="import-file")
+					.modal__wrapper
+						.modal__overlay
+						.modal__content
+							button.modal__close-btn(type="button" aria-label="Закрыть попап" data-close-modal data-focus)
+								+svg("xmark")
+							section.query-import
+								.productEditing__title
+									p.h3 Импортировать из файла
+								p.query-import__lead Укажите пожалуйста, какие столбцы таблицы Excel будут использованы:
+								form.form(enctype="multipart/form-data" data-form-import)
+									.form__main
+										.form__row
+											+input({
+												type: 'text',
+												placeholder: 'Бренд',
+												name: 'brand',
+												list: 'brands',
+											})
+											+input({
+												type: 'text',
+												placeholder: 'Номер запчасти',
+												name: 'numparts',
+											})
+											+input({
+												type: 'num',
+												placeholder: 'Количество',
+												name: 'count',
+											})
+											+input({
+												type: 'num',
+												placeholder: 'Начать импорт со строки',
+												name: 'startimport',
+											})
+									.form__file
+										.input-upload.input-upload--file(data-upload="file")
+											label
+												input(type="file" name="upload-file")
+												span.button.button__outline Загрузить файл
+									.form__buttons
+										button.button.button__primary(type="submit") Сохранить
+										a.button.button__primary(data-close-modal) Отмена
 			+footer()

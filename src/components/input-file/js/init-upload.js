@@ -28,7 +28,7 @@ export const uploadImage = () => new Upload(uploadImageBlock, {
 });
 
 export const uploadFile = () => new Upload(uploadIFileBlock, {
-	uploadLength: 5,
+	uploadLength: 1,
 	preview: true,
 	maxFullSize: 1048576,
 	accept: ['.pdf', '.docx', '.xlsx'],

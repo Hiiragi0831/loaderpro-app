@@ -54,11 +54,19 @@ const addQuery = () => {
 	});
 };
 
+const importFile = () => {
+	const form = document.querySelector('[data-form-import]');
+	const sendForm = new Form('POST');
+
+	sendForm.init('https://my.loaderpro.ru/Main/import_file_xls/', form);
+};
+
 const init = () => {
 	if (document.querySelector('[data-query]')) {
 		let data = [];
 		const form = new Form('POST');
 		addQuery();
+		importFile();
 
 		querysBox.querySelector('.form').querySelector('[type="submit"]').addEventListener('click', (evt) => {
 			evt.preventDefault();
