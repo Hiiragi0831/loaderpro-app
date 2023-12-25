@@ -31,12 +31,13 @@ export const uploadFile = () => new Upload(uploadIFileBlock, {
 	uploadLength: 1,
 	preview: true,
 	maxFullSize: 1048576,
-	accept: ['.pdf', '.docx', '.xlsx'],
+	accept: ['.xls', '.xlsx'],
 	iconFormat: {
 		'xlsx': '/assets/images/file/icon-file-xlsx.png',
+		'xls': '/assets/images/file/icon-file-xlsx.png',
 		'docx': '/assets/images/file/icon-file-docx.png',
 		'pdf': '/assets/images/file/icon-file-pdf.png',
-		'default': '/assets/images/file/icon-file-docx.png',
+		'default': '/assets/images/file/icon-file-xlsx.png',
 	},
 	fileInfo: {
 		fileName: true,

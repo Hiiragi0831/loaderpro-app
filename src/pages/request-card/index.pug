@@ -29,11 +29,16 @@ block content
 											{value: '4', label: 'Счет отправлен'},
 										],
 									}).request-card__select(data-color)
-									+input({
-										type: 'text',
+									+select({
 										placeholder: 'Ответственный',
 										name: 'responsible',
-										value: 'Вася Неудержимый Романович'
+										items: [
+											{value: '0', label: 'Вася Неудержимый Романович'},
+											{value: '1', label: 'Вася Неудержимый Романович'},
+											{value: '2', selected: true, label: 'Вася Неудержимый Романович'},
+											{value: '3', label: 'Вася Неудержимый Романович'},
+											{value: '4', label: 'Вася Неудержимый Романович'},
+										],
 									})
 									+input({
 										type: 'text',
@@ -265,7 +270,7 @@ block content
 												{value: 'category-12', label: 'Колеса, шины, диски и ЦПС'},
 												{value: 'category-13', label: 'Вилы и навесное оборудование'},
 												{value: 'category-14', label: 'Комплекты для ТО'},
-												{ value: 'category-15', label: 'Освещение и дополнительное оборудование'},
+												{value: 'category-15', label: 'Освещение и дополнительное оборудование'},
 											]
 										})
 										+select({
