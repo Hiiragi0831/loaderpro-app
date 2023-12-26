@@ -81,6 +81,10 @@ export class Form {
 	}
 
 	fileUpload(files, action, type) {
+		if (files.length === 0) {
+			return;
+		}
+
 		// Create FormData instance
 		const fd = new FormData();
 

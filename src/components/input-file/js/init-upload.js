@@ -64,7 +64,7 @@ export const uploadImageDrop = (selector) => new Upload(selector, {
 		fileName: true,
 		fileSize: true,
 	},
-	emptyMessage: 'Добавление файла обязательно',
+	// emptyMessage: 'Добавление файла обязательно',
 	errorMessage: 'Выделенные файлы превышают максимальный размер',
 });
 
