@@ -112,7 +112,9 @@ export class Form {
 
 		if (target.querySelector('[name="images[]"]')) {
 			this.fileUpload(target.querySelector('[type="file"]').files, action, 'image');
-		} else {
+		}
+
+		if (target.querySelector('[name="upload-file"]')) {
 			this.fileUpload(target.querySelector('[type="file"]').files, action, 'file');
 		}
 
