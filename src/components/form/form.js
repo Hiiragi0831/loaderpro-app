@@ -1,6 +1,5 @@
 import {Notyf} from 'notyf';
 import {Cookie} from '../cookies/cookies';
-import el from "air-datepicker/locale/el";
 let notyf = new Notyf();
 
 export class Form {

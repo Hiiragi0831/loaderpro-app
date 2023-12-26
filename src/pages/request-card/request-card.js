@@ -40,7 +40,6 @@ const colorChange = () => {
 const typeChange = (modal) => {
 	const type = modal.querySelector('[name="type"]');
 	const category = modal.querySelector('[name="category"]');
-	console.log(typeData);
 
 	category.addEventListener('change', (i) => {
 		type.innerHTML = '';

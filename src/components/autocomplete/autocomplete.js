@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 let countries = [
 	'Afghanistan',
 	'Albania',
@@ -222,6 +223,7 @@ let countries = [
 	'Zambia',
 	'Zimbabwe',
 ];
+// eslint-disable-next-line
 const autocomplete = (input, data) => {
 	function ciSearch(what = '', where = '') {
 		return where.toUpperCase().search(what.toUpperCase());

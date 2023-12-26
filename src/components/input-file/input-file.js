@@ -1,4 +1,4 @@
-import {uploadFile, uploadFileDrop, uploadFileDropPreview, uploadImage, uploadImageDrop} from './js/init-upload';
+import {uploadFile, uploadImageDrop} from './js/init-upload';
 
 const init = () => {
 	// uploadImage();
