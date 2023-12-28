@@ -15,9 +15,6 @@ export class Form {
 		try {
 			return await fetch(url, {
 				method: this.method,
-				// headers: {
-				// 	'Content-Type': 'application/json',
-				// },
 				body: JSON.stringify(data),
 			});
 		} catch (error) {
@@ -81,7 +78,7 @@ export class Form {
 
 	fileUpload(files, action, type) {
 		if (files.length === 0) {
-			return;
+			this.sendData(this.data, action);
 		}
 
 		// Create FormData instance
@@ -98,34 +95,42 @@ export class Form {
 
 		// Create XHR rquest
 		const xhr = new XMLHttpRequest();
-
-		// Log HTTP response
+		xhr.responseType = 'json';
 		xhr.onload = () => {
 			console.log(xhr.response);
+			this.data.filepath = xhr.response.filepath;
 		};
-		// Send XHR reqeust
 		xhr.open('POST', action);
 		xhr.send(fd);
+
+		this.sendData(this.data, action);
 	}
 
 	send(action, target) {
-		new FormData(target).forEach((value, key) => {
+		const fd = new FormData(target);
+		let check = true;
+
+		fd.forEach((value, key) => {
 			this.data[key] = value;
 		});
-
-		if (target.querySelector('[name="images[]"]')) {
-			this.fileUpload(target.querySelector('[type="file"]').files, action, 'image');
-		}
-
-		if (target.querySelector('[name="upload-file"]')) {
-			this.fileUpload(target.querySelector('[type="file"]').files, action, 'file');
-		}
 
 		if (this.cookieJwt.get('jwt')) {
 			this.data.jwt = this.cookieJwt.get('jwt');
 		}
 
-		this.sendData(this.data, action);
+		if (target.querySelector('[name="images[]"]')) {
+			check = false;
+			this.fileUpload(target.querySelector('[type="file"]').files, action, 'image');
+		}
+
+		if (target.querySelector('[name="upload-file"]')) {
+			check = false;
+			this.fileUpload(target.querySelector('[type="file"]').files, action, 'file');
+		}
+
+		if (check) {
+			this.sendData(this.data, action);
+		}
 	}
 
 	setAttribute(target) {

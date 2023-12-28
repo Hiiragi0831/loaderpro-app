@@ -43,6 +43,7 @@ const typeChange = (modal) => {
 
 	category.addEventListener('change', (i) => {
 		type.innerHTML = '';
+		// https://my.loaderpro.ru/Main/category_type/
 
 		typeData.forEach((data) => {
 			const options = [];
