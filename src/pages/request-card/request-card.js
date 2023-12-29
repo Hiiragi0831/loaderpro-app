@@ -1,5 +1,5 @@
-import typeData from './data';
 import {Form} from '../../components/form/form';
+import {Cookie} from '../../components/cookies/cookies';
 const requestCard = document.querySelector('.request-card');
 
 const marginCalc = () => {
@@ -42,19 +42,26 @@ const typeChange = (modal) => {
 	const category = modal.querySelector('[name="category"]');
 
 	category.addEventListener('change', (i) => {
-		type.innerHTML = '';
-		// https://my.loaderpro.ru/Main/category_type/
+		const jwt = new Cookie('jwt');
+		const data = {
+			jwt: jwt.get('jwt'),
+			value: i.target.value,
+		};
+		const fe = fetch('https://my.loaderpro.ru/Main/category_type/', {
+			method: 'POST',
+			body: JSON.stringify(data),
+		});
 
-		typeData.forEach((data) => {
-			const options = [];
-
-			data.options.forEach((text, index) => {
-				options.push(`<option value="type-${index}" label="${text}">type-${index}</option>`);
-			});
-
-			if (i.target.value === data.category) {
-				type.innerHTML = options.join('');
+		fe.then((response) => {
+			if (response.ok) {
+				return response.json();
 			}
+			throw new Error();
+		}).then((responseJson) => {
+			console.log(responseJson);
+			type.innerHTML = responseJson.html;
+		}).catch((error) => {
+			console.log(error);
 		});
 	});
 };

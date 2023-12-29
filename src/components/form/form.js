@@ -113,10 +113,7 @@ export class Form {
 		fd.forEach((value, key) => {
 			this.data[key] = value;
 		});
-
-		if (this.cookieJwt.get('jwt')) {
-			this.data.jwt = this.cookieJwt.get('jwt');
-		}
+		this.data.jwt = this.cookieJwt.get('jwt');
 
 		if (target.querySelector('[name="images[]"]')) {
 			check = false;
