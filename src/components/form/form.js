@@ -144,7 +144,7 @@ export class Form {
 		});
 	}
 
-	init(action, target, elappend) {
+	init(action, target, elappend, parameter) {
 		target.addEventListener('submit', async (evt) => {
 			evt.preventDefault();
 
@@ -152,6 +152,7 @@ export class Form {
 		});
 
 		this.elappend = elappend;
+		this.data.parameter = parameter;
 
 		this.setAttribute(target);
 	}
