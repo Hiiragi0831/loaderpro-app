@@ -22,8 +22,11 @@ export class Form {
 		}
 	}
 
-	sendData(data, url) {
+	sendData(data, url, elappend) {
 		console.log(url, data);
+		if (elappend) {
+			this.elappend = elappend;
+		}
 		this.sendForm(data, url)
 			.then((response) => {
 				if (response.ok) {
@@ -144,15 +147,16 @@ export class Form {
 		});
 	}
 
-	init(action, target, elappend, parameter) {
+	init(action, target, elappend) {
 		target.addEventListener('submit', async (evt) => {
 			evt.preventDefault();
 
 			this.send(action, target);
 		});
 
-		this.elappend = elappend;
-		this.data.parameter = parameter;
+		if (elappend) {
+			this.elappend = elappend;
+		}
 
 		this.setAttribute(target);
 	}

@@ -79,11 +79,7 @@ const editProduct = () => {
 	const forms = document.querySelectorAll('.productEditing__form');
 
 	forms.forEach((form) => {
-		if (form.dataset.add === 'add-product') {
-			send.init('https://my.loaderpro.ru/Main/edit_product/', form, document.querySelector('main'), 'create');
-		} else {
-			send.init('https://my.loaderpro.ru/Main/edit_product/', form);
-		}
+		send.init('https://my.loaderpro.ru/Main/edit_product/', form);
 	});
 };
 
