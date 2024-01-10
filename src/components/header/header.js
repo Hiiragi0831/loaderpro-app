@@ -5,7 +5,7 @@ const init = () => {
 		const form = document.querySelector('[data-header-request]');
 		const sendData = new Form('POST');
 
-		sendData.init('https://my.loaderpro.ru/Main/orders/', form);
+		sendData.init('https://my.loaderpro.ru/Main/orders/', form, document.querySelector('main'));
 	}
 };
 
