@@ -102,11 +102,10 @@ export class Form {
 		xhr.onload = () => {
 			console.log(xhr.response);
 			this.data.filepath = xhr.response.filepath;
+			this.sendData(this.data, action);
 		};
 		xhr.open('POST', action);
 		xhr.send(fd);
-
-		this.sendData(this.data, action);
 	}
 
 	send(action, target) {

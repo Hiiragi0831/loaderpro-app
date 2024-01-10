@@ -82,8 +82,6 @@ const init = () => {
 				});
 				data.push(object);
 			});
-			console.log('da')
-
 			form.sendData(data, 'https://my.loaderpro.ru/Main/orders/', document.querySelector('.query'));
 		});
 	}
