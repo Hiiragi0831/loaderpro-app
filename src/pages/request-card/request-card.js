@@ -43,13 +43,14 @@ const typeChange = (modal) => {
 
 	category.addEventListener('change', (i) => {
 		const jwt = new Cookie('jwt');
-		const data = {
-			jwt: jwt.get('jwt'),
-			value: i.target.value,
-		};
+		const fd = new FormData();
+
+		fd.append('jwt', jwt.get('jwt'));
+		fd.append('value', i.target.value);
+
 		const fe = fetch('https://my.loaderpro.ru/Main/category_type/', {
 			method: 'POST',
-			body: JSON.stringify(data),
+			body: fd,
 		});
 
 		fe.then((response) => {

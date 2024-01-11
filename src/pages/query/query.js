@@ -72,15 +72,9 @@ const init = () => {
 			evt.preventDefault();
 
 			querysBox.querySelector('.form').querySelectorAll('.form__group').forEach((el) => {
-				let object = {};
-				new FormData(el).forEach((value, key) => {
-					object[key] = value;
-
-					if (cookie.get('jwt')) {
-						object.jwt = cookie.get('jwt');
-					}
-				});
-				data.push(object);
+				const fd = new FormData(el);
+				fd.append('jwt', cookie.get('jwt'));
+				data.push(fd);
 			});
 			form.sendData(data, 'https://my.loaderpro.ru/Main/orders/', document.querySelector('.query'));
 		});

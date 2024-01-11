@@ -4,18 +4,16 @@ let notyf = new Notyf();
 
 export class Form {
 	constructor(method) {
-		this.data = {};
 		this.method = method;
 		this.elappend = null;
 		this.cookieJwt = new Cookie('jwt');
 	}
 
 	async sendForm(data, url) {
-		console.log(JSON.stringify(data));
 		try {
 			return await fetch(url, {
 				method: this.method,
-				body: JSON.stringify(data),
+				body: data,
 			});
 		} catch (error) {
 			return error;
@@ -79,57 +77,10 @@ export class Form {
 		notyf.error('Произошла ошибка отправки');
 	}
 
-	fileUpload(files, action, type) {
-		if (files.length === 0) {
-			this.sendData(this.data, action);
-		}
-
-		// Create FormData instance
-		const fd = new FormData();
-
-		// Iterate over all selected files
-		Array.from(files).forEach((file) => {
-			if (type === 'image') {
-				fd.append('images[]', file, file.name);
-			} else {
-				fd.append('file', file, file.name);
-			}
-		});
-
-		// Create XHR rquest
-		const xhr = new XMLHttpRequest();
-		xhr.responseType = 'json';
-		xhr.onload = () => {
-			console.log(xhr.response);
-			this.data.filepath = xhr.response.filepath;
-			this.sendData(this.data, action);
-		};
-		xhr.open('POST', action);
-		xhr.send(fd);
-	}
-
 	send(action, target) {
 		const fd = new FormData(target);
-		let check = true;
-
-		fd.forEach((value, key) => {
-			this.data[key] = value;
-		});
-		this.data.jwt = this.cookieJwt.get('jwt');
-
-		if (target.querySelector('[name="images[]"]')) {
-			check = false;
-			this.fileUpload(target.querySelector('[type="file"]').files, action, 'image');
-		}
-
-		if (target.querySelector('[name="upload-file"]')) {
-			check = false;
-			this.fileUpload(target.querySelector('[type="file"]').files, action, 'file');
-		}
-
-		if (check) {
-			this.sendData(this.data, action);
-		}
+		fd.append('jwt', this.cookieJwt.get('jwt'));
+		this.sendData(fd, action);
 	}
 
 	setAttribute(target) {
