@@ -64,3 +64,58 @@ mixin commodityQuery(data)
 					p 30 000 Р
 				.commodity-query__info-button
 					button.button.button__primary Добавить в корзину
+		.commodity-query__item
+			.commodity-query__img
+				+picture({
+					path: `${baseDir}assets/images/1`,
+					ext: 'jpg',
+				})
+			.commodity-query__head
+				p.commodity-query__head-title!= data.title
+				p.commodity-query__head-article 13232422
+				.commodity-query__head-characteristics
+					.commodity-query__head-characteristic
+						p Единица измерения
+						span ШТ
+					.commodity-query__head-characteristic
+						p Вес ( кг )
+						span 1,55
+			.commodity-query__info
+				.commodity-query__info-item
+					+input({
+						type: 'text',
+						placeholder: 'Количество',
+						name: 'count',
+						value: 2,
+					})
+					.commodity-query__info-price
+						p Цена:
+						p 15 000 Р
+				.commodity-query__info-item
+					if (data.status === 'green')
+						.commodity-query__info-status.green
+							p В наличии
+							button
+								+svg('rotate')
+						.commodity-query__info-stoke
+							p 1 шт. (склад)
+							p 1 шт. (1-2 недели)
+					else if (data.status === 'red')
+						.commodity-query__info-status.red
+							p Нет в Наличии
+							button
+								+svg('rotate')
+						.commodity-query__info-stoke
+							p -
+					else if (data.status === 'yellow')
+						.commodity-query__info-status.yellow
+							p Под заказ
+							button
+								+svg('rotate')
+						.commodity-query__info-stoke
+							p -
+				.commodity-query__info-item.commodity-query__info-summary
+					p Сумма:
+					p 30 000 Р
+				.commodity-query__info-button
+					button.button.button__primary Добавить в корзину
