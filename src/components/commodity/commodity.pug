@@ -16,7 +16,7 @@ mixin commodityQuery(data)
 					ext: 'jpg',
 				})
 			.commodity-query__head
-				p.commodity-query__head-title!= data.title
+				a(href="#").commodity-query__head-title!= data.title
 				p.commodity-query__head-article 13232422
 				.commodity-query__head-characteristics
 					.commodity-query__head-characteristic
@@ -59,9 +59,10 @@ mixin commodityQuery(data)
 								+svg('rotate')
 						.commodity-query__info-stoke
 							p -
-				.commodity-query__info-item.commodity-query__info-summary
-					p Сумма:
-					p 30 000 Р
+				.commodity-query__info-item
+					.commodity-query__info-summary
+						p Сумма:
+						p 30 000 Р
 				.commodity-query__info-button
 					button.button.button__primary Добавить в корзину
 		.commodity-query__item
@@ -114,8 +115,9 @@ mixin commodityQuery(data)
 								+svg('rotate')
 						.commodity-query__info-stoke
 							p -
-				.commodity-query__info-item.commodity-query__info-summary
-					p Сумма:
-					p 30 000 Р
+				.commodity-query__info-item
+					.commodity-query__info-summary
+						p Сумма:
+						p 30 000 Р
 				.commodity-query__info-button
 					button.button.button__primary Добавить в корзину
