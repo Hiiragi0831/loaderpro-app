@@ -4,13 +4,12 @@ const listener = () => {
 	document.querySelectorAll('.notification').forEach((el) => {
 		el.addEventListener('click', () => {
 			const sendData = new Form('POST');
-			const noteid = el.dataset.id;
-			const object = {
-				noteid,
-			};
+			const fd = new FormData();
+
+			fd.append('noteid', el.dataset.id);
 
 			if (el.dataset.read === '0') {
-				sendData.sendData(object, 'https://my.loaderpro.ru/notifications/note_read');
+				sendData.sendData(fd, 'https://my.loaderpro.ru/notifications/note_read');
 				el.dataset.read = 1;
 			}
 
