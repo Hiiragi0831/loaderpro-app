@@ -58,7 +58,7 @@ const importFile = () => {
 	const form = document.querySelector('[data-form-import]');
 	const sendForm = new Form('POST');
 
-	sendForm.init('https://my.loaderpro.ru/Main/import_file_xls/', form);
+	sendForm.init('https://my.loaderpro.ru/Main/import_file_xls/', form, document.querySelector('main'));
 };
 
 const init = () => {
