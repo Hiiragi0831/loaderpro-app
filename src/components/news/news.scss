@@ -7,8 +7,16 @@
 	gap: vc(10);
 
 	&__img {
+		flex: none;
 		overflow: hidden;
 		border-radius: vc(5);
+		width: vc(234);
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: vc(20);
 	}
 
 	&__title {
@@ -23,5 +31,10 @@
 		&:hover {
 			opacity: 0.7;
 		}
+	}
+
+	&.in-line {
+		flex-direction: row-reverse;
+		gap: vc(40);
 	}
 }
