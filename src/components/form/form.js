@@ -77,10 +77,10 @@ export class Form {
 		notyf.error('Произошла ошибка отправки');
 	}
 
-	send(action, target) {
+	send(action, target, elappend) {
 		const fd = new FormData(target);
 		fd.append('jwt', this.cookieJwt.get('jwt'));
-		this.sendData(fd, action);
+		this.sendData(fd, action, elappend);
 	}
 
 	setAttribute(target) {
@@ -101,12 +101,8 @@ export class Form {
 		target.addEventListener('submit', async (evt) => {
 			evt.preventDefault();
 
-			this.send(action, target);
+			this.send(action, target, elappend);
 		});
-
-		if (elappend) {
-			this.elappend = elappend;
-		}
 
 		this.setAttribute(target);
 	}
