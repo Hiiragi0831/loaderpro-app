@@ -1,0 +1,92 @@
+extends @pug/base
+
+append globals
+	- pageName = 'privacy-policy'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main
+				+breadcrumbs()
+				section.section-text
+					.container
+						.row
+							.text-block
+								h1 Реквизиты
+								table
+									tbody
+										tr
+											td
+												p Наименование контрагента
+											td
+												p ООО «СПЕЦМАШИНА»
+										tr
+											td
+												p Юридический, фактический и почтовый адрес
+											td
+												p 196240, г. Санкт-Петербург, ул. Кубинская, д. 75 к. 1 литера А, помещ. 3-Н, ком. 25 (Офис 216)
+										tr
+											td
+												p Телефон
+											td
+												p 8 (800) 55-11-996
+										tr
+											td
+												p e-mail
+											td
+												p buh@loaderpro.ru
+										tr
+											td
+												p ИНН/КПП
+											td
+												p 7810959038 / 781001001
+										tr
+											td
+												p ОГРН
+											td
+												p 1227800152590
+										tr
+											td
+												p ОКВЭД
+											td
+												p 45.32
+										tr
+											td
+												p ОКПО
+											td
+												p 54144451
+										tr
+											td
+												p ОКАТО
+											td
+												p 40284000
+										tr
+											td
+												p БАНК
+											td
+												p в АО «Тинькофф Банк»
+										tr
+											td
+												p Р/С
+											td
+												p 40702810710001237184
+										tr
+											td
+												p БИК
+											td
+												p 044525974
+										tr
+											td
+												p К/С
+											td
+												p 30101810145250000974
+										tr
+											td
+												p Генеральный директор
+											td
+												p Сокирка Юлия Виталиевна
+												p действующий на основании Устава
+			+footer()
