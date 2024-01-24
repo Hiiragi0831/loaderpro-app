@@ -21,6 +21,7 @@
 	&__logo {
 		width: vc(527);
 		height: vc(113);
+		max-width: 100%;
 
 		svg {
 			fill: $color-black;

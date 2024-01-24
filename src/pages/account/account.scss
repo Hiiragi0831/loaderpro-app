@@ -7,6 +7,10 @@
 		display: grid;
 		grid-template-columns: vc(290) 1fr;
 		gap: vc(30);
+
+		@include devices {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	&__menu {
@@ -77,12 +81,28 @@
 			grid-template-columns: 1fr;
 			gap: vc(30);
 
+			.two-column {
+				grid-column: span 2 / span 1;
+
+				@include devices {
+					grid-column: auto;
+				}
+			}
+
 			&.row-2 {
 				grid-template-columns: 1fr 1fr;
+
+				@include devices {
+					grid-template-columns: 1fr;
+				}
 			}
 
 			&.row-3 {
 				grid-template-columns: 1fr 1fr 1fr;
+
+				@include devices {
+					grid-template-columns: 1fr;
+				}
 			}
 		}
 

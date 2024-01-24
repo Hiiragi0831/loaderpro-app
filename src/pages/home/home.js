@@ -5,8 +5,13 @@ const init = () => {
 	// eslint-disable-next-line
 	const sliderBrands = new Swiper('.home__brands .swiper', {
 		modules: [Autoplay],
-		slidesPerView: 8,
+		slidesPerView: 2,
 		autoplay: true,
+		breakpoints: {
+			1024: {
+				slidesPerView: 8,
+			},
+		},
 	});
 };
 

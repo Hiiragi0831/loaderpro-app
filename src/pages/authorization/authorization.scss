@@ -8,6 +8,7 @@
 	&__logo {
 		width: vc(527);
 		height: vc(113);
+		max-width: 100%;
 
 		svg {
 			fill: $color-black;
@@ -25,6 +26,11 @@
 			display: grid;
 			grid-template-columns: 1fr auto 1fr;
 			gap: vc(130);
+
+			@include devices {
+				grid-template-columns: 1fr;
+				gap: vc(50);
+			}
 		}
 
 		.form {
@@ -65,5 +71,9 @@
 			background-size: 100%;
 			background-repeat: no-repeat;
 		}
+	}
+
+	@include devices {
+		padding-top: vc(50);
 	}
 }

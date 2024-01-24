@@ -6,12 +6,22 @@
 	&__row {
 		display: flex;
 		gap: vc(60);
+
+		@include devices {
+			flex-direction: column;
+			align-items: center;
+			gap: vc(15);
+		}
 	}
 
 	&__about {
 		display: flex;
 		flex-direction: column;
 		gap: vc(16);
+
+		@include devices {
+			align-items: center;
+		}
 	}
 
 	&__logo {
@@ -26,6 +36,10 @@
 	&__head {
 		font-weight: 600;
 		font-size: vc(18);
+
+		@include devices {
+			text-align: center;
+		}
 	}
 
 	&__socials {
@@ -50,6 +64,11 @@
 		display: flex;
 		flex-direction: column;
 		gap: vc(20);
+
+		@include devices {
+			align-items: center;
+			width: 100%;
+		}
 	}
 
 	&__info {

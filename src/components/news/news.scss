@@ -11,6 +11,10 @@
 		overflow: hidden;
 		border-radius: vc(5);
 		width: vc(234);
+
+		@include devices {
+			width: 100%;
+		}
 	}
 
 	&__info {
@@ -36,5 +40,9 @@
 	&.in-line {
 		flex-direction: row-reverse;
 		gap: vc(40);
+
+		@include devices {
+			flex-direction: column;
+		}
 	}
 }

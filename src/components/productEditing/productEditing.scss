@@ -14,6 +14,18 @@
 		.form__row {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
+
+			.two-column {
+				grid-column: span 2 / span 1;
+
+				@include devices {
+					grid-column: auto;
+				}
+			}
+
+			@include devices {
+				grid-template-columns: 1fr;
+			}
 		}
 	}
 }

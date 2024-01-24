@@ -24,6 +24,26 @@
 
 					&--3 {
 						grid-template-columns: 0.8fr 1.4fr 0.8fr;
+
+						@include devices {
+							grid-template-columns: 1fr;
+						}
+					}
+
+					@include devices {
+						grid-template-columns: 1fr;
+					}
+				}
+
+				&__row {
+					@include devices {
+						flex-direction: column;
+					}
+				}
+
+				&__footer {
+					@include devices {
+						flex-direction: column;
 					}
 				}
 			}

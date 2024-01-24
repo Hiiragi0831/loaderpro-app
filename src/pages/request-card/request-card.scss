@@ -13,6 +13,10 @@
 		display: grid;
 		grid-template-columns: vc(510) 1fr;
 		gap: vc(38);
+
+		@include devices {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	&__status {
@@ -116,6 +120,12 @@
 			border-radius: vc(5);
 			width: vc(118);
 			height: vc(118);
+
+			@include devices {
+				margin-top: vc(30);
+				width: 100%;
+				height: vc(200);
+			}
 		}
 
 		&-change {
@@ -142,6 +152,10 @@
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			padding: vc(20) 0;
 			gap: vc(10) vc(40);
+
+			@include devices {
+				grid-template-columns: 1fr 1fr;
+			}
 		}
 
 		&-specification {
@@ -150,6 +164,10 @@
 			span {
 				color: $tree-poppy-400;
 			}
+		}
+
+		@include devices {
+			grid-template-columns: 1fr;
 		}
 	}
 
