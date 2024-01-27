@@ -53,7 +53,7 @@ block content
 											}).datepicker-multiple
 									.form__buttons
 										button.button.button__primary(type="submit") Поиск
-				section
+				section(data-more-query-h)
 					.container
 						.query__box
 							.query__box-title Результат поиска
@@ -70,6 +70,8 @@ block content
 									title: 'Название товара',
 									status: 'yellow',
 								})
-						include @components/pagenav/pagenav
+						form.form.mt-50(data-more)
+							input(type="hidden" name="query-more" value="30")
+							button.button.button__primary(type="submit") Загрузить ещё
 
 			+footer()

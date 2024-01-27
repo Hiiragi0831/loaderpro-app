@@ -161,4 +161,10 @@
 		justify-content: space-between;
 		gap: vc(35);
 	}
+
+	&[data-more] {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }
