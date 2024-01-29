@@ -248,6 +248,7 @@
 		}
 
 		@include devices {
+			order: 1;
 			min-height: vc(200);
 		}
 	}
@@ -296,6 +297,7 @@
 		}
 
 		@include devices {
+			order: 0;
 			min-height: vc(200);
 		}
 	}
