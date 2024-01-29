@@ -160,6 +160,10 @@
 		display: flex;
 		justify-content: space-between;
 		gap: vc(35);
+
+		@include devices {
+			gap: vc(15);
+		}
 	}
 
 	&[data-more] {

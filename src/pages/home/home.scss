@@ -12,7 +12,12 @@
 	&__links {
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
 		gap: vc(20);
+
+		@include devices {
+			order: 1;
+		}
 	}
 
 	&__link {
@@ -107,6 +112,7 @@
 
 		&-bg {
 			position: absolute;
+			z-index: -1;
 			width: 100%;
 			height: 100%;
 			inset: 0;
@@ -129,13 +135,15 @@
 		}
 
 		&-content {
-			position: relative;
-			z-index: 2;
 			display: flex;
 			flex-direction: column;
 			max-width: vc(300);
 			color: $color-white;
 			gap: vc(10);
+
+			@include devices {
+				text-align: center;
+			}
 		}
 
 		&-title {
@@ -143,7 +151,7 @@
 			font-size: vc(40);
 
 			@include devices {
-				font-size: vc(30);
+				font-size: vc(24);
 			}
 		}
 
@@ -153,18 +161,24 @@
 		}
 
 		&-icon {
-			position: relative;
+			position: absolute;
+			right: vc(130);
+			top: vc(56);
 			z-index: 2;
-			margin: 0 vc(80) 0 auto;
 			width: vc(228);
 			height: vc(228);
 
 			@include devices {
-				display: none;
+				position: relative;
+				margin: auto;
+				width: vc(80);
+				height: vc(80);
+				inset: 0;
 			}
 		}
 
 		@include devices {
+			order: 0;
 			padding: vc(30);
 		}
 	}

@@ -9,7 +9,6 @@
 		gap: vc(60);
 
 		@include devices {
-			align-items: center;
 			grid-template-columns: 1fr 1fr;
 			gap: vc(30);
 		}

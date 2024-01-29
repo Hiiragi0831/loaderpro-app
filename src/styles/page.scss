@@ -31,12 +31,16 @@
 		&-head {
 			margin-bottom: vc(20);
 			border-radius: vc(5);
-			padding: vc(18) vc(30);
+			padding: vc(15) vc(20);
 			background: $woodsmoke-100;
 
 			p {
 				font-weight: 600;
 				font-size: vc(20);
+
+				@include devices {
+					font-size: vc(16);
+				}
 			}
 		}
 
@@ -124,6 +128,7 @@
 		li {
 			display: list-item;
 			list-style: disc;
+			line-height: 1.5;
 		}
 	}
 
@@ -134,6 +139,7 @@
 		li {
 			display: list-item;
 			list-style: decimal;
+			line-height: 1.5;
 		}
 	}
 

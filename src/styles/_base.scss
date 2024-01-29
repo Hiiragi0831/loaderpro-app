@@ -48,6 +48,10 @@ body {
 main {
 	flex: 1;
 	padding: vc(30) 0 vc(80);
+
+	@include devices {
+		padding-bottom: vc(40);
+	}
 }
 
 h1,

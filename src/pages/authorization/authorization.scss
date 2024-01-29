@@ -13,10 +13,19 @@
 		svg {
 			fill: $color-black;
 		}
+
+		@include devices {
+			width: vc(231);
+			height: vc(50);
+		}
 	}
 
 	&__head {
 		margin: vc(24) 0 vc(40);
+
+		@include devices {
+			margin: vc(30) 0 vc(10);
+		}
 	}
 
 	&__auth {
@@ -29,7 +38,7 @@
 
 			@include devices {
 				grid-template-columns: 1fr;
-				gap: vc(50);
+				gap: vc(30);
 			}
 		}
 
@@ -46,11 +55,19 @@
 		flex-direction: column;
 		width: 100%;
 		gap: vc(20);
+
+		.h1 {
+			font-size: vc(22);
+		}
 	}
 
 	&__hr {
 		width: 1px;
 		background-color: $woodsmoke-950;
+
+		@include devices {
+			display: none;
+		}
 	}
 
 	&__advantages {
