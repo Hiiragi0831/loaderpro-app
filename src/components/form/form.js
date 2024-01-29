@@ -63,7 +63,7 @@ export class Form {
 			}
 
 			if (responseJson.count) {
-				this.elappend.parentElement.querySelector('[data-more]').querySelector('[name="query-more"]').value = responseJson.count;
+				this.elappend.parentElement.querySelector('[data-more]').querySelector('[name="query_more"]').value = responseJson.count;
 			}
 
 			if (responseJson.jwt) {
