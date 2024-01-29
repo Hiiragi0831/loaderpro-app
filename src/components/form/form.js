@@ -62,6 +62,10 @@ export class Form {
 				this.renderHtml(responseJson.html);
 			}
 
+			if (responseJson.count) {
+				this.elappend.parentElement.querySelector('[data-more]').querySelector('[name="query-more"]').value = responseJson.count;
+			}
+
 			if (responseJson.jwt) {
 				this.cookieJwt.set(responseJson.jwt, 1);
 			}
