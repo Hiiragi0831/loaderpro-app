@@ -1,11 +1,9 @@
 import {Form} from '../../components/form/form';
 import {Notyf} from 'notyf';
-import {Cookie} from '../../components/cookies/cookies';
 
 const queryBox = document.querySelector('[data-query]');
 const querysBox = document.querySelector('[data-querys]');
 let notyf = new Notyf();
-const cookie = new Cookie('jwt');
 
 const deleteQuery = () => {
 	querysBox.querySelector('.form').querySelectorAll('.form__group').forEach((el) => {
@@ -63,19 +61,23 @@ const importFile = () => {
 
 const init = () => {
 	if (document.querySelector('[data-query]')) {
-		let data = [];
+		let data = new FormData();
 		const form = new Form('POST');
+
 		addQuery();
 		importFile();
 
 		querysBox.querySelector('.form').querySelector('[type="submit"]').addEventListener('click', (evt) => {
 			evt.preventDefault();
 
-			querysBox.querySelector('.form').querySelectorAll('.form__group').forEach((el) => {
-				const fd = new FormData(el);
-				fd.append('jwt', cookie.get('jwt'));
-				data.push(fd);
+			querysBox.querySelector('.form').querySelectorAll('.form__group').forEach((el, id) => {
+				const inputs = {};
+				new FormData(el).forEach((value, key) => {
+					inputs[key] = value;
+				});
+				data.append(`form ${id}`, inputs);
 			});
+
 			form.sendData(data, 'https://my.loaderpro.ru/Main/orders/', document.querySelector('.query'));
 		});
 	}

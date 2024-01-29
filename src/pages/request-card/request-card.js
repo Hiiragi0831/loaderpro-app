@@ -36,7 +36,7 @@ const colorChange = () => {
 		select.dataset.color = evt.target.value;
 	});
 };
-
+// eslint-disable-next-line
 const typeChange = (modal) => {
 	const type = modal.querySelector('[name="type"]');
 	const category = modal.querySelector('[name="category"]');
@@ -94,9 +94,9 @@ const init = () => {
 	sendData();
 	editProduct();
 
-	document.querySelectorAll('.modal').forEach((i) => {
-		typeChange(i);
-	});
+	// document.querySelectorAll('.modal').forEach((i) => {
+	// 	typeChange(i);
+	// });
 };
 
 export default {
