@@ -61,6 +61,12 @@
 			width: vc(136);
 			height: vc(41);
 		}
+
+		@include devices {
+			order: 7;
+			grid-column: span 2 / span 1;
+			margin: auto;
+		}
 	}
 
 	&__links {
@@ -105,6 +111,15 @@
 			svg {
 				width: vc(25);
 				height: vc(25);
+			}
+		}
+
+		&--social {
+			@include devices {
+				order: 6;
+				grid-column: span 2 / span 1;
+				margin: auto;
+				text-align: center;
 			}
 		}
 	}
