@@ -61,7 +61,7 @@ const importFile = () => {
 
 const init = () => {
 	if (document.querySelector('[data-query]')) {
-		let data = new FormData();
+		let data = [];
 		const form = new Form('POST');
 
 		addQuery();
@@ -70,15 +70,17 @@ const init = () => {
 		querysBox.querySelector('.form').querySelector('[type="submit"]').addEventListener('click', (evt) => {
 			evt.preventDefault();
 
-			querysBox.querySelector('.form').querySelectorAll('.form__group').forEach((el, id) => {
-				const inputs = {};
+			querysBox.querySelector('.form').querySelectorAll('.form__group').forEach((el) => {
+				let dannie = {};
+
 				new FormData(el).forEach((value, key) => {
-					inputs[key] = value;
+					dannie[key] = value;
 				});
-				data.append(`form ${id}`, inputs);
+
+				data.push(dannie);
 			});
 
-			form.sendData(data, 'https://my.loaderpro.ru/Main/orders/', document.querySelector('.query'));
+			form.sendData(JSON.stringify(data), 'https://my.loaderpro.ru/Main/orders/', document.querySelector('.query'));
 		});
 	}
 };
