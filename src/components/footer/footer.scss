@@ -118,8 +118,12 @@
 			@include devices {
 				order: 6;
 				grid-column: span 2 / span 1;
-				margin: auto;
+				margin: vc(-20) auto;
 				text-align: center;
+
+				.footer__head {
+					display: none;
+				}
 			}
 		}
 	}
