@@ -9,6 +9,10 @@
 			display: flex;
 			flex-direction: column;
 			gap: vc(24);
+
+			@include devices {
+				gap: vc(10);
+			}
 		}
 
 		p {
@@ -33,6 +37,7 @@
 		}
 
 		@include devices {
+			margin-bottom: vc(20);
 			width: vc(231);
 			height: vc(50);
 		}
