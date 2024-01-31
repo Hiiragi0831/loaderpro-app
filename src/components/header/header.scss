@@ -54,6 +54,10 @@
 		justify-content: center;
 		font-weight: 500;
 		gap: vc(5);
+
+		@include devices {
+			margin-left: auto;
+		}
 	}
 
 	&__icon {
@@ -99,11 +103,17 @@
 	}
 
 	&__logo {
+		display: inline-block;
 		width: vc(204);
 		height: vc(44);
 
 		svg {
 			fill: $color-black;
+		}
+
+		@include devices {
+			width: vc(120);
+			height: vc(26);
 		}
 	}
 
@@ -241,5 +251,81 @@
 				transform: scale(1);
 			}
 		}
+	}
+
+	&__burger {
+		display: flex;
+		flex-direction: column;
+		gap: vc(3);
+
+		span {
+			width: vc(15);
+			height: vc(2);
+			background: $color-black;
+			transition: transform $transition, opacity $transition;
+		}
+
+		.header-mobile.is-active & {
+			span {
+				&:nth-child(1) {
+					transform: translate(0, vc(5)) rotate(45deg);
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+				}
+
+				&:nth-child(3) {
+					transform: translate(0, vc(-5)) rotate(-45deg);
+				}
+			}
+		}
+	}
+
+	@include devices {
+		display: none;
+	}
+}
+
+.header-mobile {
+	border-bottom: 1px solid $woodsmoke-200;
+	padding: vc(14) 0;
+
+	.row {
+		display: flex;
+		align-items: center;
+		gap: vc(15);
+	}
+
+	&__wrapper {
+		position: fixed;
+		right: 0;
+		top: vc(50);
+		z-index: 1000;
+		overflow: auto;
+		border-radius: vc(5);
+		padding: vc(20) vc(50) vc(20) vc(20);
+		width: auto;
+		box-shadow: $box-shadow;
+		background-color: $color-white;
+		opacity: 0;
+		visibility: hidden;
+		transition: visibility $transition, opacity $transition;
+
+		.is-active & {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: vc(20);
+	}
+
+	@include desktop {
+		display: none;
 	}
 }

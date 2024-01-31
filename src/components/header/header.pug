@@ -72,9 +72,30 @@ header.header
 					a.header__link(href="#" data-title="Запросы") Запросы
 					a.header__link(href="#" data-title="Заказы") Заказы
 					a.header__link(href="#" data-title="Промоакции") Промоакции
-	datalist#brands
-		option(value="HTML")
-		option(value="CSS")
-		option(value="JavaScript")
-		option(value="Java")
-		option(value="Ruby")
+.header-mobile
+	.container
+		.row
+			a.header__logo(href="/")
+				+svg("logo")
+			a.header__notification(href="#")
+				.header__icon
+					+svg("bell")
+					span 9+
+			a.header__basket(href="#")
+				.header__icon
+					+svg("cart-shopping")
+					span 9+
+			button.header__burger
+				span
+				span
+				span
+	.header-mobile__wrapper
+		.header-mobile__box
+			a(href="#") Главная
+			a(href="#") Запросы
+			a(href="#") Заказы
+			a(href="#") Подбор ЗЧ
+			a(href="#") Каталог
+			a(href="#") Гараж
+			a(href="#") Мой аккаунт
+			a.is-red(href="#") Завершить сеанс
