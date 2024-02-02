@@ -64,6 +64,10 @@ export class Form {
 
 			if (responseJson.count) {
 				this.elappend.parentElement.querySelector('[data-more]').querySelector('[name="query_more"]').value = responseJson.count;
+
+				if (responseJson.count === 0) {
+					this.elappend.parentElement.querySelector('[data-more]').querySelector('.button').classList.add('is-hidden');
+				}
 			}
 
 			if (responseJson.jwt) {
