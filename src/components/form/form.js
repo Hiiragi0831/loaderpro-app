@@ -55,28 +55,30 @@ export class Form {
 		console.log('Ваша форма успешна отправлена', responseJson);
 		if (responseJson.status === 'error') {
 			notyf.error(responseJson.message);
-		} else {
-			notyf.success(responseJson.message);
 
-			if (responseJson.html) {
-				this.renderHtml(responseJson.html);
-			}
+			return;
+		}
 
-			if (responseJson.count) {
-				this.elappend.parentElement.querySelector('[data-more]').querySelector('[name="query_more"]').value = responseJson.count;
+		notyf.success(responseJson.message);
 
-				if (responseJson.count === 0) {
-					this.elappend.parentElement.querySelector('[data-more]').querySelector('.button').classList.add('is-hidden');
-				}
-			}
+		if (responseJson.html) {
+			this.renderHtml(responseJson.html);
+		}
 
-			if (responseJson.jwt) {
-				this.cookieJwt.set(responseJson.jwt, 1);
-			}
+		if (responseJson.count) {
+			this.elappend.parentElement.querySelector('[data-more]').querySelector('[name="query_more"]').value = responseJson.count;
+		}
 
-			if (responseJson.url) {
-				window.location.href = responseJson.url;
-			}
+		if (responseJson.count === 0) {
+			this.elappend.parentElement.querySelector('[data-more]').querySelector('.button').classList.add('is-hidden');
+		}
+
+		if (responseJson.jwt) {
+			this.cookieJwt.set(responseJson.jwt, 1);
+		}
+
+		if (responseJson.url) {
+			window.location.href = responseJson.url;
 		}
 	}
 
