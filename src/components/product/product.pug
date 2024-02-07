@@ -1,4 +1,8 @@
 form.product
+	.product__head
+		h1.h3 Название товара + бренд + артикул
+		.product__status.green
+			p В наличии
 	.product__main
 		.product__gallery
 			.product__gallery-main
@@ -20,50 +24,28 @@ form.product
 									ext: 'png',
 								})
 		.product__info
-			.product__head
-				h1.h3 Название товара
-				.product__head-bottom
-					p Бренд + артикул
-					.product__head-right
-						.product__head-item
-							p Предложение: #[a 2353674392]
-						.product__head-item
-							p Действительно до: #[b 9/05/23]
-			.product__info-item.product__info-item--price
-				p Цена: #[span 15000 Р]
-			.product__info-item.product__info-item--count
-				+input({
-					type: 'number',
-					placeholder: 'Количество',
-					name: 'count',
-					value: '1'
-				})
-				.product__info-status.green
-					p В наличии
-					button
-						+svg('rotate')
-			.product__info-item
-				p Итогова цена: #[span 15000 Р]
-			.product__button
-				button.button.button__primary Добавить в корзину
-	.product__specifications
-		h3 Спецификации
-		.row
-			.product__specification
-				p Категория
-				p 168
-			.product__specification
-				p Единица измерения
-				p 168
-			.product__specification
-				p Тип
-				p 168
-			.product__specification
-				p Вес
-				p 168
-			.product__specification
-				p Качество
-				p 168
-			.product__specification
-				p Комментарий
-				p 168
+
+			.product__specifications
+				h3 Спецификации
+				.row
+					.product__specification
+						p Единица измерения
+						p 168
+					.product__specification
+						p Вес
+						p 168
+					.product__specification
+						p Качество
+						p 168
+			.product__basket
+				.product__price
+					span Цена:
+					p 15000₽
+				.product__count
+					button.product__count-minus -
+					input(type="number" name="count" value="1" max="100")
+					button.product__count-plus +
+				button.button.button__primary В корзину
+
+			.product__description
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus amet architecto asperiores blanditiis commodi deserunt dolorem enim ipsum labore, minima mollitia natus nobis obcaecati odit quibusdam quidem quos rem!

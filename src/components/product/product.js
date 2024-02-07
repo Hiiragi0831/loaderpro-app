@@ -2,6 +2,21 @@ import Swiper from 'swiper/bundle';
 
 const product = document.querySelectorAll('.product');
 
+const count = () => {
+	const item = document.querySelector('.product__count');
+	const input = item.querySelector('input');
+
+	item.querySelector('.product__count-plus').addEventListener('click', (evt) => {
+		evt.preventDefault();
+		input.value++;
+	});
+
+	item.querySelector('.product__count-minus').addEventListener('click', (evt) => {
+		evt.preventDefault();
+		input.value--;
+	});
+};
+
 const init = () => {
 	if (!product.length) {
 		return;
@@ -26,6 +41,8 @@ const init = () => {
 	});
 
 	galleryMain.init();
+
+	count();
 };
 
 export default {

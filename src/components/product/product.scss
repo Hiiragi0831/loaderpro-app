@@ -1,13 +1,19 @@
 .product {
 	display: flex;
 	flex-direction: column;
-	gap: vc(100);
+	gap: vc(20);
+
+	&__head {
+		display: flex;
+		justify-content: space-between;
+	}
 
 	&__main {
 		position: relative;
 		display: grid;
 		grid-template-columns: vc(400) 1fr;
-		overflow: hidden;
+
+		//overflow: hidden;
 		gap: vc(30);
 
 		@include devices {
@@ -40,95 +46,33 @@
 		}
 	}
 
-	&__head {
-		display: flex;
-		flex-direction: column;
-		border-bottom: 1px solid $woodsmoke-200;
-		padding-bottom: vc(20);
-		gap: vc(10);
-
-		&-bottom {
-			display: flex;
-			justify-content: space-between;
-			gap: vc(15);
-
-			@include devices {
-				flex-direction: column;
-			}
-		}
-
-		&-right {
-			display: flex;
-			gap: vc(40);
-		}
-
-		&-item {
-			a {
-				font-weight: 700;
-				color: $tree-poppy-500;
-			}
-		}
+	&__info {
+		display: grid;
+		grid-template-columns: 1fr vc(360);
+		height: min-content;
+		gap: vc(20);
 
 		@include devices {
-			gap: vc(15);
+			grid-template-columns: 1fr;
 		}
 	}
 
-	&__info {
-		&-item {
-			border-bottom: 1px solid $woodsmoke-200;
-			padding: vc(20) 0;
+	&__status {
+		display: flex;
+		align-items: center;
+		gap: vc(10);
 
-			&--price {
-				font-size: vc(20);
-			}
-
-			&--count {
-				display: flex;
-				gap: vc(50);
-
-				.form__input {
-					max-width: vc(200);
-
-					@include devices {
-						max-width: 100%;
-					}
-				}
-
-				@include devices {
-					flex-direction: column;
-					gap: vc(15);
-				}
-			}
+		&.red {
+			color: #fa5d47;
 		}
 
-		&-status {
-			display: flex;
-			align-items: center;
-			gap: vc(10);
-
-			svg {
-				width: vc(20);
-				height: vc(20);
-				fill: rgba($color-black, 0.4);
-			}
-
-			&.red {
-				color: #fa5d47;
-			}
-
-			&.green {
-				color: #02bc7d;
-			}
-
-			&.yellow {
-				color: $tree-poppy-400;
-			}
+		&.green {
+			color: #02bc7d;
 		}
-	}
 
-	&__button {
-		padding-top: vc(20);
+		&.yellow {
+			color: $tree-poppy-400;
+		}
 	}
 
 	&__specification {
@@ -140,38 +84,84 @@
 		padding: vc(20);
 		background-color: $color-white;
 
-		&:nth-child(4n + 1),
-		&:nth-child(4n + 2) {
-			@include desktop {
-				background-color: $woodsmoke-50;
-			}
-		}
-
 		&:nth-child(2n) {
-			@include devices {
-				background-color: $woodsmoke-50;
-			}
+			background-color: $woodsmoke-50;
 		}
 	}
 
 	&__specifications {
 		.row {
 			display: flex;
-			flex-wrap: wrap;
+			flex-direction: column;
 			margin-top: vc(20);
-			gap: 2%;
-
-			> * {
-				width: 49%;
-
-				@include devices {
-					width: 100%;
-				}
-			}
 
 			@include devices {
 				gap: 0;
 			}
+		}
+
+		@include devices {
+			order: 1;
+		}
+	}
+
+	&__description {
+		@include desktop {
+			grid-column: span 2 / span 1;
+		}
+
+		@include devices {
+			order: 2;
+		}
+	}
+
+	&__basket {
+		display: grid;
+		grid-auto-rows: min-content;
+		grid-template-columns: repeat(2, 1fr);
+		border-radius: vc(5);
+		padding: vc(20);
+		height: min-content;
+		box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+		gap: vc(15);
+
+		@include devices {
+			order: 0;
+		}
+	}
+
+	&__price {
+		grid-column: span 2 / span 1;
+
+		span {
+			color: $woodsmoke-400;
+		}
+
+		p {
+			font-weight: 700;
+			font-size: vc(30);
+			color: $tree-poppy-400;
+		}
+	}
+
+	&__count {
+		display: flex;
+		border: 1px solid $woodsmoke-200;
+
+		input {
+			border-right: 1px solid $woodsmoke-200;
+			border-left: 1px solid $woodsmoke-200;
+			width: vc(80);
+			text-align: center;
+
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				appearance: none;
+			}
+		}
+
+		button {
+			width: vc(35);
 		}
 	}
 }
