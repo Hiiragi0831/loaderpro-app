@@ -16,35 +16,82 @@ block content
 						h1 Название категории
 						.row
 							.catalog__filter
-								.catalog__filter-header
-									+svg('sliders')
-									p.h4 Фильтры
-							.catalog__row
-								+merchandise({
-									status: 1,
-								})
-								+merchandise({
-									status: 2,
-								})
-								+merchandise({
-									status: 3,
-								})
-								+merchandise({
-									status: 1,
-								})
-								+merchandise({
-									status: 2,
-								})
-								+merchandise({
-									status: 3,
-								})
-								+merchandise({
-									status: 1,
-								})
-								+merchandise({
-									status: 2,
-								})
-								+merchandise({
-									status: 3,
-								})
+								fieldset
+									legend
+										+svg('sliders')
+										p.h4 Фильтры
+									+select({
+										placeholder: 'Бренд',
+										name: 'brand',
+										items: [
+											{
+												value: '0',
+												label: 'Бренд 1'
+											},
+											{
+												value: '1',
+												label: 'Бренд 2'
+											},
+											{
+												value: '2',
+												selected: true,
+												label: 'Бренд 3'
+											},
+										],
+									})
+									+select({
+										placeholder: 'Качество',
+										name: 'quality',
+										items: [
+											{
+												value: '0',
+												selected: true,
+												label: 'Качество 1'
+											},
+											{
+												value: '1',
+												label: 'Качество 2'
+											},
+											{
+												value: '2',
+												label: 'Качество 3'
+											},
+										],
+									})
+							.catalog__items
+								form.form
+									.form__row
+										+input({
+											type: 'text',
+											placeholder: 'Поиск',
+											name: 'search'
+										})
+								.catalog__row
+									+merchandise({
+										status: 1,
+									})
+									+merchandise({
+										status: 2,
+									})
+									+merchandise({
+										status: 3,
+									})
+									+merchandise({
+										status: 1,
+									})
+									+merchandise({
+										status: 2,
+									})
+									+merchandise({
+										status: 3,
+									})
+									+merchandise({
+										status: 1,
+									})
+									+merchandise({
+										status: 2,
+									})
+									+merchandise({
+										status: 3,
+									})
 			+footer()

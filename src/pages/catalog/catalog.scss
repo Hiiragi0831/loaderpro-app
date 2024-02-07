@@ -11,12 +11,20 @@
 	}
 
 	&__filter {
-		&-header {
+		fieldset {
+			display: flex;
+			flex-direction: column;
+			gap: vc(20);
+		}
+
+		legend {
 			display: flex;
 			align-items: center;
+			margin-bottom: vc(20);
 			border-top: 1px solid $woodsmoke-200;
 			border-bottom: 1px solid $woodsmoke-200;
-			padding: vc(20);
+			padding: vc(14) vc(10);
+			width: 100%;
 			gap: vc(30);
 
 			svg {
@@ -25,6 +33,12 @@
 				fill: $tree-poppy-400;
 			}
 		}
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: vc(20);
 	}
 
 	&__row {
