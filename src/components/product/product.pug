@@ -1,8 +1,6 @@
 form.product
 	.product__head
 		h1.h3 Название товара + бренд + артикул
-		.product__status.green
-			p В наличии
 	.product__main
 		.product__gallery
 			.product__gallery-main
@@ -24,18 +22,22 @@ form.product
 									ext: 'png',
 								})
 		.product__info
-			.product__specifications
-				h3 Спецификации
-				.row
-					.product__specification
-						p Единица измерения
-						p 168
-					.product__specification
-						p Вес
-						p 168
-					.product__specification
-						p Качество
-						p 168
+			.product__body
+				.product__standing
+					p.h4 Срок поставки
+					.product__status.green
+						p В наличии
+				.product__specifications
+					.row
+						.product__specification
+							p Единица измерения
+							p 168
+						.product__specification
+							p Вес
+							p 168
+						.product__specification
+							p Качество
+							p 168
 			.product__basket
 				.product__price
 					span Цена:

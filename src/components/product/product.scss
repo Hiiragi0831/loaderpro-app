@@ -164,4 +164,9 @@
 			width: vc(35);
 		}
 	}
+
+	&__standing {
+		display: flex;
+		justify-content: space-between;
+	}
 }
