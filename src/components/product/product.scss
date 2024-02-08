@@ -13,8 +13,6 @@
 		position: relative;
 		display: grid;
 		grid-template-columns: vc(400) 1fr;
-
-		//overflow: hidden;
 		gap: vc(30);
 
 		@include devices {
