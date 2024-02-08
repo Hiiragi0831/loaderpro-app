@@ -58,10 +58,6 @@
 	}
 
 	&__status {
-		display: flex;
-		align-items: center;
-		gap: vc(10);
-
 		&.red {
 			color: #fa5d47;
 		}
@@ -163,10 +159,5 @@
 		button {
 			width: vc(35);
 		}
-	}
-
-	&__standing {
-		display: flex;
-		justify-content: space-between;
 	}
 }
