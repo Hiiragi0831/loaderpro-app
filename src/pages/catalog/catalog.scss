@@ -50,4 +50,9 @@
 			grid-template-columns: 1fr;
 		}
 	}
+
+	&__import {
+		display: flex;
+		justify-content: flex-end;
+	}
 }

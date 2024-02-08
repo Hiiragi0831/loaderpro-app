@@ -5,6 +5,7 @@
 
 	&__head {
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 	}
 
@@ -158,6 +159,16 @@
 
 		button {
 			width: vc(35);
+		}
+	}
+
+	&__edit {
+		display: inline-flex;
+		width: vc(20);
+		height: vc(20);
+
+		svg {
+			fill: $tree-poppy-400;
 		}
 	}
 }
