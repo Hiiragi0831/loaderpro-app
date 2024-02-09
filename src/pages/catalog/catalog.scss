@@ -36,6 +36,7 @@
 	}
 
 	&__items {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		gap: vc(20);
@@ -48,6 +49,22 @@
 
 		@include devices {
 			grid-template-columns: 1fr;
+		}
+	}
+
+	&__adm {
+		&-buttons {
+			position: absolute;
+			top: vc(-80);
+			display: flex;
+			justify-content: flex-end;
+			width: 100%;
+			gap: vc(20);
+
+			@include devices {
+				position: relative;
+				inset: 0;
+			}
 		}
 	}
 
