@@ -1,0 +1,31 @@
+extends @pug/base
+
+append globals
+	- pageName = 'query'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main
+				+breadcrumbs()
+				section.garage
+					.container
+						.garage__head
+							.garage__search
+								form.form(data-garage-search)
+									.form__row
+										+input({
+											type: 'text',
+											placeholder: 'Поиск ТС',
+											name: 'search',
+											icon: 'magnifying-glass',
+											button: true,
+										})
+							.garage__add
+								button.button.button__outline + добавить ТС
+						.garage__items
+							include @components/transport/transport
+			+footer()

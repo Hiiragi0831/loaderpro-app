@@ -169,4 +169,9 @@
 			fill: $tree-poppy-400;
 		}
 	}
+
+	&__info-pro {
+		display: flex;
+		justify-content: space-between;
+	}
 }

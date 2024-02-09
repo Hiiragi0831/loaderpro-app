@@ -1,0 +1,15 @@
+.garage {
+	&__head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__search {
+		width: vc(430);
+	}
+
+	&__items {
+		margin-top: vc(30);
+	}
+}

@@ -1,0 +1,55 @@
+.transport {
+	position: relative;
+	display: grid;
+	grid-template-columns: vc(160) 1fr;
+	border-radius: vc(5);
+	padding: vc(30);
+	background: $woodsmoke-50;
+	gap: vc(20);
+
+	&__img {
+		flex: none;
+		overflow: hidden;
+		border-radius: vc(5);
+		width: vc(160);
+		height: vc(160);
+	}
+
+	&__body {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		gap: vc(20);
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: vc(10);
+
+		b {
+			font-size: vc(20);
+		}
+
+		p {
+			font-size: vc(18);
+		}
+	}
+
+	&__button {
+		align-self: flex-end;
+		justify-self: flex-end;
+		grid-column: 4;
+	}
+
+	&__edit {
+		position: absolute;
+		right: vc(20);
+		top: vc(20);
+		width: vc(20);
+		height: vc(20);
+
+		svg {
+			fill: $tree-poppy-400;
+		}
+	}
+}
