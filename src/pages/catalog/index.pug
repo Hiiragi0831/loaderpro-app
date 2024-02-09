@@ -62,12 +62,14 @@ block content
 								.catalog__adm-buttons
 									button.button.button__primary(data-catalog-add) Добавить товар
 									button.button.button__outline(data-catalog-import) Импортировать из файла
-								form.form
+								form.form(data-catalog-search)
 									.form__row
 										+input({
 											type: 'text',
 											placeholder: 'Поиск',
-											name: 'search'
+											name: 'search',
+											icon: 'magnifying-glass',
+											button: true,
 										})
 								.catalog__row
 									+merchandise({

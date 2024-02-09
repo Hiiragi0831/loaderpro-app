@@ -1,6 +1,9 @@
 mixin input(data)
 	label.form__input&attributes(attributes)
 		input(type= data.type placeholder= data.placeholder name= data.name autocomplete= data.autocomplete ? data.autocomplete: '' value= data.value ? data.value: '' list=data.list? data.list: '')
+		if data.button
+			button(type="submit")
+				+svg(data.icon)
 		span= data.placeholder
 
 mixin select(data)

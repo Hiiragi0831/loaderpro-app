@@ -59,6 +59,15 @@
 			transition: translate $transition;
 			cursor: text;
 		}
+
+		svg {
+			position: absolute;
+			right: vc(15);
+			top: vc(15);
+			width: vc(20);
+			height: vc(20);
+			fill: $tree-poppy-400;
+		}
 	}
 
 	&__select {
