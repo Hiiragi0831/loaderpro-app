@@ -21,7 +21,10 @@
 		}
 
 		&-item {
+			display: flex;
+			flex-direction: column;
 			margin-bottom: vc(30);
+			gap: vc(20);
 
 			&:last-child {
 				margin: 0;
@@ -29,7 +32,6 @@
 		}
 
 		&-head {
-			margin-bottom: vc(20);
 			border-radius: vc(5);
 			padding: vc(15) vc(20);
 			background: $woodsmoke-100;
