@@ -13,12 +13,21 @@
 		border-radius: vc(5);
 		width: vc(160);
 		height: vc(160);
+
+		@include devices {
+			width: 100%;
+			height: vc(200);
+		}
 	}
 
 	&__body {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		gap: vc(20);
+
+		@include devices {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	&__info {
@@ -39,17 +48,36 @@
 		align-self: flex-end;
 		justify-self: flex-end;
 		grid-column: 4;
+
+		@include devices {
+			grid-column: inherit;
+			width: 100%;
+
+			button {
+				width: 100%;
+			}
+		}
 	}
 
 	&__edit {
 		position: absolute;
 		right: vc(20);
 		top: vc(20);
+		z-index: 2;
 		width: vc(20);
 		height: vc(20);
 
 		svg {
 			fill: $tree-poppy-400;
 		}
+
+		@include devices {
+			right: vc(10);
+			top: vc(10);
+		}
+	}
+
+	@include devices {
+		grid-template-columns: 1fr;
 	}
 }

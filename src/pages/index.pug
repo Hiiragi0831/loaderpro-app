@@ -12,7 +12,7 @@ block content
 				.container
 					h1 Список страниц
 					-
-						const pages = [
+						var pages = [
 							{
 								title: '404',
 								href: '404',
@@ -46,9 +46,6 @@ block content
 							}, {
 								title: 'Сотрудник',
 								href: 'employee',
-							}, {
-								title: 'Форма запроса',
-								href: 'request',
 							}, {
 								title: 'Новости',
 								href: 'news',
@@ -85,7 +82,10 @@ block content
 							}, {
 								title: 'Мой гараж',
 								href: 'garage',
-							},
+							}, {
+								title: 'Данные ТС',
+								href: 'request',
+							}
 						]
 					ol
 						each item in pages

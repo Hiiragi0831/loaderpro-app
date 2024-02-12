@@ -1,7 +1,7 @@
-import {uploadFile, uploadImageDrop} from './js/init-upload';
+import {uploadFile, uploadImageDrop, uploadImage} from './js/init-upload';
 
 const init = () => {
-	// uploadImage();
+	uploadImage();
 	uploadFile();
 	document.querySelectorAll('[data-upload="img-drop"]').forEach((i) => {
 		uploadImageDrop(i);

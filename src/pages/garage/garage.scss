@@ -3,10 +3,29 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		@include devices {
+			flex-direction: column;
+			gap: vc(20);
+		}
 	}
 
 	&__search {
 		width: vc(430);
+
+		@include devices {
+			width: 100%;
+		}
+	}
+
+	&__add {
+		@include devices {
+			width: 100%;
+
+			button {
+				width: 100%;
+			}
+		}
 	}
 
 	&__items {
