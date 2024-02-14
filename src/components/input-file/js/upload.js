@@ -101,6 +101,10 @@ export class Upload {
 				reader.addEventListener('load', (readerEvent) => {
 					// eslint-disable-next-line max-len
 					renderElement(this._previewBlock, createElement(createPreviewMarkup(file, readerEvent, this._options, fileSizeError)));
+
+					if (this._uploadBlock.contains(this._uploadBlock.querySelector('.js-toggle'))) {
+						this._uploadBlock.querySelector('.js-toggle').classList.add('is-hidden');
+					}
 				});
 			}
 			reader.readAsDataURL(file);
@@ -182,6 +186,9 @@ export class Upload {
 				this._message.remove();
 				this._message = null;
 			}
+		}
+		if (this._uploadBlock.contains(this._uploadBlock.querySelector('.js-toggle'))) {
+			this._uploadBlock.querySelector('.js-toggle').classList.remove('is-hidden');
 		}
 	}
 

@@ -49,6 +49,14 @@ export class Form {
 		if (responseJson.status === 'error') {
 			notyf.error(responseJson.message);
 
+			if (responseJson.html === '') {
+				this.elappend.innerHTML = '';
+
+				if (this.elappend.parentElement.querySelector('[data-more]')) {
+					this.elappend.parentElement.querySelector('[data-more]').classList.add('is-hidden');
+				}
+			}
+
 			return;
 		}
 
@@ -63,7 +71,7 @@ export class Form {
 		}
 
 		if (responseJson.count === 0) {
-			this.elappend.parentElement.querySelector('[data-more]').querySelector('.button').classList.add('is-hidden');
+			this.elappend.parentElement.querySelector('[data-more]').classList.add('is-hidden');
 		}
 
 		if (responseJson.jwt) {

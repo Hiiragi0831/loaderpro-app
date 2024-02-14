@@ -8,8 +8,6 @@ const init = () => {
 	new FormData(request.querySelector('.request__item')).forEach((value, key) => {
 		object[key] = value;
 	});
-
-	console.log(object);
 };
 
 export default {

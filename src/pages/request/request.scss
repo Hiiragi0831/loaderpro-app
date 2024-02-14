@@ -1,11 +1,35 @@
 .request {
-	&__item {
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
+	&__items {
+		border: 1px solid $woodsmoke-200;
+		box-shadow: $box-shadow;
+	}
 
-		textarea {
-			width: vc(300);
+	&__item {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-top: 1px solid $woodsmoke-200;
+		padding: vc(15);
+		width: 100%;
+		gap: vc(20);
+
+		.input-upload {
+			flex: none;
+			width: vc(320);
+
+			label {
+				display: flex;
+				justify-content: flex-end;
+			}
+
+			&__preview {
+				margin-top: 0;
+			}
+		}
+
+		&:first-child {
+			border: none;
 		}
 	}
 }

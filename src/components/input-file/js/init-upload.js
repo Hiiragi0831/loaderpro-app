@@ -2,7 +2,8 @@ import {Upload} from './upload.js';
 
 const uploadImageBlock = document.querySelector('[data-upload="img"]');
 const uploadIFileBlock = document.querySelector('[data-upload="file"]');
-const uploadFileDropBlock = document.querySelector('[data-upload="file-drop"]');
+// const uploadIFileImgBlock = document.querySelectorAll('[data-upload="file-img"]');
+const uploadFileDropBlock = document.querySelectorAll('[data-upload="file-drop"]');
 const uploadFileDropPreviewBlock = document.querySelector('[data-upload="file-drop-preview"]');
 
 export const uploadImage = () => new Upload(uploadImageBlock, {
@@ -38,6 +39,30 @@ export const uploadFile = () => new Upload(uploadIFileBlock, {
 		'docx': '/assets/images/file/icon-file-docx.png',
 		'pdf': '/assets/images/file/icon-file-pdf.png',
 		'default': '/assets/images/file/icon-file-xlsx.png',
+	},
+	fileInfo: {
+		fileName: true,
+		fileSize: true,
+	},
+	emptyMessage: 'Добавление файла обязательно',
+	errorMessage: 'Общий размер файлов слишком большой',
+});
+
+export const uploadFileImg = (selector) => new Upload(selector, {
+	uploadLength: 1,
+	preview: true,
+	maxFullSize: 1048576,
+	accept: ['.xls', '.xlsx', '.pdf', '.docx', '.png', '.jpg', '.jpeg', '.webp'],
+	iconFormat: {
+		'xlsx': '/assets/images/file/icon-file-xlsx.png',
+		'xls': '/assets/images/file/icon-file-xlsx.png',
+		'docx': '/assets/images/file/icon-file-docx.png',
+		'pdf': '/assets/images/file/icon-file-pdf.png',
+		'png': '/assets/images/file/icon-file-png.png',
+		'jpg': '/assets/images/file/icon-file-jpg.png',
+		'jpeg': '/assets/images/file/icon-file-jpg.png',
+		'webp': '/assets/images/file/icon-file-webp.png',
+		'default': '/assets/images/file/icon-file-docs.png',
 	},
 	fileInfo: {
 		fileName: true,
