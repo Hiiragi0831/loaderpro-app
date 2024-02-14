@@ -39,16 +39,9 @@ export class Form {
 			});
 	}
 
-	convertStringToHTML(htmlString) {
-		const parser = new DOMParser();
-		const html = parser.parseFromString(htmlString, 'text/html');
-
-		return html.body;
-	}
-
 	renderHtml(html) {
 		this.elappend.innerHTML = '';
-		this.elappend.append(this.convertStringToHTML(html));
+		this.elappend.insertAdjacentHTML('beforeend', html);
 	}
 
 	onSuccess(responseJson) {

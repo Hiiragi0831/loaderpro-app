@@ -33,6 +33,7 @@ import modal from '../components/modal/modal';
 import autocomplete from '../components/autocomplete/autocomplete';
 import funnel from '../pages/funnel/funnel';
 import catalog from '../pages/catalog/catalog';
+import request from '../pages/request/request';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -100,6 +101,7 @@ const init = () => {
 	autocomplete.init();
 	funnel.init();
 	catalog.init();
+	request.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));

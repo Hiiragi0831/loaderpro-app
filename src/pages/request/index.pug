@@ -9,7 +9,7 @@ block content
 	+router(pageName)
 		.site
 			include @components/header/header
-			main
+			main.request
 				+breadcrumbs()
 				section.employee
 					.container
@@ -40,10 +40,19 @@ block content
 										name: 'text',
 										rows: '4',
 									})
-									.input-upload.input-upload--file(data-upload="file")
-										label
-											input(type="file" name="upload-file")
-											span.button.button__outline Загрузить файл
 								.page__info-button
-									button.button.button__primary Сохранить
+									button.button.button__primary Добавить в список
+				section.request__data
+					.container
+						form.request__item
+							input(name="titleparts" value="OMR 34672847" readonly )
+							input(name="numparts" value="2594981656988" readonly)
+							input(name="count" value="2" readonly)
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet at doloremque exercitationem fugit iure, magni modi natus necessitatibus non perspiciatis, praesentium quia quidem rerum, sequi tenetur ullam veritatis voluptatibus.
+							input(name="comment" readonly type="hidden" value="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet at doloremque exercitationem fugit iure, magni modi natus necessitatibus non perspiciatis, praesentium quia quidem rerum, sequi tenetur ullam veritatis voluptatibus.")
+							.input-upload.input-upload--file(data-upload="file")
+								label
+									input(type="file" name="file")
+									span.button.button__outline Загрузить файл
+
 			+footer()

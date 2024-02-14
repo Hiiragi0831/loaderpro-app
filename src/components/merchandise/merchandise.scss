@@ -1,5 +1,8 @@
 .merchandise {
+	display: flex;
+	flex-direction: column;
 	padding: vc(20);
+	height: 100%;
 	box-shadow: $box-shadow;
 
 	&__img {
@@ -48,7 +51,8 @@
 	&__footer {
 		display: flex;
 		flex-direction: column;
-		padding: vc(12) 0;
+		padding: vc(12) 0 0;
+		height: 100%;
 		gap: vc(6);
 	}
 
@@ -81,7 +85,7 @@
 			background-color: $atlantis-400;
 		}
 
-		&--orange {
+		&--yellow {
 			background-color: $tree-poppy-300;
 		}
 
@@ -91,12 +95,13 @@
 	}
 
 	&__title {
+		margin-bottom: vc(6);
 		font-weight: 500;
 		font-size: vc(16);
 	}
 
 	&__button {
-		margin-top: vc(6);
+		margin-top: auto;
 
 		button {
 			width: 100%;
