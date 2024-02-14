@@ -23,10 +23,10 @@ const init = () => {
 
 	sendData.init('https://my.loaderpro.ru/Main/import_file_xls/', importFile);
 
-	filter.querySelectorAll('select').forEach((i) => {
+	filter.querySelectorAll('select, input').forEach((i) => {
 		i.addEventListener('change', (evt) => {
 			evt.preventDefault();
-			sendData.send('https://my.loaderpro.ru/catalog/catalog_filters', filter);
+			sendData.send('https://my.loaderpro.ru/catalog/catalog_filters', filter, catalog.querySelector('.catalog__row'));
 		});
 	});
 };
