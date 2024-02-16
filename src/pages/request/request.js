@@ -1,9 +1,11 @@
 import {uploadFileImg} from '../../components/input-file/js/init-upload';
-import {Form} from '../../components/form/form';
+// import {Form} from '../../components/form/form';
+import {Notyf} from 'notyf';
 
 const request = document.querySelector('.request');
 const dataItem = {};
-const submitForm = new Form('POST');
+// const submitForm = new Form('POST');
+const notyf = new Notyf();
 
 const renderItem = () => {
 	const clone = request.querySelector('#request-item').content.cloneNode(true);
@@ -17,14 +19,20 @@ const renderItem = () => {
 	request.querySelector('.request__items').append(clone);
 };
 const getData = () => {
-	request.querySelector('.request__request').addEventListener('submit', (evt) => {
+	const form = request.querySelector('.request__request');
+	form.addEventListener('submit', (evt) => {
 		evt.preventDefault();
 
 		new FormData(evt.target).forEach((value, key) => {
 			dataItem[key] = value;
 		});
 
-		renderItem();
+		if (dataItem.titleparts && dataItem.numparts && dataItem.count) {
+			renderItem();
+			form.reset();
+		} else {
+			notyf.error('Обязательные поля не заполнены');
+		}
 	});
 };
 
@@ -44,7 +52,7 @@ const sendData = () => {
 	let formsDate = [];
 	const formData = new FormData();
 
-	request.querySelector('.request__data').querySelectorAll('.request__item').forEach((item, id) => {
+	request.querySelector('.request__data').querySelectorAll('.request__item').forEach((item) => {
 		let obj = {};
 		new FormData(item).forEach((value, key) => {
 			obj[key] = value;
@@ -53,8 +61,6 @@ const sendData = () => {
 	});
 
 	buildFormData(formData, formsDate);
-
-	console.log(formsDate);
 
 	formData.forEach((i, k) => {
 		console.log(k, i);
