@@ -1,23 +1,17 @@
 .transport
 	button.transport__edit
 		+svg('pen-to-square')
-	.transport__img
-		+picture({
-			path: `${baseDir}assets/images/image`,
-			ext: 'png',
-		})
-	.transport__body
-		.transport__info
-			b Марка
-			p Toyota
-		.transport__info
-			b Модель
-			p 344jIf
-		.transport__info
-			b Серийный номер
-			p 9243248535892
-		.transport__info
-			b Год производства
-			p 2020
-		.transport__button
-			button.button.button__primary Запросить запчасти
+	.transport__info
+		b Марка
+		p Toyota
+	.transport__info
+		b Модель
+		p 344jIf
+	.transport__info
+		b Серийный номер
+		p 9243248535892
+	.transport__info
+		b Год производства
+		p 2020
+	.transport__button
+		button.button.button__primary Запросить запчасти

@@ -42,48 +42,31 @@ block content
 									})
 								.page__info-button
 									button.button.button__primary Добавить в список
-				section.request__data
+				section.request__data.is-hidden
 					.container
 						.row
 							.request__wrapper
 								.request__table
 									.request__items-head
+										p
 										p Наименование
 										p Каталожный номер
 										p Количество
 										p Комментарий
 										p Фото запчасти
 									.request__items
-										form.request__item
-											input(name="titleparts" value="OMR 34672847" readonly)
-											input(name="numparts" value="2594981656988" readonly)
-											input(name="count" value="2" readonly)
-											p.request__item-comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet at doloremque exercitationem fugit iure, magni modi natus necessitatibus non perspiciatis, praesentium quia quidem rerum, sequi tenetur ullam veritatis voluptatibus.
-											input(name="comment" readonly type="hidden" value="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet at doloremque exercitationem fugit iure, magni modi natus necessitatibus non perspiciatis, praesentium quia quidem rerum, sequi tenetur ullam veritatis voluptatibus.")
-											.input-upload.input-upload--file(data-upload="file-img")
-												label
-													input(type="file" name="file")
-													span.button.button__outline.js-toggle Загрузить файл
-										form.request__item
-											input(name="titleparts" value="OMR 34672847" readonly)
-											input(name="numparts" value="2594981656988" readonly)
-											input(name="count" value="2" readonly)
-											p.request__item-comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet at doloremque exercitationem fugit iure, magni modi natus necessitatibus non perspiciatis, praesentium quia quidem rerum, sequi tenetur ullam veritatis voluptatibus.
-											input(name="comment" readonly type="hidden" value="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet at doloremque exercitationem fugit iure, magni modi natus necessitatibus non perspiciatis, praesentium quia quidem rerum, sequi tenetur ullam veritatis voluptatibus.")
-											.input-upload.input-upload--file(data-upload="file-img")
-												label
-													input(type="file" name="file")
-													span.button.button__outline.js-toggle Загрузить файл
+
 							button.button.button__primary.request__send Отправить запрос на идентификацию
-					template#request-item
-						form.request__item
-							input(name="titleparts" value="OMR 34672847" readonly)
-							input(name="numparts" value="2594981656988" readonly)
-							input(name="count" value="2" readonly)
-							p.request__item-comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet at doloremque exercitationem fugit iure, magni modi natus necessitatibus non perspiciatis, praesentium quia quidem rerum, sequi tenetur ullam veritatis voluptatibus.
-							input(name="comment" readonly type="hidden" value="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet at doloremque exercitationem fugit iure, magni modi natus necessitatibus non perspiciatis, praesentium quia quidem rerum, sequi tenetur ullam veritatis voluptatibus.")
-							.input-upload.input-upload--file(data-upload="file-img")
-								label
-									input(type="file" name="file")
-									span.button.button__outline.js-toggle Загрузить файл
+				template#request-item
+					form.request__item
+						button.button.button__primary.button-delete X
+						input(name="titleparts" value="OMR 34672847" readonly)
+						input(name="numparts" value="2594981656988" readonly)
+						input(name="count" value="2" readonly)
+						p.request__item-comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet at doloremque exercitationem fugit iure, magni modi natus necessitatibus non perspiciatis, praesentium quia quidem rerum, sequi tenetur ullam veritatis voluptatibus.
+						input(name="comment" readonly type="hidden" value="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet at doloremque exercitationem fugit iure, magni modi natus necessitatibus non perspiciatis, praesentium quia quidem rerum, sequi tenetur ullam veritatis voluptatibus.")
+						.input-upload.input-upload--file(data-upload="file-img")
+							label
+								input(type="file" name="file")
+								span.button.button__outline.js-toggle Загрузить файл
 			+footer()

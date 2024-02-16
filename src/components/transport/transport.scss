@@ -1,9 +1,9 @@
 .transport {
 	position: relative;
 	display: grid;
-	grid-template-columns: vc(160) 1fr;
+	grid-template-columns: repeat(5, 1fr);
 	border-radius: vc(5);
-	padding: vc(30);
+	padding: vc(60) vc(30);
 	background: $woodsmoke-50;
 	gap: vc(20);
 
@@ -17,16 +17,6 @@
 		@include devices {
 			width: 100%;
 			height: vc(200);
-		}
-	}
-
-	&__body {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		gap: vc(20);
-
-		@include devices {
-			grid-template-columns: 1fr;
 		}
 	}
 
@@ -45,9 +35,8 @@
 	}
 
 	&__button {
-		align-self: flex-end;
+		align-self: center;
 		justify-self: flex-end;
-		grid-column: 4;
 
 		@include devices {
 			grid-column: inherit;
@@ -79,5 +68,6 @@
 
 	@include devices {
 		grid-template-columns: 1fr;
+		padding: vc(30);
 	}
 }

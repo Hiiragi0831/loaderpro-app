@@ -10,6 +10,12 @@
 		width: 100%;
 	}
 
+	&__request {
+		h2 {
+			margin-bottom: vc(10);
+		}
+	}
+
 	&__table {
 		position: relative;
 		overflow: hidden;
@@ -24,7 +30,7 @@
 			display: grid;
 			align-items: center;
 			justify-content: space-between;
-			grid-template-columns: vc(170) vc(170) vc(170) vc(400) vc(320);
+			grid-template-columns: vc(40) vc(170) vc(170) vc(150) vc(400) vc(300);
 			padding: vc(15);
 			background: $woodsmoke-50;
 			gap: vc(20);
@@ -41,7 +47,7 @@
 		display: grid;
 		align-items: center;
 		justify-content: space-between;
-		grid-template-columns: vc(170) vc(170) vc(170) vc(400) vc(320);
+		grid-template-columns: vc(40) vc(170) vc(170) vc(150) vc(400) vc(300);
 		border-top: 1px solid $woodsmoke-200;
 		padding: vc(15);
 		width: 100%;

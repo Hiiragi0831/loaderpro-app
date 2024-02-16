@@ -30,6 +30,15 @@ const getData = () => {
 		if (dataItem.titleparts && dataItem.numparts && dataItem.count) {
 			renderItem();
 			form.reset();
+			if (request.querySelector('.request__data').classList.contains('is-hidden')) {
+				request.querySelector('.request__data').classList.remove('is-hidden');
+			}
+			request.querySelector('.request__data').querySelectorAll('.request__item').forEach((i) => {
+				i.querySelector('.button-delete').addEventListener('click', (e) => {
+					e.preventDefault();
+					i.remove();
+				});
+			});
 		} else {
 			notyf.error('Обязательные поля не заполнены');
 		}
