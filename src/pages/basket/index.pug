@@ -81,7 +81,7 @@ block content
 												})
 											.basket__product-total
 												p Сумма: #[span 15000 ₽]
-							.basket__information
+							form.basket__information
 								.basket__information-sum
 									.page__info-head
 										p Итого
@@ -91,4 +91,88 @@ block content
 								.basket__information-dostavka
 									.page__info-head
 										p Доставка
+									.basket__information-radio
+										label.form__radio
+											input(type="radio" name="delivery" value="По умолчанию")
+											span По умолчанию
+										label.form__radio
+											input(type="radio" name="delivery" value="До клиента")
+											span До клиента
+									.basket__information-info
+										+input({
+											type: 'text',
+											placeholder: 'Наименование компании',
+											name: 'сompany',
+											value: 'Спецмашина'
+										})
+										+input({
+											type: 'text',
+											placeholder: 'ИНН',
+											name: 'inn',
+											value: '65158956056'
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Имя',
+											name: 'name',
+											value: 'Петр'
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Фамилия',
+											name: 'surname',
+											value: 'Петров'
+										})
+										+input({
+											type: 'phone',
+											placeholder: 'Телефон',
+											name: 'phone',
+											value: '+79524562589'
+										})
+										+select({
+											placeholder: 'Перевозчик',
+											name: 'carrier',
+											items: [
+												{value: '0', label: 'Деловые линии', selected: true},
+												{value: '1', label: 'ПЭК'},
+												{value: '2', label: 'Заур'},
+												{value: '3', label: 'Космоперевозки от Виталя'},
+												{value: '4', label: 'Черепахи транспорт'},
+											],
+										})
+										+select({
+											placeholder: 'Метод доставки',
+											name: 'method',
+											items: [
+												{value: '0', label: 'До двери', selected: true},
+												{value: '1', label: 'До подъезда'},
+												{value: '2', label: 'До дома'},
+												{value: '3', label: 'До космолифта'},
+												{value: '4', label: 'До марса'},
+											],
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Город',
+											name: 'city',
+											value: 'Сыктывкар'
+										})
+										+input({
+											type: 'text',
+											placeholder: 'Адрес',
+											name: 'address',
+											value: 'ул. Маршала Зайка, д. 312, кв. 789'
+										})
+										+select({
+											placeholder: 'Приоритет отгрузки',
+											name: 'priority',
+											items: [
+												{value: '0', label: 'Укомплектовать полностью', selected: true},
+												{value: '1', label: 'Укомплектовать не полностью'},
+												{value: '2', label: 'По частям'},
+												{value: '3', label: 'Ноги отдельно, руки отдельно'},
+												{value: '4', label: 'Череп и мозги'},
+											],
+										})
+										button.button.button__primary(type="submit") Разместить заказ
 			+footer-two()

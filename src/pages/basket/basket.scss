@@ -31,6 +31,20 @@
 				font-size: vc(18);
 			}
 		}
+
+		&-radio {
+			display: flex;
+			flex-direction: column;
+			padding: vc(15);
+			gap: vc(15);
+		}
+
+		&-info {
+			display: flex;
+			flex-direction: column;
+			margin-top: vc(15);
+			gap: vc(20);
+		}
 	}
 
 	&__product {

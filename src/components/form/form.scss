@@ -126,7 +126,8 @@
 		gap: vc(20);
 	}
 
-	&__checkbox {
+	&__checkbox,
+	&__radio {
 		position: relative;
 
 		input {
