@@ -1,0 +1,94 @@
+extends @pug/base
+
+append globals
+	- pageName = 'authorization'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main.basket
+				+breadcrumbs()
+				section
+					.container
+						.basket__title.page__info-head
+							p Содержимое корзины
+						.row
+							.basket__items
+								form.basket__product
+									input(type="hidden" name="id" value="165149856")
+									button.basket__product-del X
+									.basket__product-img
+										+picture({
+											path: `${baseDir}assets/images/image`,
+											ext: 'png',
+										})
+									.basket__product-info
+										.basket__product-left
+											a.basket__product-title(href="#") lorem
+											.basket__product-article 123549
+											.basket__product-status.green
+												p В наличии
+											.basket__product-characteristic
+												p Единица измерения
+												span ШТ
+											.basket__product-characteristic
+												p Вес (кг)
+												span 1,3
+										.basket__product-right
+											.basket__product-price
+												p Цена: #[span 15000 ₽]
+											.basket__product-count
+												+input({
+													type: 'text',
+													placeholder: 'Количество',
+													name: 'count',
+													value: 2,
+												})
+											.basket__product-total
+												p Сумма: #[span 15000 ₽]
+								form.basket__product
+									input(type="hidden" name="id" value="165149856")
+									button.basket__product-del X
+									.basket__product-img
+										+picture({
+											path: `${baseDir}assets/images/image`,
+											ext: 'png',
+										})
+									.basket__product-info
+										.basket__product-left
+											a.basket__product-title(href="#") lorem
+											.basket__product-article 123549
+											.basket__product-status.green
+												p В наличии
+											.basket__product-characteristic
+												p Единица измерения
+												span ШТ
+											.basket__product-characteristic
+												p Вес (кг)
+												span 1,3
+										.basket__product-right
+											.basket__product-price
+												p Цена: #[span 15000 ₽]
+											.basket__product-count
+												+input({
+													type: 'text',
+													placeholder: 'Количество',
+													name: 'count',
+													value: 2,
+												})
+											.basket__product-total
+												p Сумма: #[span 15000 ₽]
+							.basket__information
+								.basket__information-sum
+									.page__info-head
+										p Итого
+									.basket__information-title
+										p Всего: #[br] #[small Без стоимости транспортировки]
+										span 30 000 ₽
+								.basket__information-dostavka
+									.page__info-head
+										p Доставка
+			+footer-two()
