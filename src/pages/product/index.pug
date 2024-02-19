@@ -14,5 +14,110 @@ block content
 				section
 					.container
 						include @components/product/product
-
+				section.modal.modal--preload(data-modal="edit-product")
+					.modal__wrapper
+						.modal__overlay
+						.modal__content
+							button.modal__close-btn(type="button" aria-label="Закрыть попап" data-close-modal data-focus)
+								+svg("xmark")
+							section.productEditing
+								.productEditing__title
+									p.h3 Редактирование товара
+								form.form.productEditing__form(enctype="multipart/form-data")
+									.form__main
+										.form__row
+											+input({
+												type: 'text',
+												placeholder: 'Название товара',
+												name: 'productname',
+												value: 'Lorem ipsum dolor sit amet'
+											}).two-column
+											+input({
+												type: 'text',
+												placeholder: 'Бренд',
+												name: 'brand',
+												list: 'brands',
+											})
+											+input({
+												type: 'text',
+												placeholder: 'Артикул',
+												name: 'article',
+											})
+											+input({
+												type: 'num',
+												placeholder: 'Цена',
+												name: 'price',
+											})
+											+input({
+												type: 'num',
+												placeholder: 'Количество',
+												name: 'count',
+											})
+											+select({
+												placeholder: 'Качество',
+												name: 'quality',
+												items: [
+													{value: 'quality-0', selected: true, label: 'Оригинал'},
+													{value: 'quality-1', label: 'OEM'},
+													{value: 'quality-2', label: 'Аналог'},
+												],
+											})
+											+select({
+												placeholder: 'Срок поставки',
+												name: 'deliverytime',
+												items: [
+													{
+														value: 'deliverytime-0',
+														selected: true,
+														label: 'В наличии'
+													},
+													{value: 'deliverytime-1', label: '1-2 дня'},
+													{value: 'deliverytime-2', label: '2 - 3 дня'},
+													{value: 'deliverytime-3', label: '3 - 5 дней'},
+													{value: 'deliverytime-4', label: '5 - 7 дней'},
+													{value: 'deliverytime-5', label: '7 - 10 дней'},
+													{value: 'deliverytime-6', label: '1 - 2 недели'},
+													{value: 'deliverytime-7', label: '2 - 3 недели'},
+													{value: 'deliverytime-8', label: '3 - 4 недели'},
+													{value: 'deliverytime-9', label: '4 - 5 недель'},
+													{value: 'deliverytime-10', label: '6 - 8 недель'},
+													{value: 'deliverytime-11', label: '8 - 10 недель'},
+													{value: 'deliverytime-12', label: '10 - 12 недель'},
+													{value: 'deliverytime-13', label: '3 - 4 месяца'},
+													{value: 'deliverytime-14', label: '4 - 5 месяцев'},
+													{value: 'deliverytime-15', label: '5 - 6 месяцев'},
+													{value: 'deliverytime-16', label: 'Срок уточняется'},
+													{value: 'deliverytime-17', label: 'Нет предложений'},
+													{value: 'deliverytime-18', label: 'Некорректный номер'},
+												],
+											})
+											//input#autocomplete
+											+select({
+												placeholder: 'Единица измерения',
+												name: 'measurement',
+												items: [
+													{value: 'measurement-0', selected: true, label: 'шт.'},
+													{value: 'measurement-1', label: 'м.'},
+													{value: 'measurement-2', label: 'л.'},
+													{value: 'measurement-3', label: 'компл.'},
+												],
+											})
+											+input({
+												type: 'text',
+												placeholder: 'Вес',
+												name: 'weight',
+											})
+											+textarea({
+												placeholder: 'Комментарий',
+												name: 'comment',
+												rows: '4',
+											}).two-column
+									.form__img
+										.input-upload.input-upload--images-drop(data-upload="img-drop")
+											.input-upload__drop-zone(data-drop-zone)
+												span.input-upload__drop-zone-text Фото товара
+											label(data-drop-zone)
+												input(type="file" name="images[]")
+									.form__buttons
+										button.button.button__primary(type="submit") Сохранить
 			+footer()

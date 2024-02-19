@@ -1,6 +1,9 @@
 import Swiper from 'swiper/bundle';
+import {Form} from '../form/form';
 
 const product = document.querySelectorAll('.product');
+const addProduct = document.querySelector('.productEditing__form');
+const sendData = new Form('POST');
 
 const count = () => {
 	const item = document.querySelector('.product__count');
@@ -43,6 +46,8 @@ const init = () => {
 	galleryMain.init();
 
 	count();
+
+	sendData.init('https://my.loaderpro.ru/Main/edit_product/', addProduct);
 };
 
 export default {
