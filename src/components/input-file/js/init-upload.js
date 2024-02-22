@@ -24,7 +24,7 @@ export const uploadImage = () => new Upload(uploadImageBlock, {
 		fileName: true,
 		fileSize: true,
 	},
-	emptyMessage: 'Добавление файла обязательно',
+	// emptyMessage: 'Добавление файла обязательно',
 	errorMessage: 'Выделенные файлы превышают максимальный размер',
 });
 
@@ -44,7 +44,7 @@ export const uploadFile = () => new Upload(uploadIFileBlock, {
 		fileName: true,
 		fileSize: true,
 	},
-	emptyMessage: 'Добавление файла обязательно',
+	// emptyMessage: 'Добавление файла обязательно',
 	errorMessage: 'Общий размер файлов слишком большой',
 });
 
@@ -68,7 +68,7 @@ export const uploadFileImg = (selector) => new Upload(selector, {
 		fileName: true,
 		fileSize: true,
 	},
-	emptyMessage: 'Добавление файла обязательно',
+	// emptyMessage: 'Добавление файла обязательно',
 	errorMessage: 'Общий размер файлов слишком большой',
 });
 
@@ -108,7 +108,7 @@ export const uploadFileDrop = () => new Upload(uploadFileDropBlock, {
 		fileName: true,
 		fileSize: true,
 	},
-	emptyMessage: 'Добавление файла обязательно',
+	// emptyMessage: 'Добавление файла обязательно',
 	errorMessage: 'Выделенные файлы превышают максимальный размер',
 });
 
@@ -128,6 +128,6 @@ export const uploadFileDropPreview = () => new Upload(uploadFileDropPreviewBlock
 		fileName: true,
 		fileSize: true,
 	},
-	emptyMessage: 'Добавление файла обязательно',
+	// emptyMessage: 'Добавление файла обязательно',
 	errorMessage: 'Выделенные файлы превышают максимальный размер',
 });

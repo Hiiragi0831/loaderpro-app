@@ -34,6 +34,7 @@ import autocomplete from '../components/autocomplete/autocomplete';
 import funnel from '../pages/funnel/funnel';
 import catalog from '../pages/catalog/catalog';
 import request from '../pages/request/request';
+import vehicle from '../pages/vehicle/vehicle';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -102,6 +103,7 @@ const init = () => {
 	funnel.init();
 	catalog.init();
 	request.init();
+	vehicle.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));
