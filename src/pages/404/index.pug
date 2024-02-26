@@ -7,4 +7,12 @@ append vars
 
 block content
 	+router(pageName)
-		h1 404
+		.site
+			include @components/header/header
+			main.page
+				+breadcrumbs()
+				section.page-message
+					.container
+						h1.mb-20 Ошибка 404
+						a.button.button__outline.mt-40 На главную
+			+footer-two()

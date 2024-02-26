@@ -1,0 +1,20 @@
+extends @pug/base
+
+append globals
+	- pageName = 'message-error'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main.page
+				+breadcrumbs()
+				section.page-message
+					.container
+						h1.mb-20 Обратитесь в поддержку
+						p Если вы видите данную страницу, значит вы обнаружили ошибку в работе платформы.
+						p Помогите нам стать лучше и пришлите пожалуйста скриншот с описанием проблемы на почту #[a(href="#") support@loaderpro.ru]
+						a.button.button__outline.mt-40 На главную
+			+footer-two()

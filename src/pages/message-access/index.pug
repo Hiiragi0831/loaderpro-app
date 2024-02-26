@@ -1,0 +1,19 @@
+extends @pug/base
+
+append globals
+	- pageName = 'message-access'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main.page
+				+breadcrumbs()
+				section.page-message
+					.container
+						h1.mb-20 Доступ закрыт
+						p Доступ к данному разделу запрещен. Для запроса на расширение прав доступа обратитесь к коммерческому представителю.
+						a.button.button__outline.mt-40 На главную
+			+footer-two()

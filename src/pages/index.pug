@@ -14,9 +14,6 @@ block content
 					-
 						var pages = [
 							{
-								title: '404',
-								href: '404',
-							}, {
 								title: 'Страница авторизации',
 								href: 'authorization',
 							}, {
@@ -94,7 +91,16 @@ block content
 							}, {
 								title: 'Корзина',
 								href: 'basket',
-							}
+							}, {
+								title: 'Сбой системы',
+								href: 'message-error',
+							}, {
+								title: '404',
+								href: '404',
+							}, {
+								title: 'Доступ закрыт',
+								href: 'message-access',
+							},
 						]
 					ol
 						each item in pages
