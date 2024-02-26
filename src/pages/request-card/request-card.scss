@@ -26,6 +26,20 @@
 	}
 
 	&__title {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: vc(15);
+
+		a {
+			flex: none;
+			width: vc(60);
+			height: vc(60);
+
+			svg {
+				fill: $tree-poppy-400;
+			}
+		}
 	}
 
 	&__labels {
