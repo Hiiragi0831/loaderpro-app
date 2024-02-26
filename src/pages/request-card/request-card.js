@@ -1,6 +1,7 @@
 import {Form} from '../../components/form/form';
 import {Cookie} from '../../components/cookies/cookies';
 const requestCard = document.querySelector('.request-card');
+const sendForm = new Form('POST');
 
 const marginCalc = () => {
 	const margin = requestCard.querySelector('[name="margin"]');
@@ -24,6 +25,18 @@ const marginCalc = () => {
 	[budget, purchase, additionalaccounts, delivery].forEach((i) => {
 		i.addEventListener('change', () => {
 			formula();
+		});
+	});
+};
+
+const delPhoto = () => {
+	document.querySelectorAll('[data-base-photo]').forEach((item) => {
+		const FData = new FormData();
+		item.querySelector('.input-upload__preview-item-remove').addEventListener('click', () => {
+			item.remove();
+			FData.append('src', item.querySelector('.input-upload__preview-img').src);
+			console.log('src', item.querySelector('.input-upload__preview-img').src);
+			sendForm.sendData(FData, 'https://my.loaderpro.ru/Main/img_delete');
 		});
 	});
 };
@@ -68,19 +81,14 @@ const typeChange = (modal) => {
 };
 
 const sendData = () => {
-	const sendForm = new Form('POST');
-	const from = requestCard.querySelector('[data-request-card]');
-
-	sendForm.init('https://my.loaderpro.ru/request_card/request_card_save/', from);
+	sendForm.init('https://my.loaderpro.ru/request_card/request_card_save/', requestCard.querySelector('[data-request-card]'));
 };
 
 const editProduct = () => {
-	// https://my.loaderpro.ru/Main/edit_product/
-	const send = new Form('POST');
 	const forms = document.querySelectorAll('.productEditing__form');
 
 	forms.forEach((form) => {
-		send.init('https://my.loaderpro.ru/Main/edit_product/', form);
+		sendForm.init('https://my.loaderpro.ru/Main/edit_product/', form);
 	});
 };
 
@@ -93,10 +101,7 @@ const init = () => {
 	marginCalc();
 	sendData();
 	editProduct();
-
-	// document.querySelectorAll('.modal').forEach((i) => {
-	// 	typeChange(i);
-	// });
+	delPhoto();
 };
 
 export default {
