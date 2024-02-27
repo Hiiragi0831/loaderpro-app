@@ -93,12 +93,12 @@ block content
 										p Доставка
 									.basket__information-radio
 										label.form__radio
-											input(type="radio" name="delivery" value="По умолчанию")
+											input(type="radio" name="delivery" value="default" checked)
 											span По умолчанию
 										label.form__radio
-											input(type="radio" name="delivery" value="До клиента")
+											input(type="radio" name="delivery" value="client")
 											span До клиента
-									.basket__information-info
+									.basket__information-info.is-hidden
 										+input({
 											type: 'text',
 											placeholder: 'Наименование компании',
@@ -174,5 +174,19 @@ block content
 												{value: '4', label: 'Череп и мозги'},
 											],
 										})
-										button.button.button__primary(type="submit") Разместить заказ
+									.request-card__contact
+										p.h4 Информация о контакте
+										.request-card__contact-item
+											p Компания
+											p #[b ООО "Добрый зайка"]
+										.request-card__contact-item
+											p Раб. телефон
+											p #[b +7-977-777-66-66]
+										.request-card__contact-item
+											p E-mail раб
+											p #[b морковка@зайкидобра.рф]
+										.request-card__contact-item
+											p Должность
+											p #[b Старший Заяц]
+									button.button.button__primary(type="submit") Разместить заказ
 			+footer-two()

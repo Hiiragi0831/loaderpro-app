@@ -35,6 +35,7 @@ import funnel from '../pages/funnel/funnel';
 import catalog from '../pages/catalog/catalog';
 import request from '../pages/request/request';
 import vehicle from '../pages/vehicle/vehicle';
+import basket from '../pages/basket/basket';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -104,6 +105,7 @@ const init = () => {
 	catalog.init();
 	request.init();
 	vehicle.init();
+	basket.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));

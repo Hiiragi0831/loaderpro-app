@@ -35,7 +35,7 @@
 		&-radio {
 			display: flex;
 			flex-direction: column;
-			padding: vc(15);
+			padding: 0 vc(15);
 			gap: vc(15);
 		}
 
@@ -44,6 +44,12 @@
 			flex-direction: column;
 			margin-top: vc(15);
 			gap: vc(20);
+		}
+
+		&-dostavka {
+			display: flex;
+			flex-direction: column;
+			gap: vc(15);
 		}
 	}
 
