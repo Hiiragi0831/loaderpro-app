@@ -102,6 +102,10 @@ const init = () => {
 	sendData();
 	editProduct();
 	delPhoto();
+	requestCard.querySelector('[data-export]').addEventListener('click', (evt) => {
+		evt.preventDefault();
+		// sendForm.sendData('data', 'https://my.loaderpro.ru/Main/edit_product/');
+	});
 };
 
 export default {
