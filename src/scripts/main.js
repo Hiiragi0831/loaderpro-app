@@ -36,6 +36,7 @@ import catalog from '../pages/catalog/catalog';
 import request from '../pages/request/request';
 import vehicle from '../pages/vehicle/vehicle';
 import basket from '../pages/basket/basket';
+import garage from '../pages/garage/garage';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -106,6 +107,7 @@ const init = () => {
 	request.init();
 	vehicle.init();
 	basket.init();
+	garage.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));

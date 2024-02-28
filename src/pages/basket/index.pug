@@ -17,70 +17,8 @@ block content
 							p Содержимое корзины
 						.row
 							.basket__items
-								form.basket__product
-									input(type="hidden" name="id" value="165149856")
-									button.basket__product-del X
-									.basket__product-img
-										+picture({
-											path: `${baseDir}assets/images/image`,
-											ext: 'png',
-										})
-									.basket__product-info
-										.basket__product-left
-											a.basket__product-title(href="#") lorem
-											.basket__product-article 123549
-											.basket__product-status.green
-												p В наличии
-											.basket__product-characteristic
-												p Единица измерения
-												span ШТ
-											.basket__product-characteristic
-												p Вес (кг)
-												span 1,3
-										.basket__product-right
-											.basket__product-price
-												p Цена: #[span 15000 ₽]
-											.basket__product-count
-												+input({
-													type: 'text',
-													placeholder: 'Количество',
-													name: 'count',
-													value: 2,
-												})
-											.basket__product-total
-												p Сумма: #[span 15000 ₽]
-								form.basket__product
-									input(type="hidden" name="id" value="165149856")
-									button.basket__product-del X
-									.basket__product-img
-										+picture({
-											path: `${baseDir}assets/images/image`,
-											ext: 'png',
-										})
-									.basket__product-info
-										.basket__product-left
-											a.basket__product-title(href="#") lorem
-											.basket__product-article 123549
-											.basket__product-status.green
-												p В наличии
-											.basket__product-characteristic
-												p Единица измерения
-												span ШТ
-											.basket__product-characteristic
-												p Вес (кг)
-												span 1,3
-										.basket__product-right
-											.basket__product-price
-												p Цена: #[span 15000 ₽]
-											.basket__product-count
-												+input({
-													type: 'text',
-													placeholder: 'Количество',
-													name: 'count',
-													value: 2,
-												})
-											.basket__product-total
-												p Сумма: #[span 15000 ₽]
+								+basket-product()
+								+basket-product()
 							form.basket__information
 								.basket__information-sum
 									.page__info-head
