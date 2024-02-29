@@ -26,18 +26,25 @@ block content
 									.basket__information-title
 										p Всего: #[br] #[small Без стоимости транспортировки]
 										span 30 000 ₽
-									.basket__information-status
-										+select({
-											placeholder: 'Статус',
-											name: 'status',
-											items: [
-												{value: '0', label: 'Дата создания', selected: true},
-												{value: '1', label: 'Дата оплаты'},
-												{value: '2', label: 'Дата поставки'},
-												{value: '3', label: 'Дата отгрузки'},
-												{value: '4', label: 'Трек номер'},
-											],
-										})
+								.basket__information-item
+									.page__info-head
+										p Статус
+									.basket__information-item-box
+										.basket__information-box
+											p Дата создания
+											p 12.11.2023
+										.basket__information-box
+											p Дата оплаты
+											p 12.11.2023
+										.basket__information-box
+											p Дата поставки
+											p 12.11.2023
+										.basket__information-box
+											p Дата отгрузки
+											p 12.11.2023
+										.basket__information-box
+											p Трек номер
+											p 12.11.2023
 								.basket__information-dostavka
 									.page__info-head
 										p Доставка

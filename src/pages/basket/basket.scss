@@ -37,8 +37,19 @@
 			flex-direction: column;
 		}
 
-		&-status {
-			padding: vc(15);
+		&-item {
+			&-box {
+				display: flex;
+				flex-direction: column;
+				padding: vc(15);
+				gap: vc(15);
+			}
+		}
+
+		&-box {
+			display: flex;
+			justify-content: space-between;
+			font-size: vc(16);
 		}
 
 		&-radio {
