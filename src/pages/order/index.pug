@@ -27,9 +27,20 @@ block content
 										p Всего: #[br] #[small Без стоимости транспортировки]
 										span 30 000 ₽
 								.basket__information-item
-									.page__info-head
-										p Статус
 									.basket__information-item-box
+										+select({
+											placeholder: 'Статус',
+											name: 'carrier',
+											items: [
+												{value: '0', label: 'В обработке', selected: true},
+												{value: '1', label: 'Счет отправлен'},
+												{value: '2', label: 'Счет оплачен'},
+												{value: '3', label: 'В пути'},
+												{value: '4', label: 'Готов к отгрузке'},
+												{value: '5', label: 'Отгружен'},
+												{value: '6', label: 'Отменен'},
+											],
+										})
 										.basket__information-box
 											p Дата создания
 											p 12.11.2023
