@@ -42,10 +42,6 @@ export class Form {
 	renderHtml(html) {
 		this.elappend.innerHTML = '';
 		this.elappend.insertAdjacentHTML('beforeend', html);
-
-		if (html === '') {
-			this.elappend.innerHTML = '';
-		}
 	}
 
 	onSuccess(responseJson) {
@@ -69,6 +65,8 @@ export class Form {
 
 		if (responseJson.html) {
 			this.renderHtml(responseJson.html);
+		} else if (responseJson.html === '') {
+			this.elappend.innerHTML = '';
 		}
 
 		if (responseJson.count) {
