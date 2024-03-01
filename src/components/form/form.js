@@ -42,10 +42,15 @@ export class Form {
 	renderHtml(html) {
 		this.elappend.innerHTML = '';
 		this.elappend.insertAdjacentHTML('beforeend', html);
+
+		if (html === '') {
+			this.elappend.innerHTML = '';
+		}
 	}
 
 	onSuccess(responseJson) {
 		console.log('Ваша форма успешна отправлена', responseJson);
+
 		if (responseJson.status === 'error') {
 			notyf.error(responseJson.message);
 
