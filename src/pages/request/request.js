@@ -1,10 +1,10 @@
 import {uploadFileImg} from '../../components/input-file/js/init-upload';
-// import {Form} from '../../components/form/form';
+import {Form} from '../../components/form/form';
 import {Notyf} from 'notyf';
 
 const request = document.querySelector('.request');
 const dataItem = {};
-// const submitForm = new Form('POST');
+const submitForm = new Form('POST');
 const notyf = new Notyf();
 
 const renderItem = () => {
@@ -70,6 +70,8 @@ const sendData = () => {
 	});
 
 	buildFormData(formData, formsDate);
+
+	submitForm.sendData(formData, 'https://my.loaderpro.ru/Main/orders');
 
 	formData.forEach((i, k) => {
 		console.log(k, i);
