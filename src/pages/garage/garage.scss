@@ -29,6 +29,9 @@
 	}
 
 	&__items {
+		display: flex;
+		flex-direction: column;
 		margin-top: vc(30);
+		gap: vc(30);
 	}
 }
