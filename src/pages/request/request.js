@@ -71,7 +71,7 @@ const sendData = () => {
 
 	buildFormData(formData, formsDate);
 
-	submitForm.sendData(formData, 'https://my.loaderpro.ru/Main/orders');
+	submitForm.sendData(formData, 'https://my.loaderpro.ru/pz_request/pz_request_orders');
 
 	formData.forEach((i, k) => {
 		console.log(k, i);
