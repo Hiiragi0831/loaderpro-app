@@ -7,7 +7,7 @@ const init = () => {
 		return;
 	}
 
-	sendForm.init('https://my.loaderpro.ru/vehicle/vehicle_add', page.querySelector('.vehicle__form'));
+	sendForm.init('https://my.loaderpro.ru/pz_vehicle/vehicle_add', page.querySelector('.vehicle__form'));
 };
 
 export default {
