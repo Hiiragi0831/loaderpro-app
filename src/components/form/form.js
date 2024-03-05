@@ -73,6 +73,10 @@ export class Form {
 			this.elappend.parentElement.querySelector('[data-more]').querySelector('[name="query_more"]').value = responseJson.count;
 		}
 
+		if (responseJson.link) {
+			window.location.href = responseJson.link;
+		}
+
 		if (responseJson.count === 0) {
 			this.elappend.parentElement.querySelector('[data-more]').classList.add('is-hidden');
 		}
