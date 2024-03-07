@@ -64,6 +64,9 @@ block content
 											input(type="radio" name="delivery" value="default" checked)
 											span По умолчанию
 										label.form__radio
+											input(type="radio" name="delivery" value="pickup")
+											span Самовывоз Санкт-Петербург
+										label.form__radio
 											input(type="radio" name="delivery" value="client")
 											span До клиента
 									.basket__information-info.is-hidden
@@ -102,21 +105,15 @@ block content
 											name: 'carrier',
 											items: [
 												{value: '0', label: 'Деловые линии', selected: true},
-												{value: '1', label: 'ПЭК'},
-												{value: '2', label: 'Заур'},
-												{value: '3', label: 'Космоперевозки от Виталя'},
-												{value: '4', label: 'Черепахи транспорт'},
+												{value: '1', label: 'СДЭК'},
 											],
 										})
 										+select({
 											placeholder: 'Метод доставки',
 											name: 'method',
 											items: [
-												{value: '0', label: 'До двери', selected: true},
-												{value: '1', label: 'До подъезда'},
-												{value: '2', label: 'До дома'},
-												{value: '3', label: 'До космолифта'},
-												{value: '4', label: 'До марса'},
+												{value: '0', label: 'До дверей', selected: true},
+												{value: '1', label: 'До терминала'},
 											],
 										})
 										+input({
@@ -136,10 +133,7 @@ block content
 											name: 'priority',
 											items: [
 												{value: '0', label: 'Укомплектовать полностью', selected: true},
-												{value: '1', label: 'Укомплектовать не полностью'},
-												{value: '2', label: 'По частям'},
-												{value: '3', label: 'Ноги отдельно, руки отдельно'},
-												{value: '4', label: 'Череп и мозги'},
+												{value: '1', label: 'Отправить имеющееся в наличии'},
 											],
 										})
 									.request-card__contact
