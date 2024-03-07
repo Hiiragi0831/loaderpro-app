@@ -88,6 +88,11 @@ export class Form {
 		if (responseJson.url) {
 			window.location.href = responseJson.url;
 		}
+
+		if (responseJson.vehicle_id) {
+			const vehicleId = new Cookie('vehicle_id');
+			vehicleId.set(responseJson.vehicle_id, 1);
+		}
 	}
 
 	onError(error) {
