@@ -1,0 +1,95 @@
+extends @pug/base
+
+append globals
+	- pageName = 'account'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main.account
+				+breadcrumbs()
+				section.account__section
+					.container
+						h1.account__title Мой аккаунт
+						.account__row
+							nav.account__menu
+								.account__menu-wrapper
+									each item in data.account.menu
+										a.account__menu-item(href!= item.href)
+											+svg(item.icon)
+											span!= item.name
+							.page__info
+								h2 Заказы
+								.page__tab
+									+navTab([
+										{
+											link: 'В обработке',
+											active: true,
+										}, {
+											link: 'Счет отправлен'
+										}, {
+											link: 'Счет оплачен'
+										}, {
+											link: 'В пути'
+										}, {
+											link: 'Готов к отгрузки'
+										}, {
+											link: 'Отгружен'
+										}, {
+											link: 'Отменен'
+										},
+									])
+								.query__box.mt-20
+									.query__box-title
+										p Поиск заказа
+									.query__box-form
+										form.form
+											.form__main
+												.form__row
+													+input({
+														type: 'text',
+														placeholder: 'Номер заказа',
+														name: 'ordernumber',
+													})
+													+input({
+														type: 'text',
+														placeholder: 'Кем создан',
+														name: 'created',
+													})
+													+input({
+														type: 'text',
+														placeholder: 'Дата создания',
+														name: 'date',
+													}).datepicker-multiple
+													button.button.button__primary(type="submit") Поиск
+								.page__results.mt-20
+									.page__info-head
+										p Результаты
+									.table
+										table
+											tr
+												th Номер заказа
+												th Дата создания
+												th Дата оплаты
+												th Дата поставки
+												th Дата отгрузки
+												th Трек номер
+											tr
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+											tr
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+
+			+footer()

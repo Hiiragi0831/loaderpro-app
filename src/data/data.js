@@ -24,6 +24,10 @@ const data = {
 				icon: 'gear',
 				name: 'Мой аккаунт',
 				href: '/account/',
+			}, {
+				icon: 'ballot-check',
+				name: 'Заказы',
+				href: '/list-orders/',
 			},
 		],
 	},

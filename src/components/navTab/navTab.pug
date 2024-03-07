@@ -1,4 +1,5 @@
 mixin navTab(data)
 	.navtab
-		each item in data
-			a.navtab__item(href="#" class=item.active? 'is-active': '')!= item.link
+		.navtab__wrapper
+			each item in data
+				a.navtab__item(href="#" class=item.active? 'is-active': '')!= item.link

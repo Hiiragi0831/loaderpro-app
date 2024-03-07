@@ -1,8 +1,17 @@
 .navtab {
-	display: inline-flex;
-	overflow: auto;
+	position: relative;
+	display: block;
 	border-bottom: 2px solid $tree-poppy-400;
-	max-width: 100%;
+	width: 100%;
+	height: vc(54);
+
+	&__wrapper {
+		position: absolute;
+		display: flex;
+		overflow: auto;
+		width: 100%;
+		height: 100%;
+	}
 
 	&__item {
 		flex: none;
