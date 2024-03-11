@@ -19,7 +19,7 @@ const init = () => {
 				informationInfo.querySelectorAll('input, select').forEach((i) => {
 					i.disabled = false;
 				});
-			} else if (item.querySelector('input').value === 'default') {
+			} else {
 				informationInfo.classList.add('is-hidden');
 				informationInfo.querySelectorAll('input, select').forEach((i) => {
 					i.disabled = true;
