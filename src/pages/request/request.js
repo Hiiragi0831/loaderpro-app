@@ -27,7 +27,7 @@ const getData = () => {
 			dataItem[key] = value;
 		});
 
-		if (dataItem.titleparts && dataItem.numparts && dataItem.count) {
+		if (dataItem.titleparts && dataItem.count) {
 			renderItem();
 			form.reset();
 			if (request.querySelector('.request__data').classList.contains('is-hidden')) {
