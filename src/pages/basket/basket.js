@@ -1,13 +1,17 @@
+import {Form} from '../../components/form/form';
+
 const page = document.querySelector('.basket');
+const sendForm = new Form('POST');
 const init = () => {
 	if (!page) {
 		return;
 	}
 	const informationInfo = page.querySelector('.basket__information-info');
 
-	page.querySelectorAll('.basket__product').forEach((item) => {
-		item.querySelector('.basket__product-del').addEventListener('click', (evt) => {
+	page.querySelectorAll('.basket-product').forEach((item) => {
+		item.querySelector('.basket-product__del').addEventListener('click', (evt) => {
 			evt.preventDefault();
+			sendForm.send('https://my.loaderpro.ru/basket/basket_delete', item);
 			item.remove();
 		});
 	});
@@ -27,6 +31,10 @@ const init = () => {
 			}
 		});
 	});
+
+	if (page.querySelector('[data-basket]')) {
+		sendForm.init('https://my.loaderpro.ru/basket/basket_add_orders', page.querySelector('[data-basket]'));
+	}
 };
 
 export default {

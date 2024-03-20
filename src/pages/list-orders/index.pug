@@ -9,7 +9,7 @@ block content
 	+router(pageName)
 		.site
 			include @components/header/header
-			main.account
+			main.account(data-list-orders)
 				+breadcrumbs()
 				section.account__section
 					.container
@@ -46,7 +46,7 @@ block content
 									.query__box-title
 										p Поиск заказа
 									.query__box-form
-										form.form
+										form.form(data-search)
 											.form__main
 												.form__row
 													+input({

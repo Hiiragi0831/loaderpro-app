@@ -3,7 +3,13 @@ import {Notyf} from 'notyf';
 
 const queryBox = document.querySelector('[data-query]');
 const querysBox = document.querySelector('[data-querys]');
-let notyf = new Notyf();
+let notyf = new Notyf({
+	duration: 5000,
+	position: {
+		x: 'right',
+		y: 'top',
+	},
+});
 
 const deleteQuery = () => {
 	querysBox.querySelector('.form').querySelectorAll('.form__group').forEach((el) => {

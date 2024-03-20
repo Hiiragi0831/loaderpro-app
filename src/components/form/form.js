@@ -1,6 +1,12 @@
 import {Notyf} from 'notyf';
 import {Cookie} from '../cookies/cookies';
-let notyf = new Notyf();
+let notyf = new Notyf({
+	duration: 5000,
+	position: {
+		x: 'right',
+		y: 'top',
+	},
+});
 
 export class Form {
 	constructor(method) {

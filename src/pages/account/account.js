@@ -1,9 +1,15 @@
 import {Form} from '../../components/form/form';
 import {Notyf} from 'notyf';
+let notyf = new Notyf({
+	duration: 5000,
+	position: {
+		x: 'right',
+		y: 'top',
+	},
+});
 
 const init = () => {
 	if (document.querySelector('[data-account-form]')) {
-		let notyf = new Notyf();
 		const form = document.querySelector('[data-account-form]');
 		const sendData = new Form('POST');
 		const password = form.querySelector('.password').querySelector('input');

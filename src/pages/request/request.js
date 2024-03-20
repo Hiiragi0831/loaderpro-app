@@ -5,7 +5,13 @@ import {Notyf} from 'notyf';
 const request = document.querySelector('.request');
 const dataItem = {};
 const submitForm = new Form('POST');
-const notyf = new Notyf();
+const notyf = new Notyf({
+	duration: 5000,
+	position: {
+		x: 'right',
+		y: 'top',
+	},
+});
 
 const renderItem = () => {
 	const clone = request.querySelector('#request-item').content.cloneNode(true);
