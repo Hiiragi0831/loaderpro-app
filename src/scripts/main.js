@@ -38,6 +38,7 @@ import vehicle from '../pages/vehicle/vehicle';
 import basket from '../pages/basket/basket';
 import garage from '../pages/garage/garage';
 import listOrders from '../pages/list-orders/list-orders';
+import merchandise from '../components/merchandise/merchandise';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -110,6 +111,7 @@ const init = () => {
 	basket.init();
 	garage.init();
 	listOrders.init();
+	merchandise.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));
