@@ -38,7 +38,7 @@ import vehicle from '../pages/vehicle/vehicle';
 import basket from '../pages/basket/basket';
 import garage from '../pages/garage/garage';
 import listOrders from '../pages/list-orders/list-orders';
-import merchandise from '../components/merchandise/merchandise';
+import {Form} from '../components/form/form';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -60,6 +60,15 @@ const resize = () => {
 	document.body.classList.remove('is-resizing');
 
 	resizeWidth = innerWidth;
+};
+
+const addBasket = () => {
+	const sendForm = new Form('POST');
+	if (document.querySelector('[data-add-basket]')) {
+		document.querySelectorAll('[data-add-basket]').forEach((item) => {
+			sendForm.init('https://my.loaderpro.ru/basket/basket_add_orders', item);
+		});
+	}
 };
 
 // добавить скрипты для инициализации при переходах
@@ -111,7 +120,7 @@ const init = () => {
 	basket.init();
 	garage.init();
 	listOrders.init();
-	merchandise.init();
+	addBasket();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));
