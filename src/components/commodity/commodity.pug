@@ -1,5 +1,5 @@
 mixin commodityQuery(data)
-	form.commodity-query(data-add-basket)
+	.commodity-query
 		.commodity-query__heading
 			.commodity-query__heading-item
 				p 8/05/23 - 1.0
@@ -9,7 +9,7 @@ mixin commodityQuery(data)
 				p Кем создан: #[b Имя Фамилия]
 			.commodity-query__heading-item
 				p Действительно до: #[b 9/05/23]
-		.commodity-query__item
+		form.commodity-query__item(data-add-basket)
 			.commodity-query__img
 				+picture({
 					path: `${baseDir}assets/images/1`,
@@ -59,7 +59,7 @@ mixin commodityQuery(data)
 						p 30 000 Р
 				.commodity-query__info-button
 					button.button.button__primary Добавить в корзину
-		.commodity-query__item
+		form.commodity-query__item(data-add-basket)
 			.commodity-query__img
 				+picture({
 					path: `${baseDir}assets/images/1`,
