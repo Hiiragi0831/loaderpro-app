@@ -66,7 +66,7 @@ const addBasket = () => {
 	const sendForm = new Form('POST');
 	if (document.querySelector('[data-add-basket]')) {
 		document.querySelectorAll('[data-add-basket]').forEach((item) => {
-			sendForm.init('https://my.loaderpro.ru/basket/basket_add_orders', item);
+			sendForm.init('https://my.loaderpro.ru/basket/basket_add', item);
 		});
 	}
 };

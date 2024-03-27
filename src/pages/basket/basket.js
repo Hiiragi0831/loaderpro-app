@@ -31,6 +31,8 @@ const init = () => {
 			}
 		});
 	});
+
+	sendForm.send('https://my.loaderpro.ru/basket/basket_add_orders', page.querySelector('[data-basket]'));
 };
 
 export default {
