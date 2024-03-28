@@ -14,6 +14,11 @@ const init = () => {
 			sendForm.send('https://my.loaderpro.ru/basket/basket_delete', item);
 			item.remove();
 		});
+
+		item.querySelector('.basket-product__count input').addEventListener('change', (evt) => {
+			evt.preventDefault();
+			sendForm.send('https://my.loaderpro.ru/basket/basket_count_edit', item);
+		});
 	});
 
 	page.querySelector('.basket__information-radio').querySelectorAll('.form__radio').forEach((item) => {
@@ -32,7 +37,7 @@ const init = () => {
 		});
 	});
 
-	sendForm.send('https://my.loaderpro.ru/basket/basket_add_orders', page.querySelector('[data-basket]'));
+	sendForm.init('https://my.loaderpro.ru/basket/basket_add_orders', page.querySelector('[data-basket]'));
 };
 
 export default {
