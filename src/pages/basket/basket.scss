@@ -43,6 +43,10 @@
 				flex-direction: column;
 				padding: vc(15);
 				gap: vc(15);
+
+				input {
+					text-align: end;
+				}
 			}
 		}
 
