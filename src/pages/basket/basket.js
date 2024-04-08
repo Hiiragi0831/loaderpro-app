@@ -44,6 +44,12 @@ const init = () => {
 	if (page.querySelector('[data-basket-order]')) {
 		sendForm.init('https://my.loaderpro.ru/order/order_edit_orders', page.querySelector('[data-basket-order]'));
 	}
+
+	if (document.querySelector('.productEditing__form')) {
+		document.querySelectorAll('.productEditing__form').forEach((i) => {
+			sendForm.init('https://my.loaderpro.ru/Main/edit_product/', i);
+		});
+	}
 };
 
 export default {
