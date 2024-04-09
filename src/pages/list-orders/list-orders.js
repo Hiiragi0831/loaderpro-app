@@ -11,9 +11,11 @@ const init = () => {
 
 	page.querySelector('.page__tab').querySelectorAll('.navtab__item').forEach((i, id) => {
 		i.addEventListener('click', (e) => {
+			const fd = new FormData();
 			e.preventDefault();
 			console.log(i, id);
-			sendForm.sendData(id, 'https://my.loaderpro.ru/list_orders/list_order_status_result', page.querySelector('.page__results'));
+			fd.append('order_status', id);
+			sendForm.sendData(fd, 'https://my.loaderpro.ru/list_orders/list_order_status_result', page.querySelector('.page__results'));
 		});
 	});
 };

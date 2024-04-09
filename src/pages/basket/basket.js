@@ -22,7 +22,7 @@ const init = () => {
 	});
 
 	page.querySelector('.basket__information-radio').querySelectorAll('.form__radio').forEach((item) => {
-		item.querySelector('input').addEventListener('change', () => {
+		const condition = () => {
 			if (item.querySelector('input').value === 'client') {
 				informationInfo.classList.remove('is-hidden');
 				informationInfo.querySelectorAll('input, select').forEach((i) => {
@@ -34,6 +34,13 @@ const init = () => {
 					i.disabled = true;
 				});
 			}
+		};
+
+		if (item.querySelector('input').checked) {
+			condition();
+		}
+		item.querySelector('input').addEventListener('change', () => {
+			condition();
 		});
 	});
 
