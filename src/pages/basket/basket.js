@@ -45,7 +45,7 @@ const init = () => {
 	});
 
 	if (page.querySelector('[data-basket]')) {
-		sendForm.init('https://my.loaderpro.ru/basket/basket_add_orders', page.querySelector('[data-basket]'));
+		sendForm.init('https://my.loaderpro.ru/basket/basket_add_orders', page.querySelector('[data-basket]'), document.querySelector('main'));
 	}
 
 	if (page.querySelector('[data-basket-order]')) {
