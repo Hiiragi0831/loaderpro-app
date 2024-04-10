@@ -1,5 +1,6 @@
 import debounce from 'lodash.debounce';
 import throttle from 'lodash.throttle';
+import IMask from 'imask';
 
 import 'swiper/swiper-bundle.css';
 import 'air-datepicker/air-datepicker.css';
@@ -71,6 +72,18 @@ const addBasket = () => {
 	}
 };
 
+const phoneMask = () => {
+	if (document.querySelector('.js-phone-mask')) {
+		document.querySelectorAll('.js-phone-mask').forEach((i) => {
+			// eslint-disable-next-line
+			const imask = new IMask(i.querySelector('input'), {
+				mask: '+{7} (000) 000-00-00',
+				lazy: false,
+			});
+		});
+	}
+};
+
 // добавить скрипты для инициализации при переходах
 // const scriptsInit = [
 // 	// активируем нужные модули которые будут использоваться и которые должны обновлять при переходах между страницами
@@ -121,6 +134,7 @@ const init = () => {
 	garage.init();
 	listOrders.init();
 	addBasket();
+	phoneMask();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));
