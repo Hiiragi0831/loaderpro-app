@@ -29,6 +29,7 @@ const init = () => {
 			sendData.send('https://my.loaderpro.ru/catalog/catalog_filters', filter, catalog.querySelector('.catalog__row'));
 		});
 	});
+	sendData.init('https://my.loaderpro.ru/catalog/catalog_filters', filter, catalog.querySelector('.catalog__row'));
 };
 
 export default {
