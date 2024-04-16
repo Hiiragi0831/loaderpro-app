@@ -135,6 +135,10 @@
 			width: vc(118);
 			height: vc(118);
 
+			img {
+				object-fit: contain;
+			}
+
 			@include devices {
 				margin-top: vc(30);
 				width: 100%;
