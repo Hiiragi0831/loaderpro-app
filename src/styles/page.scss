@@ -93,6 +93,22 @@
 			display: flex;
 			justify-content: flex-end;
 		}
+
+		.two-column {
+			grid-column: span 2 / span 1;
+
+			@include devices {
+				grid-column: auto;
+			}
+		}
+
+		.one-column {
+			grid-column: span 3 / span 1;
+
+			@include devices {
+				grid-column: auto;
+			}
+		}
 	}
 }
 

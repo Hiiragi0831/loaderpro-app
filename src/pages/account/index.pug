@@ -83,16 +83,22 @@ block content
 										})
 										+input({
 											type: 'text',
-											placeholder: 'Город',
-											name: 'city',
-											value: 'Константинополь'
-										})
+											placeholder: 'Фактический Адрес',
+											name: 'factaddress',
+											value: '19293, Константинополь, Византийская 7б,'
+										}).one-column
 										+input({
 											type: 'text',
-											placeholder: 'Юр. Адрес',
+											placeholder: 'Юридический Адрес',
 											name: 'legaladdress',
 											value: '19293, Константинополь, Византийская 7б,'
-										}).two-column
+										}).one-column
+										+input({
+											type: 'text',
+											placeholder: 'Почтовый Адрес',
+											name: 'postaddress',
+											value: '19293, Константинополь, Византийская 7б,'
+										}).one-column
 								.page__info-item
 									.page__info-head
 										p Настройки профиля
