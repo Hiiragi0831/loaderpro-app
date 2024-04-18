@@ -76,7 +76,7 @@ const phoneMask = () => {
 	if (document.querySelector('.js-phone-mask')) {
 		document.querySelectorAll('.js-phone-mask').forEach((i) => {
 			// eslint-disable-next-line
-			const imask = new IMask(i.querySelector('input'), {
+			new IMask(i.querySelector('input'), {
 				mask: '+{7} (000) 000-00-00',
 				lazy: false,
 			});

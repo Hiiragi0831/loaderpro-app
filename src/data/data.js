@@ -28,6 +28,10 @@ const data = {
 				icon: 'ballot-check',
 				name: 'Заказы',
 				href: '/list-orders/',
+			}, {
+				icon: 'user',
+				name: 'Пользователи',
+				href: '/users/',
 			},
 		],
 	},

@@ -1,0 +1,85 @@
+extends @pug/base
+
+append globals
+	- pageName = 'account'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main.account
+				+breadcrumbs()
+				section.account__section
+					.container
+						h1.account__title Мой аккаунт
+						.account__row
+							nav.account__menu
+								.account__menu-wrapper
+									each item in data.account.menu
+										a.account__menu-item(href!= item.href)
+											+svg(item.icon)
+											span!= item.name
+							.page__info
+								h2 Пользователи
+								.query__box.mt-20
+									.query__box-title
+										p Поиск пользователя
+									.query__box-form
+										form.form(data-search)
+											.form__main
+												.form__row
+													+input({
+														type: 'text',
+														placeholder: 'Номер пользователя',
+														name: 'usernum',
+													})
+													+input({
+														type: 'text',
+														placeholder: 'ИНН',
+														name: 'inn',
+													})
+													+input({
+														type: 'tel',
+														placeholder: 'Телефон',
+														name: 'phone',
+													}).js-phone-mask
+													button.button.button__primary(type="submit") Поиск
+								.page__results.mt-20
+									.page__info-head
+										p Результаты
+									.table
+										table
+											tr
+												th Номер пользователя
+												th ИНН
+												th Название компании
+												th Контактное лицо
+												th Телефон
+												th Email
+												th Администратор
+											tr
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+												td
+													label.form__checkbox
+														input(type="checkbox" name="admin" value="admin")
+														span
+											tr
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+												td 4345435
+												td
+													label.form__checkbox
+														input(type="checkbox" name="admin" value="admin")
+														span
+
+			+footer()
