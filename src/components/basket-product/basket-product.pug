@@ -14,7 +14,7 @@ mixin basket-product(data = {})
 		.basket-product__info
 			.basket-product__left
 				a.basket-product__title(href="#") lorem
-				.basket-product__article 123549
+				.basket-product__article Kia - 123549
 				.basket-product__status.green
 					p В наличии
 				.basket-product__characteristic
@@ -24,7 +24,7 @@ mixin basket-product(data = {})
 					p Вес (кг)
 					span 1,3
 			.basket-product__right
-				.basket-product__price
+				.basket-product__price(data-product-price="15000")
 					p Цена: #[span 15000 ₽]
 				.basket-product__count
 					+input({
@@ -33,5 +33,5 @@ mixin basket-product(data = {})
 						name: 'count',
 						value: 2,
 					})
-				.basket-product__total
+				.basket-product__total(data-product-total="15000")
 					p Сумма: #[span 15000 ₽]

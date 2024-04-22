@@ -31,7 +31,7 @@ export const uploadImage = () => new Upload(uploadImageBlock, {
 export const uploadFile = () => new Upload(uploadIFileBlock, {
 	uploadLength: 1,
 	preview: true,
-	maxFullSize: 1048576,
+	maxFullSize: 2097152,
 	accept: ['.xls', '.xlsx'],
 	iconFormat: {
 		'xlsx': '/assets/images/file/icon-file-xlsx.png',
@@ -51,7 +51,7 @@ export const uploadFile = () => new Upload(uploadIFileBlock, {
 export const uploadFileImg = (selector) => new Upload(selector, {
 	uploadLength: 1,
 	preview: true,
-	maxFullSize: 1048576,
+	maxFullSize: 2097152,
 	accept: ['.xls', '.xlsx', '.pdf', '.docx', '.png', '.jpg', '.jpeg', '.webp'],
 	iconFormat: {
 		'xlsx': '/assets/images/file/icon-file-xlsx.png',
@@ -76,7 +76,7 @@ export const uploadImageDrop = (selector) => new Upload(selector, {
 	uploadLength: 4,
 	dropZone: true,
 	previewImg: true,
-	maxFileSize: 307200,
+	maxFileSize: 2097152,
 	accept: ['.png', '.jpg', '.jpeg', '.webp'],
 	iconFormat: {
 		'png': '/assets/images/file/icon-file-png.png',
@@ -96,7 +96,7 @@ export const uploadImageDrop = (selector) => new Upload(selector, {
 export const uploadFileDrop = () => new Upload(uploadFileDropBlock, {
 	uploadLength: 4,
 	dropZone: true,
-	maxFileSize: 1048576,
+	maxFileSize: 2097152,
 	accept: ['.pdf', '.docx', '.xlsx'],
 	iconFormat: {
 		'xlsx': '/assets/images/file/icon-file-xlsx.png',
@@ -116,7 +116,7 @@ export const uploadFileDropPreview = () => new Upload(uploadFileDropPreviewBlock
 	uploadLength: 4,
 	dropZone: true,
 	preview: true,
-	maxFileSize: 1048576,
+	maxFileSize: 2097152,
 	accept: ['.pdf', '.docx', '.xlsx'],
 	iconFormat: {
 		'xlsx': '/assets/images/file/icon-file-xlsx.png',
