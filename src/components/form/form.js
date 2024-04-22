@@ -99,6 +99,11 @@ export class Form {
 			const vehicleId = new Cookie('vehicle_id');
 			vehicleId.set(responseJson.vehicle_id, 1);
 		}
+
+		if (responseJson.basket) {
+			document.querySelector('.header__basket .header__icon span').innerHTML = responseJson.basket.count;
+			document.querySelector('.header__basket b').innerHTML = `${responseJson.basket.sum} ₽`;
+		}
 	}
 
 	onError(error) {
