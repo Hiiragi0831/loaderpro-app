@@ -40,6 +40,7 @@ import basket from '../pages/basket/basket';
 import garage from '../pages/garage/garage';
 import listOrders from '../pages/list-orders/list-orders';
 import {Form} from '../components/form/form';
+import users from '../pages/users/users';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -135,6 +136,7 @@ const init = () => {
 	listOrders.init();
 	addBasket();
 	phoneMask();
+	users.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));
