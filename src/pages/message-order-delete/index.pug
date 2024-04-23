@@ -1,0 +1,19 @@
+extends @pug/base
+
+append globals
+	- pageName = 'message-order'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main.page
+				+breadcrumbs()
+				section.page-message
+					.container
+						h1.mb-20 Заказ Z124235346 удалён
+						p Нажмите на кнопку чтобы продолжить покупки
+						a.button.button__outline.mt-40(href="#") В каталог
+			+footer-two()
