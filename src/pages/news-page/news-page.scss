@@ -1,6 +1,8 @@
 .news-page {
 	picture {
+		overflow: hidden;
 		margin-bottom: vc(20);
+		border-radius: vc(20);
 		width: 100%;
 	}
 
