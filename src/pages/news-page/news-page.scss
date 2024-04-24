@@ -1,0 +1,21 @@
+.news-page {
+	picture {
+		margin-bottom: vc(20);
+		width: 100%;
+	}
+
+	h1 {
+		margin-bottom: vc(20);
+		text-align: center;
+	}
+
+	p {
+		margin-bottom: vc(16);
+		font-size: vc(16);
+		line-height: vc(18);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
