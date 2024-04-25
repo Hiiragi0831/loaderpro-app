@@ -1,7 +1,7 @@
 import {Form} from '../form/form';
 
 const mobileMenu = () => {
-	const burger = document.querySelector('.header-mobile');
+	const burger = document.querySelector('.header__burger');
 
 	burger.addEventListener('click', (evt) => {
 		evt.preventDefault();
