@@ -13,10 +13,10 @@ export class Form {
 		this.method = method;
 		this.elappend = null;
 		this.cookieJwt = new Cookie('jwt');
-		this.evt = new Event('status', {
-			bubbles: true,
-			cancelable: false,
-		});
+		// this.evt = new Event('status', {
+		// 	bubbles: true,
+		// 	cancelable: false,
+		// });
 	}
 
 	async sendForm(data, url) {
@@ -57,6 +57,8 @@ export class Form {
 	onSuccess(responseJson) {
 		console.log('Ваша форма успешна отправлена', responseJson);
 
+		// document.dispatchEvent(this.evt);
+
 		if (responseJson.status === 'error') {
 			notyf.error(responseJson.message);
 
@@ -70,8 +72,6 @@ export class Form {
 
 			return;
 		}
-
-		document.dispatchEvent(this.evt);
 
 		notyf.success(responseJson.message);
 

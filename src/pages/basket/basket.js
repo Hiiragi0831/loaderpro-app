@@ -41,7 +41,7 @@ const orderDel = () => {
 		if (!page.querySelectorAll('.basket-product').length) {
 			const fd = new FormData();
 			fd.append('order_num', page.querySelector('input[name="order_num"]').value);
-			sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/orders_delete');
+			sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/orders_delete', page);
 		}
 	}
 };
