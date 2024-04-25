@@ -82,16 +82,26 @@
 
 		&-buttons {
 			display: flex;
+			align-self: flex-end;
+			width: max-content;
 			gap: vc(10);
 
 			button {
-				flex:1 1 auto;
+				flex: 1 0 auto;
+			}
+
+			@include devices {
+				width: 100%;
 			}
 		}
 
 		&-button {
 			display: flex;
 			justify-content: flex-end;
+
+			@include devices {
+				width: 100%;
+			}
 		}
 
 		.two-column {

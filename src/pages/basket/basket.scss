@@ -3,6 +3,10 @@
 		display: grid;
 		grid-template-columns: 1fr vc(450);
 		gap: vc(30);
+
+		@include devices {
+			grid-template-columns: 100%;
+		}
 	}
 
 	&__title {

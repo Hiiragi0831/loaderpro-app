@@ -288,8 +288,12 @@
 }
 
 .header-mobile {
+	position: fixed;
+	z-index: 10;
 	border-bottom: 1px solid $woodsmoke-200;
 	padding: vc(14) 0;
+	width: 100%;
+	background: $color-white;
 
 	.row {
 		display: flex;

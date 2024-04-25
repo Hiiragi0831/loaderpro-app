@@ -49,6 +49,10 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: vc(20);
+
+		@include devices {
+			grid-template-columns: 100%;
+		}
 	}
 
 	&__left {
@@ -143,5 +147,9 @@
 		&.yellow {
 			color: $tree-poppy-400;
 		}
+	}
+
+	@include devices {
+		grid-template-columns: 100%;
 	}
 }

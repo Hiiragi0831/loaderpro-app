@@ -51,7 +51,7 @@ const basketProduct = () => {
 		if (item.querySelector('.basket-product__del')) {
 			item.querySelector('.basket-product__del').addEventListener('click', (evt) => {
 				evt.preventDefault();
-				sendForm.send('https://my.loaderpro.ru/basket/basket_delete', item);
+				sendForm.send('https://my.loaderpro.ru/basket/basket_delete', item, page);
 				item.remove();
 				orderDel();
 			});
