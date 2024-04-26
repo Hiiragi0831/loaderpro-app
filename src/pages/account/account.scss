@@ -22,7 +22,7 @@
 		border: 1px solid $woodsmoke-200;
 		border-radius: vc(5);
 		width: 100%;
-		max-height: vc(650);
+		height: min-content;
 
 		&-wrapper {
 			padding: vc(20) vc(16);
