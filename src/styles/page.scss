@@ -120,6 +120,22 @@
 			}
 		}
 	}
+
+	&__title {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		gap: vc(20);
+
+		&-select {
+			top: vc(-20);
+			width: auto;
+		}
+
+		@include devices {
+			flex-direction: column;
+		}
+	}
 }
 
 .section {

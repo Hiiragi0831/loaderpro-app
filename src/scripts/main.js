@@ -5,12 +5,14 @@ import IMask from 'imask';
 import 'swiper/swiper-bundle.css';
 import 'air-datepicker/air-datepicker.css';
 import '@tarekraafat/autocomplete.js/dist/css/autoComplete.css';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import '@styles/vendor.scss';
 import '@styles/main.scss';
 
 import actualYear from '../scripts/modules/actual-year';
 import uaParser from '../scripts/modules/ua-parser';
 import vhFix from '../scripts/modules/vh-fix';
+import {Fancybox} from '@fancyapps/ui';
 
 import {isDevices} from '../scripts/helpers/index';
 import lazyLoad from '../scripts/modules/lazy-load';
@@ -137,6 +139,7 @@ const init = () => {
 	addBasket();
 	phoneMask();
 	users.init();
+	Fancybox.bind('[data-fancybox="gallery"]');
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));

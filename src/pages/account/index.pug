@@ -22,7 +22,17 @@ block content
 											+svg(item.icon)
 											span!= item.name
 							form.page__info(data-account-form)
-								h2 Профиль
+								.page__title
+									h2 Профиль
+									+select({
+										placeholder: 'Ответственный',
+										name: 'responsible',
+										items: [
+											{value: 'responsible-1', label: 'Ответственный 1'},
+											{value: 'responsible-2', label: 'Ответственный 2'},
+											{value: 'responsible-2', label: 'Ответственный 3'},
+										],
+									}).page__title-select
 								.page__info-item
 									.page__info-head
 										p Контактные данные
