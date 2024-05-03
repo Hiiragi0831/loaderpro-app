@@ -29,10 +29,20 @@
 		picture {
 			overflow: hidden;
 			border-radius: vc(5);
+			height: vc(400);
+
+			img {
+				height: 100%;
+				object-fit: contain;
+			}
 		}
 
 		&-thumb {
 			width: calc(100% + #{vc(15)});
+
+			picture {
+				height: vc(90);
+			}
 
 			.swiper-slide {
 				padding-right: vc(15);
