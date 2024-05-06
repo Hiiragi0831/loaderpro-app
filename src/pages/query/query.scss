@@ -69,6 +69,15 @@
 		&-items {
 
 		}
+
+		&-buttons {
+			display: flex;
+			gap: vc(18);
+
+			@include devices {
+				flex-direction: column;
+			}
+		}
 	}
 }
 

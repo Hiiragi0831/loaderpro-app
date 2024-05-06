@@ -59,7 +59,9 @@ block content
 						.query__box
 							.query__box-title
 								p Результат поиска
-								button.button.button__primary Создать предложение
+								.query__box-buttons
+									button.button.button__outline Экспортировать в файл
+									button.button.button__primary Создать предложение
 							.query__box-items
 								+commodityQuery({
 									title: 'Название товара',
