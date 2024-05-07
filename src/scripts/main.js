@@ -50,6 +50,7 @@ window._debounce = debounce;
 window._throttle = throttle;
 
 let resizeWidth = null;
+const sendForm = new Form('POST');
 
 const resize = () => {
 	if (isDevices() && resizeWidth && resizeWidth === innerWidth) {
@@ -67,7 +68,6 @@ const resize = () => {
 };
 
 const addBasket = () => {
-	const sendForm = new Form('POST');
 	if (document.querySelector('[data-add-basket]')) {
 		document.querySelectorAll('[data-add-basket]').forEach((item) => {
 			sendForm.init('https://my.loaderpro.ru/basket/basket_add', item);
@@ -82,6 +82,20 @@ const phoneMask = () => {
 			new IMask(i.querySelector('input'), {
 				mask: '+{7} (000) 000-00-00',
 				lazy: false,
+			});
+		});
+	}
+};
+
+const delPhoto = () => {
+	if (document.querySelector('[data-base-photo]')) {
+		document.querySelectorAll('[data-base-photo]').forEach((item) => {
+			const FData = new FormData();
+			item.querySelector('.input-upload__preview-item-remove').addEventListener('click', () => {
+				item.remove();
+				FData.append('src', item.querySelector('.input-upload__preview-img').src);
+				console.log('src', item.querySelector('.input-upload__preview-img').src);
+				sendForm.sendData(FData, 'https://my.loaderpro.ru/Main/img_delete');
 			});
 		});
 	}
@@ -140,6 +154,7 @@ const init = () => {
 	phoneMask();
 	users.init();
 	Fancybox.bind('[data-fancybox="gallery"]');
+	delPhoto();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));

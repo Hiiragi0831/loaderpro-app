@@ -29,18 +29,6 @@ const marginCalc = () => {
 	});
 };
 
-const delPhoto = () => {
-	document.querySelectorAll('[data-base-photo]').forEach((item) => {
-		const FData = new FormData();
-		item.querySelector('.input-upload__preview-item-remove').addEventListener('click', () => {
-			item.remove();
-			FData.append('src', item.querySelector('.input-upload__preview-img').src);
-			console.log('src', item.querySelector('.input-upload__preview-img').src);
-			sendForm.sendData(FData, 'https://my.loaderpro.ru/Main/img_delete');
-		});
-	});
-};
-
 const colorChange = () => {
 	const select = requestCard.querySelector('.request-card__select');
 	select.dataset.color = select.querySelector('select').value;
@@ -101,7 +89,6 @@ const init = () => {
 	marginCalc();
 	sendData();
 	editProduct();
-	delPhoto();
 	requestCard.querySelector('[data-export]').addEventListener('click', (evt) => {
 		evt.preventDefault();
 		// sendForm.sendData('data', 'https://my.loaderpro.ru/Main/edit_product/');
