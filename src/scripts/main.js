@@ -18,7 +18,6 @@ import {isDevices} from '../scripts/helpers/index';
 import lazyLoad from '../scripts/modules/lazy-load';
 import scrollToAnchor from './modules/scrollToAnchor';
 import lazyBlur from './modules/lazyBlur';
-// import router from '../components/router/router';
 import sharing from '../components/sharing/sharing';
 import authentication from '../components/authentication/authentication';
 import registration from '../components/registration/registration';

@@ -37,11 +37,17 @@ const totalBasket = () => {
 };
 
 const orderDel = () => {
+	const fd = new FormData();
+
 	if (page.querySelector('[data-basket-order]')) {
 		if (!page.querySelectorAll('.basket-product').length) {
-			const fd = new FormData();
 			fd.append('order_num', page.querySelector('input[name="order_num"]').value);
 			sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/orders_delete', page);
+		}
+	} else if (page.querySelector('[data-basket]')) {
+		if (!page.querySelectorAll('.basket-product').length) {
+			fd.append('basket_delete', '1');
+			sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/basket_delete_callback', page);
 		}
 	}
 };
