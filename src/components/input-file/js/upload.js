@@ -1,5 +1,5 @@
 import {createElement, renderElement} from './render';
-import {createPreviewContainerMarkup} from './create-preview-container-markup';
+// import {createPreviewContainerMarkup} from './create-preview-container-markup';
 import {createMessageMarkup} from './create-message-markup';
 import {createPreviewMarkup} from './create-preview-markup';
 
@@ -240,10 +240,19 @@ export class Upload {
 		}
 		// this._files = [...this._files, ...event.target.files].slice(0, this._uploadLength);
 		this._files = [...this._files, ...Array.from(event.target.files)].slice(0, this._uploadLength);
+		console.log(this._files);
 		this._renderFiles();
 	}
 
-	_init() {
+	blobToFile(theBlob, fileName) {
+		theBlob.lastModifiedDate = new Date();
+		theBlob.name = fileName;
+		theBlob.type = 'image/jpeg';
+
+		return theBlob;
+	}
+
+	async _init() {
 		this._input.addEventListener('change', this._onInputChange);
 
 		if (this._uploadLength > 1) {
@@ -255,19 +264,28 @@ export class Upload {
 		}
 
 		if (this._dropZoneBlock) {
-			this._previewBlock = createElement(createPreviewContainerMarkup(this._options));
+			this._previewBlock = this._uploadBlock.querySelector('.input-upload__preview');
 			this._previewBlock.addEventListener('click', this._onPreviewBlockClick);
 			this._dropZoneBlock.addEventListener('dragover', this._onDropZoneBlockDragover);
 			this._dropZoneBlock.addEventListener('dragenter', this._onDropZoneBlockDragenter);
 			this._dropZoneBlock.addEventListener('dragleave', this._onDropZoneBlockDragleave);
 			this._dropZoneBlock.addEventListener('drop', this._onDropZoneBlockDrop);
 			this._dropZoneBlock.addEventListener('click', this._onDropZoneBlockClick);
-			renderElement(this._dropZoneBlock, this._previewBlock);
+			// renderElement(this._dropZoneBlock, this._previewBlock);
+
+			if (this._uploadBlock.querySelector('.input-upload__preview').querySelector('.input-upload__preview-item')) {
+				for (const item of this._uploadBlock.querySelector('.input-upload__preview').querySelectorAll('.input-upload__preview-item')) {
+					let blob = await fetch(item.querySelector('.input-upload__preview-img').src).then((r) => r.blob().then((myBlob) => myBlob));
+					const myFile = this.blobToFile(blob, item.querySelector('.input-upload__preview-img').alt);
+					let file = new File([myFile], item.querySelector('.input-upload__preview-img').alt, {type: myFile.type});
+					this._files = [...this._files, ...file].slice(0, this._uploadLength);
+				}
+			}
 		}
 		if (this._renderPreview) {
-			this._previewBlock = createElement(createPreviewContainerMarkup(this._options));
+			this._previewBlock = this._uploadBlock.querySelector('.input-upload__preview');
 			this._previewBlock.addEventListener('click', this._onPreviewBlockClick);
-			renderElement(this._uploadBlock, this._previewBlock);
+			// renderElement(this._uploadBlock, this._previewBlock);
 		}
 
 		if (this._formParent) {
