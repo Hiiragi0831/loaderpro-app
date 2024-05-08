@@ -2,6 +2,7 @@ import {createElement, renderElement} from './render';
 // import {createPreviewContainerMarkup} from './create-preview-container-markup';
 import {createMessageMarkup} from './create-message-markup';
 import {createPreviewMarkup} from './create-preview-markup';
+import {Form} from '../../form/form';
 
 export class Upload {
 	constructor(uploadBlock, options = {}) {
@@ -84,7 +85,7 @@ export class Upload {
 		error = this._maxFullSize ? this._checkFullSize(this._files) > this._maxFullSize : false;
 
 		if (this._previewBlock) {
-			this._previewBlock.innerHTML = '';
+			// this._previewBlock.innerHTML = '';
 		}
 
 		if (this._dropZoneBlock) {
@@ -99,8 +100,19 @@ export class Upload {
 			const reader = new FileReader();
 			if (this._previewBlock) {
 				reader.addEventListener('load', (readerEvent) => {
-					// eslint-disable-next-line max-len
-					renderElement(this._previewBlock, createElement(createPreviewMarkup(file, readerEvent, this._options, fileSizeError)));
+					let filesName = [];
+
+					if (this._uploadBlock.querySelector('.input-upload__preview').querySelector('.input-upload__preview-item')) {
+						this._uploadBlock.querySelector('.input-upload__preview').querySelectorAll('.input-upload__preview-item').forEach((item) => {
+							if (!filesName.includes(item.querySelector('.input-upload__preview-img').alt)) {
+								filesName.push(item.querySelector('.input-upload__preview-img').alt);
+							}
+						});
+					}
+					if (!filesName.includes(file.name)) {
+						// eslint-disable-next-line max-len
+						renderElement(this._previewBlock, createElement(createPreviewMarkup(file, readerEvent, this._options, fileSizeError)));
+					}
 
 					if (this._uploadBlock.contains(this._uploadBlock.querySelector('.js-toggle'))) {
 						this._uploadBlock.querySelector('.js-toggle').classList.add('is-hidden');
@@ -193,7 +205,7 @@ export class Upload {
 	}
 
 	_onDropZoneBlockClick(event) {
-		if (event.target.dataset.fileName || event.target.closest('.input-upload__preview')) {
+		if (event.target.dataset.fileName || event.target.dataset.basePhotoDel || event.target.closest('.input-upload__preview')) {
 			return;
 		}
 		this._input.click();
@@ -240,16 +252,7 @@ export class Upload {
 		}
 		// this._files = [...this._files, ...event.target.files].slice(0, this._uploadLength);
 		this._files = [...this._files, ...Array.from(event.target.files)].slice(0, this._uploadLength);
-		console.log(this._files);
 		this._renderFiles();
-	}
-
-	blobToFile(theBlob, fileName) {
-		theBlob.lastModifiedDate = new Date();
-		theBlob.name = fileName;
-		theBlob.type = 'image/jpeg';
-
-		return theBlob;
 	}
 
 	async _init() {
@@ -272,15 +275,6 @@ export class Upload {
 			this._dropZoneBlock.addEventListener('drop', this._onDropZoneBlockDrop);
 			this._dropZoneBlock.addEventListener('click', this._onDropZoneBlockClick);
 			// renderElement(this._dropZoneBlock, this._previewBlock);
-
-			if (this._uploadBlock.querySelector('.input-upload__preview').querySelector('.input-upload__preview-item')) {
-				for (const item of this._uploadBlock.querySelector('.input-upload__preview').querySelectorAll('.input-upload__preview-item')) {
-					let blob = await fetch(item.querySelector('.input-upload__preview-img').src).then((r) => r.blob().then((myBlob) => myBlob));
-					const myFile = this.blobToFile(blob, item.querySelector('.input-upload__preview-img').alt);
-					let file = new File([myFile], item.querySelector('.input-upload__preview-img').alt, {type: myFile.type});
-					this._files = [...this._files, ...file].slice(0, this._uploadLength);
-				}
-			}
 		}
 		if (this._renderPreview) {
 			this._previewBlock = this._uploadBlock.querySelector('.input-upload__preview');
@@ -291,6 +285,26 @@ export class Upload {
 		if (this._formParent) {
 			this._formParent.addEventListener('reset', this._onFormParentReset);
 			this._formParent.addEventListener('submit', this._onFormParentSubmit);
+		}
+
+		if (this._uploadBlock.querySelector('[data-base-photo]')) {
+			this._uploadBlock.querySelectorAll('[data-base-photo]').forEach((item) => {
+				const FData = new FormData();
+				const sendForm = new Form('POST');
+
+				this._uploadLength--;
+
+				item.querySelector('.input-upload__preview-item-remove').addEventListener('click', (evt) => {
+					evt.preventDefault();
+					FData.append('src', item.querySelector('.input-upload__preview-img').src);
+					sendForm.sendData(FData, 'https://my.loaderpro.ru/Main/img_delete');
+
+					document.addEventListener('statusSuccess', () => {
+						this._uploadLength++;
+						item.remove();
+					});
+				});
+			});
 		}
 	}
 }

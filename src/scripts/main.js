@@ -86,20 +86,6 @@ const phoneMask = () => {
 	}
 };
 
-const delPhoto = () => {
-	if (document.querySelector('[data-base-photo]')) {
-		document.querySelectorAll('[data-base-photo]').forEach((item) => {
-			const FData = new FormData();
-			item.querySelector('.input-upload__preview-item-remove').addEventListener('click', () => {
-				item.remove();
-				FData.append('src', item.querySelector('.input-upload__preview-img').src);
-				console.log('src', item.querySelector('.input-upload__preview-img').src);
-				sendForm.sendData(FData, 'https://my.loaderpro.ru/Main/img_delete');
-			});
-		});
-	}
-};
-
 // добавить скрипты для инициализации при переходах
 // const scriptsInit = [
 // 	// активируем нужные модули которые будут использоваться и которые должны обновлять при переходах между страницами
@@ -153,7 +139,6 @@ const init = () => {
 	phoneMask();
 	users.init();
 	Fancybox.bind('[data-fancybox="gallery"]');
-	delPhoto();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));

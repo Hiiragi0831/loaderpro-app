@@ -323,6 +323,14 @@ block content
 									.input-upload.input-upload--images-drop(data-upload="img-drop")
 										.input-upload__drop-zone(data-drop-zone)
 											span.input-upload__drop-zone-text Фото товара
+											.input-upload__preview
+												.input-upload__preview-item(data-base-photo)
+													button.input-upload__preview-item-remove(type="button" data-base-photo-del="news-1.jpeg") &times;
+													img.input-upload__preview-img(src="/assets/images/news-1.jpeg" alt="news-1.jpeg")
+													img.input-upload__preview-icon(src="/assets/images/file/icon-file-jpg.png" alt="")
+													.input-upload__preview-file-info
+														span.input-upload__preview-file-name
+															| news-1.jpeg
 										label(data-drop-zone)
 											input(type="file" name="images[]")
 								.form__buttons
@@ -474,6 +482,7 @@ block content
 									.input-upload.input-upload--images-drop(data-upload="img-drop")
 										.input-upload__drop-zone(data-drop-zone)
 											span.input-upload__drop-zone-text Фото товара
+											.input-upload__preview
 										label(data-drop-zone)
 											input(type="file" name="images[]")
 								.form__buttons
