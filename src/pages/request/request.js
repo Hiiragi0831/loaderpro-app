@@ -24,6 +24,7 @@ const renderItem = () => {
 	uploadFileImg(clone.querySelector('[data-upload="file-img"]'));
 	request.querySelector('.request__items').append(clone);
 };
+
 const getData = () => {
 	const form = request.querySelector('.request__request');
 	form.addEventListener('submit', (evt) => {

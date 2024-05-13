@@ -60,7 +60,9 @@ block content
 							.query__box-title
 								p Результат поиска
 								.query__box-buttons
-									button.button.button__outline Экспортировать в файл
+									form(data-export-xls)
+										input(type="hidden" name="exportquery" value="1")
+										button.button.button__outline(type="submit") Экспортировать в файл
 									button.button.button__primary Создать предложение
 							.query__box-items
 								+commodityQuery({
