@@ -74,6 +74,14 @@ const addBasket = () => {
 	}
 };
 
+const exportXml = () => {
+	if (document.querySelector('[data-export-xls]')) {
+		document.querySelectorAll('[data-export-xls]').forEach((item) => {
+			sendForm.init('https://my.loaderpro.ru/Main/export_xls', item);
+		});
+	}
+};
+
 const phoneMask = () => {
 	if (document.querySelector('.js-phone-mask')) {
 		document.querySelectorAll('.js-phone-mask').forEach((i) => {
@@ -139,6 +147,7 @@ const init = () => {
 	phoneMask();
 	users.init();
 	Fancybox.bind('[data-fancybox="gallery"]');
+	exportXml();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));
