@@ -207,6 +207,29 @@
 				height: auto;
 			}
 
+			.request__data &, {
+				grid-template-columns: 1fr;
+
+				.input-upload__preview-item {
+					flex-direction: row;
+					padding: vc(5) vc(40) vc(5) vc(50);
+					width: 100%;
+					height: vc(50);
+				}
+
+				.input-upload__preview-icon {
+					top: unset;
+				}
+
+				.input-upload__preview-item-img {
+					height: auto;
+				}
+
+				.input-upload__preview-item-remove {
+					top: unset;
+				}
+			}
+
 			@include devices {
 				grid-template-columns: 1fr;
 			}
