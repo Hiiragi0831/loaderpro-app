@@ -31,12 +31,6 @@ export class Form {
 	}
 
 	sendData(data, url, elappend) {
-		let object = {};
-		data.forEach((value, key) => {
-			object[key] = value;
-		});
-		console.log(url, JSON.stringify(object));
-
 		if (elappend) {
 			this.elappend = elappend;
 		}

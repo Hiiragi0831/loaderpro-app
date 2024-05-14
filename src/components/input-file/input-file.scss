@@ -176,32 +176,40 @@
 	&--file {
 		.input-upload__preview {
 			display: grid;
-			grid-template-columns: 1fr;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
 			gap: vc(20);
-		}
 
-		.input-upload__preview-item {
-			position: relative;
-			display: flex;
-			align-items: center;
-			overflow: hidden;
-			border: 1px solid rgba(0, 0, 0, 0.2);
-			border-radius: vc(5);
-			padding: vc(5) vc(40) vc(5) vc(50);
-			width: 100%;
-			height: vc(50);
-		}
+			&-item {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				overflow: hidden;
+				border: 1px solid rgba(0, 0, 0, 0.2);
+				border-radius: vc(5);
+				width: 100%;
 
-		.input-upload__preview-icon {
-			position: absolute;
-			left: vc(10);
-			z-index: 1;
-			width: vc(30);
-			height: auto;
-		}
+				&-remove {
+					top: vc(20);
+				}
+			}
 
-		.input-upload__preview-item-remove {
-			top: unset;
+			&-img {
+				height: vc(200);
+			}
+
+			&-icon {
+				position: absolute;
+				left: vc(20);
+				top: vc(20);
+				z-index: 1;
+				width: vc(30);
+				height: auto;
+			}
+
+			@include devices {
+				grid-template-columns: 1fr;
+			}
 		}
 	}
 
