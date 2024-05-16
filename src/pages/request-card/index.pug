@@ -11,174 +11,173 @@ block content
 			include @components/header/header
 			main.request-card
 				+breadcrumbs()
-				form(data-request-card)
-					.container
-						.row
-							.request-card__status
-								.request-card__title
-									h1.h3 Запрос 9389923
-									a(href="#")
-										+svg('forklift-info')
-								.request-card__labels
-									input(name="id" value="9389923" type="hidden")
-									+select({
-										placeholder: 'Статус запроса',
-										name: 'language',
-										items: [
-											{value: '0', label: 'Котел'},
-											{value: '1', label: 'Подбор'},
-											{value: '2', selected: true, label: 'В запросе'},
-											{value: '3', label: 'Обработан'},
-											{value: '4', label: 'Счет отправлен'},
-										],
-									}).request-card__select(data-color)
-									+select({
-										placeholder: 'Ответственный',
-										name: 'responsible',
-										items: [
-											{value: '0', label: 'Вася Неудержимый Романович'},
-											{value: '1', label: 'Вася Неудержимый Романович'},
-											{value: '2', selected: true, label: 'Вася Неудержимый Романович'},
-											{value: '3', label: 'Вася Неудержимый Романович'},
-											{value: '4', label: 'Вася Неудержимый Романович'},
-										],
-									})
-									+input({
-										type: 'text',
-										placeholder: 'Бюджет',
-										name: 'budget',
-										value: '24000'
-									})
-									+input({
-										type: 'number',
-										placeholder: 'Закупка',
-										name: 'purchase',
-										value: '18000'
-									})
-									+input({
-										type: 'number',
-										placeholder: 'Доп.завтраты',
-										name: 'additionalaccounts',
-										value: '300'
-									})
-									+input({
-										type: 'number',
-										placeholder: 'Доставка',
-										name: 'delivery',
-										value: '300'
-									})
-									+input({
-										type: 'text',
-										placeholder: 'Маржа',
-										name: 'margin'
-									})
-									+input({
-										type: 'text',
-										placeholder: 'Маржа в %',
-										name: 'marginpercent'
-									})
-									+input({
-										type: 'number',
-										placeholder: '№ счета',
-										name: 'accountno',
-										value: '2390842'
-									})
-									+input({
-										type: 'text',
-										placeholder: '№ УПД',
-										name: 'updno',
-										value: 'Зашквар 13'
-									})
-									+input({
-										type: 'text',
-										placeholder: 'Оплачен полностью',
-										name: 'paidinfull',
-										value: '08.12.2023'
-									}).datepicker-single
-								.request-card__contact
-									p.h4 Информация о контакте
-									.request-card__contact-item
-										p Компания
-										p #[b ООО "Добрый зайка"]
-									.request-card__contact-item
-										p Раб. телефон
-										p #[b +7-977-777-66-66]
-									.request-card__contact-item
-										p E-mail раб
-										p #[b морковка@зайкидобра.рф]
-									.request-card__contact-item
-										p Должность
-										p #[b Старший Заяц]
-								.request-card__button
-									button.button.button__primary Сохранить
-							.request-card__products
-								.request-card__head
-									.request-card__head-item
-										p Дата создания:
-										p #[b 12.12.2023]
-									.request-card__head-item
-										p Номер запроса:
-										p #[b 2353674392]
-									.request-card__head-item
-										p Действует до:
-										p #[b 09.05.2023]
-								.request-card__product
-									+picture({
-										path: `${baseDir}assets/images/image`,
-										ext: 'png',
-									})
-									.request-card__product-info
-										.request-card__product-change(data-open-modal="modal-1")
-											+svg('pencil')
-										.request-card__product-title
-											p.h4 Название товара
-										.request-card__product-specifications
-											.request-card__product-specification
-												p Бренд: #[span Название]
-											.request-card__product-specification
-												p Артикул: #[span 1343245]
-											.request-card__product-specification
-												p Количество: #[span 12]
-											.request-card__product-specification
-												p Цена: #[span 1000 ₽]
-											.request-card__product-specification
-												p Ед. изм: #[span Шт]
-											.request-card__product-specification
-												p Вес (кг): #[span 13]
-											.request-card__product-specification
-												p Наличие: #[span Есть]
-											.request-card__product-specification
-												p Сумма: #[span 12000 ₽]
-								.request-card__product
-									+picture({
-										path: `${baseDir}assets/images/image`,
-										ext: 'png',
-									})
-									.request-card__product-info
-										.request-card__product-change(data-open-modal="modal-1")
-											+svg('pencil')
-										.request-card__product-title
-											p.h4 Название товара
-										.request-card__product-specifications
-											.request-card__product-specification
-												p Бренд: #[span Название]
-											.request-card__product-specification
-												p Артикул: #[span 1343245]
-											.request-card__product-specification
-												p Количество: #[span 12]
-											.request-card__product-specification
-												p Цена: #[span 1000 ₽]
-											.request-card__product-specification
-												p Ед. изм: #[span Шт]
-											.request-card__product-specification
-												p Вес (кг): #[span 13]
-											.request-card__product-specification
-												p Наличие: #[span Есть]
-											.request-card__product-specification
-												p Сумма: #[span 12000 ₽]
-								.request-card__buttons
-									button.button.button__outline(data-export) Экспортировать в файл
-									button.button.button__primary(data-open-modal="add-product") Добавить товар
+				.container
+					.row
+						form.request-card__status(data-request-card)
+							.request-card__title
+								h1.h3 Запрос 9389923
+								a(href="#")
+									+svg('forklift-info')
+							.request-card__labels
+								input(name="id" value="9389923" type="hidden")
+								+select({
+									placeholder: 'Статус запроса',
+									name: 'language',
+									items: [
+										{value: '0', label: 'Котел'},
+										{value: '1', label: 'Подбор'},
+										{value: '2', selected: true, label: 'В запросе'},
+										{value: '3', label: 'Обработан'},
+										{value: '4', label: 'Счет отправлен'},
+									],
+								}).request-card__select(data-color)
+								+select({
+									placeholder: 'Ответственный',
+									name: 'responsible',
+									items: [
+										{value: '0', label: 'Вася Неудержимый Романович'},
+										{value: '1', label: 'Вася Неудержимый Романович'},
+										{value: '2', selected: true, label: 'Вася Неудержимый Романович'},
+										{value: '3', label: 'Вася Неудержимый Романович'},
+										{value: '4', label: 'Вася Неудержимый Романович'},
+									],
+								})
+								+input({
+									type: 'text',
+									placeholder: 'Бюджет',
+									name: 'budget',
+									value: '24000'
+								})
+								+input({
+									type: 'number',
+									placeholder: 'Закупка',
+									name: 'purchase',
+									value: '18000'
+								})
+								+input({
+									type: 'number',
+									placeholder: 'Доп.завтраты',
+									name: 'additionalaccounts',
+									value: '300'
+								})
+								+input({
+									type: 'number',
+									placeholder: 'Доставка',
+									name: 'delivery',
+									value: '300'
+								})
+								+input({
+									type: 'text',
+									placeholder: 'Маржа',
+									name: 'margin'
+								})
+								+input({
+									type: 'text',
+									placeholder: 'Маржа в %',
+									name: 'marginpercent'
+								})
+								+input({
+									type: 'number',
+									placeholder: '№ счета',
+									name: 'accountno',
+									value: '2390842'
+								})
+								+input({
+									type: 'text',
+									placeholder: '№ УПД',
+									name: 'updno',
+									value: 'Зашквар 13'
+								})
+								+input({
+									type: 'text',
+									placeholder: 'Оплачен полностью',
+									name: 'paidinfull',
+									value: '08.12.2023'
+								}).datepicker-single
+							.request-card__contact
+								p.h4 Информация о контакте
+								.request-card__contact-item
+									p Компания
+									p #[b ООО "Добрый зайка"]
+								.request-card__contact-item
+									p Раб. телефон
+									p #[b +7-977-777-66-66]
+								.request-card__contact-item
+									p E-mail раб
+									p #[b морковка@зайкидобра.рф]
+								.request-card__contact-item
+									p Должность
+									p #[b Старший Заяц]
+							.request-card__button
+								button.button.button__primary Сохранить
+						.request-card__products
+							.request-card__head
+								.request-card__head-item
+									p Дата создания:
+									p #[b 12.12.2023]
+								.request-card__head-item
+									p Номер запроса:
+									p #[b 2353674392]
+								.request-card__head-item
+									p Действует до:
+									p #[b 09.05.2023]
+							.request-card__product
+								+picture({
+									path: `${baseDir}assets/images/image`,
+									ext: 'png',
+								})
+								.request-card__product-info
+									.request-card__product-change(data-open-modal="modal-1")
+										+svg('pencil')
+									.request-card__product-title
+										p.h4 Название товара
+									.request-card__product-specifications
+										.request-card__product-specification
+											p Бренд: #[span Название]
+										.request-card__product-specification
+											p Артикул: #[span 1343245]
+										.request-card__product-specification
+											p Количество: #[span 12]
+										.request-card__product-specification
+											p Цена: #[span 1000 ₽]
+										.request-card__product-specification
+											p Ед. изм: #[span Шт]
+										.request-card__product-specification
+											p Вес (кг): #[span 13]
+										.request-card__product-specification
+											p Наличие: #[span Есть]
+										.request-card__product-specification
+											p Сумма: #[span 12000 ₽]
+							.request-card__product
+								+picture({
+									path: `${baseDir}assets/images/image`,
+									ext: 'png',
+								})
+								.request-card__product-info
+									.request-card__product-change(data-open-modal="modal-1")
+										+svg('pencil')
+									.request-card__product-title
+										p.h4 Название товара
+									.request-card__product-specifications
+										.request-card__product-specification
+											p Бренд: #[span Название]
+										.request-card__product-specification
+											p Артикул: #[span 1343245]
+										.request-card__product-specification
+											p Количество: #[span 12]
+										.request-card__product-specification
+											p Цена: #[span 1000 ₽]
+										.request-card__product-specification
+											p Ед. изм: #[span Шт]
+										.request-card__product-specification
+											p Вес (кг): #[span 13]
+										.request-card__product-specification
+											p Наличие: #[span Есть]
+										.request-card__product-specification
+											p Сумма: #[span 12000 ₽]
+							.request-card__buttons
+								button.button.button__outline(data-export) Экспортировать в файл
+								button.button.button__primary(data-open-modal="add-product") Добавить товар
 			section.modal.modal--preload(data-modal="modal-1")
 				.modal__wrapper
 					.modal__overlay

@@ -194,5 +194,10 @@
 	&__buttons {
 		display: flex;
 		justify-content: space-between;
+
+		@include devices {
+			flex-direction: column;
+			gap: vc(15);
+		}
 	}
 }
