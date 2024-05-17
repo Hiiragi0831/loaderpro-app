@@ -17,6 +17,7 @@ const renderItem = () => {
 	const clone = request.querySelector('#request-item').content.cloneNode(true);
 
 	clone.querySelector('input[name="titleparts"]').value = dataItem.titleparts;
+	clone.querySelector('.request__item-titleparts').textContent = dataItem.titleparts;
 	clone.querySelector('input[name="numparts"]').value = dataItem.numparts;
 	clone.querySelector('input[name="count"]').value = dataItem.count;
 	clone.querySelector('input[name="comment"]').value = dataItem.comment;
