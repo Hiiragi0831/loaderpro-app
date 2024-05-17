@@ -94,6 +94,16 @@ const phoneMask = () => {
 	}
 };
 
+const delDotsTire = () => {
+	if (document.querySelector('input[name="numparts"]')) {
+		document.querySelectorAll('input[name="numparts"]').forEach((item) => {
+			item.addEventListener('change', (e) => {
+				e.target.value = e.target.value.replace(/([.\-/\\=,])/g, '');
+			});
+		});
+	}
+};
+
 // добавить скрипты для инициализации при переходах
 // const scriptsInit = [
 // 	// активируем нужные модули которые будут использоваться и которые должны обновлять при переходах между страницами
@@ -148,6 +158,7 @@ const init = () => {
 	users.init();
 	Fancybox.bind('[data-fancybox="gallery"]');
 	exportXml();
+	delDotsTire();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));
