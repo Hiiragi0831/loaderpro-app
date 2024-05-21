@@ -95,11 +95,19 @@ const phoneMask = () => {
 };
 
 const delDotsTire = () => {
+	const replaceString = (item) => {
+		item.addEventListener('change', (e) => {
+			e.target.value = e.target.value.replace(/([.\-/\\=,])/g, '');
+		});
+	};
 	if (document.querySelector('input[name="numparts"]')) {
 		document.querySelectorAll('input[name="numparts"]').forEach((item) => {
-			item.addEventListener('change', (e) => {
-				e.target.value = e.target.value.replace(/([.\-/\\=,])/g, '');
-			});
+			replaceString(item);
+		});
+	}
+	if (document.querySelector('input[name="search"]')) {
+		document.querySelectorAll('input[name="search"]').forEach((item) => {
+			replaceString(item);
 		});
 	}
 };
