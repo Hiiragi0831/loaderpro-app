@@ -110,6 +110,11 @@ const delDotsTire = () => {
 			replaceString(item);
 		});
 	}
+	if (document.querySelector('input[name="article"]')) {
+		document.querySelectorAll('input[name="article"]').forEach((item) => {
+			replaceString(item);
+		});
+	}
 };
 
 // добавить скрипты для инициализации при переходах
