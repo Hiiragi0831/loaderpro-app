@@ -63,7 +63,7 @@ block content
 									form(data-export-xls)
 										input(type="hidden" name="exportquery" value="1")
 										button.button.button__outline(type="submit") Экспортировать в файл
-									button.button.button__primary Создать предложение
+									button.button.button__primary(data-open-modal="create-proposal") Создать предложение
 							.query__box-items
 								+commodityQuery({
 									title: 'Название товара',
@@ -80,5 +80,21 @@ block content
 						form.form.mt-50(data-more)
 							input(type="hidden" name="query_more" value="30")
 							button.button.button__primary(type="submit") Загрузить ещё
+			section.modal.modal--preload(data-modal="create-proposal")
+				.modal__wrapper
+					.modal__overlay
+					.modal__content
+						button.modal__close-btn(type="button" aria-label="Закрыть попап" data-close-modal data-focus)
+							+svg("xmark")
+						form(action="/Main/export_pdf_commerce/" method="post")
+							input(type="hidden" name="query_id" value="000000000000000000")
+							.form__main.mt-50.mb-50
+								.page__info-row.row-2
+									+input({
+										type: 'text',
+										placeholder: 'Наценка',
+										name: 'margin',
+									})
+									button.button.button__primary Создать PDF
 
 			+footer()
