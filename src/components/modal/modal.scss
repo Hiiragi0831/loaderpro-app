@@ -49,6 +49,10 @@
 		width: 100%;
 		max-width: vc(1080);
 		background-color: $color-white;
+
+		&.small {
+			max-width: vc(540);
+		}
 	}
 
 	&__close-btn {

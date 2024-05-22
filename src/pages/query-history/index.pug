@@ -83,7 +83,7 @@ block content
 			section.modal.modal--preload(data-modal="create-proposal")
 				.modal__wrapper
 					.modal__overlay
-					.modal__content
+					.modal__content.small
 						button.modal__close-btn(type="button" aria-label="Закрыть попап" data-close-modal data-focus)
 							+svg("xmark")
 						form(action="/Main/export_pdf_commerce/" method="post")
@@ -91,7 +91,7 @@ block content
 							.form__main.mt-50.mb-50
 								.page__info-row.row-2
 									+input({
-										type: 'text',
+										type: 'number',
 										placeholder: 'Наценка',
 										name: 'margin',
 									})
