@@ -17,6 +17,11 @@
 				font-weight: 600;
 				font-size: vc(24);
 			}
+
+			@include devices {
+				flex-direction: column;
+				gap: vc(30);
+			}
 		}
 
 		&-form {
