@@ -65,21 +65,27 @@ block content
 										button.button.button__outline(type="submit") Экспортировать в файл
 									button.button.button__primary(data-open-modal="create-proposal") Создать предложение
 							.query__box-items
-								+commodityQuery({
-									title: 'Название товара',
-									status: 'green',
-								})
-								+commodityQuery({
-									title: 'Название товара',
-									status: 'red',
-								})
-								+commodityQuery({
-									title: 'Название товара',
-									status: 'yellow',
-								})
-						form.form.mt-50(data-more)
-							input(type="hidden" name="query_more" value="30")
-							button.button.button__primary(type="submit") Загрузить ещё
+								.commodity-query
+									each data in [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]
+										.commodity-query__heading
+											.commodity-query__heading-item
+												p Дата создания #[b 23.05.24]
+											.commodity-query__heading-item
+												p Номер запроса: #[a(href="#") #[b 2353674392]]
+											.commodity-query__heading-item
+												p Кем создан: #[b Имя Фамилия]
+											.commodity-query__heading-item
+												p Статус: #[b Обработан]
+											.commodity-query__heading-item
+												p Действительно до: #[b 24.05.24]
+								//+commodityQuery({
+								//	title: 'Название товара',
+								//	status: 'green',
+								//})
+						include @components/pagenav/pagenav
+						//form.form.mt-50(data-more)
+						//	input(type="hidden" name="query_more" value="30")
+						//	button.button.button__primary(type="submit") Загрузить ещё
 			section.modal.modal--preload(data-modal="create-proposal")
 				.modal__wrapper
 					.modal__overlay

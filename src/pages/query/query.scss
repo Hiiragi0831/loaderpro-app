@@ -72,7 +72,9 @@
 		}
 
 		&-items {
-
+			.commodity-query__heading {
+				border-bottom: 1px solid $woodsmoke-300;
+			}
 		}
 
 		&-buttons {

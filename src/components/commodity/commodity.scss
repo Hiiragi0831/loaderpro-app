@@ -10,6 +10,12 @@
 			&-item {
 				font-size: vc(16);
 
+				a {
+					@include hoverOpacity;
+
+					color: $tree-poppy-400;
+				}
+
 				&:last-child {
 					margin-left: auto;
 

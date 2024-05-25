@@ -1,0 +1,50 @@
+extends @pug/base
+
+append globals
+	- pageName = 'query-history'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main.query
+				+breadcrumbs()
+				section
+					.container
+						+navTab([
+							{
+								link: 'Новый запрос',
+							},
+							{
+								link: 'История запросов',
+								active: true,
+							},
+						])
+				section(data-more-query-h)
+					.container
+						.query__box
+							.query__box-items
+								+commodityQuery({
+									title: 'Название товара',
+									status: 'green',
+								})
+			section.modal.modal--preload(data-modal="create-proposal")
+				.modal__wrapper
+					.modal__overlay
+					.modal__content.small
+						button.modal__close-btn(type="button" aria-label="Закрыть попап" data-close-modal data-focus)
+							+svg("xmark")
+						form(action="/Main/export_pdf_commerce/" method="post")
+							input(type="hidden" name="query_id" value="000000000000000000")
+							.form__main.mt-50.mb-50
+								.page__info-row.row-2
+									+input({
+										type: 'number',
+										placeholder: 'Наценка',
+										name: 'margin',
+									})
+									button.button.button__primary Создать PDF
+
+			+footer()
