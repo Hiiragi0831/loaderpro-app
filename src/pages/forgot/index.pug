@@ -1,0 +1,33 @@
+extends @pug/base
+
+append globals
+	- pageName = 'forgot'
+
+append vars
+
+block content
+	+router(pageName)
+		.site
+			include @components/header/header
+			main
+				section
+					.container
+						.row
+							form.page__info(data-forgot-page)
+								.page__info-item
+									.page__info-head
+										p Восстановление пароля
+									.page__info-row.row-2
+										+input({
+											type: 'password',
+											placeholder: 'Новый пароль',
+											name: 'password',
+											autocomplete: "off",
+										}).password
+										+input({
+											type: 'password',
+											placeholder: 'Повторно введите новый пароль',
+										}).password-repeat
+								.page__info-buttons
+									button.button.button__primary(type="submit") Сохранить
+			+footer()

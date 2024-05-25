@@ -42,6 +42,7 @@ import garage from '../pages/garage/garage';
 import listOrders from '../pages/list-orders/list-orders';
 import {Form} from '../components/form/form';
 import users from '../pages/users/users';
+import forgot from '../pages/forgot/forgot';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -172,6 +173,7 @@ const init = () => {
 	Fancybox.bind('[data-fancybox="gallery"]');
 	exportXml();
 	delDotsTire();
+	forgot.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));
