@@ -20,7 +20,14 @@ block content
 							.authorization__login
 								p.h1 Уже зарегистрированы?
 								p.h3 Выполнить вход
-								include @components/authentication/authentication
+								form.form(data-login-form)
+									input.form__input(type="email" placeholder="Email" name="email")
+									input.form__input(type="password" placeholder="Пароль" name="password" autocomplete="on")
+									.form__row
+										button.button.button__primary(type="submit") Авторизоваться
+										a(href="#" data-open-modal="forgot") Забыли пароль ?
+									a.button.button__outline Требуется наша помощь ?
+
 							.authorization__hr
 							.authorization__registration
 								p.h1 Новый пользователь?
@@ -32,4 +39,19 @@ block content
 									.authorization__edge Более 25 000 тысяч товаров в наличии на складах РФ.
 									.authorization__edge Доставка санкционных товаров от 30 дней.
 									a.button.button__primary(href="/register/") Зарегистрироваться
+			section.modal.modal--preload(data-modal="forgot")
+				.modal__wrapper
+					.modal__overlay
+					.modal__content.small
+						button.modal__close-btn(type="button" aria-label="Закрыть попап" data-close-modal data-focus)
+							+svg("xmark")
+						form.form
+							.form__main.mt-30.mb-30
+								.form__row
+									+input({
+										type: 'email',
+										placeholder: 'Введите ваш Email',
+										name: 'email',
+									})
+									button.button.button__primary(type="submit") Восстановить
 			+footer-two()

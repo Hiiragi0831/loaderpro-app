@@ -19,7 +19,7 @@ import lazyLoad from '../scripts/modules/lazy-load';
 import scrollToAnchor from './modules/scrollToAnchor';
 import lazyBlur from './modules/lazyBlur';
 import sharing from '../components/sharing/sharing';
-import authentication from '../components/authentication/authentication';
+import authorization from '../pages/authorization/authorization';
 import registration from '../components/registration/registration';
 import header from '../components/header/header';
 import home from '../pages/home/home';
@@ -145,7 +145,7 @@ const init = () => {
 	scrollToAnchor.init();
 	lazyBlur.init();
 	sharing.init();
-	authentication.init();
+	authorization.init();
 	registration.init();
 	home.init();
 	query.init();
