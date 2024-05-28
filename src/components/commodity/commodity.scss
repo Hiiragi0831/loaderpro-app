@@ -1,11 +1,11 @@
 .commodity {
 	&-query {
 		&__heading {
-			display: flex;
-			grid-column: 1 / 4;
+			display: grid;
+			grid-template-columns: vc(208) vc(250) vc(286) vc(180) 1fr;
 			padding: vc(22) vc(30);
 			background-color: #e5edf0;
-			gap: vc(50);
+			gap: vc(40);
 
 			&-item {
 				font-size: vc(16);
@@ -15,18 +15,10 @@
 
 					color: $tree-poppy-400;
 				}
-
-				&:last-child {
-					margin-left: auto;
-
-					@include devices {
-						margin: inherit;
-					}
-				}
 			}
 
 			@include devices {
-				flex-direction: column;
+				grid-template-columns: 1fr;
 				gap: vc(15);
 			}
 		}
