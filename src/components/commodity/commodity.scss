@@ -2,10 +2,10 @@
 	&-query {
 		&__heading {
 			display: grid;
-			grid-template-columns: vc(208) vc(250) vc(286) vc(180) 1fr;
+			grid-template-columns: vc(224) vc(250) vc(286) vc(180) 1fr;
 			padding: vc(22) vc(30);
 			background-color: #e5edf0;
-			gap: vc(40);
+			gap: vc(34);
 
 			&-item {
 				font-size: vc(16);
