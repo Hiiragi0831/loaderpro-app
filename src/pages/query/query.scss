@@ -12,8 +12,11 @@
 			justify-content: space-between;
 			border-bottom: 1px solid $woodsmoke-100;
 			padding: vc(25) vc(30);
-			font-weight: 600;
-			font-size: vc(24);
+
+			p {
+				font-weight: 600;
+				font-size: vc(24);
+			}
 
 			@include devices {
 				flex-direction: column;
