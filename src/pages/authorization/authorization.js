@@ -7,7 +7,7 @@ const init = () => {
 	}
 
 	if (document.querySelector('[data-forgot]')) {
-		sendData.init('https://my.loaderpro.ru/Main/replace_pass', document.querySelector('[data-login-form]'));
+		sendData.init('https://my.loaderpro.ru/Main/replace_pass', document.querySelector('[data-forgot]'));
 	}
 };
 
