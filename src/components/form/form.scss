@@ -23,6 +23,7 @@
 		width: 100%;
 		font-weight: 500;
 		font-size: vc(16);
+		transition: border $transition;
 
 		input,
 		textarea {
@@ -67,6 +68,14 @@
 			width: vc(20);
 			height: vc(20);
 			fill: $tree-poppy-400;
+		}
+
+		&.is-valid {
+			border-color: $atlantis-500;
+		}
+
+		&.is-invalid {
+			border-color: $red-orange-500;
 		}
 	}
 

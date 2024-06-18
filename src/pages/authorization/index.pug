@@ -21,8 +21,16 @@ block content
 								p.h1 Уже зарегистрированы?
 								p.h3 Выполнить вход
 								form.form(data-login-form)
-									input.form__input(type="email" placeholder="Email" name="email")
-									input.form__input(type="password" placeholder="Пароль" name="password" autocomplete="on")
+									+input({
+										type: 'email',
+										placeholder: 'Email',
+										name: 'email',
+									})
+									+input({
+										type: 'password',
+										placeholder: 'Пароль',
+										name: 'password',
+									})
 									.form__row
 										button.button.button__primary(type="submit") Авторизоваться
 										a(href="#" data-open-modal="forgot") Забыли пароль ?

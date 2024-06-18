@@ -174,6 +174,7 @@ const init = () => {
 	exportXml();
 	delDotsTire();
 	forgot.init();
+	// validate.init();
 
 	resizeWidth = innerWidth;
 	window.addEventListener('resize', _debounce(resize, 500));

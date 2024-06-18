@@ -1,18 +1,31 @@
 import {Form} from '../form/form';
+import {validateCount} from '../validate/validate';
+import validator from 'validator';
+const sendData = new Form('POST');
+
 const init = () => {
 	if (document.querySelector('[data-registration-form]')) {
 		const form = document.querySelector('[data-registration-form]');
-		const sendData = new Form('POST');
 
-		form.addEventListener('submit', async (evt) => {
-			evt.preventDefault();
-
-			document.querySelectorAll('.form__checkbox').forEach((el) => {
+		form.querySelectorAll('.form__checkbox').forEach((el) => {
+			el.addEventListener('change', () => {
 				if (el.querySelector('input').checked) {
 					const input = document.querySelector(`[name="${el.querySelector('input').dataset.name}"]`);
 					input.value = el.querySelector('input').value;
+				} else {
+					const input = document.querySelector(`[name="${el.querySelector('input').dataset.name}"]`);
+					input.value = '';
 				}
 			});
+		});
+
+		const formName = form.querySelector('input[name="firstname"]');
+		validateCount(formName, 20);
+
+		form.addEventListener('submit', (evt) => {
+			evt.preventDefault();
+			const firstname = validator.isAlphanumeric(formName.value, ['ru-RU'], {ignore: '-'});
+			console.log(firstname);
 
 			sendData.send('https://my.loaderpro.ru/Main/create_user/', form);
 		});
