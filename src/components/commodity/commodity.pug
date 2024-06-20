@@ -29,12 +29,9 @@ mixin commodityQuery(data)
 						span 1,55
 			.commodity-query__info
 				.commodity-query__info-item
-					+input({
-						type: 'text',
-						placeholder: 'Количество',
-						name: 'count',
-						value: 2,
-					})
+					.commodity-query__info-message
+						p У товара истёк срок действия цены и срока поставки. Товар необходимо запросить заново.
+
 					.commodity-query__info-price
 						p Цена:
 						p #[del 15 000 Р]
@@ -42,9 +39,12 @@ mixin commodityQuery(data)
 					if (data.status === 'green')
 						.commodity-query__info-status.green
 							p В наличии
-						.commodity-query__info-stoke
-							p 1 шт. (склад)
-							p 1 шт. (1-2 недели)
+						+input({
+							type: 'text',
+							placeholder: 'Количество',
+							name: 'count',
+							value: 2,
+						})
 					else if (data.status === 'red')
 						.commodity-query__info-status.red
 							p Нет в Наличии
@@ -56,8 +56,6 @@ mixin commodityQuery(data)
 						.commodity-query__info-stoke
 							p -
 				.commodity-query__info-item
-					.commodity-query__info-message
-						p У товара истёк срок действия цены и срока поставки. Товар необходимо запросить заново.
 					.commodity-query__info-summary
 						p Сумма: #[span #[del 30 000 Р]]
 						button.button.button__primary Добавить в корзину
@@ -79,12 +77,7 @@ mixin commodityQuery(data)
 						span 1,55
 			.commodity-query__info
 				.commodity-query__info-item
-					+input({
-						type: 'text',
-						placeholder: 'Количество',
-						name: 'count',
-						value: 2,
-					})
+
 					.commodity-query__info-price
 						p Цена:
 						p 15 000 Р
@@ -92,9 +85,12 @@ mixin commodityQuery(data)
 					if (data.status === 'green')
 						.commodity-query__info-status.green
 							p В наличии
-						.commodity-query__info-stoke
-							p 1 шт. (склад)
-							p 1 шт. (1-2 недели)
+						+input({
+							type: 'text',
+							placeholder: 'Количество',
+							name: 'count',
+							value: 2,
+						})
 					else if (data.status === 'red')
 						.commodity-query__info-status.red
 							p Нет в Наличии
@@ -107,6 +103,5 @@ mixin commodityQuery(data)
 							p -
 				.commodity-query__info-item
 					.commodity-query__info-summary
-						p Сумма: #[span 30 000 Р]
-				.commodity-query__info-button
-					button.button.button__primary Добавить в корзину
+						p Сумма: #[span #[del 30 000 Р]]
+						button.button.button__primary Добавить в корзину
