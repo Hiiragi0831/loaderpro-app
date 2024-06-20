@@ -42,14 +42,17 @@ form.product(data-add-basket)
 						.product__specification
 							p Качество
 							p 168
-			.product__basket
-				.product__price
-					span Цена:
-					p 15000₽
-				.product__count
-					button.product__count-minus -
-					input(type="number" name="count" value="1" max="100")
-					button.product__count-plus +
-				button.button.button__primary В корзину
+			.product__side
+				.product__basket
+					.product__price
+						span Цена:
+						p от 15000₽
+					.product__count
+						button.product__count-minus -
+						input(type="number" name="count" value="1" max="100")
+						button.product__count-plus +
+					button.button.button__primary В корзину
+				.product__message
+					p У товара истёк срок действия цены и срока поставки. Товар необходимо запросить заново.
 			.product__description
 				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus amet architecto asperiores blanditiis commodi deserunt dolorem enim ipsum labore, minima mollitia natus nobis obcaecati odit quibusdam quidem quos rem!

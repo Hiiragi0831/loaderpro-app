@@ -37,7 +37,7 @@ mixin commodityQuery(data)
 					})
 					.commodity-query__info-price
 						p Цена:
-						p 15 000 Р
+						p #[del 15 000 Р]
 				.commodity-query__info-item
 					if (data.status === 'green')
 						.commodity-query__info-status.green
@@ -56,11 +56,11 @@ mixin commodityQuery(data)
 						.commodity-query__info-stoke
 							p -
 				.commodity-query__info-item
+					.commodity-query__info-message
+						p У товара истёк срок действия цены и срока поставки. Товар необходимо запросить заново.
 					.commodity-query__info-summary
-						p Сумма:
-						p 30 000 Р
-				.commodity-query__info-button
-					button.button.button__primary Добавить в корзину
+						p Сумма: #[span #[del 30 000 Р]]
+						button.button.button__primary Добавить в корзину
 		form.commodity-query__item(data-add-basket)
 			.commodity-query__img
 				+picture({
@@ -107,7 +107,6 @@ mixin commodityQuery(data)
 							p -
 				.commodity-query__info-item
 					.commodity-query__info-summary
-						p Сумма:
-						p 30 000 Р
+						p Сумма: #[span 30 000 Р]
 				.commodity-query__info-button
 					button.button.button__primary Добавить в корзину

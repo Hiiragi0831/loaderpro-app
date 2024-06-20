@@ -108,15 +108,20 @@
 			flex-direction: column;
 
 			&-item {
-				display: grid;
+				display: flex;
 				align-items: center;
-				grid-template-columns: 1fr 1fr;
+				justify-content: flex-end;
 				padding: vc(25) 0;
 				font-size: vc(16);
 				gap: vc(60);
 
 				> * {
-					justify-content: space-between;
+					flex-shrink: 0;
+					width: vc(215);
+
+					@include devices {
+						width: 100%;
+					}
 				}
 
 				&:nth-child(2) {
@@ -126,13 +131,14 @@
 				}
 
 				@include devices {
-					grid-template-columns: 1fr;
+					flex-direction: column;
 					gap: vc(15);
 				}
 			}
 
 			&-price {
 				display: flex;
+				justify-content: space-between;
 				gap: vc(25);
 			}
 
@@ -168,15 +174,22 @@
 
 			&-summary {
 				display: flex;
-				justify-content: space-between;
-				grid-column-start: 2;
-				gap: vc(25);
+				flex-direction: column;
+				gap: vc(20);
 
 				p {
-					&:first-child {
-						//grid-column-start: 2;
-					}
+					display: flex;
+					justify-content: space-between;
 				}
+			}
+
+			&-message {
+				border-radius: vc(5);
+				padding: vc(10);
+				box-shadow: $box-shadow;
+				font-weight: 600;
+				font-size: vc(12);
+				color: $tree-poppy-400;
 			}
 
 			&-button {
