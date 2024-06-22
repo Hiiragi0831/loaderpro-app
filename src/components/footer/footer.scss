@@ -1,7 +1,7 @@
 .footer {
 	padding: vc(30) 0 0;
 	color: $color-white;
-	background-color: $woodsmoke-950;
+	background: #242528;
 
 	&__row {
 		display: grid;
@@ -132,7 +132,7 @@
 		margin-top: vc(30);
 		padding: vc(15) 0;
 		text-align: center;
-		background-color: $color-black;
+		background-color: $woodsmoke-950;
 	}
 
 	&__title {
