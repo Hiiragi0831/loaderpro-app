@@ -127,14 +127,14 @@ const delDotsTire = () => {
 };
 
 const delMetods = () => {
-	if (document.querySelector('.commodity-query')) {
-		document.querySelectorAll('.commodity-query').forEach((item) => {
+	if (document.querySelector('.commodity-query__item')) {
+		document.querySelectorAll('.commodity-query__item').forEach((item) => {
 			item.querySelector('.commodity-query__del').addEventListener('click', (e) => {
 				e.preventDefault();
 				const fd = new FormData();
 				fd.append('jwt', cookieJwt.get('jwt'));
-				fd.append('id', item.dataset.qhId);
-				fd.append('num', item.dataset.qhNum);
+				fd.append('id', item.querySelector('.commodity-query__del').dataset.qhId);
+				fd.append('num', item.querySelector('.commodity-query__del').dataset.qhNum);
 				sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/delete_products', document.querySelector('main'));
 				item.remove();
 			});
@@ -147,8 +147,8 @@ const delMetods = () => {
 				e.preventDefault();
 				const fd = new FormData();
 				fd.append('jwt', cookieJwt.get('jwt'));
-				fd.append('id', item.dataset.rcId);
-				fd.append('num', item.dataset.rcNum);
+				fd.append('id', item.querySelector('.request-card__product-del').dataset.rcId);
+				fd.append('num', item.querySelector('.request-card__product-del').dataset.rcNum);
 				sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/delete_products', document.querySelector('main'));
 				item.remove();
 			});
