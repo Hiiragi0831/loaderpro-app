@@ -12,6 +12,8 @@ mixin commodityQuery(data)
 			.commodity-query__heading-item
 				p Действительно до: #[b 24.05.24]
 		form.commodity-query__item(data-add-basket)
+			.commodity-query__del
+				+svg('xmark')
 			.commodity-query__img
 				+picture({
 					path: `${baseDir}assets/images/1`,
@@ -60,6 +62,8 @@ mixin commodityQuery(data)
 						p Сумма: #[span #[del 30 000 Р]]
 						button.button.button__primary Добавить в корзину
 		form.commodity-query__item(data-add-basket)
+			.commodity-query__del
+				+svg('xmark')
 			.commodity-query__img
 				+picture({
 					path: `${baseDir}assets/images/1`,

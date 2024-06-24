@@ -43,6 +43,7 @@ import listOrders from '../pages/list-orders/list-orders';
 import {Form} from '../components/form/form';
 import users from '../pages/users/users';
 import forgot from '../pages/forgot/forgot';
+import {Cookie} from '../components/cookies/cookies';
 
 // eslint-disable-next-line no-underscore-dangle
 window._debounce = debounce;
@@ -51,6 +52,7 @@ window._throttle = throttle;
 
 let resizeWidth = null;
 const sendForm = new Form('POST');
+const cookieJwt = new Cookie('jwt');
 
 const resize = () => {
 	if (isDevices() && resizeWidth && resizeWidth === innerWidth) {
@@ -118,6 +120,29 @@ const delDotsTire = () => {
 	}
 };
 
+const delMetods = () => {
+	const fd = new FormData();
+	fd.append('jwt', cookieJwt.get('jwt'));
+
+	if (document.querySelector('.commodity-query__del')) {
+		document.querySelectorAll('.commodity-query__del').forEach((item) => {
+			item.addEventListener('click', (e) => {
+				e.preventDefault();
+				sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/delete_products');
+			});
+		});
+	}
+
+	if (document.querySelector('.request-card__product-del')) {
+		document.querySelectorAll('.request-card__product-del').forEach((item) => {
+			item.addEventListener('click', (e) => {
+				e.preventDefault();
+				sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/delete_products');
+			});
+		});
+	}
+};
+
 // добавить скрипты для инициализации при переходах
 // const scriptsInit = [
 // 	// активируем нужные модули которые будут использоваться и которые должны обновлять при переходах между страницами
@@ -174,6 +199,7 @@ const init = () => {
 	exportXml();
 	delDotsTire();
 	forgot.init();
+	delMetods();
 	// validate.init();
 
 	resizeWidth = innerWidth;

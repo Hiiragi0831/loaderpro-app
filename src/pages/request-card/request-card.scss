@@ -147,11 +147,13 @@
 			}
 		}
 
-		&-change {
+		&-manage {
 			position: absolute;
 			right: vc(16);
 			top: vc(20);
 			z-index: 2;
+			display: flex;
+			gap: vc(10);
 
 			svg {
 				width: vc(18);

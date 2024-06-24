@@ -24,6 +24,7 @@
 		}
 
 		&__item {
+			position: relative;
 			display: grid;
 			grid-template-columns: vc(300) 1fr 1fr;
 			border-top: 1px solid rgba($color-black, 0.2);
@@ -37,6 +38,20 @@
 			@include devices {
 				grid-template-columns: 1fr;
 				gap: vc(15);
+			}
+		}
+
+		&__del {
+			position: absolute;
+			right: vc(16);
+			top: vc(20);
+			z-index: 2;
+			cursor: pointer;
+
+			svg {
+				width: vc(18);
+				height: vc(18);
+				fill: $tree-poppy-400;
 			}
 		}
 
