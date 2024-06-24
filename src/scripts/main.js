@@ -75,6 +75,12 @@ const addBasket = () => {
 			sendForm.init('https://my.loaderpro.ru/basket/basket_add', item);
 		});
 	}
+
+	if (document.querySelector('[data-add-request]')) {
+		document.querySelectorAll('[data-add-request]').forEach((item) => {
+			sendForm.init('https://my.loaderpro.ru/Main/orders', item);
+		});
+	}
 };
 
 const exportXml = () => {
