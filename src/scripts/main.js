@@ -121,28 +121,30 @@ const delDotsTire = () => {
 };
 
 const delMetods = () => {
-	if (document.querySelector('.commodity-query__del')) {
-		document.querySelectorAll('.commodity-query__del').forEach((item) => {
-			item.addEventListener('click', (e) => {
+	if (document.querySelector('.commodity-query')) {
+		document.querySelectorAll('.commodity-query').forEach((item) => {
+			item.querySelector('.commodity-query__del').addEventListener('click', (e) => {
 				e.preventDefault();
 				const fd = new FormData();
 				fd.append('jwt', cookieJwt.get('jwt'));
 				fd.append('id', item.dataset.qhId);
 				fd.append('num', item.dataset.qhNum);
-				sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/delete_products');
+				sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/delete_products', document.querySelector('main'));
+				item.remove();
 			});
 		});
 	}
 
-	if (document.querySelector('.request-card__product-del')) {
-		document.querySelectorAll('.request-card__product-del').forEach((item) => {
-			item.addEventListener('click', (e) => {
+	if (document.querySelector('.request-card__product')) {
+		document.querySelectorAll('.request-card__product').forEach((item) => {
+			item.querySelector('.request-card__product-del').addEventListener('click', (e) => {
 				e.preventDefault();
 				const fd = new FormData();
 				fd.append('jwt', cookieJwt.get('jwt'));
 				fd.append('id', item.dataset.rcId);
 				fd.append('num', item.dataset.rcNum);
-				sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/delete_products');
+				sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/delete_products', document.querySelector('main'));
+				item.remove();
 			});
 		});
 	}
