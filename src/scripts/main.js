@@ -78,7 +78,7 @@ const addBasket = () => {
 
 	if (document.querySelector('[data-add-request]')) {
 		document.querySelectorAll('[data-add-request]').forEach((item) => {
-			sendForm.init('https://my.loaderpro.ru/Main/orders', item);
+			sendForm.init('https://my.loaderpro.ru/Main/orders', item, document.querySelector('main'));
 		});
 	}
 };
