@@ -297,7 +297,7 @@ export class Upload {
 				item.querySelector('.input-upload__preview-item-remove').addEventListener('click', (evt) => {
 					evt.preventDefault();
 					FData.append('src', item.querySelector('.input-upload__preview-img').src);
-					sendForm.sendData(FData, 'https://my.loaderpro.ru/Main/img_delete');
+					sendForm.sendData(FData, '/Main/img_delete');
 
 					document.addEventListener('statusSuccess', () => {
 						this._uploadLength++;

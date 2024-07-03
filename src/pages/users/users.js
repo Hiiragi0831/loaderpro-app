@@ -8,7 +8,7 @@ const init = () => {
 		return;
 	}
 
-	form.init('https://my.loaderpro.ru/users/users_search', page.querySelector('[data-search]'), page.querySelector('.page__results'));
+	form.init('/users/users_search', page.querySelector('[data-search]'), page.querySelector('.page__results'));
 
 	page.querySelectorAll('input[name="admin"]').forEach((i) => {
 		i.addEventListener('change', (e) => {
@@ -17,7 +17,7 @@ const init = () => {
 
 			fd.append('admin', e.target.value);
 			fd.append('checked', e.target.checked);
-			form.sendData(fd, 'https://my.loaderpro.ru/users/users_access_edit');
+			form.sendData(fd, '/users/users_access_edit');
 		});
 	});
 };

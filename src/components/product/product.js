@@ -47,7 +47,7 @@ const init = () => {
 
 	count();
 
-	sendData.init('https://my.loaderpro.ru/Main/edit_product/', addProduct);
+	sendData.init('/Main/edit_product/', addProduct);
 };
 
 export default {

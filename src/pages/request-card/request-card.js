@@ -49,7 +49,7 @@ const typeChange = (modal) => {
 		fd.append('jwt', jwt.get('jwt'));
 		fd.append('value', i.target.value);
 
-		const fe = fetch('https://my.loaderpro.ru/Main/category_type/', {
+		const fe = fetch('/Main/category_type/', {
 			method: 'POST',
 			body: fd,
 		});
@@ -69,14 +69,14 @@ const typeChange = (modal) => {
 };
 
 const sendData = () => {
-	sendForm.init('https://my.loaderpro.ru/request_card/request_card_save/', requestCard.querySelector('[data-request-card]'));
+	sendForm.init('/request_card/request_card_save/', requestCard.querySelector('[data-request-card]'));
 };
 
 const editProduct = () => {
 	const forms = document.querySelectorAll('.productEditing__form');
 
 	forms.forEach((form) => {
-		sendForm.init('https://my.loaderpro.ru/Main/edit_product/', form);
+		sendForm.init('/Main/edit_product/', form);
 	});
 };
 

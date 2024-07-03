@@ -9,7 +9,7 @@ const listener = () => {
 			fd.append('noteid', el.dataset.id);
 
 			if (el.dataset.read === '0') {
-				sendData.sendData(fd, 'https://my.loaderpro.ru/notifications/note_read');
+				sendData.sendData(fd, '/notifications/note_read');
 				el.dataset.read = 1;
 			}
 

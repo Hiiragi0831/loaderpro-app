@@ -38,7 +38,7 @@ const init = () => {
 		form.addEventListener('submit', (evt) => {
 			evt.preventDefault();
 			if (!change) {
-				sendData.send('https://my.loaderpro.ru/Main/replace_pass', form);
+				sendData.send('/Main/replace_pass', form);
 			} else {
 				notyf.error('Пароли не совпадают');
 			}

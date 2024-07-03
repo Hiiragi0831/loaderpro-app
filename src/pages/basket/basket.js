@@ -42,14 +42,14 @@ const orderDel = () => {
 	if (page.querySelector('[data-basket-order]')) {
 		if (!page.querySelectorAll('.basket-product').length) {
 			fd.append('order_num', page.querySelector('input[name="order_num"]').value);
-			sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/orders_delete', page);
+			sendForm.sendData(fd, '/Main/orders_delete', page);
 		}
 	}
 
 	if (page.querySelector('[data-basket]')) {
 		if (!page.querySelectorAll('.basket-product').length) {
 			fd.append('basket_delete', '1');
-			sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/basket_delete_callback', page);
+			sendForm.sendData(fd, '/Main/basket_delete_callback', page);
 		}
 	}
 };
@@ -59,7 +59,7 @@ const basketProduct = () => {
 		if (item.querySelector('.basket-product__del')) {
 			item.querySelector('.basket-product__del').addEventListener('click', (evt) => {
 				evt.preventDefault();
-				sendForm.send('https://my.loaderpro.ru/basket/basket_delete', item, page);
+				sendForm.send('/basket/basket_delete', item, page);
 				item.remove();
 				orderDel();
 			});
@@ -67,7 +67,7 @@ const basketProduct = () => {
 
 		item.querySelector('.basket-product__count input').addEventListener('change', (evt) => {
 			evt.preventDefault();
-			sendForm.send('https://my.loaderpro.ru/basket/basket_count_edit', item);
+			sendForm.send('/basket/basket_count_edit', item);
 			const count = Number(item.querySelector('.basket-product__count input').value);
 			const price = Number(item.querySelector('.basket-product__price').dataset.productPrice);
 			const total = count * price;
@@ -87,16 +87,16 @@ const init = () => {
 	radioInfo(page.querySelector('.basket__information-info'));
 
 	if (page.querySelector('[data-basket]')) {
-		sendForm.init('https://my.loaderpro.ru/basket/basket_add_orders', page.querySelector('[data-basket]'), document.querySelector('main'));
+		sendForm.init('/basket/basket_add_orders', page.querySelector('[data-basket]'), document.querySelector('main'));
 	}
 
 	if (page.querySelector('[data-basket-order]')) {
-		sendForm.init('https://my.loaderpro.ru/order/order_edit_orders', page.querySelector('[data-basket-order]'), document.querySelector('main'));
+		sendForm.init('/order/order_edit_orders', page.querySelector('[data-basket-order]'), document.querySelector('main'));
 	}
 
 	if (document.querySelector('.productEditing__form')) {
 		document.querySelectorAll('.productEditing__form').forEach((i) => {
-			sendForm.init('https://my.loaderpro.ru/Main/edit_product/', i);
+			sendForm.init('/Main/edit_product/', i);
 		});
 	}
 };

@@ -72,13 +72,13 @@ const resize = () => {
 const addBasket = () => {
 	if (document.querySelector('[data-add-basket]')) {
 		document.querySelectorAll('[data-add-basket]').forEach((item) => {
-			sendForm.init('https://my.loaderpro.ru/basket/basket_add', item);
+			sendForm.init('/basket/basket_add', item);
 		});
 	}
 
 	if (document.querySelector('[data-add-request]')) {
 		document.querySelectorAll('[data-add-request]').forEach((item) => {
-			sendForm.init('https://my.loaderpro.ru/Main/orders', item, document.querySelector('main'));
+			sendForm.init('/Main/orders', item, document.querySelector('main'));
 		});
 	}
 };
@@ -86,7 +86,7 @@ const addBasket = () => {
 const exportXml = () => {
 	if (document.querySelector('[data-export-xls]')) {
 		document.querySelectorAll('[data-export-xls]').forEach((item) => {
-			sendForm.init('https://my.loaderpro.ru/Main/export_xls', item);
+			sendForm.init('/Main/export_xls', item);
 		});
 	}
 };
@@ -135,7 +135,7 @@ const delMetods = () => {
 				fd.append('jwt', cookieJwt.get('jwt'));
 				fd.append('id', item.querySelector('.commodity-query__del').dataset.qhId);
 				fd.append('num', item.querySelector('.commodity-query__del').dataset.qhNum);
-				sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/delete_products', document.querySelector('main'));
+				sendForm.sendData(fd, '/Main/delete_products', document.querySelector('main'));
 				item.remove();
 			});
 		});
@@ -149,7 +149,7 @@ const delMetods = () => {
 				fd.append('jwt', cookieJwt.get('jwt'));
 				fd.append('id', item.querySelector('.request-card__product-del').dataset.rcId);
 				fd.append('num', item.querySelector('.request-card__product-del').dataset.rcNum);
-				sendForm.sendData(fd, 'https://my.loaderpro.ru/Main/delete_products', document.querySelector('main'));
+				sendForm.sendData(fd, '/Main/delete_products', document.querySelector('main'));
 				item.remove();
 			});
 		});

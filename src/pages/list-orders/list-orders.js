@@ -11,7 +11,7 @@ const init = () => {
 
 	// let tabId = null;
 
-	sendForm.init('https://my.loaderpro.ru/basket/basket_search', page.querySelector('[data-search]'), page.querySelector('.page__results'));
+	sendForm.init('/basket/basket_search', page.querySelector('[data-search]'), page.querySelector('.page__results'));
 
 	page.querySelector('.page__tab').querySelectorAll('.navtab__item').forEach((i, id) => {
 		i.addEventListener('click', (e) => {
@@ -22,7 +22,7 @@ const init = () => {
 			// tabId = id;
 			i.classList.add('is-active');
 			fd.append('order_status', id);
-			sendForm.sendData(fd, 'https://my.loaderpro.ru/list_orders/list_order_status_result', page.querySelector('.page__results'));
+			sendForm.sendData(fd, '/list_orders/list_order_status_result', page.querySelector('.page__results'));
 		});
 	});
 

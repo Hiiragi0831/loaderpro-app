@@ -7,7 +7,7 @@ const init = () => {
 		return;
 	}
 
-	sendData.init('https://my.loaderpro.ru/garage/garage_search ', page.querySelector('[data-garage-search]'), page.querySelector('.garage__items'))
+	sendData.init('/garage/garage_search ', page.querySelector('[data-garage-search]'), page.querySelector('.garage__items'))
 
 	;
 };

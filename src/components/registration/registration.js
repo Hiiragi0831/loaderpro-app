@@ -27,7 +27,7 @@ const init = () => {
 			const firstname = validator.isAlphanumeric(formName.value, ['ru-RU'], {ignore: '-'});
 			console.log(firstname);
 
-			sendData.send('https://my.loaderpro.ru/Main/create_user/', form);
+			sendData.send('/Main/create_user/', form);
 		});
 	}
 };

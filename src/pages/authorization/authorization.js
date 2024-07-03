@@ -28,13 +28,13 @@ const init = () => {
 			evt.preventDefault();
 
 			if (email && password) {
-				sendData.send('https://my.loaderpro.ru/Main/auth_user/', document.querySelector('[data-login-form]'));
+				sendData.send('/Main/auth_user/', document.querySelector('[data-login-form]'));
 			}
 		});
 	}
 
 	if (document.querySelector('[data-forgot]')) {
-		sendData.init('https://my.loaderpro.ru/Main/replace_pass', document.querySelector('[data-forgot]'));
+		sendData.init('/Main/replace_pass', document.querySelector('[data-forgot]'));
 	}
 };
 

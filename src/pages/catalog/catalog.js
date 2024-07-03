@@ -14,22 +14,22 @@ const init = () => {
 	const importFile = document.querySelector('[data-form-import]');
 	const filter = catalog.querySelector('.catalog__filter');
 
-	sendData.init('https://my.loaderpro.ru/catalog/catalog_more', loadMore, catalog.querySelector('.catalog__row'));
-	sendData.init('https://my.loaderpro.ru/catalog/catalog_search', search, catalog.querySelector('.catalog__row'));
+	sendData.init('/catalog/catalog_more', loadMore, catalog.querySelector('.catalog__row'));
+	sendData.init('/catalog/catalog_search', search, catalog.querySelector('.catalog__row'));
 
 	addProduct.forEach((form) => {
-		sendData.init('https://my.loaderpro.ru/Main/edit_product/', form);
+		sendData.init('/Main/edit_product/', form);
 	});
 
-	sendData.init('https://my.loaderpro.ru/Main/import_file_xls/', importFile);
+	sendData.init('/Main/import_file_xls/', importFile);
 
 	filter.querySelectorAll('select, input').forEach((i) => {
 		i.addEventListener('change', (evt) => {
 			evt.preventDefault();
-			sendData.send('https://my.loaderpro.ru/catalog/catalog_filters', filter, catalog.querySelector('.catalog__row'));
+			sendData.send('/catalog/catalog_filters', filter, catalog.querySelector('.catalog__row'));
 		});
 	});
-	sendData.init('https://my.loaderpro.ru/catalog/catalog_filters', filter, catalog.querySelector('.catalog__row'));
+	sendData.init('/catalog/catalog_filters', filter, catalog.querySelector('.catalog__row'));
 };
 
 export default {

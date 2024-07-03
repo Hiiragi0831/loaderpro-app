@@ -62,7 +62,7 @@ const importFile = () => {
 	const form = document.querySelector('[data-form-import]');
 	const sendForm = new Form('POST');
 
-	sendForm.init('https://my.loaderpro.ru/Main/import_file_xls/', form, document.querySelector('main'));
+	sendForm.init('/Main/import_file_xls/', form, document.querySelector('main'));
 };
 
 const init = () => {
@@ -86,7 +86,7 @@ const init = () => {
 				data.push(dannie);
 			});
 
-			form.sendData(JSON.stringify(data), 'https://my.loaderpro.ru/Main/orders/', document.querySelector('.query'));
+			form.sendData(JSON.stringify(data), '/Main/orders/', document.querySelector('.query'));
 		});
 	}
 };
