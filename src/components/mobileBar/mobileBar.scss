@@ -1,0 +1,55 @@
+.mobilebar {
+	position: fixed;
+	bottom: 0;
+	z-index: 999;
+	display: grid;
+	align-items: center;
+	grid-template-columns: 1fr 1fr vc(80) 1fr 1fr;
+	border-top: 1px solid $woodsmoke-400;
+	padding: 0 vc(10) vc(10);
+	width: 100%;
+	height: vc(80);
+	background: $color-white;
+	gap: vc(15);
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-items: center;
+		font-size: vc(10);
+		color: $woodsmoke-400;
+		gap: vc(5);
+
+		svg {
+			width: vc(32);
+			height: vc(32);
+			fill: $woodsmoke-400;
+		}
+	}
+
+	&__search {
+		position: relative;
+		top: vc(-20);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid $woodsmoke-400;
+		border-radius: 100%;
+		width: vc(80);
+		height: vc(80);
+		background: $color-white;
+
+		svg {
+			left: vc(-2);
+			top: vc(3);
+			width: vc(50);
+			height: vc(50);
+			fill: $color-black;
+		}
+	}
+
+	@include desktop {
+		display: none;
+	}
+}
