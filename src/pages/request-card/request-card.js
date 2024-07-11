@@ -72,6 +72,10 @@ const sendData = () => {
 	sendForm.init('/request_card/request_card_save/', requestCard.querySelector('[data-request-card]'));
 };
 
+const importXls = () => {
+	sendForm.init('/request_card/request_card_import_xls/', requestCard.querySelector('[data-form-import]'));
+};
+
 const editProduct = () => {
 	const forms = document.querySelectorAll('.productEditing__form');
 
@@ -89,6 +93,7 @@ const init = () => {
 	marginCalc();
 	sendData();
 	editProduct();
+	importXls();
 };
 
 export default {
