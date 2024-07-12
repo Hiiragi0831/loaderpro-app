@@ -3,12 +3,11 @@
 	bottom: 0;
 	z-index: 999;
 	display: grid;
-	align-items: center;
 	grid-template-columns: 1fr 1fr vc(80) 1fr 1fr;
 	border-top: 1px solid $woodsmoke-400;
 	padding: 0 vc(10) vc(10);
 	width: 100%;
-	height: vc(80);
+	height: vc(65);
 	background: $color-white;
 	gap: vc(15);
 

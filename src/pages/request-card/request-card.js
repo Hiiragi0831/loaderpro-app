@@ -73,7 +73,7 @@ const sendData = () => {
 };
 
 const importXls = () => {
-	sendForm.init('/request_card/request_card_import_xls/', requestCard.querySelector('[data-form-import]'));
+	sendForm.init('/request_card/request_card_import_xls/', document.querySelector('[data-form-import]'));
 };
 
 const editProduct = () => {
