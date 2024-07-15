@@ -208,7 +208,7 @@ const init = () => {
 	addBasket();
 	phoneMask();
 	users.init();
-	Fancybox.bind('[data-fancybox="gallery"]');
+	Fancybox.bind('[data-fancybox]');
 	exportXml();
 	delDotsTire();
 	forgot.init();
