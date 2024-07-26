@@ -106,7 +106,7 @@ const phoneMask = () => {
 const delDotsTire = () => {
 	const replaceString = (item) => {
 		item.addEventListener('change', (e) => {
-			e.target.value = e.target.value.replace(/([.\-/\\=,])/g, '');
+			e.target.value = e.target.value.replace(/([.\-/\\=,\s+])/g, '');
 		});
 	};
 	if (document.querySelector('input[name="numparts"]')) {
