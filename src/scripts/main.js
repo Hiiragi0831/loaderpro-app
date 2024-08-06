@@ -114,11 +114,11 @@ const delDotsTire = () => {
 			replaceString(item);
 		});
 	}
-	if (document.querySelector('input[name="search"]')) {
-		document.querySelectorAll('input[name="search"]').forEach((item) => {
-			replaceString(item);
-		});
-	}
+	// if (document.querySelector('input[name="search"]')) {
+	// 	document.querySelectorAll('input[name="search"]').forEach((item) => {
+	// 		replaceString(item);
+	// 	});
+	// }
 	if (document.querySelector('input[name="article"]')) {
 		document.querySelectorAll('input[name="article"]').forEach((item) => {
 			replaceString(item);

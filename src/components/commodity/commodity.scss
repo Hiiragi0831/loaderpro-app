@@ -9,6 +9,7 @@
 
 			&-item {
 				font-size: vc(16);
+				white-space: nowrap;
 
 				a {
 					@include hoverOpacity;

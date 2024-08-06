@@ -1,13 +1,9 @@
 .catalog {
 	.row {
 		display: grid;
-		grid-template-columns: vc(300) 1fr;
+		grid-template-columns: 100%;
 		margin-top: vc(40);
 		gap: vc(15);
-
-		@include devices {
-			grid-template-columns: 1fr;
-		}
 	}
 
 	&__filter {
@@ -44,7 +40,7 @@
 
 	&__row {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 		gap: vc(20);
 
 		@include devices {
