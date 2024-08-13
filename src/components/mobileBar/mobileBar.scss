@@ -5,9 +5,9 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr vc(80) 1fr 1fr;
 	border-top: 1px solid $woodsmoke-400;
-	padding: vc(10);
+	padding: vc(7) vc(10);
 	width: 100%;
-	height: vc(65);
+	height: vc(80);
 	background: $color-white;
 	gap: vc(15);
 
@@ -21,8 +21,8 @@
 		gap: vc(5);
 
 		svg {
-			width: vc(32);
-			height: vc(32);
+			width: vc(22);
+			height: vc(22);
 			fill: $woodsmoke-400;
 		}
 	}
