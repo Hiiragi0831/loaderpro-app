@@ -78,7 +78,7 @@ const addBasket = () => {
 
 	if (document.querySelector('[data-add-request]')) {
 		document.querySelectorAll('[data-add-request]').forEach((item) => {
-			sendForm.init('/Main/orders', item, document.querySelector('main'));
+			sendForm.init('/catalog_product/catalog_product_query/', item, document.querySelector('main'));
 		});
 	}
 };
@@ -156,30 +156,10 @@ const delMetods = () => {
 	}
 };
 
-// добавить скрипты для инициализации при переходах
-// const scriptsInit = [
-// 	// активируем нужные модули которые будут использоваться и которые должны обновлять при переходах между страницами
-// 	lazyLoad.init,
-// 	scrollToAnchor.init,
-// 	lazyBlur.init,
-// 	sharing.init,
-//
-// 	authentication.init,
-// 	registration.init,
-// 	home.init,
-// 	query.init,
-// ];
-//
-// // добавить скрипты для удаленния данных при уходе
-// const scriptsDestroy = [
-//
-// ];
 const init = () => {
 	uaParser.init();
 	actualYear.init();
 	vhFix.init();
-	// закоментировать или удалить если SPA поведение не требуется
-	// router.init(scriptsInit, scriptsDestroy);
 	lazyLoad.init();
 	scrollToAnchor.init();
 	lazyBlur.init();

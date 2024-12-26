@@ -193,7 +193,7 @@ block content
 						section.productEditing
 							.productEditing__title
 								p.h3 Редактирование товара
-							form.form.productEditing__form(enctype="multipart/form-data")
+							form.form.productEditing__form(enctype="multipart/form-data" data-edit-product)
 								.form__main
 									.form__row
 										+input({
@@ -348,8 +348,8 @@ block content
 							+svg("xmark")
 						section.productEditing
 							.productEditing__title
-								p.h3 Редактирование товара
-							form.form.productEditing__form(enctype="multipart/form-data")
+								p.h3 Добавить товар
+							form.form.productEditing__form(enctype="multipart/form-data" data-add-product)
 								.form__main
 									.form__row
 										+input({

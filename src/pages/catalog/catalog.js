@@ -10,7 +10,7 @@ const init = () => {
 	const sendData = new Form('POST');
 	const loadMore = catalog.querySelector('[data-more]');
 	const search = catalog.querySelector('[data-catalog-search]');
-	const addProduct = document.querySelectorAll('.productEditing__form');
+	const addProduct = document.querySelectorAll('[data-form-add]');
 	const importFile = document.querySelector('[data-form-import]');
 	const filter = catalog.querySelector('.catalog__filter');
 
@@ -18,10 +18,10 @@ const init = () => {
 	sendData.init('/catalog/catalog_search', search, catalog.querySelector('.catalog__row'));
 
 	addProduct.forEach((form) => {
-		sendData.init('/Main/edit_product/', form);
+		sendData.init('/catalog/catalog_product_create/', form);
 	});
 
-	sendData.init('/Main/import_file_xls/', importFile);
+	sendData.init('/catalog/catalog_import_file/', importFile);
 
 	filter.querySelectorAll('select, input').forEach((i) => {
 		i.addEventListener('change', (evt) => {

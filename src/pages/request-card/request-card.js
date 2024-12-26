@@ -76,11 +76,19 @@ const importXls = () => {
 	sendForm.init('/request_card/request_card_import_xls/', document.querySelector('[data-form-import]'));
 };
 
+const exportFile = () => {
+	sendForm.init('/request_card/request_card_export_file/', document.querySelector('[data-export]'));
+};
+
+const addProduct = () => {
+	sendForm.init('/request_card/request_card_product_create/', document.querySelector('[data-add-product]'));
+};
+
 const editProduct = () => {
-	const forms = document.querySelectorAll('.productEditing__form');
+	const forms = document.querySelectorAll('[data-edit-product]');
 
 	forms.forEach((form) => {
-		sendForm.init('/Main/edit_product/', form);
+		sendForm.init('/request_card/request_card_product_edit/', form);
 	});
 };
 
@@ -94,6 +102,8 @@ const init = () => {
 	sendData();
 	editProduct();
 	importXls();
+	exportFile();
+	addProduct();
 };
 
 export default {
