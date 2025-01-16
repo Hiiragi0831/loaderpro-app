@@ -149,6 +149,7 @@ block content
 										label
 											input(type="file" name="upload-file")
 											span.button.button__outline Загрузить файл
+										.input-upload__preview
 								.form__buttons
 									button.button.button__primary(type="submit") Сохранить
 									a.button.button__primary(data-close-modal) Отмена
@@ -250,6 +251,7 @@ block content
 									.input-upload.input-upload--images-drop(data-upload="img-drop")
 										.input-upload__drop-zone(data-drop-zone)
 											span.input-upload__drop-zone-text Фото товара
+											.input-upload__preview
 										label(data-drop-zone)
 											input(type="file" name="images[]")
 								.form__buttons
