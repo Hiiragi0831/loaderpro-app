@@ -30,7 +30,7 @@ const loadMore = (selector) => {
 			throw new Error();
 		}).then((res) => {
 			catalog.querySelector('.catalog__row').insertAdjacentHTML('beforeend', res.html);
-			selector.querySelector("input[name='query_more']").value = res.count;
+			selector.querySelector("input[name='catalog_more']").value = res.count;
 		});
 	});
 };
