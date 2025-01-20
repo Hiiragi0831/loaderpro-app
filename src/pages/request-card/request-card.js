@@ -73,11 +73,15 @@ const sendData = () => {
 };
 
 const importXls = () => {
-	sendForm.init('/request_card/request_card_import_xls/', document.querySelector('[data-form-import]'));
+	if (document.querySelector('[data-form-import]')) {
+		sendForm.init('/request_card/request_card_import_xls/', document.querySelector('[data-form-import]'));
+	}
 };
 
 const exportFile = () => {
-	sendForm.init('/request_card/request_card_export_file/', document.querySelector('[data-export]'));
+	if (document.querySelector('[data-export]')) {
+		sendForm.init('/request_card/request_card_export_file/', document.querySelector('[data-export]'));
+	}
 };
 
 const addProduct = () => {
