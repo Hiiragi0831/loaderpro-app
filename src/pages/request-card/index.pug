@@ -493,27 +493,4 @@ block content
 											input(type="file" name="images[]")
 								.form__buttons
 									button.button.button__primary(type="submit") Сохранить
-			section.modal(data-modal="import-file")
-				.modal__wrapper
-					.modal__overlay
-					.modal__content
-						button.modal__close-btn(type="button" aria-label="Закрыть попап" data-close-modal data-focus)
-							+svg("xmark")
-						section.query-import
-							.productEditing__title
-								p.h3 &Icy;&mcy;&pcy;&ocy;&rcy;&tcy;&icy;&rcy;&ocy;&vcy;&acy;&tcy;&softcy; &icy;&zcy; &fcy;&acy;&jcy;&lcy;&acy;
-							p.query-import__lead &Zcy;&acy;&gcy;&rcy;&ucy;&zcy;&icy;&tcy;&iecy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&ucy; Excel &dcy;&lcy;&yacy; &icy;&mcy;&pcy;&ocy;&rcy;&tcy;&acy; &tcy;&ocy;&vcy;&acy;&rcy;&ocy;&vcy; &vcy; &kcy;&acy;&tcy;&acy;&lcy;&ocy;&gcy;:
-							form.form(enctype="multipart/form-data" data-form-import)
-								input(type="hidden" name="query_id" value="17393551437")
-								.form__file
-									.input-upload.input-upload--file(data-upload="file")
-										label
-											input(type="file" name="upload-file" accept=".xls,.xlsx")
-											span.button.button__outline &Zcy;&acy;&gcy;&rcy;&ucy;&zcy;&icy;&tcy;&softcy; &fcy;&acy;&jcy;&lcy;
-										.input-upload__preview
-										.input-upload__preview
-								.form__buttons
-									button.button.button__primary(type="submit") &Scy;&ocy;&khcy;&rcy;&acy;&ncy;&icy;&tcy;&softcy;
-									a.button.button__primary(data-close-modal) &Ocy;&tcy;&mcy;&iecy;&ncy;&acy;
-
 			+footer()
