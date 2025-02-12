@@ -11,6 +11,7 @@ let notyf = new Notyf({
 export class Form {
 	constructor(method) {
 		this.method = method;
+		this.target = null;
 		this.elappend = null;
 		this.cookieJwt = new Cookie('jwt');
 		this.evt = new Event('statusSuccess', {
@@ -108,11 +109,17 @@ export class Form {
 			document.querySelector('.header__basket .header__icon span').innerHTML = responseJson.basket.count;
 			document.querySelector('.header__basket b').innerHTML = `${responseJson.basket.sum} ₽`;
 		}
+		this.target.querySelector('[type="submit"]').disabled = false;
+		this.target.querySelector('[type="submit"]').classList.remove('is-loading');
 	}
 
 	onError(error) {
 		console.error('Произошла ошибка отправки', error);
 		notyf.error('Произошла ошибка отправки');
+		setTimeout(() => {
+			this.target.querySelector('[type="submit"]').disabled = false;
+			this.target.querySelector('[type="submit"]').classList.remove('is-loading');
+		}, 1000);
 	}
 
 	send(action, target, elappend) {
@@ -138,7 +145,9 @@ export class Form {
 	init(action, target, elappend) {
 		target.addEventListener('submit', async (evt) => {
 			evt.preventDefault();
-
+			this.target = target;
+			this.target.querySelector('[type="submit"]').classList.add('is-loading');
+			this.target.querySelector('[type="submit"]').disabled = true;
 			this.send(action, target, elappend);
 		});
 
