@@ -116,10 +116,8 @@ export class Form {
 	onError(error) {
 		console.error('Произошла ошибка отправки', error);
 		notyf.error('Произошла ошибка отправки');
-		setTimeout(() => {
-			this.target.querySelector('[type="submit"]').disabled = false;
-			this.target.querySelector('[type="submit"]').classList.remove('is-loading');
-		}, 1000);
+		this.target.querySelector('[type="submit"]').disabled = false;
+		this.target.querySelector('[type="submit"]').classList.remove('is-loading');
 	}
 
 	send(action, target, elappend) {
