@@ -109,15 +109,19 @@ export class Form {
 			document.querySelector('.header__basket .header__icon span').innerHTML = responseJson.basket.count;
 			document.querySelector('.header__basket b').innerHTML = `${responseJson.basket.sum} ₽`;
 		}
-		this.target.querySelector('[type="submit"]').disabled = false;
-		this.target.querySelector('[type="submit"]').classList.remove('is-loading');
+		if (this.target) {
+			this.target.querySelector('[type="submit"]').disabled = false;
+			this.target.querySelector('[type="submit"]').classList.remove('is-loading');
+		}
 	}
 
 	onError(error) {
 		console.error('Произошла ошибка отправки', error);
 		notyf.error('Произошла ошибка отправки');
-		this.target.querySelector('[type="submit"]').disabled = false;
-		this.target.querySelector('[type="submit"]').classList.remove('is-loading');
+		if (this.target) {
+			this.target.querySelector('[type="submit"]').disabled = false;
+			this.target.querySelector('[type="submit"]').classList.remove('is-loading');
+		}
 	}
 
 	send(action, target, elappend) {
@@ -143,9 +147,11 @@ export class Form {
 	init(action, target, elappend) {
 		target.addEventListener('submit', async (evt) => {
 			evt.preventDefault();
-			this.target = target;
-			this.target.querySelector('[type="submit"]').classList.add('is-loading');
-			this.target.querySelector('[type="submit"]').disabled = true;
+			if (target) {
+				this.target = target;
+				this.target.querySelector('[type="submit"]').classList.add('is-loading');
+				this.target.querySelector('[type="submit"]').disabled = true;
+			}
 			this.send(action, target, elappend);
 		});
 
