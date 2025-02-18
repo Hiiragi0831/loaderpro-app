@@ -80,6 +80,10 @@ export class Form {
 			this.elappend.innerHTML = '';
 		}
 
+		if (responseJson.updateData) {
+			console.log(responseJson.updateData);
+		}
+
 		if (responseJson.count) {
 			this.elappend.parentElement.querySelector('[data-more]').querySelector('[name="query_more"]').value = responseJson.count;
 		}
