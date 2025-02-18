@@ -147,11 +147,9 @@ export class Form {
 	init(action, target, elappend) {
 		target.addEventListener('submit', async (evt) => {
 			evt.preventDefault();
-			if (target) {
-				this.target = target;
-				this.target.querySelector('[type="submit"]').classList.add('is-loading');
-				this.target.querySelector('[type="submit"]').disabled = true;
-			}
+			this.target = target;
+			this.target.querySelector('[type="submit"]').classList.add('is-loading');
+			this.target.querySelector('[type="submit"]').disabled = true;
 			this.send(action, target, elappend);
 		});
 
