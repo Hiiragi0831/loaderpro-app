@@ -81,7 +81,13 @@ export class Form {
 		}
 
 		if (responseJson.updateData) {
-			console.log(responseJson.updateData);
+			// eslint-disable-next-line guard-for-in
+			for (const key in responseJson.updateData) {
+				if (key === 'image') {
+					console.log(key, responseJson.updateData[key]);
+				}
+				this.target.querySelector(`input[name=${key}]`).value = responseJson.updateData[key];
+			}
 		}
 
 		if (responseJson.count) {
