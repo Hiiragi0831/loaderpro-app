@@ -83,22 +83,27 @@ export class Form {
 		if (responseJson.updateData) {
 			// eslint-disable-next-line guard-for-in
 			for (const key in responseJson.updateData) {
-				if (key === 'image') {
-					console.log(key, responseJson.updateData[key]);
-				}
+				switch (key) {
+					case 'image':
+						console.log(key, responseJson.updateData[key]);
+						break;
+					case 'deliverytime':
+					case 'quality':
+					case 'measurement':
+						// eslint-disable-next-line no-case-declarations
+						const select = this.target.querySelector(`select[name=${key}]`).getElementsByTagName('option');
 
-				if (key === 'deliverytime' || key === 'quality' || key === 'measurement') {
-					const select = this.target.querySelector(`select[name=${key}]`).getElementsByTagName('option');
-
-					for (let i = 0; i < select.length; i++) {
-						if (select[i].value === responseJson.updateData[key]) {
-							select[i].selected = true;
+						for (let i = 0; i < select.length; i++) {
+							if (select[i].value === responseJson.updateData[key]) {
+								select[i].selected = true;
+							}
 						}
-					}
-				}
-
-				if (responseJson.updateData[key]) {
-					this.target.querySelector(`input[name=${key}]`).value = responseJson.updateData[key];
+						break;
+					default:
+						if (responseJson.updateData[key]) {
+							this.target.querySelector(`input[name=${key}]`).value = String(responseJson.updateData[key]);
+						}
+						break;
 				}
 			}
 		}
