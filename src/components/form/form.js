@@ -86,7 +86,20 @@ export class Form {
 				if (key === 'image') {
 					console.log(key, responseJson.updateData[key]);
 				}
-				this.target.querySelector(`input[name=${key}]`).value = responseJson.updateData[key];
+
+				if (key === 'deliverytime' || key === 'quality' || key === 'measurement') {
+					const select = this.target.querySelector(`select[name=${key}]`).getElementsByTagName('option');
+
+					for (let i = 0; i < select.length; i++) {
+						if (select[i].value === responseJson.updateData[key]) {
+							select[i].selected = true;
+						}
+					}
+				}
+
+				if (responseJson.updateData[key]) {
+					this.target.querySelector(`input[name=${key}]`).value = responseJson.updateData[key];
+				}
 			}
 		}
 
