@@ -1,5 +1,6 @@
 import {Notyf} from 'notyf';
 import {Cookie} from '../cookies/cookies';
+import {uploadImageDrop} from '../input-file/js/init-upload';
 let notyf = new Notyf({
 	duration: 5000,
 	position: {
@@ -81,31 +82,10 @@ export class Form {
 		}
 
 		if (responseJson.updateData) {
-			// eslint-disable-next-line guard-for-in
-			for (const key in responseJson.updateData) {
-				switch (key) {
-					case 'image':
-						console.log(key, responseJson.updateData[key]);
-						break;
-					case 'deliverytime':
-					case 'quality':
-					case 'measurement':
-						// eslint-disable-next-line no-case-declarations
-						const select = this.target.querySelector(`select[name=${key}]`).getElementsByTagName('option');
-
-						for (let i = 0; i < select.length; i++) {
-							if (select[i].value === responseJson.updateData[key]) {
-								select[i].selected = true;
-							}
-						}
-						break;
-					default:
-						if (responseJson.updateData[key]) {
-							this.target.querySelector(`input[name=${key}]`).value = String(responseJson.updateData[key]);
-						}
-						break;
-				}
-			}
+			this.init('/request_card/request_card_product_edit/', responseJson.updateData.querySelector('[data-edit-product]'));
+			uploadImageDrop(responseJson.updateData.querySelector('[data-upload="img-drop"]'));
+			this.target.insertAdjacentHTML('afterend', responseJson.updateData);
+			this.target.remove();
 		}
 
 		if (responseJson.count) {
