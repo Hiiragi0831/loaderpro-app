@@ -152,6 +152,11 @@ section {
 	margin-bottom: vc(30);
 }
 
+video {
+	min-width: vc(400);
+	min-height: vc(400);
+}
+
 [data-barba='container'] {
 	position: absolute;
 	left: 0;

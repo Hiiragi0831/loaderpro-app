@@ -58,6 +58,11 @@ export class Form {
 	onSuccess(responseJson) {
 		console.log('Ваша форма успешна отправлена', responseJson);
 
+		if (this.target) {
+			this.target.querySelector('[type="submit"]').disabled = false;
+			this.target.querySelector('[type="submit"]').classList.remove('is-loading');
+		}
+
 		if (responseJson.status === 'error') {
 			notyf.error(responseJson.message);
 
@@ -82,9 +87,12 @@ export class Form {
 		}
 
 		if (responseJson.updateData) {
-			this.init('/request_card/request_card_product_edit/', responseJson.updateData.querySelector('[data-edit-product]'));
-			uploadImageDrop(responseJson.updateData.querySelector('[data-upload="img-drop"]'));
-			this.target.insertAdjacentHTML('afterend', responseJson.updateData);
+			const parser = new DOMParser();
+			const formDocument = parser.parseFromString(responseJson.updateData, 'text/html');
+			this.init('/request_card/request_card_product_edit/', formDocument.querySelector('[data-edit-product]'));
+			uploadImageDrop(formDocument.querySelector('[data-upload="img-drop"]'));
+			const element = formDocument.body.firstChild;
+			this.target.parentElement.appendChild(element);
 			this.target.remove();
 		}
 
@@ -116,10 +124,6 @@ export class Form {
 		if (responseJson.basket) {
 			document.querySelector('.header__basket .header__icon span').innerHTML = responseJson.basket.count;
 			document.querySelector('.header__basket b').innerHTML = `${responseJson.basket.sum} ₽`;
-		}
-		if (this.target) {
-			this.target.querySelector('[type="submit"]').disabled = false;
-			this.target.querySelector('[type="submit"]').classList.remove('is-loading');
 		}
 	}
 
