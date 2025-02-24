@@ -50,6 +50,8 @@ window._debounce = debounce;
 // eslint-disable-next-line no-underscore-dangle
 window._throttle = throttle;
 
+require('fslightbox');
+
 let resizeWidth = null;
 const sendForm = new Form('POST');
 const cookieJwt = new Cookie('jwt');

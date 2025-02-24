@@ -101,7 +101,9 @@ export class Form {
 		}
 
 		if (responseJson.link) {
-			window.location.href = responseJson.link;
+			setTimeout(() => {
+				window.location.href = responseJson.link;
+			}, 3000);
 		}
 
 		if (responseJson.count === 0) {
