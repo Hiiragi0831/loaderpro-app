@@ -29,8 +29,13 @@ const loadMore = (selector) => {
 			}
 			throw new Error();
 		}).then((res) => {
+			const sendForm = new Form('POST');
+
 			catalog.querySelector('.catalog__row').insertAdjacentHTML('beforeend', res.html);
 			selector.querySelector("input[name='catalog_more']").value = res.count;
+			document.querySelectorAll('[data-add-basket]').forEach((item) => {
+				sendForm.init('/basket/basket_add', item);
+			});
 		});
 	});
 };
