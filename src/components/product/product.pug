@@ -10,7 +10,7 @@ form.product(data-add-basket)
 					.swiper-wrapper
 						each slide in [1, 2, 3, 4, 5, 6, 7, 8]
 							.swiper-slide
-								a(data-fancybox href=`${baseDir}assets/images/image.png`)
+								a(data-fancybox="gallery" href=`${baseDir}assets/images/image.png`)
 									+picture({
 										path: `${baseDir}assets/images/image`,
 										ext: 'png',
