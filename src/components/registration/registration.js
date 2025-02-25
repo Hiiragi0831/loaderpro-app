@@ -1,6 +1,6 @@
 import {Form} from '../form/form';
 import {validateCount} from '../validate/validate';
-import validator from 'validator';
+// import validator from 'validator';
 const sendData = new Form('POST');
 
 const init = () => {
@@ -22,13 +22,14 @@ const init = () => {
 		const formName = form.querySelector('input[name="firstname"]');
 		validateCount(formName, 20);
 
-		form.addEventListener('submit', (evt) => {
-			evt.preventDefault();
-			const firstname = validator.isAlphanumeric(formName.value, ['ru-RU'], {ignore: '-'});
-			console.log(firstname);
-
-			sendData.send('/Main/create_user/', form);
-		});
+		sendData.init('/Main/create_user/', form);
+		// form.addEventListener('submit', (evt) => {
+		// 	evt.preventDefault();
+		// 	const firstname = validator.isAlphanumeric(formName.value, ['ru-RU'], {ignore: '-'});
+		// 	console.log(firstname);
+		//
+		// 	sendData.send('/Main/create_user/', form);
+		// });
 	}
 };
 

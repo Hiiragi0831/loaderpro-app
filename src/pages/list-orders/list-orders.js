@@ -25,7 +25,6 @@ const init = () => {
 			sendForm.sendData(fd, '/list_orders/list_order_status_result', page.querySelector('.page__results'));
 		});
 	});
-
 	// document.addEventListener('status', () => {
 	// 	console.log('status');
 	// 	page.querySelector('.navtab__item.is-active').classList.remove('is-active');

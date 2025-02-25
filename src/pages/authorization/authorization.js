@@ -13,13 +13,7 @@ const init = () => {
 			validate(email, evt.target);
 		});
 
-		document.querySelector('[data-login-form]').addEventListener('submit', (evt) => {
-			evt.preventDefault();
-
-			if (email) {
-				sendData.send('/Main/auth_user/', document.querySelector('[data-login-form]'));
-			}
-		});
+		sendData.init('/Main/auth_user/', document.querySelector('[data-login-form]'));
 	}
 
 	if (document.querySelector('[data-forgot]')) {
