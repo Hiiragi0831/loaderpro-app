@@ -124,7 +124,14 @@ export class Form {
 		}
 
 		if (responseJson.basket) {
-			document.querySelector('.header__basket .header__icon span').innerHTML = responseJson.basket.count;
+			if (document.querySelector('.header__basket .header__icon span')) {
+				if (responseJson.basket.count > 0) {
+					document.querySelector('.header__basket .header__icon span').classList.remove('is-hidden');
+				} else {
+					document.querySelector('.header__basket .header__icon span').classList.add('is-hidden');
+				}
+				document.querySelector('.header__basket .header__icon span').innerHTML = responseJson.basket.count;
+			}
 			document.querySelector('.header__basket b').innerHTML = `${responseJson.basket.sum} ₽`;
 		}
 	}
