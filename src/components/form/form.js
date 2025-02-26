@@ -118,6 +118,32 @@ export class Form {
 			window.location.href = responseJson.url;
 		}
 
+		if (responseJson.list_orders) {
+			const pageList = document.querySelector('[data-list-orders]');
+			this.elappend.innerHTML = '';
+			this.elappend.insertAdjacentHTML('beforeend', responseJson.list_orders.results);
+			pageList.querySelector('.navtab__item.is-active').classList.remove('is-active');
+
+			pageList.querySelector('.page__tab').querySelectorAll('.navtab__item').forEach((i, id) => {
+				if (id + 1 === responseJson.list_orders.status) {
+					i.classList.add('is-active');
+				}
+
+				i.addEventListener('click', (e) => {
+					e.preventDefault();
+					const fd = new FormData();
+
+					if (pageList.querySelector('.navtab__item.is-active')) {
+						pageList.querySelector('.navtab__item.is-active').classList.remove('is-active');
+					}
+
+					i.classList.add('is-active');
+					fd.append('order_status', id + 1);
+					this.sendData(fd, '/list_orders/list_order_status_result', pageList.querySelector('.page__results'));
+				});
+			});
+		}
+
 		if (responseJson.vehicle_id) {
 			const vehicleId = new Cookie('vehicle_id');
 			vehicleId.set(responseJson.vehicle_id, 1);
