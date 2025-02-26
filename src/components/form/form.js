@@ -122,7 +122,9 @@ export class Form {
 			const pageList = document.querySelector('[data-list-orders]');
 			this.elappend.innerHTML = '';
 			this.elappend.insertAdjacentHTML('beforeend', responseJson.list_orders.results);
-			pageList.querySelector('.navtab__item.is-active').classList.remove('is-active');
+			if (pageList.querySelector('.navtab__item.is-active')) {
+				pageList.querySelector('.navtab__item.is-active').classList.remove('is-active');
+			}
 
 			pageList.querySelector('.page__tab').querySelectorAll('.navtab__item').forEach((i, id) => {
 				if (id + 1 === responseJson.list_orders.status) {
