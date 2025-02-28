@@ -158,7 +158,7 @@ const delMetods = () => {
 
 const repeatQuery = () => {
 	if (document.querySelector('[data-repeat-query]')) {
-		sendForm.init('/Main/repeat_query/', document.querySelector('[data-repeat-query]'));
+		sendForm.init('/Main/repeat_query/', document.querySelector('[data-repeat-query]'), document.querySelector('main'));
 	}
 };
 
