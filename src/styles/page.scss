@@ -153,6 +153,12 @@
 			flex-direction: column;
 			gap: vc(30);
 		}
+
+		.read-all {
+			position: absolute;
+			right: 0;
+			top: vc(-60);
+		}
 	}
 
 	&-news {
