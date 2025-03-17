@@ -153,11 +153,10 @@ section {
 }
 
 video {
-	width: vc(400);
-	height: vc(400);
+	width: 100%;
+	height: vc(600);
 
 	@include devices {
-		width: 100%;
 		height: vc(200);
 	}
 }
