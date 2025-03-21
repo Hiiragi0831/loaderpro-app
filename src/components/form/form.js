@@ -103,7 +103,7 @@ export class Form {
 		if (responseJson.link) {
 			setTimeout(() => {
 				window.location.href = responseJson.link;
-			}, 3000);
+			}, 1000);
 		}
 
 		if (responseJson.count === 0) {
