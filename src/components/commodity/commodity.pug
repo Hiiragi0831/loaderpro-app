@@ -11,7 +11,7 @@ mixin commodityQuery(data)
 				p Статус: #[b Обработан]
 			.commodity-query__heading-item
 				p Действительно до: #[b 24.05.24]
-		form.commodity-query__item(data-add-basket)
+		.commodity-query__item
 			.commodity-query__del(data-qh-id="17" data-qh-num="17192253381")
 				+svg('xmark')
 			.commodity-query__img
@@ -29,83 +29,79 @@ mixin commodityQuery(data)
 					.commodity-query__head-characteristic
 						p Вес ( кг )
 						span 1,55
-			.commodity-query__info
-				.commodity-query__info-item
-					.commodity-query__info-message
-						p У товара истёк срок действия цены и срока поставки. Товар необходимо запросить заново.
-
-					.commodity-query__info-price
+			.commodity-query__basket
+				.commodity-query__basket-wrapper
+					.commodity-query__basket-head
 						p Цена:
-						p #[del 15 000 Р]
-				.commodity-query__info-item
-					if (data.status === 'green')
-						.commodity-query__info-status.green
-							p В наличии
-						+input({
-							type: 'text',
-							placeholder: 'Количество',
-							name: 'count',
-							value: 2,
-						})
-					else if (data.status === 'red')
-						.commodity-query__info-status.red
-							p Нет в Наличии
-						.commodity-query__info-stoke
-							p -
-					else if (data.status === 'yellow')
-						.commodity-query__info-status.yellow
-							p Под заказ
-						.commodity-query__info-stoke
-							p -
-				.commodity-query__info-item
-					.commodity-query__info-summary
-						p Сумма: #[span #[del 30 000 Р]]
-						button.button.button__primary Добавить в корзину
-		form.commodity-query__item(data-add-basket)
-			.commodity-query__del(data-qh-id="17" data-qh-num="17192253381")
-				+svg('xmark')
-			.commodity-query__img
-				+picture({
-					path: `${baseDir}assets/images/1`,
-					ext: 'jpg',
-				})
-			.commodity-query__head
-				p.commodity-query__head-title!= data.title
-				p.commodity-query__head-article 13232422
-				.commodity-query__head-characteristics
-					.commodity-query__head-characteristic
-						p Единица измерения
-						span ШТ
-					.commodity-query__head-characteristic
-						p Вес ( кг )
-						span 1,55
-			.commodity-query__info
-				.commodity-query__info-item
-
-					.commodity-query__info-price
-						p Цена:
-						p 15 000 Р
-				.commodity-query__info-item
-					if (data.status === 'green')
-						.commodity-query__info-status.green
-							p В наличии
-						+input({
-							type: 'text',
-							placeholder: 'Количество',
-							name: 'count',
-							value: 2,
-						})
-					else if (data.status === 'red')
-						.commodity-query__info-status.red
-							p Нет в Наличии
-						.commodity-query__info-stoke
-							p -
-					else if (data.status === 'yellow')
-						.commodity-query__info-status.yellow
-							p Под заказ
-						.commodity-query__info-stoke
-							p -
-				.commodity-query__info-item
-					.commodity-query__info-summary
-						p Сумма: #[span #[del 30 000 Р]]
-						button.button.button__primary Добавить в корзину
+						p Кол-во:
+						p Сумма:
+						p Срок поставки:
+					form.commodity-query__basket-form(data-add-basket)
+						.commodity-query__basket-item
+							p 15 000 ₽
+						.commodity-query__basket-item
+							+input({
+								type: 'text',
+								placeholder: 'Количество',
+								name: 'count',
+								value: 2,
+							})
+						.commodity-query__basket-item
+							p #[span 30 000 ₽]
+						.commodity-query__basket-item
+							.commodity-query__info-status.green
+								p В наличии
+						button.button.button__primary
+							+svg("cart-shopping")
+					form.commodity-query__basket-form(data-add-basket)
+						.commodity-query__basket-item
+							p 15 000 ₽
+						.commodity-query__basket-item
+							+input({
+								type: 'text',
+								placeholder: 'Количество',
+								name: 'count',
+								value: 2,
+							})
+						.commodity-query__basket-item
+							p #[span 30 000 ₽]
+						.commodity-query__basket-item
+							.commodity-query__info-status.yellow
+								p 7-14 дней
+						button.button.button__primary
+							+svg("cart-shopping")
+					form.commodity-query__basket-form(data-add-basket)
+						.commodity-query__basket-item
+							p 15 000 ₽
+						.commodity-query__basket-item
+							+input({
+								type: 'text',
+								placeholder: 'Количество',
+								name: 'count',
+								value: 2,
+							})
+						.commodity-query__basket-item
+							p #[span 30 000 ₽]
+						.commodity-query__basket-item
+							.commodity-query__info-status.red
+								p 24-31 день
+						button.button.button__primary
+							+svg("cart-shopping")
+					form.commodity-query__basket-form(data-add-basket)
+						.commodity-query__basket-item
+							p 15 000 ₽
+						.commodity-query__basket-item
+							+input({
+								type: 'text',
+								placeholder: 'Количество',
+								name: 'count',
+								value: 2,
+								disabled: true,
+							})
+						.commodity-query__basket-item
+							p #[span 30 000 ₽]
+						.commodity-query__basket-item
+							.commodity-query__info-status.red
+								p 24-31 день
+						button.button.button__primary
+							+svg("cart-shopping")

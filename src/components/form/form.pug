@@ -7,6 +7,7 @@ mixin input(data)
 			autocomplete= data.autocomplete ? data.autocomplete: ''
 			value= data.value ? data.value: ''
 			list=data.list? data.list: ''
+			disabled=data.disabled ? data.disabled: false
 			)
 		if data.button
 			button(type="submit")
