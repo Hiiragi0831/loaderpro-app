@@ -153,8 +153,12 @@ section {
 }
 
 video {
-	min-width: vc(400);
-	min-height: vc(400);
+	width: 100%;
+	height: vc(600);
+
+	@include devices {
+		height: vc(200);
+	}
 }
 
 [data-barba='container'] {

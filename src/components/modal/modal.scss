@@ -53,6 +53,10 @@
 		&.small {
 			max-width: vc(540);
 		}
+
+		@include devices {
+			padding: vc(20);
+		}
 	}
 
 	&__close-btn {

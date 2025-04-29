@@ -156,6 +156,20 @@ const delMetods = () => {
 	}
 };
 
+const repeatQuery = () => {
+	if (document.querySelector('[data-repeat-query]')) {
+		sendForm.init('/Main/repeat_query/', document.querySelector('[data-repeat-query]'), document.querySelector('main'));
+	}
+};
+
+const productEditQuery = () => {
+	if (document.querySelector('[data-product-edit-query]')) {
+		document.querySelectorAll('[data-product-edit-query]').forEach((item) => {
+			sendForm.init('/product/product_edit/', item);
+		});
+	}
+};
+
 const init = () => {
 	uaParser.init();
 	actualYear.init();
@@ -193,6 +207,8 @@ const init = () => {
 	delDotsTire();
 	forgot.init();
 	delMetods();
+	repeatQuery();
+	productEditQuery();
 	// validate.init();
 
 	resizeWidth = innerWidth;

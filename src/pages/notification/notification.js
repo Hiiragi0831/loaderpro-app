@@ -19,6 +19,12 @@ const listener = () => {
 };
 
 const init = () => {
+	const sendForm = new Form('POST');
+
+	if (document.querySelector('.read-all')) {
+		sendForm.init('/notifications/note_read_all', document.querySelector('.read-all'));
+	}
+
 	if (document.querySelector('.notification')) {
 		listener();
 	}

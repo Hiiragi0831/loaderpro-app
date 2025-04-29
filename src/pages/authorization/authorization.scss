@@ -100,3 +100,11 @@
 		padding-top: vc(50);
 	}
 }
+
+[data-forgot] {
+	.form__row {
+		@include devices {
+			flex-direction: column;
+		}
+	}
+}
