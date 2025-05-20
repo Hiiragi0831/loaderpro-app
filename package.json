@@ -105,6 +105,7 @@
 		"notyf": "3.10.0",
 		"scroll-lock": "2.1.5",
 		"swiper": "11.0.4",
+		"tippy.js": "6.3.7",
 		"ua-parser-js": "1.0.33",
 		"validator": "13.12.0"
 	},

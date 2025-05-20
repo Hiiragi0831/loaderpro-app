@@ -6,6 +6,8 @@ import 'swiper/swiper-bundle.css';
 import 'air-datepicker/air-datepicker.css';
 import '@tarekraafat/autocomplete.js/dist/css/autoComplete.css';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/themes/light.css';
 import '@styles/vendor.scss';
 import '@styles/main.scss';
 
@@ -13,6 +15,7 @@ import actualYear from '../scripts/modules/actual-year';
 import uaParser from '../scripts/modules/ua-parser';
 import vhFix from '../scripts/modules/vh-fix';
 import {Fancybox} from '@fancyapps/ui';
+import tippy from 'tippy.js';
 
 import {isDevices} from '../scripts/helpers/index';
 import lazyLoad from '../scripts/modules/lazy-load';
@@ -170,6 +173,18 @@ const productEditQuery = () => {
 	}
 };
 
+const tooltip = () => {
+	if (document.querySelector('[data-tooltip]')) {
+		document.querySelectorAll('[data-tooltip]').forEach((item) => {
+			console.log(item.dataset.tooltip);
+			tippy(item, {
+				theme: 'light',
+				content: item.dataset.tooltip,
+			});
+		});
+	}
+};
+
 const init = () => {
 	uaParser.init();
 	actualYear.init();
@@ -209,6 +224,7 @@ const init = () => {
 	delMetods();
 	repeatQuery();
 	productEditQuery();
+	tooltip();
 	// validate.init();
 
 	resizeWidth = innerWidth;
