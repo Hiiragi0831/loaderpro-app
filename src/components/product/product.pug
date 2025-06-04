@@ -1,4 +1,4 @@
-form.product(data-add-basket)
+.product
 	.product__head
 		h1.h3 Название товара + бренд + артикул
 		button.product__edit(data-open-modal="edit-product")
@@ -27,9 +27,6 @@ form.product(data-add-basket)
 									})
 		.product__info
 			.product__body
-				.product__info-pro
-					p Номер запроса: #[b #[a(href="#") 200203]]
-					p Действует до: #[b 20.02.2024]
 				.product__specifications
 					.row
 						.product__specification
@@ -46,15 +43,92 @@ form.product(data-add-basket)
 							p 168
 			.product__side
 				.product__basket
-					.product__price
-						span Цена:
-						p от 15000₽
-					.product__count
-						button.product__count-minus -
-						input(type="number" name="count" value="1" max="100")
-						button.product__count-plus +
-					button.button.button__primary В корзину
-				.product__message
-					p У товара истёк срок действия цены и срока поставки. Товар необходимо запросить заново.
+					.product__basket-wrapper
+						.product__basket-head
+							p Цена:
+							p Кол-во:
+							p Сумма:
+							p Срок поставки:
+						form.product__basket-form(data-add-basket)
+							.product__basket-item
+								p 15 000 ₽
+							.product__basket-item
+								+input({
+									type: 'text',
+									name: 'count',
+									value: 2,
+								})
+							.product__basket-item
+								p #[span 30 000 ₽]
+							.product__basket-item
+								.product__info-status.green
+									p В наличии
+							button.button.button__primary(type="submit")
+								+svg("cart-shopping")
+						form.product__basket-form.is-disabled(data-add-request)
+							.product__tooltip(data-tooltip="Срок действия предложения истек. Вы можете обновить информацию по отдельному товару или по всему запросу.")
+								+svg('question-solid')
+							.product__basket-item
+								p 15 000 ₽
+							.product__basket-item
+								+input({
+									type: 'text',
+									name: 'count',
+									value: 2,
+									disabled: true
+								})
+							.product__basket-item
+								p #[span 30 000 ₽]
+							.product__basket-item
+								.product__info-status.yellow
+									p 7-14 дней
+							button.button.button__primary(type="submit")
+								+svg("plus")
+						form.product__basket-form.is-disabled(data-add-request)
+							.product__tooltip(data-tooltip="Срок действия предложения истек. Вы можете обновить информацию по отдельному товару или по всему запросу.")
+								+svg('question-solid')
+							.product__basket-item
+								p 15 000 ₽
+							.product__basket-item
+								+input({
+									type: 'text',
+									name: 'count',
+									value: 2,
+								})
+							.product__basket-item
+								p #[span 30 000 ₽]
+							.product__basket-item
+								.product__info-status.red
+									p 24-31 день
+							button.button.button__primary(type="submit")
+								+svg("plus")
+						form.product__basket-form.is-disabled(data-add-request)
+							.product__tooltip(data-tooltip="Срок действия предложения истек. Вы можете обновить информацию по отдельному товару или по всему запросу.")
+								+svg('question-solid')
+							.product__basket-item
+								p 15 000 ₽
+							.product__basket-item
+								+input({
+									type: 'text',
+									name: 'count',
+									value: 2,
+									disabled: true,
+								})
+							.product__basket-item
+								p #[span 30 000 ₽]
+							.product__basket-item
+								.product__info-status.red
+									p 24-31 день
+							button.button.button__primary(type="submit")
+								+svg('plus')
+				form.product__query(data-add-request)
+					+input({
+						type: 'text',
+						name: 'count',
+						value: 2,
+						disabled: true
+					})
+					p Укажите необходимое количество для запроса
+					button.button.button__primary(type="submit") Запросить
 			.product__description
 				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus amet architecto asperiores blanditiis commodi deserunt dolorem enim ipsum labore, minima mollitia natus nobis obcaecati odit quibusdam quidem quos rem!

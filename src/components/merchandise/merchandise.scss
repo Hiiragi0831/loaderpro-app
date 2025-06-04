@@ -1,6 +1,8 @@
 .merchandise {
+	position: relative;
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 	padding: vc(20);
 	height: 100%;
 	box-shadow: $box-shadow;
@@ -20,79 +22,22 @@
 		}
 	}
 
-	&__main {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		border-top: 1px solid $woodsmoke-200;
-		border-bottom: 1px solid $woodsmoke-200;
-		padding: vc(12) 0;
-	}
+	&__info {
+		position: absolute;
+		left: 0;
+		bottom: vc(-48);
+		padding: vc(20);
+		width: 100%;
+		background: rgba($color-white, 0.6);
+		transition: bottom $transition;
+		backdrop-filter: blur(4px);
 
-	&__price {
-		display: flex;
-		align-items: center;
-		gap: vc(10);
+		&:hover {
+			bottom: 0;
 
-		p {
-			font-weight: 500;
-			font-size: vc(20);
-			color: $tree-poppy-400;
-		}
-
-		s {
-			opacity: 0.7;
-		}
-	}
-
-	&__article {
-		font-size: vc(12);
-		opacity: 0.5;
-	}
-
-	&__footer {
-		display: flex;
-		flex-direction: column;
-		padding: vc(12) 0 0;
-		height: 100%;
-		gap: vc(6);
-	}
-
-	&__status {
-		display: flex;
-		align-items: center;
-		gap: vc(6);
-	}
-
-	&__circle {
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 100%;
-		width: vc(10);
-		height: vc(10);
-
-		&::before {
-			content: "";
-			position: absolute;
-			border: vc(2) solid rgba($color-white, 0.8);
-			border-radius: 100%;
-			width: 100%;
-			height: 100%;
-			inset: 0;
-		}
-
-		&--green {
-			background-color: $atlantis-400;
-		}
-
-		&--yellow {
-			background-color: $tree-poppy-300;
-		}
-
-		&--red {
-			background-color: $red-orange-500;
+			.merchandise__button {
+				transform: translateY(0);
+			}
 		}
 	}
 
@@ -104,8 +49,10 @@
 
 	&__button {
 		margin-top: auto;
+		transform: translateY(100%);
+		transition: transform $transition;
 
-		button {
+		.button {
 			width: 100%;
 		}
 	}

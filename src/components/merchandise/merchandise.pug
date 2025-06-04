@@ -5,24 +5,8 @@ mixin merchandise(data)
 				path: `${baseDir}assets/images/image`,
 				ext: 'png',
 			})
-		.merchandise__main
-			.merchandise__price
-				p 3 738 ₽
-				//s 4 673 ₽
-			.merchandise__article
-				p Качество: Оригинал
-		.merchandise__footer
-			.merchandise__status
-				if data.status === 1
-					.merchandise__circle.merchandise__circle--green
-					p В наличии
-				else if data.status === 2
-					.merchandise__circle.merchandise__circle--orange
-					p 1-2 недели
-				else
-					.merchandise__circle.merchandise__circle--red
-					p Нет предложений
+		.merchandise__info
 			.merchandise__title
 				p Тяга рулевая TOYOTA (058) 213159894
 			.merchandise__button
-				button.button.button__primary В корзину
+				a.button.button__primary(href="#") Перейти

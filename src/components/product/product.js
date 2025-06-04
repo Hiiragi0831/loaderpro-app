@@ -5,21 +5,6 @@ const product = document.querySelectorAll('.product');
 const editProduct = document.querySelector('[data-form-edit]');
 const sendData = new Form('POST');
 
-const count = () => {
-	const item = document.querySelector('.product__count');
-	const input = item.querySelector('input');
-
-	item.querySelector('.product__count-plus').addEventListener('click', (evt) => {
-		evt.preventDefault();
-		input.value++;
-	});
-
-	item.querySelector('.product__count-minus').addEventListener('click', (evt) => {
-		evt.preventDefault();
-		input.value--;
-	});
-};
-
 const init = () => {
 	if (!product.length) {
 		return;
@@ -44,8 +29,6 @@ const init = () => {
 	});
 
 	galleryMain.init();
-
-	count();
 
 	sendData.init('/catalog_product/catalog_product_edit_product/', editProduct);
 };
