@@ -26,12 +26,9 @@ header.header
 				a.header__logo(href="/")
 					+svg("logo")
 				form.header__query(data-header-request)
-					+input({
-						type: 'text',
-						placeholder: 'Бренд',
-						name: 'brand',
-						list: 'brands',
-					})(data-required="true")
+					select(name="brand" data-nise-select)
+						option(value="one") one
+						option(value="two") two
 					+input({
 						type: 'text',
 						placeholder: 'Номер запчасти',
