@@ -20,10 +20,10 @@ const deleteQuery = () => {
 };
 
 const formGroup = (data) => {
-	const clone = querysBox.querySelector('template').content.cloneNode(true);
-	clone.querySelector('input[name="brand"]').value = data.brand;
-	clone.querySelector('input[name="numparts"]').value = data.numparts;
-	clone.querySelector('input[name="count"]').value = data.count;
+	const clone = document.querySelector('#query-form').content.cloneNode(true);
+	clone.querySelector('[name="brand"]').value = data.brand;
+	clone.querySelector('[name="numparts"]').value = data.numparts;
+	clone.querySelector('[name="count"]').value = data.count;
 
 	querysBox.querySelector('.form .form__main').append(clone);
 
@@ -40,6 +40,7 @@ const addQuery = () => {
 
 		new FormData(evt.target).forEach((value, key) => {
 			object[key] = value;
+			console.log(key, value);
 
 			if (!value) {
 				trigger = false;
@@ -67,7 +68,6 @@ const importFile = () => {
 
 const init = () => {
 	if (document.querySelector('[data-query]')) {
-		let data = [];
 		const form = new Form('POST');
 
 		addQuery();
@@ -75,6 +75,7 @@ const init = () => {
 
 		querysBox.querySelector('.form').querySelector('[type="submit"]').addEventListener('click', (evt) => {
 			evt.preventDefault();
+			let data = [];
 
 			querysBox.querySelector('.form').querySelectorAll('.form__group').forEach((el) => {
 				let dannie = {};

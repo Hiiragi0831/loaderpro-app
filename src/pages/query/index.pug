@@ -54,75 +54,31 @@ block content
 							.query__box-form
 								.form
 									.form__main
-										form.form__group
-											+input({
-												type: 'text',
-												placeholder: 'Бренд',
-												name: 'brand',
-												list: 'brands',
-												disabled: true,
-											})(data-required="true")
-											+input({
-												type: 'text',
-												placeholder: 'Номер запчасти',
-												name: 'numparts',
-												value: '1235456',
-												disabled: true,
-											})(data-disabled="true")
-											+input({
-												type: 'number',
-												placeholder: 'Количество',
-												name: 'count',
-												value: '4',
-												disabled: true,
-											})(data-disabled="true")
-											button.button.button__primary(type="button" name="delete") X
-										form.form__group
-											+input({
-												type: 'text',
-												placeholder: 'Бренд',
-												name: 'brand',
-												disabled: true,
-											})(data-required="true")
-											+input({
-												type: 'text',
-												placeholder: 'Номер запчасти*',
-												name: 'numparts',
-												value: '236548',
-												disabled: true,
-											})(data-disabled="true")
-											+input({
-												type: 'number',
-												placeholder: 'Количество*',
-												name: 'count',
-												value: '2',
-												disabled: true,
-											})(data-disabled="true")
-											button.button.button__primary(type="button" name="delete") X
+
 									.form__footer
 										button.button.button__outline(type="clean") Очистить
 										button.button.button__primary(type="submit") Отправить запрос
-							template
-								form.form__group
-									+input({
-										type: 'text',
-										placeholder: 'Бренд',
-										name: 'brand',
-										disabled: true,
-									})
-									+input({
-										type: 'text',
-										placeholder: 'Номер запчасти*',
-										name: 'numparts',
-										disabled: true,
-									})(data-disabled)
-									+input({
-										type: 'number',
-										placeholder: 'Количество*',
-										name: 'count',
-										disabled: true,
-									})(data-disabled)
-									button.button.button__primary(type="button" name="delete") X
+				template#query-form
+					form.form__group
+						+input({
+							type: 'text',
+							placeholder: 'Бренд',
+							name: 'brand',
+							readonly: true,
+						})
+						+input({
+							type: 'text',
+							placeholder: 'Номер запчасти*',
+							name: 'numparts',
+							readonly: true,
+						})(data - disabled)
+						+input({
+							type: 'number',
+							placeholder: 'Количество*',
+							name: 'count',
+							readonly: true,
+						})(data - disabled)
+						button.button.button__primary(type="button" name="delete") X
 				section.modal.modal--preload(data-modal="import-file")
 					.modal__wrapper
 						.modal__overlay
