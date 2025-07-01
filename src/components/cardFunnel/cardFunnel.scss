@@ -6,9 +6,18 @@
 	background: $color-white;
 
 	&__head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		border-bottom: 1px solid $tree-poppy-400;
 		padding: vc(12);
 		background: $tree-poppy-50;
+
+		svg {
+			width: vc(20);
+			height: vc(20);
+			fill: $tree-poppy-400;
+		}
 	}
 
 	&__main {

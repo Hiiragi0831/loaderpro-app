@@ -2,6 +2,7 @@ mixin cardFunnel(data)
 	.cardFunnel&attributes(attributes)
 		.cardFunnel__head
 			p!= `Номер ${data}: <b> 12453453</b>`
+			+svg('forklift-info')
 		.cardFunnel__main
 			.cardFunnel__info
 				+svg('user')
