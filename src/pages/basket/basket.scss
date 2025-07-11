@@ -20,6 +20,10 @@
 	}
 
 	&__information {
+		display: flex;
+		flex-direction: column;
+		gap: vc(15);
+
 		&-title {
 			display: flex;
 			align-items: center;

@@ -19,106 +19,109 @@ block content
 							.basket__items
 								+basket-product()
 								+basket-product()
-							form.basket__information(data-basket)
-								.basket__information-sum
-									.page__info-head
-										p Итого
-									.basket__information-title
-										p Всего: #[br] #[small Без стоимости транспортировки]
-										span 30 000 ₽
-								.basket__information-dostavka
-									.page__info-head
-										p Доставка
-									.basket__information-radio
-										label.form__radio
-											input(type="radio" name="delivery" value="default" checked)
-											span По умолчанию
-										label.form__radio
-											input(type="radio" name="delivery" value="pickup")
-											span Самовывоз Санкт-Петербург
-										label.form__radio
-											input(type="radio" name="delivery" value="client")
-											span До клиента
-									.basket__information-info.is-hidden
-										+input({
-											type: 'text',
-											placeholder: 'Наименование компании',
-											name: 'сompany',
-											value: 'Спецмашина'
-										})
-										+input({
-											type: 'text',
-											placeholder: 'ИНН',
-											name: 'inn',
-											value: '65158956056'
-										})
-										+input({
-											type: 'text',
-											placeholder: 'Имя',
-											name: 'name',
-											value: 'Петр'
-										})
-										+input({
-											type: 'text',
-											placeholder: 'Фамилия',
-											name: 'surname',
-											value: 'Петров'
-										})
-										+input({
-											type: 'phone',
-											placeholder: 'Телефон',
-											name: 'phone',
-											value: '+79524562589'
-										})
-										+select({
-											placeholder: 'Перевозчик',
-											name: 'carrier',
-											items: [
-												{value: '0', label: 'Деловые линии', selected: true},
-												{value: '1', label: 'СДЭК'},
-											],
-										})
+							.basket__information
+								form(data-basket)
+									.basket__information-sum
+										.page__info-head
+											p Итого
+										.basket__information-title
+											p Всего: #[br] #[small Без стоимости транспортировки]
+											span 30 000 ₽
+									.basket__information-dostavka
+										.page__info-head
+											p Доставка
+										.basket__information-radio
+											label.form__radio
+												input(type="radio" name="delivery" value="default" checked)
+												span По умолчанию
+											label.form__radio
+												input(type="radio" name="delivery" value="pickup")
+												span Самовывоз Санкт-Петербург
+											label.form__radio
+												input(type="radio" name="delivery" value="client")
+												span До клиента
+										.basket__information-info.is-hidden
+											+input({
+												type: 'text',
+												placeholder: 'Наименование компании',
+												name: 'сompany',
+												value: 'Спецмашина'
+											})
+											+input({
+												type: 'text',
+												placeholder: 'ИНН',
+												name: 'inn',
+												value: '65158956056'
+											})
+											+input({
+												type: 'text',
+												placeholder: 'Имя',
+												name: 'name',
+												value: 'Петр'
+											})
+											+input({
+												type: 'text',
+												placeholder: 'Фамилия',
+												name: 'surname',
+												value: 'Петров'
+											})
+											+input({
+												type: 'phone',
+												placeholder: 'Телефон',
+												name: 'phone',
+												value: '+79524562589'
+											})
 											+select({
-												placeholder: 'Метод доставки',
-												name: 'method',
+												placeholder: 'Перевозчик',
+												name: 'carrier',
 												items: [
-													{value: '0', label: 'До дверей', selected: true},
-													{value: '1', label: 'До терминала'},
+													{value: '0', label: 'Деловые линии', selected: true},
+													{value: '1', label: 'СДЭК'},
 												],
 											})
-										+input({
-											type: 'text',
-											placeholder: 'Город',
-											name: 'city',
-											value: 'Сыктывкар'
-										})
-										+input({
-											type: 'text',
-											placeholder: 'Адрес',
-											name: 'address',
-											value: 'ул. Маршала Зайка, д. 312, кв. 789'
-										})
-										+select({
-											placeholder: 'Приоритет отгрузки',
-											name: 'priority',
-											items: [
-												{value: '0', label: 'Укомплектовать полностью', selected: true},
-												{value: '1', label: 'Отправить имеющееся в наличии'},
-											],
-										})
-									.request-card__contact
-										p.h4 Информация о контакте
-										.request-card__contact-item
-											p Компания
-											p #[b ООО "Добрый зайка"]
-										.request-card__contact-item
-											p Раб. телефон
-											p #[b +7-977-777-66-66]
-										.request-card__contact-item
-											p E-mail раб
-											p #[b морковка@зайкидобра.рф]
-										.request-card__contact-item
-											p Должность
-											p #[b Старший Заяц]
-									button.button.button__primary(type="submit") Разместить заказ
+												+select({
+													placeholder: 'Метод доставки',
+													name: 'method',
+													items: [
+														{value: '0', label: 'До дверей', selected: true},
+														{value: '1', label: 'До терминала'},
+													],
+												})
+											+input({
+												type: 'text',
+												placeholder: 'Город',
+												name: 'city',
+												value: 'Сыктывкар'
+											})
+											+input({
+												type: 'text',
+												placeholder: 'Адрес',
+												name: 'address',
+												value: 'ул. Маршала Зайка, д. 312, кв. 789'
+											})
+											+select({
+												placeholder: 'Приоритет отгрузки',
+												name: 'priority',
+												items: [
+													{value: '0', label: 'Укомплектовать полностью', selected: true},
+													{value: '1', label: 'Отправить имеющееся в наличии'},
+												],
+											})
+										.request-card__contact
+											p.h4 Информация о контакте
+											.request-card__contact-item
+												p Компания
+												p #[b ООО "Добрый зайка"]
+											.request-card__contact-item
+												p Раб. телефон
+												p #[b +7-977-777-66-66]
+											.request-card__contact-item
+												p E-mail раб
+												p #[b морковка@зайкидобра.рф]
+											.request-card__contact-item
+												p Должность
+												p #[b Старший Заяц]
+										button.button.button__primary(type="submit") Разместить заказ
+								form(action="").w-100
+									button.button.button__outline.w-100(type="submit") Экспортировать в файл
 			+footer-two()

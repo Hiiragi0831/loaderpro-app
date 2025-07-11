@@ -20,6 +20,17 @@ const init = () => {
 			form.sendData(fd, '/users/users_access_edit');
 		});
 	});
+
+	page.querySelectorAll('input[name="access"]').forEach((i) => {
+		i.addEventListener('change', (e) => {
+			e.preventDefault();
+			const fd = new FormData();
+
+			fd.append('access', e.target.value);
+			fd.append('checked', e.target.checked);
+			form.sendData(fd, '/users/users_access_blocking');
+		});
+	});
 };
 
 export default {
