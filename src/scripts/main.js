@@ -114,7 +114,7 @@ const selectSearch = () => {
 			// eslint-disable-next-line
 			new NiceSelect(item, {
 				searchable: true,
-				placeholder: 'Бренд*',
+				placeholder: 'Бренд',
 				searchtext: 'Поиск бренда',
 			});
 		});
