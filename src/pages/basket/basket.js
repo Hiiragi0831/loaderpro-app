@@ -6,7 +6,7 @@ const sendForm = new Form('POST');
 const radioInfo = (informationInfo) => {
 	page.querySelector('.basket__information-radio').querySelectorAll('.form__radio').forEach((item) => {
 		const condition = () => {
-			if (item.querySelector('input').value === 'client') {
+			if (item.querySelector('input').value === 'client' || item.querySelector('input').value === 'default') {
 				informationInfo.classList.remove('is-hidden');
 				informationInfo.querySelectorAll('input, select').forEach((i) => {
 					i.disabled = false;
