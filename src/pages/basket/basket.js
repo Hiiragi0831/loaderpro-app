@@ -11,6 +11,11 @@ const radioInfo = (informationInfo) => {
 				informationInfo.querySelectorAll('input, select').forEach((i) => {
 					i.disabled = false;
 				});
+				if (item.querySelector('input').value === 'client') {
+					informationInfo.querySelectorAll('input').forEach((i) => {
+						i.value = '';
+					});
+				}
 			} else {
 				informationInfo.classList.add('is-hidden');
 				informationInfo.querySelectorAll('input, select').forEach((i) => {
